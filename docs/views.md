@@ -1,6 +1,6 @@
 # View Wireframes
 
-## New Session
+<!-- ## New Session
 ![new-session]
 
 ## Feed Show (landing page)
@@ -24,3 +24,4 @@
 [post-show]: ./wireframes/post_show.png
 [post-form]: ./wireframes/post_form.png
 [search-results]: ./wireframes/search_results.png
+ -->

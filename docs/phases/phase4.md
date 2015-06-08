@@ -1,20 +1,23 @@
-# Phase 4: User Feeds
+# Phase 4: Implementing Comments
 
 ## Rails
 ### Models
+* Comments
 
 ### Controllers
-Api::PostsController (feed)
+* Api::CommentsController (index, show, new, create, edit, update, destroy)
 
 ### Views
-posts/feed.json.jbuilder
+* comments/show.json.jbuilder
 
 ## Backbone
 ### Models
+* Comment
 
 ### Collections
+* Comments
 
 ### Views
-* FeedShow (composite view, contains PostsIndex subview)
+* CommentForm
 
 ## Gems/Libraries
