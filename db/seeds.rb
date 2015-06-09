@@ -9,3 +9,9 @@
 User.create!(username: "example1", password: "password")
 User.create!(username: "example2", password: "password")
 User.create!(username: "example3", password: "password")
+
+Project.create!(owner_id: 1, title: "Project 1")
+Project.create!(owner_id: 1, title: "Project 2")
+Project.create!(owner_id: 1, title: "Project 3")
+Project.create!(owner_id: 2, title: "New Project")
+Project.create!(owner_id: 3, title: "Old Project")

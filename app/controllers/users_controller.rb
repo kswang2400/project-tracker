@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    render :show
+    # render json: @username
+    render "show.json.jbuilder"
   end
 
   def new
