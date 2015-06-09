@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find_by(session_token: session[:session_token])
+    @user = User.find(params[:id])
     render :show
   end
 
   def new
     @user = User.new
     render :new
-
   end
 
   def create
@@ -15,7 +14,7 @@ class UsersController < ApplicationController
 
     if @user.save
       log_in(@user)
-      redirect_to user_url
+      redirect_to user_url(@user)
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new
