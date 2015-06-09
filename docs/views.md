@@ -1,5 +1,15 @@
 # View Wireframes
 
+
+## Home Page
+<img src="./wireframes/home-page.png">
+
+## User Show Page
+<img src="./wireframes/user-show.png">
+
+## Project Show Page
+<img src="./wireframes/project-show.png">
+
 <!-- ## New Session
 ![new-session]
 

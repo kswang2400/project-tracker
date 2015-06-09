@@ -34,20 +34,18 @@ a simple text form in a Rails view. The most important part of this phase will
 be pushing the app to Heroku and ensuring that everything works before moving on
 to phase 2.
 
-[Details][phase-one]
-
 ### Phase 2: Project SCRUD (~2 days)
 The primary feature of Basecamp Clone is to interact with projects. I will finish 
 the server side CRUD operations for projects. Once my projecs table is setup, I will 
 add API routes to serve project data as JSON, then add Backbone models and collections 
 that fetch data from those routes. By the end of this phase, users will be able 
 to 
+
 + and search for projects by title
 + tag other users to their projects
-+ subscribe to projects 
-all inside a single Backbone app.
++ subscribe to projects
 
-[Details][phase-two]
+all inside a single Backbone app.
 
 ### Phase 3: Implementing Tasks (~2 days)
 Once the users can create, search, tag and subscribe to projects, I want to add 
@@ -56,13 +54,9 @@ to a project. By the end of this phase, all projects will have a Task feature wh
 allows anyone involved in the project to create/update a new Task associated with
 the project. 
 
-[Details][phase-three]
-
 ### Phase 4: Implementing Comments (~2 days)
 For each task, I will add a section that allows users in the project to discuss 
 and leave comments for one another. 
-
-[Details][phase-four]
 
 ### Phase 5: Uploading Pictures (~3 days)
 Once I have a usable project coordination app, I will try to allow users to upload 
@@ -70,18 +64,10 @@ pictures. At first, I will have it only be posted to whole projects, but eventua
 have the feature be allowed in tasks and maybe even comments as well. I will have 
 to use Amazon Ruby SDK to store images on S3.
 
-[Details][phase-five]
-
 ### Bonus Features (TBD)
 - [ ] User avatars
 - [ ] Typeahead search bar
 - [ ] Photo Carousel
 - [ ] Chat window
 
-<!-- 
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md -->
 
