@@ -1,0 +1,23 @@
+<h1><%= form_title %></h1>
+
+<form action="<%= action_url %>" method="post">
+  <div class="form-group">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  </div>
+
+  <div class="form-group">
+    <label for="user_username">Username</label>
+    <input type="text" name="user[username]" 
+           value="<%= user.username %>" 
+           id="user_username">
+  </div>
+
+  <div class="form-group">
+    <label for="user_password">Password</label>
+    <input type="password" name="user[password]"id="user_password">
+  </div>
+
+  <div class="form-group">
+    <input type="submit" class="btn btn-primary">
+  </div>
+</form>
