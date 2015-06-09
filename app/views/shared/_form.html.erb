@@ -1,6 +1,6 @@
-<h1><%= form_title %></h1>
+<form action="<%= action_url %>" method="post" class="col-md-4 col-md-offset-4">
+  <h1><%= form_title %></h1>
 
-<form action="<%= action_url %>" method="post">
   <div class="form-group">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   </div>
