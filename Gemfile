@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.1'
-gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass'
 gem 'uglifier', '>= 1.3.0'
@@ -14,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'backbone-on-rails'
+gem 'pg'
 
 # gem 'unicorn'
 
@@ -25,5 +25,6 @@ group :development, :test do
   gem 'spring'
   gem 'binding_of_caller'
   gem 'better_errors'
+  gem 'sqlite3'
 end
 
