@@ -1,7 +1,8 @@
 module Api
   class ProjectsController < ApplicationController
     def create
-      project = Project.new(projects_params)
+      project = Project.new(project_params)
+      project.owner_id = current_user.id
 
       if project.save
         render json: project

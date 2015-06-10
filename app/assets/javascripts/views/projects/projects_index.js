@@ -1,6 +1,10 @@
 BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
   template: JST['projects/index'],
 
+  events: {
+    "click button.add-project": "newProject"
+  },
+
   initialize: function () {
     this.collection.each(this.addProjectSubview.bind(this));
     this.listenTo(this.collection, 'add', this.addProjectSubview);
@@ -13,6 +17,16 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
       id: project.get('id')
     });
     this.addSubview('.projects-index', subview);
+  },
+
+  newProject: function (event) {
+    event.preventDefault();
+    var projectFormView = new BasecampApp.Views.ProjectForm({
+      model: new BasecampApp.Models.Project(),
+      collection: this.collection
+    });
+    this.$el.find('.add-project').hide();
+    this.addSubview('.project-form-container', projectFormView);
   },
 
   render: function () {

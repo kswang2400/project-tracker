@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require underscore
 //= require backbone
+//= require jquery.serializeJSON.js
 //= require basecamp_app
 //= require_tree ../templates
 //= require_tree ./models
