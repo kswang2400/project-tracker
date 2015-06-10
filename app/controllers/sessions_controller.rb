@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
     if user
       log_in(user)
-      redirect_to root_url
+      redirect_to "/#home"
     else
       flash.now[:errors] = ["Invalid username or password"]
       render :new
