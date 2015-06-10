@@ -41,6 +41,10 @@ html {
   height: 100%;
 }
 
+.invite-users {
+  margin-top: 40px;
+}
+
 .jumbotron {
   border-radius: 25px;
   margin: 0px 80px;
@@ -107,11 +111,22 @@ nav a {
 }
 
 .project-description {
+  margin-top: 12px;
+}
+
+.project-show-footer {
   margin-left: 100px;
-  margin-top: 50px;
+}
+
+.project-show {
+  background-color: white;  
+  border: 1px solid red;
+  margin: 0px 100px;
 }
 
 .project-title {
-  margin-left: 100px;
+  margin: 40px 0px;
+  
 }
+
 

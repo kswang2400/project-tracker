@@ -18,6 +18,6 @@ BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
   },
 
   show: function () {
-    // go to projects show page, redirect with router?
+    Backbone.history.navigate("/projects/" + this.model.escape('id'), { trigger: true });
   }
 });
