@@ -10,8 +10,15 @@ User.create!(username: "example1", password: "password")
 User.create!(username: "example2", password: "password")
 User.create!(username: "example3", password: "password")
 
-Project.create!(owner_id: 1, title: "Project 1")
-Project.create!(owner_id: 1, title: "Project 2")
-Project.create!(owner_id: 1, title: "Project 3")
-Project.create!(owner_id: 2, title: "New Project")
-Project.create!(owner_id: 3, title: "Old Project")
+Project.create!(owner_id: 1, title: "Project 1", 
+  description: "This is my first project! I'm using it to test things out")
+Project.create!(owner_id: 1, title: "Project 2",
+  description: "For my second project, I'm going to finish projects CRUD by 
+  the end of the day")
+Project.create!(owner_id: 1, title: "Project 3",
+  description: "This is my latest project. I don't even know what I'm going to 
+  do yet. Come back soon to see if I started anything new.")
+Project.create!(owner_id: 2, title: "New Project",
+  description: "I created a new project.")
+Project.create!(owner_id: 3, title: "Old Project",
+  description: "This project was completed years ago!")

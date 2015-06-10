@@ -49,7 +49,7 @@ html {
 }
 
 .list-item {
-  margin-left: 15px;
+  margin-left: 25px;
 }
 
 .logo {
@@ -87,16 +87,22 @@ nav a {
 
 .projects-index {
   display: block;
-  border: 1px solid red;
-  margin: 10px 50px;
+  background-color: white;
+  margin: 30px 50px;
+  padding-top: 20px;
+  padding-left: 30px;
 }
 
 .projects-index-item {
   display: block;
   float: left;
-  border: 4px solid blue;
+  border: 4px solid #aaaaaa;
   margin: 20px;
   padding: 0px 15px 30px 15px;
   width: 250px;
+}
+
+.projects-index-title {
+  margin-left: 100px;
 }
 

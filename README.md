@@ -11,7 +11,7 @@ Basecamp Clone is a clone of Tumblr built on Rails and Backbone. Users can:
 
 - [x] Create accounts
 - [x] Create sessions (log in)
-- [ ] SCRUD for projects
+- [ ] CRUD for projects
 - [ ] Tag other users to projects
 - [ ] Subscribe to projects
 - [ ] Create tasks in projects
@@ -41,11 +41,8 @@ add API routes to serve project data as JSON, then add Backbone models and colle
 that fetch data from those routes. By the end of this phase, users will be able 
 to 
 
-+ and search for projects by title
 + tag other users to their projects
 + subscribe to projects
-
-all inside a single Backbone app.
 
 ### Phase 3: Implementing Tasks (~2 days)
 Once the users can create, search, tag and subscribe to projects, I want to add 
@@ -65,6 +62,7 @@ have the feature be allowed in tasks and maybe even comments as well. I will hav
 to use Amazon Ruby SDK to store images on S3.
 
 ### Bonus Features (TBD)
+- [ ] Project search
 - [ ] User avatars
 - [ ] Typeahead search bar
 - [ ] Photo Carousel
