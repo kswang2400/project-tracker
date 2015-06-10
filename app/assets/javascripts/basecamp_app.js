@@ -4,7 +4,10 @@ window.BasecampApp = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    new BasecampApp.Routers.Router({ 
+      $rootEl: $('#main')
+    });
+    Backbone.history.start();
   }
 };
 
