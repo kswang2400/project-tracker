@@ -40,6 +40,16 @@ html {
   background-color: #cccccc;
 }
 
+.logo {
+  padding: 30px 0px;
+  background-color: #ebebeb;
+}
+
+.logo-image {
+  height: 60px;
+  width: 45px;
+}
+
 #main {
   background-color: #ebebeb;
   height: 100%;
@@ -47,9 +57,13 @@ html {
   width: 100%;
 }
 
+nav a {
+  color: white;
+}
+
 .navbar {
   border-radius: 0px;
-  background-color: #cccccc;
+  background-color: #aaaaaa;
   margin-bottom: 0px;
 }
 
