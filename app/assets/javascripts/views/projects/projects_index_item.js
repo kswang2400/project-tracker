@@ -1,5 +1,7 @@
 BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
   template: JST['projects/index_item'],
+  tagName: "ul",
+  className: "projects-index-item",
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);

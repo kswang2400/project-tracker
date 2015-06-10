@@ -21,6 +21,14 @@ body {
   height: 100%;
 }
 
+.clearfix {
+  &:before {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
 .form-group .btn {
   width: 100%;
 }
@@ -38,6 +46,10 @@ html {
   margin: 0px 80px;
   padding-left: 50px;
   background-color: #cccccc;
+}
+
+.list-item {
+  margin-left: 15px;
 }
 
 .logo {
@@ -73,4 +85,18 @@ nav a {
   padding: 20px;
 }
 
+.projects-index {
+  display: block;
+  border: 1px solid red;
+  margin: 10px 50px;
+}
+
+.projects-index-item {
+  display: block;
+  float: left;
+  border: 4px solid blue;
+  margin: 20px;
+  padding: 0px 15px 30px 15px;
+  width: 250px;
+}
 
