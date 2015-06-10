@@ -24,6 +24,7 @@ module Api
     def show
       project = Project.find(params[:id])
       # .includes(:title, :description).
+      # implement privacy later
       render json: project
     end
 
