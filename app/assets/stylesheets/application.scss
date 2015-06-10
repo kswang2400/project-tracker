@@ -16,3 +16,47 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  height: 100%;
+}
+
+.form-group .btn {
+  width: 100%;
+}
+
+.form-title {
+  margin: 0px;
+}
+
+html {
+  height: 100%;
+}
+
+.jumbotron {
+  border-radius: 25px;
+  margin: 0px 80px;
+  padding-left: 50px;
+  background-color: #cccccc;
+}
+
+#main {
+  background-color: #ebebeb;
+  height: 100%;
+  padding-top: 50px;
+  width: 100%;
+}
+
+.navbar {
+  border-radius: 0px;
+  background-color: #cccccc;
+  margin-bottom: 0px;
+}
+
+.new-user-session {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+
