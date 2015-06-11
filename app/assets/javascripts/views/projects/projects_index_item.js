@@ -5,8 +5,9 @@ BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
 
   events: {
     'click .delete-project': "destroyProject",
-    'click': "show"
+    'click .index-item-body': "show"
   },
+
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
@@ -24,7 +25,8 @@ BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
     return this;
   },
 
-  show: function () {
+  show: function (event) {
+    if ($(event.target).hasClass('delete-project')) { return };
     Backbone.history.navigate("/projects/" + this.model.escape('id'), { trigger: true });
   }
 });

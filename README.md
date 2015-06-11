@@ -11,7 +11,7 @@ Basecamp Clone is a clone of Tumblr built on Rails and Backbone. Users can:
 
 - [x] Create accounts
 - [x] Create sessions (log in)
-- [ ] CRUD for projects
+- [x] CRUD for projects
 - [ ] Tag other users to projects
 - [ ] Subscribe to projects
 - [ ] Create tasks in projects
@@ -34,7 +34,7 @@ a simple text form in a Rails view. The most important part of this phase will
 be pushing the app to Heroku and ensuring that everything works before moving on
 to phase 2.
 
-### Phase 2: Project SCRUD (~2 days)
+### Phase 2: Project CRUD (~2 days)
 The primary feature of Basecamp Clone is to interact with projects. I will finish 
 the server side CRUD operations for projects. Once my projecs table is setup, I will 
 add API routes to serve project data as JSON, then add Backbone models and collections 
