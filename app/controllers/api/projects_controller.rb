@@ -1,5 +1,5 @@
 module Api
-  class ProjectsController < ApplicationController
+  class ProjectsController < ApiController
     def create
       project = Project.new(project_params)
       project.owner_id = current_user.id
@@ -24,8 +24,6 @@ module Api
 
     def show
       project = Project.find(params[:id])
-      # .includes(:title, :description).
-      # implement privacy later
       render json: project
     end
 

@@ -3,15 +3,21 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   className: "project-show clearfix",
 
   events: {
-    'click button': "inviteUsers"
+    'click button.edit-project': "editProject"
   },
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
   },
 
-  inviteUsers: function () {
-    
+  editProject: function (event) {
+    event.preventDefault();
+    alert('edit');
+  },
+
+  inviteUsers: function (event) {
+    event.preventDefault();
+    alert('invite');
   },
 
   render: function () {
