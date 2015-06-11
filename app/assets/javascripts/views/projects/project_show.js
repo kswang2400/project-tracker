@@ -4,7 +4,8 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
   events: {
     'click button.invite-users': "inviteUsers",
-    'click .project-title': "editTitle"
+    'click .project-title': "editTitle",
+    'click .upload': "upload"
   },
 
   initialize: function () {
@@ -20,12 +21,19 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   inviteUsers: function (event) {
     event.preventDefault();
     alert('invite');
-    this.$el.find('.project-title')
+    this.$el.find('.project-title').html
   },
 
   render: function () {
     var content = this.template({ project: this.model });
     this.$el.html(content);
     return this;
+  },
+
+  upload: function (event) {
+    event.preventDefault();
+    cloudinary.openUploadWidget(window.CLOUDINARY_SETTINGS, function(error, payload) {
+      debugger;
+    });
   }
 });
