@@ -5,7 +5,9 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   events: {
     'click button.invite-users': "inviteUsers",
     'click .project-title': "editTitle",
-    'click .upload': "upload"
+    'click .project-description-text': 'editDescription',
+    'click .upload': "upload",
+    'blur input': 'uptdateAndSave'
   },
 
   initialize: function () {
@@ -15,13 +17,29 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
   editTitle: function (event) {
     event.preventDefault();
-    alert('editing')
+    var form = new BasecampApp.Views.Editable({ 
+      model: this.model, 
+      field: "title",
+      fieldType: "text"
+    });
+    this.$el.find('.project-title').html(form.render().$el);
+    $(event.currentTarget).removeClass('project-title');
+  },
+
+  editDescription: function (event) {
+    event.preventDefault();
+    var form = new BasecampApp.Views.Editable({ 
+      model: this.model, 
+      field: "description",
+      fieldType: "textarea"
+    });
+    this.$el.find('.project-description-text').html(form.render().$el);
+    $(event.currentTarget).removeClass('project-description-text');
   },
 
   inviteUsers: function (event) {
     event.preventDefault();
     alert('invite');
-    this.$el.find('.project-title').html
   },
 
   render: function () {

@@ -1,0 +1,9 @@
+<form class="editable" action="/api/projects" method="patch">
+  <div class="form-group">
+    <input class="form-control" type="<%= fieldType %>" name="project[<%= attr %>]" 
+           value="<%= project.escape(attr) %>" 
+           id="project-<%= attr %>">
+  </div>
+
+  <input type="submit" class="edit btn btn-success">
+</form>
