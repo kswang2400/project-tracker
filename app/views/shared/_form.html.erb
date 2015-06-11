@@ -1,8 +1,10 @@
 <form action="<%= action_url %>" method="post" class="new-user-session col-md-4 col-md-offset-4">
   <h1 class="form-title"><%= form_title %></h1>
 
-  <%= render "shared/errors" %>
-
+  <div class="render-errors">
+    <%= render "shared/errors" %>
+  </div>
+  
   <div class="form-group">
     <input class="form-control" type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   </div>
