@@ -12,7 +12,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
   editProject: function (event) {
     event.preventDefault();
-    alert('edit');
+    debugger;
   },
 
   inviteUsers: function (event) {

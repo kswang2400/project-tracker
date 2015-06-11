@@ -4,6 +4,7 @@
   <title>Basecamp</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
   <%= csrf_meta_tags %>
 </head>
 
@@ -59,5 +60,6 @@
   <div id="main">
     <%= yield %>
   </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 </body>
 </html>

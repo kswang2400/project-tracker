@@ -53,7 +53,7 @@ html {
 }
 
 .edit-project {
-  margin: 40px 0px;
+  margin: 40px 20px 40px 0px;
 }
 
 .error {
@@ -114,6 +114,10 @@ nav a {
   padding: 20px;
 }
 
+.project-description {
+  margin-left: 40px;
+}
+
 .projects-index {
   background-color: rgba(245, 245, 245, 0.2);
   border-radius: 30px;
@@ -154,6 +158,7 @@ nav a {
 
 .project-description {
   margin-top: 12px;
+  margin-right: 50px;
 }
 
 .project-show-footer {
