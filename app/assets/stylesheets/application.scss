@@ -66,6 +66,10 @@ html {
   padding: 15px 0px 15px 30px;
 }
 
+input {
+  width: 300px;
+}
+
 .jumbotron {
   background-color: rgba(245, 245, 245, 0.4);
   color: #eeeeee;
@@ -187,12 +191,13 @@ nav a {
 
 .project-title {
   border-radius: 5px;
-  padding: 20px 20px 20px 20px;
+  padding: 20px 0px 0px 10px;
   word-wrap: normal;
 }
 
 .project-title-editing {
   margin: 20px 20px 20px 20px;
+
 }
 
 .project-title:hover {

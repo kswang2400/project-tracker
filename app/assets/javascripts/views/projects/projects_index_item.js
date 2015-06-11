@@ -15,8 +15,11 @@ BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
 
   destroyProject: function (event) {
     event.preventDefault();
-    this.model.destroy();
-    this.remove();
+    var yes = confirm("Are you sure you want to delete this project?")
+    if (yes) {
+      this.model.destroy();
+      this.remove(); 
+    }
   },
 
   render: function () {
