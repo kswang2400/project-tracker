@@ -38,7 +38,8 @@
                        window.CURRENT_USER_ID = "<%= current_user.id %>" </script>
               <li><%= link_to "Log Out", session_url, method: :delete %></li>
             <% else %>
-              <script> window.CURRENT_USER_USERNAME = "Guest" </script>
+              <script> window.CURRENT_USER_USERNAME = "Guest" 
+                       window.CURRENT_USER_ID = 0 </script>
               <li><%= link_to "Log In", new_session_url %></li>
               <li><%= link_to "Sign Up", new_user_url %></li>
             <% end %>
