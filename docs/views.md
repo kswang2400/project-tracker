@@ -35,3 +35,8 @@
 [post-form]: ./wireframes/post_form.png
 [search-results]: ./wireframes/search_results.png
  -->
+
+<!--  <div class="logo">
+  <center><%= image_tag "logo.png", class: "logo-image" %></center>
+</div>
+ -->

@@ -14,7 +14,7 @@ BasecampApp.Views.ProjectForm = Backbone.View.extend({
     this.model.save({}, {
       success: function () {
         that.collection.add(that.model, { merge: true });
-        Backbone.history.navigate("#home", { trigger: true });
+        Backbone.history.navigate("#projects/" + that.model.get('id'), { trigger: true });
         that.$el.find('.new-project').remove();
       }
     })

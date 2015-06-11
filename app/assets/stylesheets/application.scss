@@ -19,6 +19,8 @@
 
 body {
   height: 100%;
+  margin: 0;
+  min-width: 550px;
 }
 
 .clearfix {
@@ -51,14 +53,15 @@ html {
 }
 
 .edit-project {
-  margin-top: 40px;
+  margin: 40px 0px;
 }
 
 .jumbotron {
+  background-color: rgba(245, 245, 245, 0.4);
+  color: #eeeeee;
   border-radius: 25px;
   margin: 0px 80px;
   padding-left: 50px;
-  background-color: #cccccc;
 }
 
 .list-item {
@@ -66,8 +69,8 @@ html {
 }
 
 .logo {
-  padding: 30px 0px;
   background-color: #ebebeb;
+  padding: 30px 0px;
 }
 
 .logo-image {
@@ -76,7 +79,9 @@ html {
 }
 
 #main {
-  background-color: #ebebeb;
+  background-image: url('fp_back2.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
   height: 100%;
   padding-top: 50px;
   width: 100%;
@@ -87,8 +92,8 @@ nav a {
 }
 
 .navbar {
-  border-radius: 0px;
   background-color: #aaaaaa;
+  border-radius: 0px;
   margin-bottom: 0px;
 }
 
@@ -105,8 +110,9 @@ nav a {
 }
 
 .projects-index {
-  display: block;
   background-color: white;
+  border-radius: 30px;
+  display: block;
   margin: 30px 50px;
   padding-top: 20px;
   padding-left: 30px;
@@ -118,9 +124,10 @@ nav a {
 }
 
 .projects-index-item {
+  border: 4px solid #aaaaaa;
+  border-radius: 25px;
   display: block;
   float: left;
-  border: 4px solid #aaaaaa;
   margin: 20px;
   padding: 0px 15px 30px 15px;
   width: 350px;
@@ -153,8 +160,7 @@ nav a {
 }
 
 .project-title {
-  margin: 40px 0px;
-  
+  padding: 20px 20px;
 }
 
 
