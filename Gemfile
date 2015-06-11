@@ -22,5 +22,6 @@ group :development, :test do
   gem 'spring'
   gem 'binding_of_caller'
   gem 'better_errors'
+  gem 'sqlite3'
 end
 
