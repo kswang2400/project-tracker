@@ -4,7 +4,15 @@ BasecampApp.Views.ProjectForm = Backbone.CompositeView.extend({
 
   events: {
     "submit": "projectForm",
-    "click .modal-backdrop": "removeModal"
+    'keydown': 'esc',
+    "click .modal-backdrop": "removeModal",
+    "click .close": "removeModal", //ActionController::InvalidAuthenticityToken
+  },
+
+  esc: function (event) {
+    if (event.keyCode === 27) {
+      this.remove();
+    }
   },
 
   projectForm: function (event) {
@@ -23,7 +31,7 @@ BasecampApp.Views.ProjectForm = Backbone.CompositeView.extend({
   },
 
   removeModal: function () {
-    $(event.currentTarget).remove();
+    this.remove();
   },
 
   render: function () {

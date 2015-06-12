@@ -64,7 +64,11 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   upload: function (event) {
     event.preventDefault();
     cloudinary.openUploadWidget(window.CLOUDINARY_SETTINGS, function(error, payload) {
-      debugger;
+      var attrs = {
+        url: payload[0].url,
+        thumbnail_url: payload[0].thumbnail_url
+      };
+      new BasecampApp.Models.Upload().set(attrs).save();
     });
   }
 });

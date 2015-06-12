@@ -25,12 +25,14 @@ ActiveRecord::Schema.define(version: 20150612024424) do
   create_table "uploads", force: :cascade do |t|
     t.string   "url",           null: false
     t.string   "thumbnail_url", null: false
+    t.integer  "user_id",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "uploads", ["thumbnail_url"], name: "index_uploads_on_thumbnail_url", unique: true
   add_index "uploads", ["url"], name: "index_uploads_on_url", unique: true
+  add_index "uploads", ["user_id"], name: "index_uploads_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
