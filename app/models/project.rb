@@ -11,4 +11,5 @@ class Project < ActiveRecord::Base
   validates :title, :owner_id, presence: true
 
   belongs_to :owner, class_name: :user
+  has_many :uploads, class_name: :upload
 end

@@ -11,9 +11,18 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     'blur textarea': 'updateAndSave'
   },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.uploads = options.uploads;
     this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.$el.find('.project-title'), 'dbclick', this.editTitle)
+    this.listenTo(this.$el.find('.project-title'), 'dbclick', this.editTitle);
+    this.listenTo(this.uploads, 'add', this.addUploadSubview);
+  },
+
+  addUploadSubview: function (upload) {
+    var subview = new BasecampApp.Views.UploadsIndexItem({
+      model: upload
+    });
+    this.addSubview('.uploads-index', subview);
   },
 
   editTitle: function (event) {
@@ -68,8 +77,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
         url: payload[0].url,
         thumbnail_url: payload[0].thumbnail_url
       };
-      var upload = new BasecampApp.Models.Upload({ project: this.model });
-      upload.save(attrs);
+      new BasecampApp.Models.Upload({ project: this.model }).save(attrs);
     }.bind(this));
   }
 });
