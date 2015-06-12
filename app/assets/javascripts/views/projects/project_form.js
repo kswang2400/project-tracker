@@ -20,7 +20,7 @@ BasecampApp.Views.ProjectForm = Backbone.CompositeView.extend({
     var attrs = this.$el.find('.new-project').serializeJSON();
     var that = this;
 
-    this.model.save({attrs}, {
+    this.model.save(attrs['project'], {
       success: function () {
         that.collection.add(that.model, { merge: true });
         Backbone.history.navigate("#projects/" + that.model.get('id'), { trigger: true });
