@@ -31,6 +31,11 @@ class UsersController < ApplicationController
   def destroy
   end
 
+  def index
+    @users = User.all
+    render json: @users
+  end
+
   private
 
   def user_params

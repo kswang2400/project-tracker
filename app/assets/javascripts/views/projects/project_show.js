@@ -3,7 +3,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   className: "project-show clearfix",
 
   events: {
-    'click button.invite-users': "inviteUsers",
+    'click .invite-users': "inviteUsers",
     'click .project-title': "editTitle",
     'click .project-description-text': 'editDescription',
     'click .upload': "upload",
@@ -54,7 +54,11 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
   inviteUsers: function (event) {
     event.preventDefault();
-    alert('invite');
+    var users = new BasecampApp.Collections.Users();
+    users.fetch();
+    var subview = new BasecampApp.Views.UsersSearch({ collection: users });
+    this.addSubview('.project-show-main', subview);
+    debugger;
   },
 
   render: function () {
