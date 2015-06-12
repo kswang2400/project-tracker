@@ -12,22 +12,23 @@ $.UsersSearch.prototype.handleInput = function (event) {
     return;
   }
 
-  // $.ajax({
-  //   url: "/users",
-  //   dataType: "json",
-  //   method: "GET",
-  //   data: { query: this.$input.val() },
-  //   success: this.renderResults.bind(this)
-  // });
-
   var users = new BasecampApp.Collections.Users();
   users.fetch({
     data: {
       query: this.$input.val()
     },
-    success: function (collection) {console.log(collection)}
+
+    success: function (collection) {
+      $('ul.users').empty();
+      collection.each(function (user) {
+        console.log(user.get('username'))
+        var resultView = new BasecampApp.Views.Result({
+          model: user
+        });
+        $('ul.users').append(resultView.render().$el);
+      });
+    }
   })
-  // debugger;
 };
 
 $.UsersSearch.prototype.renderResults = function (users) {
