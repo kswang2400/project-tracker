@@ -19,7 +19,7 @@ module Api
     end
 
     def index
-      @uploads = current_user.uploads
+      @uploads = Upload.all.where(project_id: params[:project_id])
       render json: @uploads
     end
 

@@ -1,20 +1,20 @@
 
-<div class="project-show-header">
+<div class="project-show-header clearfix">
   <div class="col-md-4">
     <h1 class="project-title"><%= project.escape('title') %></h1>
   </div>
 
   <div class="col-md-4 project-description">
-    <h4>Project Description: </h5>
+    <h4>Project Description: </h4>
     <p class="project-description-text"><%= project.escape('description') %></p>
   </div>
-</form>
 
-<div class="project-features col-md-2 col-md-offset-1">
-  <button type="button" class="invite-users btn btn-primary pull-right">Invite Users</button>
-  <button type="button" class="upload btn btn-primary pull-right">Upload File</button>
+  <div class="project-features col-md-2 col-md-offset-1">
+    <button type="button" class="invite-users btn btn-primary pull-right">Invite Users</button>
+    <button type="button" class="upload btn btn-primary pull-right">Upload File</button>
+  </div>
 </div>
 
-<div class="project-show-main">
+<div class="project-show-main clearfix">
   <div class="uploads-index"></div>
 </div>

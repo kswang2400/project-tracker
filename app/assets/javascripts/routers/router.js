@@ -19,13 +19,14 @@
 
   show: function (id) {
     project = this.projects.getOrFetch(id);
-    var uploads = new BasecampApp.Collections.Uploads({
-      project: project
-    }).fetch();
+    var uploads = new BasecampApp.Collections.Uploads({ project: project });
+    uploads.fetch();
+
     var view = new BasecampApp.Views.ProjectShow({
       model: project,
       uploads: uploads
     });
+
     this._swapView(view);
   },
 
