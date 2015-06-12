@@ -203,20 +203,25 @@ nav a {
   width: 100%;
 }
 
-.project-show-footer {
-  margin: 100px;
-}
-
 .project-show {
-  background-color: white;  
+  background-color: rgba(245, 245, 245, 0.4);;  
   border-radius: 5px;
   margin: 0px 100px;
   padding-bottom: 20px;
 }
 
-.project-show-main {
-  margin-left: 40px;
-  border: 10px solid red;
+.project-show-header {
+  background-color: white;
+  margin: 20px;
+}
+
+.project-show-footer {
+  margin: 100px;
+}
+
+.project-show-upload-bar {
+  background-color: white;
+  margin: 20px;
 }
 
 .project-title {
@@ -236,5 +241,9 @@ nav a {
 
 .upload-thumbnail {
   margin: 30px;
+  float: left;
+}
+
+#upload-title {
   float: left;
 }
