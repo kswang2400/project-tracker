@@ -15,14 +15,23 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.uploads = options.uploads;
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.$el.find('.project-title'), 'dbclick', this.editTitle);
-    this.listenTo(this.uploads, 'add', this.addUploadSubview);
+    this.listenTo(this.uploads, 'add', this.addUploadToCarousel);
   },
 
-  addUploadSubview: function (upload) {
-    var subview = new BasecampApp.Views.UploadsIndexItem({
+  // addUploadSubview: function (upload) {
+  //   var subview = new BasecampApp.Views.UploadsIndexItem({
+  //     model: upload
+  //   });
+  //   this.addSubview('.uploads-index', subview);
+  // },
+
+
+  addUploadToCarousel: function (upload) {
+    var view = new BasecampApp.Views.UploadsIndexItem({
       model: upload
     });
-    this.addSubview('.uploads-index', subview);
+    this.$el.find('.carousel-inner').append(view.render().$el);
+    $('body').find('.item').first().addClass('active')
   },
 
   editTitle: function (event) {
