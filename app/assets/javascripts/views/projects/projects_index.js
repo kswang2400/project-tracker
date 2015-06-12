@@ -24,8 +24,9 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
       model: new BasecampApp.Models.Project(),
       collection: this.collection
     });
-    this.$el.find('.add-project').hide();
-    this.addSubview('.project-form-container', projectFormView);
+    // this.$el.find('.add-project').hide();
+    // this.addSubview('.project-form-container', projectFormView);
+    $('#main').prepend(projectFormView.render().$el);
   },
 
   render: function () {

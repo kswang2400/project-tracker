@@ -18,7 +18,7 @@ module Api
     end
 
     def index
-      @projects = (logged_in?) ? current_user.projects : Project.all
+      @projects = current_user.projects
       render json: @projects
     end
 

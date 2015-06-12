@@ -1,19 +1,23 @@
-<form action="/api/projects" method="post" class="new-project col-md-4 col-md-offset-4">
-  <h1 class="form-title">Create a New Project</h1>
+<div class="modal-backdrop"></div>
 
-  <div class="form-group">
-    <label for="project_title">Title</label>
-    <input class="form-control" type="text" name="project[title]" 
-           value="<%= project.escape('title') %>" 
-           id="project-title">
-  </div>
+<div class="modal-content">
+  <form action="/api/projects" method="post" class="new-project col-md-4 col-md-offset-4">
+    <h1 class="form-title">Create a New Project</h1>
 
-  <div class="form-group">
-    <label for="project_description">Description</label>
-    <textarea class="form-control" name="project[description]"id="project-description"></textarea>
-  </div>
+    <div class="form-group">
+      <label for="project_title">Title</label>
+      <input class="form-control" type="text" name="project[title]" 
+             value="<%= project.escape('title') %>" 
+             id="project-title">
+    </div>
 
-  <div class="form-group">
-    <input type="submit" class="btn btn-primary">
-  </div>
-</form>
+    <div class="form-group">
+      <label for="project_description">Description</label>
+      <textarea class="form-control" name="project[description]"id="project-description"></textarea>
+    </div>
+
+    <div class="form-group">
+      <input type="submit" class="btn btn-primary">
+    </div>
+  </form>
+</div>
