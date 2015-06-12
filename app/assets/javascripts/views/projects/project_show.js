@@ -7,14 +7,13 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     'click .project-title': "editTitle",
     'click .project-description-text': 'editDescription',
     'click .upload': "upload",
-    'blur input': 'updateAndSave',
+    'blur input.editing': 'updateAndSave',
     'blur textarea': 'updateAndSave'
   },
 
   initialize: function (options) {
     this.uploads = options.uploads;
     this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.$el.find('.project-title'), 'dbclick', this.editTitle);
     this.listenTo(this.uploads, 'add', this.addUploadSubview);
   },
 
@@ -29,7 +28,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   editTitle: function (event) {
     event.preventDefault();
     var $input = $('<input>')
-      .addClass('project-title-editing')
+      .addClass('project-title editing')
       .data("attr", 'title')
       .data("input", "input")
       .val($(event.currentTarget).html());
@@ -42,7 +41,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   editDescription: function (event) {
     event.preventDefault();
     var $input = $('<textarea>')
-      .addClass('project-description-text-editing')
+      .addClass('project-description-text editing')
       .data("attr", 'description')
       .data("input", "textarea")
       .val($(event.currentTarget).html());
@@ -54,11 +53,8 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
   inviteUsers: function (event) {
     event.preventDefault();
-    var users = new BasecampApp.Collections.Users();
-    users.fetch();
-    var subview = new BasecampApp.Views.UsersSearch({ collection: users });
-    this.addSubview('.project-show-main', subview);
-    debugger;
+    var subview = new BasecampApp.Views.UsersSearch();
+    this.addSubview('.project-user-search', subview);
   },
 
   render: function () {
