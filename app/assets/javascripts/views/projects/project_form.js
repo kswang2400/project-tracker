@@ -1,8 +1,10 @@
-BasecampApp.Views.ProjectForm = Backbone.View.extend({
+BasecampApp.Views.ProjectForm = Backbone.CompositeView.extend({
   template: JST['projects/form'],
+  className: "modal-container",
 
   events: {
-    "submit": "projectForm"
+    "submit": "projectForm",
+    "click .modal-backdrop": "removeModal"
   },
 
   projectForm: function (event) {
@@ -18,6 +20,10 @@ BasecampApp.Views.ProjectForm = Backbone.View.extend({
         that.$el.find('.new-project').remove();
       }
     })
+  },
+
+  removeModal: function () {
+    $(event.currentTarget).remove();
   },
 
   render: function () {
