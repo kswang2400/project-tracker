@@ -6,7 +6,7 @@ BasecampApp.Views.ProjectForm = Backbone.CompositeView.extend({
     "submit": "projectForm",
     'keydown': 'esc',
     "click .modal-backdrop": "removeModal",
-    "click .close": "removeModal", //ActionController::InvalidAuthenticityToken
+    "click .close": "removeModal" //ActionController::InvalidAuthenticityToken
   },
 
   esc: function (event) {

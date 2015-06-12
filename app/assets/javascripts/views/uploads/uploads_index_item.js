@@ -2,6 +2,10 @@ BasecampApp.Views.UploadsIndexItem = Backbone.View.extend({
   template: JST['uploads/index_item'],
   className: "item",
 
+  events: {
+    'click': "showImage",
+  },
+
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
   },
@@ -13,6 +17,7 @@ BasecampApp.Views.UploadsIndexItem = Backbone.View.extend({
   },
 
   showImage: function () {
-    alert('showImage');
+    var imageModal = new BasecampApp.Views.UploadShow({ model: this.model });
+    $('#main').prepend(imageModal.render().$el);
   }
 })
