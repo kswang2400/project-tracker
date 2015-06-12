@@ -26,10 +26,12 @@ ActiveRecord::Schema.define(version: 20150612024424) do
     t.string   "url",           null: false
     t.string   "thumbnail_url", null: false
     t.integer  "user_id",       null: false
+    t.integer  "project_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "uploads", ["project_id"], name: "index_uploads_on_project_id"
   add_index "uploads", ["thumbnail_url"], name: "index_uploads_on_thumbnail_url", unique: true
   add_index "uploads", ["url"], name: "index_uploads_on_url", unique: true
   add_index "uploads", ["user_id"], name: "index_uploads_on_user_id"

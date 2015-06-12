@@ -3,11 +3,12 @@ module Api
     def create
       upload = Upload.new(upload_params)
       upload.user_id = current_user.id
+      upload.project_id = params[:project_id]
 
       if upload.save
         render json: upload
       else
-        render json: upload.errors.fullmessages, status: :unprocessable_entity
+        render json: upload.errors.full_messages, status: :unprocessable_entity
       end
     end
 
@@ -33,7 +34,7 @@ module Api
       if upload.update(upload_params)
         render json: upload
       else
-        render json: upload.errors.fullmessages, status: :unprocessable_entity
+        render json: upload.errors.full_messages, status: :unprocessable_entity
       end
     end
 

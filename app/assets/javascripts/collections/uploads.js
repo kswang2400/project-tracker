@@ -1,6 +1,6 @@
 BasecampApp.Collections.Uploads = Backbone.Collection.extend({
   model: BasecampApp.Models.Upload,
-  url: "/api/uploads",
+  url: "/api/projects/:project_id/uploads",
 
   getOrFetch: function (id) {
   var uploads = this;

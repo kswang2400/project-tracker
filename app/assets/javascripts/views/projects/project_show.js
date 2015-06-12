@@ -68,7 +68,8 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
         url: payload[0].url,
         thumbnail_url: payload[0].thumbnail_url
       };
-      new BasecampApp.Models.Upload().set(attrs).save();
-    });
+      var upload = new BasecampApp.Models.Upload({ project: this.model });
+      upload.save(attrs);
+    }.bind(this));
   }
 });
