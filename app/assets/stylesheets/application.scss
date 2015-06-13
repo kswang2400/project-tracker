@@ -63,7 +63,7 @@ html {
 }
 
 input {
-  width: 300px;
+  width: 100%;
 }
 
 .item.active {
@@ -240,6 +240,10 @@ nav a {
 
 .searched-user {
   font-size: 20px;
+}
+
+textarea {
+  width: 100%;
 }
 
 .upload-thumbnail {
