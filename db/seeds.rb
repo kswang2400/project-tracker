@@ -22,3 +22,9 @@ Project.create!(owner_id: 2, title: "New Project",
   description: "I created a new project.")
 Project.create!(owner_id: 3, title: "Old Project",
   description: "This project was completed years ago!")
+
+20.times { User.create!(username: Faker::Internet.user_name, password: "password")}
+
+50.times do |i|
+  Project.create!(owner_id: (i % 23) + 1, title: Faker::Lorem.words(2), description: Faker::Lorem.paragraph)
+end
