@@ -21,6 +21,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'byebug'
+  gem 'faker'
   gem 'spring'
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'
