@@ -7,7 +7,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     'click .project-title': "editTitle",
     'click .project-description-text': "editDescription",
     'click .tag-user': "tagUser",
-    'click .upload': "upload",
+    'click .upload-button': "upload",
     'blur input.editing': "updateAndSave",
     'blur textarea': "updateAndSave"
   },
@@ -92,12 +92,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       project: this.model
     });
 
-    membership.save(attr, {
-      success: function () {
-        that.memberships.save(membership, { merge: true });
-      }
-    });
-    debugger;
+    membership.save(attr);
   },
 
   updateAndSave: function (event) {
