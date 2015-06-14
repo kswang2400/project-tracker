@@ -32,11 +32,12 @@ class UsersController < ApplicationController
   end
 
   def index
-    if params[:query] 
-      @users = User.where("username LIKE \"%" + params[:query] + "%\"")
+    if params[:query]
+      @users = User.where("username LIKE \"%#{params[:query]}%\"").limit(10)
     else
       @users = User.all
     end
+
     render json: @users
   end
 

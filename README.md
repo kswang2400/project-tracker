@@ -27,7 +27,7 @@ Basecamp Clone is a clone of Tumblr built on Rails and Backbone. Users can:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Project creation (1~2 days)
+### Phase 1: User Authentication, Project creation (1 days)
 I will implement user authentication in Rails based on the practices learned at
 App Academy. By the end of this phase, users will be able to create projects using
 a simple text form in a Rails view. The most important part of this phase will
@@ -55,7 +55,7 @@ the project.
 For each task, I will add a section that allows users in the project to discuss 
 and leave comments for one another. 
 
-### Phase 5: Uploading Pictures (~3 days)
+### Phase 5: Uploading Pictures (~1 days)
 Once I have a usable project coordination app, I will try to allow users to upload 
 pictures. At first, I will have it only be posted to whole projects, but eventually,
 have the feature be allowed in tasks and maybe even comments as well. I will have 

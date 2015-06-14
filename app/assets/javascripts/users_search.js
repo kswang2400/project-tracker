@@ -21,7 +21,6 @@ $.UsersSearch.prototype.handleInput = function (event) {
     success: function (collection) {
       $('ul.users').empty();
       collection.each(function (user) {
-        console.log(user.get('username'))
         var resultView = new BasecampApp.Views.Result({
           model: user
         });
@@ -41,15 +40,8 @@ $.UsersSearch.prototype.renderResults = function (users) {
     $a.text(user.username);
     $a.attr("href", "/users/" + user.id);
 
-    var $followToggle = $("<button></button>");
-    $followToggle.followToggle({
-      userId: user.id,
-      followState: user.followed ? "followed" : "unfollowed"
-    });
-
     var $li = $("<li></li>");
     $li.append($a);
-    $li.append($followToggle);
 
     this.$ul.append($li);
   }

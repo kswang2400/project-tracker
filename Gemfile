@@ -14,7 +14,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'uglifier', '>= 1.3.0'
 
 # gem 'unicorn'
-
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
