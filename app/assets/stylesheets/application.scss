@@ -58,6 +58,7 @@ html {
 }
 
 input {
+  margin-bottom: 8px;
   width: 100%;
 }
 
@@ -220,6 +221,10 @@ nav a {
 
 .searched-user {
   font-size: 20px;
+}
+
+.tag-user {
+  margin-top: 3px;
 }
 
 textarea {
