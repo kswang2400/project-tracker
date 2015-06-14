@@ -33,19 +33,22 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
+          <% if current_user %>
+              <script> window.CURRENT_USER_USERNAME = "<%= current_user.username %>" 
+                       window.CURRENT_USER_ID = "<%= current_user.id %>" </script>
+          <% else %>
+              <script> window.CURRENT_USER_USERNAME = "Guest" 
+                       window.CURRENT_USER_ID = 0 </script>
+          <% end %>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
-                      role="button" aria-expanded="false">Dropdown
+                      role="button" aria-expanded="false">Welcome, <%= current_username %>
                       <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <% if current_user %>
-              <script> window.CURRENT_USER_USERNAME = "<%= current_user.username %>" 
-                       window.CURRENT_USER_ID = "<%= current_user.id %>" </script>
               <li><%= link_to "Log Out", session_url, method: :delete %></li>
             <li class="divider"></li>
               <li><a href="#home">Index</a></li>            
             <% else %>
-              <script> window.CURRENT_USER_USERNAME = "Guest" 
-                       window.CURRENT_USER_ID = 0 </script>
               <li><%= link_to "Log In", new_session_url %></li>
               <li><%= link_to "Sign Up", new_user_url %></li>
             <% end %>

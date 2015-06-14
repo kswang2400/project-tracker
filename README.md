@@ -12,7 +12,7 @@ Basecamp Clone is a clone of Tumblr built on Rails and Backbone. Users can:
 - [x] Create accounts
 - [x] Create sessions (log in)
 - [x] CRUD for projects
-- [ ] Tag other users to projects
+- [x] Tag other users to projects
 - [ ] Subscribe to projects
 - [ ] Create tasks in projects
 - [ ] Create comment threads in tasks
