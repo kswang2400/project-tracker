@@ -16,7 +16,7 @@ BasecampApp.Views.UsersSearch = Backbone.View.extend({
   render: function () {
     var content = this.template({ users: this.collection });
     this.$el.html(content);
-    this.$el.usersSearch();
+    this.$el.usersSearch(); //
     return this;
   }
 });

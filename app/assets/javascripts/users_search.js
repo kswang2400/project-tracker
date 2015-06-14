@@ -38,7 +38,6 @@ $.UsersSearch.prototype.renderResults = function (users) {
 
     var $a = $("<a></a>");
     $a.text(user.username);
-    $a.attr("href", "/users/" + user.id);
 
     var $li = $("<li></li>");
     $li.append($a);

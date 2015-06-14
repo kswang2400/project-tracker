@@ -52,11 +52,6 @@ html {
   display: block;
 }
 
-.invite-users {
-  margin-left: 20px;
-  margin-bottom: 20px;
-}
-
 .error {
   color: red;
   padding: 15px 0px 15px 30px;
@@ -229,6 +224,11 @@ nav a {
 
 textarea {
   width: 100%;
+}
+
+.upload-button {
+  margin: 0px 0px 20px 10px;
+
 }
 
 .upload-thumbnail {

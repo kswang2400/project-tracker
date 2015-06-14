@@ -15,6 +15,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.uploads = options.uploads;
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.uploads, 'add', this.addUploadSubview);
+    this.addUsersSearchSubview();
   },
 
   addUploadSubview: function (upload) {
@@ -23,6 +24,11 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     });
     this.addSubview('.carousel-inner', subview);
     this.$('.item').first().addClass('active');
+  },
+
+  addUsersSearchSubview: function () {
+    var subview = new BasecampApp.Views.UsersSearch();
+    this.addSubview('.project-user-search', subview);
   },
 
   editTitle: function (event) {
@@ -53,8 +59,8 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
   inviteUsers: function (event) {
     event.preventDefault();
-    var subview = new BasecampApp.Views.UsersSearch();
-    this.addSubview('.project-user-search', subview);
+    this.$el.find('.project-user-search').toggleClass('hidden');
+    $('body').find('.users-search').usersSearch();
   },
 
   render: function () {
