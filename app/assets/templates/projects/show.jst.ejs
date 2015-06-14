@@ -16,9 +16,15 @@
 </div>
 
 <div class="project-show-main clearfix">
-  <div class="project-show-content col-md-8 clearfix"> </div>
+  <div class="project-show-content col-md-8 clearfix">
+    <div class="collaborators-list">
+      <%= project.memberships %>
+    </div>
+  </div>
 
   <div class="side-bar col-md-4 clearfix">
+    <div class="project-user-search hidden"></div>
+
     <div class="project-show-upload-bar clearfix">
       <h3 id="upload-title">Uploaded Images</h3>
 
@@ -37,8 +43,5 @@
         </a>
       </div>
     </div>
-
-    <div class="project-user-search hidden"></div>
   </div>
-
 </div>

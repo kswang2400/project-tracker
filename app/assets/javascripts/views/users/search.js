@@ -5,10 +5,7 @@ BasecampApp.Views.UsersSearch = Backbone.View.extend({
   events: {
     'click .close': "removeSearch"
   },
-
-  initialize: function () {
-  },
-
+  
   removeSearch: function (event) {
     this.remove();
   },
@@ -16,7 +13,6 @@ BasecampApp.Views.UsersSearch = Backbone.View.extend({
   render: function () {
     var content = this.template({ users: this.collection });
     this.$el.html(content);
-    this.$el.usersSearch(); //
     return this;
   }
 });

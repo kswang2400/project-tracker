@@ -20,11 +20,16 @@
   show: function (id) {
     project = this.projects.getOrFetch(id);
     var uploads = new BasecampApp.Collections.Uploads({ project: project });
+    var memberships = new BasecampApp.Collections.Memberships({
+      project: project
+    });
     uploads.fetch();
+    memberships.fetch();
 
     var view = new BasecampApp.Views.ProjectShow({
       model: project,
-      uploads: uploads
+      uploads: uploads,
+      memberships: memberships
     });
 
     this._swapView(view);
