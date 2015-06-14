@@ -24,12 +24,12 @@
 }
 
 .circle-image{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    background-image:url("http://placekitten.com/g/200/400");
-    display:block;
-    background-position-y:25% 
+    background-image: url("http://placekitten.com/g/200/400");
+    background-position-y: 25%;
+    border-radius: 50%;
+    display: block;
+    height: 50px;
+    width: 50px;
 }
 
 .clearfix {
@@ -41,12 +41,13 @@
 }
 
 .collaborators-list {
-  display: block;
-  width: 100%;
-  height: 150px;
-  margin: 20px;
   background-color: white;
   border-radius: 5px;
+  display: block;
+  height: 150px;
+  width: 100%;
+  margin: 20px;
+  padding: 0px 20px;
 }
 
 .delete-project {
@@ -224,6 +225,7 @@ nav a {
 
 .project-show-header {
   background-color: white;
+  border-radius: 5px;
   margin: 20px;
   padding: 20px 10px;
 }
@@ -238,6 +240,7 @@ nav a {
 
 .project-show-upload-bar {
   background-color: white;
+  border-radius: 5px;
   margin: 20px;
   height: 150px;
 }
