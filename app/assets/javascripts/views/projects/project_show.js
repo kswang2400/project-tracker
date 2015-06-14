@@ -14,9 +14,11 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.uploads = options.uploads;
+    this.memberships = options.memberships;
 
-    this.listenTo(this.memberships, 'add', this.render);
     this.listenTo(this.model, 'sync', this.render);
+
+    this.listenTo(this.memberships, 'add', this.addMembershipSubview);
     this.listenTo(this.uploads, 'add', this.addUploadSubview);
 
     this.addUsersSearchSubview();
@@ -33,6 +35,13 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   addUsersSearchSubview: function () {
     var subview = new BasecampApp.Views.UsersSearch();
     this.addSubview('.project-user-search', subview);
+  },
+
+  addMembershipSubview: function (membership) {
+    var subview = new BasecampApp.Views.MembershipIndexItem({
+      model: membership
+    });
+    this.addSubview('.collaborators-list', subview);
   },
 
   editTitle: function (event) {
@@ -77,6 +86,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   tagUser: function (event) {
     var userId = $(event.currentTarget).attr('id')
     var attr = { user_id: userId }
+    var that = this
 
     var membership = new BasecampApp.Models.Membership({
       project: this.model
@@ -84,11 +94,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
     membership.save(attr, {
       success: function () {
-        alert('yay!');
-      },
-
-      error: function () {
-        alert('no');
+        that.memberships.save(membership, { merge: true });
       }
     });
     debugger;

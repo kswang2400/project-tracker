@@ -23,6 +23,7 @@
     var memberships = new BasecampApp.Collections.Memberships({
       project: project
     });
+    
     uploads.fetch();
     memberships.fetch();
 
