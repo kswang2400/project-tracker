@@ -1,8 +1,8 @@
 # Basecamp Clone (# will change name)
 
-<!-- [Heroku link][heroku] -->
+[Heroku link][heroku]
 
-<!-- [heroku]: http://flux-capacitr.herokuapp.com -->
+[heroku]: http://basecamp-clone-kwang.herokuapp.com/
 
 ## Minimum Viable Product
 Basecamp Clone is a clone of Tumblr built on Rails and Backbone. Users can:
