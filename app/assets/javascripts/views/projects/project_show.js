@@ -5,10 +5,11 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   events: {
     'click .invite-users': "inviteUsers",
     'click .project-title': "editTitle",
-    'click .project-description-text': 'editDescription',
+    'click .project-description-text': "editDescription",
+    'click .tag-user': "tagUser",
     'click .upload': "upload",
-    'blur input.editing': 'updateAndSave',
-    'blur textarea': 'updateAndSave'
+    'blur input.editing': "updateAndSave",
+    'blur textarea': "updateAndSave"
   },
 
   initialize: function (options) {
@@ -68,6 +69,10 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
     return this;
+  },
+
+  tagUser: function () {
+    alert('tag')
   },
 
   updateAndSave: function (event) {
