@@ -17,6 +17,12 @@ module Api
       render json: @tasks
     end
 
+    def destroy
+      task = current_user.tasks.find(params[:id])
+      task.try(:destroy)
+      render json: {}
+    end
+
     private
 
     def task_params
