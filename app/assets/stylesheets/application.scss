@@ -60,6 +60,10 @@
   width: 100%;
 }
 
+.completed {
+  background-color: green;
+}
+
 .delete-project {
   display: none;
   margin-top: 20px;
@@ -79,7 +83,7 @@
 }
 
 .form-title {
-  margin-bottom: 40px;
+  margin: 0;
 }
 
 html {
@@ -215,6 +219,7 @@ nav a {
   background-color: rgba(245, 245, 245, 0.2);
   border-radius: 5px;
   display: block;
+  height: 275px;
   margin: 30px 50px;
   padding-top: 20px;
   padding-left: 30px;

@@ -50,7 +50,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     var subview = new BasecampApp.Views.MembershipIndexItem({
       model: membership
     });
-    this.addSubview('.collaborators-list', subview);
+    this.addSubview('.list-collaborators', subview);
   },
 
   editTitle: function (event) {
