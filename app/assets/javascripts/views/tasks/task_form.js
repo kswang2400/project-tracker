@@ -21,7 +21,7 @@ BasecampApp.Views.TaskForm = Backbone.CompositeView.extend({
 
   taskForm: function (event) {
     event.preventDefault();
-    var attrs = this.$el.find('.new-task').serializeJSON();
+    var attrs = this.$el.find('.new-form').serializeJSON();
     var that = this;
 
     this.model.save(attrs['task'], {

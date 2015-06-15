@@ -1,7 +1,9 @@
 <div class="index-item-body">
   <div class="index-item-header clearfix">
     <h2 class="index-item-header-title col-md-8"><%= project.escape('title') %></h2>
-    <button class="delete-project btn btn-danger col-md-3 col-md-offset-1 pull-right">Delete!</button>
+    <button class="delete-project btn btn-danger col-md-2 pull-right">
+      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+    </button>
   </div>
-  <li class="list-item"><%= project.escape('description') %></li><br>
+  <li class="list-project-description"><%= project.escape('description') %></li><br>
 </div>

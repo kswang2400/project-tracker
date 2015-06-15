@@ -48,6 +48,16 @@
   width: 100%;
   margin: 20px;
   padding: 0px 20px;
+  overflow: hidden;
+}
+
+#collaborator-title {
+  text-align: center;
+}
+
+.complete-task {
+  height: 50%;
+  width: 100%;
 }
 
 .delete-project {
@@ -55,12 +65,21 @@
   margin-top: 20px;
 }
 
+.delete-task {
+  height: 50%;
+  width: 100%;
+}
+
+.task-dropdown {
+  margin-top: 15px;
+}
+
 .form-group .btn {
   width: 100%;
 }
 
 .form-title {
-  margin: 0px;
+  margin-bottom: 40px;
 }
 
 html {
@@ -69,6 +88,7 @@ html {
 
 .index-item-header {
   display: block;
+  margin-bottom: 10px;
 }
 
 .error {
@@ -89,8 +109,10 @@ input {
   padding-left: 50px;
 }
 
-.list-item {
+.list-project-description {
   margin-left: 25px;
+  height: 60px;
+  overflow: hidden;
 }
 
 .logo {
@@ -106,9 +128,9 @@ input {
 #main {
   background-attachment: fixed;
   background-image: url("fp_back2.jpg");
-  background-size: 2000px 1100px;
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 1100px;
+  height: 100%;
   padding-top: 50px;
   width: 100%;
 }
@@ -116,11 +138,6 @@ input {
 .member-circle-img {
   margin: 10px;
   float: left;
-}
-
-#member-list-title {
-  text-align: center;
-  padding-top: 15px;
 }
 
 .modal-backdrop {
@@ -158,7 +175,7 @@ nav a {
   margin-bottom: 0px;
 }
 
-.new-project {
+.new-form {
   background-color: white;
   border-radius: 5px;
   padding: 20px;
@@ -174,6 +191,16 @@ nav a {
   background-color: white;
   border-radius: 5px;
   padding: 20px;
+}
+
+.pre {
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
+}
+
+.project-description-text:hover {
+  background-color: #aaaaaa;
 }
 
 .project-description-text-editing {
@@ -207,7 +234,7 @@ nav a {
   margin: 20px;
   padding: 0px 15px 0px 15px;
   width: 350px;
-  min-height: 200px;
+  height: 200px;
 }
 
 .projects-index-item:hover {
@@ -226,8 +253,8 @@ nav a {
 .project-show {
   background-color: rgba(245, 245, 245, 0.4);;  
   border-radius: 5px;
+  height: 95%;
   margin: 0px 100px;
-  padding-bottom: 20px;
 }
 
 .project-show-content {
@@ -239,10 +266,6 @@ nav a {
   border-radius: 5px;
   margin: 20px;
   padding: 20px 10px;
-}
-
-.project-show-main {
-  margin: 20px;
 }
 
 .project-show-footer {
@@ -263,6 +286,9 @@ nav a {
 
 .project-title:hover {
   background-color: #aaaaaa;
+  .glyphicon {
+    visibility: visible;
+  }
 }
 
 .project-user-search {
@@ -280,6 +306,7 @@ nav a {
 .tasks-container {
   border-radius: 5px;
   display: block;
+  height: 100%;
   width: 100%;
   margin: 20px;
   padding: 0px 20px;
@@ -294,6 +321,22 @@ nav a {
   margin: 10px;
   padding: 10px;
   width: 300px;
+}
+
+.task-index-item-description {
+  margin-left: 25px;
+}
+
+.task-index-item-header {
+  margin-bottom: 10px;
+}
+
+.task-index-item:hover {
+  background-color: #dbdbdb;
+
+  .delete-task {
+    display: block;
+  }
 }
 
 textarea {

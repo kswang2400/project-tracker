@@ -1,3 +1,15 @@
-<h3><%= task.escape('title') %></h3>
-<button type="button" class="delete-task btn btn-danger pull-right">Delete</button>
-<p><%= task.escape('body') %></p>
+<div class="task-index-item-header clearfix">
+  <h3 class="col-md-8"><%= task.escape('title') %></h3>
+  <div class="dropdown task-dropdown col-md-3 pull-right">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+      <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+      <li><button type="button" class="complete-task btn-success">Complete!</button></li>
+      <li><button type="button" class="delete-task btn-danger">Delete!</button></li>
+    </ul>
+  </div>
+</div>
+
+<p class="task-index-item-description"><%= task.escape('body') %></p>

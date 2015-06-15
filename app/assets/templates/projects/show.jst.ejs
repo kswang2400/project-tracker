@@ -1,11 +1,13 @@
 
 <div class="project-show-header clearfix">
   <div class="project-header-title col-md-4">
+    <span class="glyphicon glyphicon-erase hidden" aria-hidden="true"></span>
     <h1 class="project-title"><%= project.escape('title') %></h1>
   </div>
 
   <div class="project-header-description col-md-6">
     <h4>Project Description: </h4>
+    <span class="glyphicon glyphicon-erase hidden" aria-hidden="true"></span>
     <p class="project-description-text"><%= project.escape('description') %></p>
   </div>
 
@@ -18,10 +20,10 @@
 <div class="project-show-main clearfix">
   <div class="project-show-content col-md-8 clearfix">
     <div class="collaborators-list">
-      <h3 id="member-list-title">Collaborators</h3>
+      <h3 id="collaborator-title">Collaborators</h3>
     </div>
 
-    <div class="tasks-container">
+    <div class="tasks-container pre-scrollable">
       <button type="button" class="new-task btn btn-primary">New Task</button>
     </div>
   </div>
