@@ -1,19 +1,19 @@
-_.extend(Backbone.Collection, {
+_.extend(Backbone.Collection.prototype, {
   getOrFetch: function (id) {
-    var projects = this;
-    var project = projects.get(id);
+    var collection = this;
+    var model = collection.get(id);
 
-    if (!project) {
-      project = new this.model({ id: id });
-      project.fetch({
+    if (!model) {
+      model = new this.model({ id: id });
+      model.fetch({
         success: function () {
-          projects.add(project)
+          collection.add(model)
         }
       });
     } else {
-      project.fetch();
+      model.fetch();
     }
 
-    return project;
+    return model;
   }
 });
