@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def current_username
     return "Guest" unless current_user
-    return current_user.username
+    return current_user.username.capitalize
   end
 
   def logged_in?

@@ -28,16 +28,6 @@ module Api
       render json: upload
     end
 
-    def update
-      upload = Upload.find(params[:id])
-      
-      if upload.update(upload_params)
-        render json: upload
-      else
-        render json: upload.errors.full_messages, status: :unprocessable_entity
-      end
-    end
-
     private
 
     def upload_params

@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :projects do
-      resources :memberships
-      resources :uploads
+      resources :memberships, only: [:create, :index]
+      resources :uploads, except: [:new, :edit, :update]
+      resources :tasks, only: [:create, :index]
     end
   end
 

@@ -14,4 +14,5 @@ class Project < ActiveRecord::Base
   belongs_to :owner, class_name: :User, dependent: :destroy
   has_many :uploads, foreign_key: :project_id, dependent: :destroy
   has_many :collaborators, through: :memberships, source: :users
+  has_many :tasks
 end
