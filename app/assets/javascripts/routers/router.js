@@ -29,6 +29,7 @@
     
     uploads.fetch();
     memberships.fetch();
+    tasks.fetch();
 
     var view = new BasecampApp.Views.ProjectShow({
       model: project,

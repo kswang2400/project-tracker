@@ -104,10 +104,11 @@ input {
 }
 
 #main {
-  background-image: image-url("fp_back2.jpg");
-  background-size: 2000px 900px;
+  background-attachment: fixed;
+  background-image: url("fp_back2.jpg");
+  background-size: 2000px 1100px;
   background-repeat: no-repeat;
-  height: 100%;
+  height: 1100px;
   padding-top: 50px;
   width: 100%;
 }
@@ -161,6 +162,12 @@ nav a {
   background-color: white;
   border-radius: 5px;
   padding: 20px;
+}
+
+.new-task {
+  clear: both;
+  display: block;
+  margin: 20px 0px;
 }
 
 .new-user-session {
@@ -223,6 +230,10 @@ nav a {
   padding-bottom: 20px;
 }
 
+.project-show-content {
+  height: 100%;
+}
+
 .project-show-header {
   background-color: white;
   border-radius: 5px;
@@ -264,6 +275,25 @@ nav a {
 
 .tag-user {
   margin-top: 3px;
+}
+
+.tasks-container {
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  margin: 20px;
+  padding: 0px 20px;
+}
+
+.task-index-item {
+  background: white;
+  border-radius: 5px;
+  display: block;
+  float: left;
+  height: 200px;
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
 }
 
 textarea {

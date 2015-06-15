@@ -6,7 +6,7 @@ BasecampApp.Views.TaskForm = Backbone.CompositeView.extend({
     "submit": "taskForm",
     'keydown': 'esc',
     "click .modal-backdrop": "removeModal",
-    "click .close": "removeModal" //ActionController::InvalidAuthenticityToken
+    "click .close-button": "removeModal" //ActionController::InvalidAuthenticityToken
   },
 
   initialize: function (options) {
@@ -27,13 +27,14 @@ BasecampApp.Views.TaskForm = Backbone.CompositeView.extend({
     this.model.save(attrs['task'], {
       success: function () {
         that.collection.add(that.model, { merge: true });
-        Backbone.history.navigate("#projects/" + that.project.get('id'), { trigger: true });
-        that.$el.find('.new-task').remove();
+        Backbone.history.navigate("#projects/" + that.project.id, { trigger: true });
+        that.$el.remove();
       }
     })
   },
 
-  removeModal: function () {
+  removeModal: function (event) {
+    event.preventDefault();
     this.remove();
   },
 

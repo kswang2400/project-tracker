@@ -22,16 +22,23 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
     this.listenTo(this.memberships, 'add', this.addMembershipSubview);
     this.listenTo(this.uploads, 'add', this.addUploadSubview);
+    this.listenTo(this.tasks, 'add', this.addTaskSubview);
 
     this.addUsersSearchSubview();
   },
 
   addUploadSubview: function (upload) {
-    var subview = new BasecampApp.Views.UploadsIndexItem({
-      model: upload
-    });
+    var subview = new BasecampApp.Views.UploadsIndexItem({ model: upload });
     this.addSubview('.carousel-inner', subview);
     this.$('.item').first().addClass('active');
+  },
+
+  addTaskSubview: function (task) {
+    var subview = new BasecampApp.Views.TaskIndexItem({ 
+      model: task,
+      project: this.model
+    });
+    this.addSubview('.tasks-container', subview);
   },
 
   addUsersSearchSubview: function () {
@@ -98,13 +105,17 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   tagUser: function (event) {
     var userId = $(event.currentTarget).attr('id')
     var attr = { user_id: userId }
-    var that = this
 
     var membership = new BasecampApp.Models.Membership({
       project: this.model
     });
 
-    membership.save(attr);
+    membership.save(attr, {
+      success: function () {
+        this.memberships.fetch();
+        this.$el.find('.project-user-search').toggleClass('hidden');
+      }.bind(this)
+    });
   },
 
   updateAndSave: function (event) {
@@ -122,7 +133,11 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
         url: payload[0].url,
         thumbnail_url: payload[0].thumbnail_url
       };
-      new BasecampApp.Models.Upload({ project: this.model }).save(attrs);
+      new BasecampApp.Models.Upload({ project: this.model }).save(attrs, {
+        success: function () {
+          this.uploads.fetch();
+        }.bind(this)
+      });
     }.bind(this));
   }
 });
