@@ -131,13 +131,14 @@ input {
 
 #main {
   background-attachment: fixed;
-  /*background-image: url("http://i.imgur.com/e3klq.gif");*/
-  background-image: url("http://i.imgur.com/YPkmfQL.gif");
-  /*background-image: url("fp_back2.jpg");*/
+  background-image: url("http://i.imgur.com/e3klq.gif");
+  /*background-image: url("http://i.imgur.com/YPkmfQL.gif"); crazy girl celebrating */
+  /*background-image: url("http://imgur.com/Za58U7p.gif"); snail */
+  /*background-image: url("fp_back2.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
-  padding-top: 50px;
+  padding-top: 30px;
   width: 100%;
 }
 
@@ -217,7 +218,13 @@ nav a {
   margin: 40px 20px 20px 0px;
 }
 
-.projects-index {
+.proj-index-header {
+  color: white;
+  margin-right: 150px;
+  text-align: right;
+}
+
+.proj-index-style {
   background-color: rgba(245, 245, 245, 0.2);
   border-radius: 5px;
   display: block;
@@ -229,7 +236,7 @@ nav a {
 
 .projects-index-footer {
   margin-left: 100px;
-  padding-bottom: 40px;
+/*  padding-bottom: 40px;*/
 }
 
 .projects-index-item {
@@ -254,7 +261,7 @@ nav a {
 
 .projects-index-title {
   color: white;
-  margin-left: 100px;
+  margin: 0px 0px 20px 100px;
 }
 
 .project-show {
