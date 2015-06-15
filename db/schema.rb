@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150615160530) do
+ActiveRecord::Schema.define(version: 20150615210422) do
 
   create_table "memberships", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150615160530) do
     t.string   "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status"
   end
 
   add_index "tasks", ["author_id"], name: "index_tasks_on_author_id"
