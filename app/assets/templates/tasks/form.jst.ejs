@@ -1,0 +1,24 @@
+<div class="modal-backdrop"></div>
+
+<div class="modal-content">
+  <form action="/api/projects/<%= project.id %>/tasks" method="post" class="new-task col-md-4 col-md-offset-4">
+    <h1 class="form-title">Create a New Task</h1>
+    <button class="close pull-right">&times;</button>
+
+    <div class="form-group">
+      <label for="task_title">Title</label>
+      <input class="form-control" type="text" name="task[title]" 
+             value="<%= task.escape('title') %>" 
+             id="task-title">
+    </div>
+
+    <div class="form-group">
+      <label for="task_body">Body</label>
+      <textarea class="form-control" name="task[body]"id="task-body"></textarea>
+    </div>
+
+    <div class="form-group">
+      <input type="submit" class="btn btn-primary">
+    </div>
+  </form>
+</div>

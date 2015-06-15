@@ -4,6 +4,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
   events: {
     'click .invite-users': "inviteUsers",
+    'click .new-task': "newTask",
     'click .project-title': "editTitle",
     'click .project-description-text': "editDescription",
     'click .tag-user': "tagUser",
@@ -15,6 +16,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.uploads = options.uploads;
     this.memberships = options.memberships;
+    this.tasks = options.tasks
 
     this.listenTo(this.model, 'sync', this.render);
 
@@ -74,6 +76,16 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     event.preventDefault();
     this.$el.find('.project-user-search').toggleClass('hidden');
     $('body').find('.users-search').usersSearch();
+  },
+
+  newTask: function (event) {
+    event.preventDefault();
+    var taskForm = new BasecampApp.Views.TaskForm({
+      model: new BasecampApp.Models.Task({ project: this.model }),
+      project: this.model,
+      collection: this.tasks
+    });
+    $('#main').prepend(taskForm.render().$el);
   },
 
   render: function () {

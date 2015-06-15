@@ -23,6 +23,9 @@
     var memberships = new BasecampApp.Collections.Memberships({
       project: project
     });
+    var tasks = new BasecampApp.Collections.Tasks({
+      project: project
+    })
     
     uploads.fetch();
     memberships.fetch();
@@ -30,7 +33,8 @@
     var view = new BasecampApp.Views.ProjectShow({
       model: project,
       uploads: uploads,
-      memberships: memberships
+      memberships: memberships,
+      tasks: tasks
     });
 
     this._swapView(view);

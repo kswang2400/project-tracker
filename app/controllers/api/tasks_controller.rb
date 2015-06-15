@@ -13,7 +13,7 @@ module Api
     end
 
     def index 
-      @tasks = task.all.where(project_id: params[:project_id])
+      @tasks = Task.all.where(project_id: params[:project_id])
       render json: @tasks
     end
 
