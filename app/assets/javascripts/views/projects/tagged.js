@@ -1,4 +1,4 @@
-BasecampApp.Collections.Projects = Backbone.Collection.extend({
+BasecampApp.Collections.Tagged = Backbone.Collection.extend({
   model: BasecampApp.Models.Project,
   url: "/api/projects",
 
@@ -7,8 +7,7 @@ BasecampApp.Collections.Projects = Backbone.Collection.extend({
     var project = projects.get(id);
 
     if (!project) {
-      // project = new BasecampApp.Models.Project({ id: id });
-      project = new this.model({ id: id });
+      project = new BasecampApp.Models.Project({ id: id });
       project.fetch({
         success: function () {
           projects.add(project)

@@ -22,15 +22,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
   def index
     if params[:query]
       @users = User.where("username LIKE \"%#{params[:query]}%\"").limit(10)

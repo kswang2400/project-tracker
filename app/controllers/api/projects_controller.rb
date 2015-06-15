@@ -18,8 +18,13 @@ module Api
     end
 
     def index
-      @projects = current_user.projects
-      render json: @projects
+      if params[:tagged]
+        @projects = current_user.tagged_projects
+      else 
+        @projects = current_user.projects
+      end
+
+      render "index.json.jbuilder"
     end
 
     def show
@@ -33,7 +38,7 @@ module Api
       if project.update(project_params)
         render json: project
       else
-        render json: project.errors.fullmessages, status: :unprocessable_entity
+        render json: project.errors.full_messages, status: :unprocessable_entity
       end
     end
 

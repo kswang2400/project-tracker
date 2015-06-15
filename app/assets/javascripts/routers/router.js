@@ -11,9 +11,19 @@
 
   index: function () {
     this.projects.fetch();
-    var view = new BasecampApp.Views.ProjectsIndex({ 
-      collection: this.projects
+    var tagged = new BasecampApp.Collections.Projects();
+
+    tagged.fetch({
+      data: {
+        tagged: true
+      }
     });
+
+    var view = new BasecampApp.Views.ProjectsIndex({ 
+      collection: this.projects,
+      tagged: tagged
+    });
+
     this._swapView(view);
   },
 
@@ -25,17 +35,18 @@
     });
     var tasks = new BasecampApp.Collections.Tasks({
       project: project
-    })
+    });
     
     uploads.fetch();
     memberships.fetch();
     tasks.fetch();
+    // TODO: nest associated objects in jbuilder
 
     var view = new BasecampApp.Views.ProjectShow({
       model: project,
       uploads: uploads,
       memberships: memberships,
-      tasks: tasks
+      tasks: tasks,
     });
 
     this._swapView(view);

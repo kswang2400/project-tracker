@@ -1,13 +1,9 @@
-BasecampApp.Collections.Projects = Backbone.Collection.extend({
-  model: BasecampApp.Models.Project,
-  url: "/api/projects",
-
+_.extend(Backbone.Collection, {
   getOrFetch: function (id) {
     var projects = this;
     var project = projects.get(id);
 
     if (!project) {
-      // project = new BasecampApp.Models.Project({ id: id });
       project = new this.model({ id: id });
       project.fetch({
         success: function () {

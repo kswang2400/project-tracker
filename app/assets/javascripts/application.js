@@ -18,6 +18,7 @@
 //= require backbone
 //= require jquery.serializeJSON.js
 //= require basecamp_app
+//= require_tree ./utils
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

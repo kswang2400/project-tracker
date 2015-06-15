@@ -5,9 +5,18 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
     "click button.add-project": "newProject"
   },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.tagged = options.tagged;
     this.collection.each(this.addProjectSubview.bind(this));
     this.listenTo(this.collection, 'add', this.addProjectSubview);
+    this.listenTo(this.tagged, 'add', this.addTaggedProjectsSubview);
+  },
+
+  addTaggedProjectsSubview: function(taggedProject) {
+    var subview = new BasecampApp.Views.ProjectsIndexItem({
+      model: taggedProject
+    });
+    this.addSubview('.projects-tagged-index', subview);
   },
 
   addProjectSubview: function (project) {

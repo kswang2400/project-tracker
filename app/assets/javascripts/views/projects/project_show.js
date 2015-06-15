@@ -16,7 +16,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.uploads = options.uploads;
     this.memberships = options.memberships;
-    this.tasks = options.tasks
+    this.tasks = options.tasks;
 
     this.listenTo(this.model, 'sync', this.render);
 
@@ -27,10 +27,11 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.addUsersSearchSubview();
   },
 
-  addUploadSubview: function (upload) {
-    var subview = new BasecampApp.Views.UploadsIndexItem({ model: upload });
-    this.addSubview('.carousel-inner', subview);
-    this.$('.item').first().addClass('active');
+  addMembershipSubview: function (membership) {
+    var subview = new BasecampApp.Views.MembershipIndexItem({
+      model: membership
+    });
+    this.addSubview('.list-collaborators', subview);
   },
 
   addTaskSubview: function (task) {
@@ -41,16 +42,15 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.addSubview('.tasks-container', subview);
   },
 
+  addUploadSubview: function (upload) {
+    var subview = new BasecampApp.Views.UploadsIndexItem({ model: upload });
+    this.addSubview('.carousel-inner', subview);
+    this.$('.item').first().addClass('active');
+  },
+
   addUsersSearchSubview: function () {
     var subview = new BasecampApp.Views.UsersSearch();
     this.addSubview('.project-user-search', subview);
-  },
-
-  addMembershipSubview: function (membership) {
-    var subview = new BasecampApp.Views.MembershipIndexItem({
-      model: membership
-    });
-    this.addSubview('.list-collaborators', subview);
   },
 
   editTitle: function (event) {
