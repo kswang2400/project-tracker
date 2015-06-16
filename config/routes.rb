@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       resources :uploads, except: [:new, :edit, :update]
       resources :tasks
     end
+    
+    resources :assigned_tasks
     # TODO: remove nesting (except maybe `create` routes)
   end
 

@@ -1,11 +1,11 @@
-# Basecamp Clone (# will change name)
+# Basecamp Clone
 
 [Heroku link][heroku]
 
 [heroku]: http://basecamp-clone-kwang.herokuapp.com/
 
 ## Minimum Viable Product
-Basecamp Clone is a clone of Tumblr built on Rails and Backbone. Users can:
+Basecamp Clone is a clone of Basecamp built on Rails and Backbone. Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 

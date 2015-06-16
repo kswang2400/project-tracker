@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150615210422) do
+ActiveRecord::Schema.define(version: 20150616214917) do
+
+  create_table "assigned_tasks", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "task_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "assigned_tasks", ["task_id"], name: "index_assigned_tasks_on_task_id"
+  add_index "assigned_tasks", ["user_id", "task_id"], name: "index_assigned_tasks_on_user_id_and_task_id", unique: true
+  add_index "assigned_tasks", ["user_id"], name: "index_assigned_tasks_on_user_id"
 
   create_table "memberships", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -20,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150615210422) do
     t.datetime "updated_at"
   end
 
+  add_index "memberships", ["project_id", "user_id"], name: "index_memberships_on_project_id_and_user_id", unique: true
   add_index "memberships", ["project_id"], name: "index_memberships_on_project_id"
   add_index "memberships", ["user_id"], name: "index_memberships_on_user_id"
 

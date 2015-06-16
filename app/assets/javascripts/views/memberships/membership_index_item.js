@@ -1,6 +1,7 @@
 BasecampApp.Views.MembershipIndexItem = Backbone.View.extend({
   template: JST['memberships/index_item'],
   className: "member-circle-img",
+
   attributes: function () {
     return { 'data-id': this.model.id }
   },
