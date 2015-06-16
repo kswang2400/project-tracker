@@ -3,7 +3,7 @@ BasecampApp.Views.TaskForm = Backbone.CompositeView.extend({
   className: "modal-container",
 
   events: {
-    "submit": "taskForm",
+    "submit": "createTask",
     'keydown': 'esc',
     "click .modal-backdrop": "removeModal",
     "click .close-button": "removeModal" //ActionController::InvalidAuthenticityToken
@@ -19,7 +19,7 @@ BasecampApp.Views.TaskForm = Backbone.CompositeView.extend({
     }
   },
 
-  taskForm: function (event) {
+  createTask: function (event) {
     event.preventDefault();
     var attrs = this.$el.find('.new-form').serializeJSON();
     var that = this;
