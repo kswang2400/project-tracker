@@ -83,6 +83,14 @@
   background-color: green;
 }
 
+.delete-member {
+  height: 73px;
+  width: 50px;
+  background-image: url("trashcan.png");
+  background-size: cover;
+  margin: 0px 8px 12px 0px;
+}
+
 .delete-project {
   display: none;
   margin-top: 20px;
@@ -158,9 +166,9 @@ input {
 #main {
   background-attachment: fixed;
   /*background-image: url("http://i.imgur.com/e3klq.gif");*/
-  /*background-image: url("http://i.imgur.com/YPkmfQL.gif"); crazy girl celebrating */
-  /*background-image: url("http://imgur.com/Za58U7p.gif"); snail */
-  background-image: url("fp_back2.jpg"); 
+  background-image: url("http://i.imgur.com/YPkmfQL.gif");
+  /*background-image: url("http://imgur.com/Za58U7p.gif");*/
+  /*background-image: url("fp_back2.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;

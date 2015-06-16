@@ -16,6 +16,12 @@ module Api
       render json: @uploads
     end
 
+    def destroy
+      membership = Membership.find(params[:id])
+      membership.destroy
+      render json: {}
+    end
+
     private
 
     def membership_params

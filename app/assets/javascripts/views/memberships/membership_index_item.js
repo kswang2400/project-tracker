@@ -1,9 +1,13 @@
 BasecampApp.Views.MembershipIndexItem = Backbone.View.extend({
   template: JST['memberships/index_item'],
   className: "member-circle-img",
+  attributes: function () {
+    return { 'data-id': this.model.id }
+  },
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'destroy', this.remove);
   },
 
   render: function () {
@@ -22,6 +26,9 @@ BasecampApp.Views.MembershipIndexItem = Backbone.View.extend({
         this.$el.find('.member').attr('id', 'c3');
         break;
     }
+    setTimeout(function () {
+      this.$el.draggable({ revert: true });
+    }.bind(this), 0)
 
     return this;
   }
