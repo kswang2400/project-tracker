@@ -7,7 +7,7 @@
   routes: {
     "home": "index",
     "projects/:id":"projectShow",
-    "tasks/:id": "taskShow"
+    "projects/:project_id/tasks/:id": "taskShow"
   },
 
   index: function () {
@@ -44,6 +44,15 @@
       memberships: memberships,
       tasks: tasks
     });
+
+    this._swapView(view);
+  },
+
+  taskShow: function (project_id, id) {
+    var project = this.projects.getOrFetch(project_id);
+    var tasks = new BasecampApp.Collections.Tasks({ project: project })
+    var task = tasks.getOrFetch(id);
+    var view = new BasecampApp.Views.TaskShow({ model: task });
 
     this._swapView(view);
   },

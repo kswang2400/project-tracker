@@ -1,8 +1,4 @@
 BasecampApp.Models.Task = Backbone.Model.extend({
-  initialize: function (options) {
-    this.project = options.project;
-  },
-
   urlRoot: function () {
     if (this.project === undefined) {
       setTimeout(function () {
@@ -11,5 +7,9 @@ BasecampApp.Models.Task = Backbone.Model.extend({
     } else {
       return "/api/projects/" + this.project.id + "/tasks";
     }
+  },
+
+  initialize: function (options) {
+    this.project = options.project;
   }
 });

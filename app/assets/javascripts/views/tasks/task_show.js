@@ -1,5 +1,6 @@
 BasecampApp.Views.TaskShow = Backbone.View.extend({
   template: JST['tasks/show'],
+  className: "task-show",
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);

@@ -5,8 +5,7 @@ BasecampApp.Views.TaskForm = Backbone.CompositeView.extend({
   events: {
     "submit": "createTask",
     'keydown': 'esc',
-    "click .modal-backdrop": "removeModal",
-    "click .close-button": "removeModal" //ActionController::InvalidAuthenticityToken
+    "click .modal-backdrop": "removeModal"
   },
 
   initialize: function (options) {

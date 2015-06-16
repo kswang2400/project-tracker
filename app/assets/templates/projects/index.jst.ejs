@@ -1,10 +1,14 @@
 <h1 class="projects-index-title"><strong>Welcome, <%= window.CURRENT_USER_USERNAME %></strong></h1>
 
-<h2 class="proj-index-header">My Projects</h2>
-  <ul class="projects-index proj-index-style clearfix pre-scrollable"></ul>
+<div class="my-projects-header clearfix">
+  <button type="button" class="add-project btn btn-success pull-right">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  </button>
+  <h2 class="proj-index-header">My Projects</h2>
+</div>
+<ul class="projects-index proj-index-style clearfix pre-scrollable"></ul>
 <h2 class="proj-index-header">Projects I'm Tagged In</h2>
-  <ul class="projects-tagged-index proj-index-style clearfix pre-scrollable"></ul>
+<ul class="projects-tagged-index proj-index-style clearfix pre-scrollable"></ul>
 
 <div class="projects-index-footer">
-  <button type="button" class="add-project btn btn-primary">Add a New Project</button>
 </div>

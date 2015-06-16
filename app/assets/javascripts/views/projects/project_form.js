@@ -5,8 +5,7 @@ BasecampApp.Views.ProjectForm = Backbone.CompositeView.extend({
   events: {
     "submit": "createNewProject",
     'keydown': 'esc',
-    "click .modal-backdrop": "removeModal",
-    "click .close-button": "removeModal"
+    "click .modal-backdrop": "removeModal"
   },
 
   esc: function (event) {

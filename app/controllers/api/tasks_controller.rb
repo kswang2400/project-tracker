@@ -33,6 +33,11 @@ module Api
       end
     end
 
+    def show
+      @task = Task.find(params[:id])
+      render json: @task
+    end
+
     private
 
     def task_params
