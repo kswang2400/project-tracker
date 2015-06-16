@@ -12,10 +12,14 @@ BasecampApp.Models.Project = Backbone.Model.extend({
     if (payload.uploads) {
       this.uploads().set(payload.uploads);
       delete payload.uploads;
-    } else if (payload.tasks) {
+    }
+
+    if (payload.tasks) {
       this.tasks().set(payload.tasks, { parse: true });
       delete payload.tasks;
-    } else if (payload.memberships) {
+    }
+    
+    if (payload.memberships) {
       this.memberships().set(payload.memberships);
       delete payload.memberships
     }
