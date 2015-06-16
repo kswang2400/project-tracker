@@ -3,7 +3,7 @@ BasecampApp.Views.ProjectForm = Backbone.CompositeView.extend({
   className: "modal-container",
 
   events: {
-    "submit": "projectForm",
+    "submit": "createNewProject",
     'keydown': 'esc',
     "click .modal-backdrop": "removeModal",
     "click .close-button": "removeModal"
@@ -15,10 +15,11 @@ BasecampApp.Views.ProjectForm = Backbone.CompositeView.extend({
     }
   },
 
-  projectForm: function (event) {
+  createNewProject: function (event) {
     event.preventDefault();
-    var attrs = this.$el.find('.new-project').serializeJSON();
+    var attrs = this.$el.find('.new-form').serializeJSON();
     var that = this;
+    debugger;
 
     this.model.save(attrs['project'], {
       success: function () {
