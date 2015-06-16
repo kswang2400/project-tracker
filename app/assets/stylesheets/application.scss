@@ -61,10 +61,10 @@
   background-color: white;
   border-radius: 5px;
   display: block;
-  height: 150px;
+  height: 75px;
   width: 100%;
   margin: 20px;
-  padding: 0px 20px;
+  padding: 0px 12px;
   overflow: hidden;
 }
 
@@ -87,11 +87,11 @@
 }
 
 .delete-member {
-  height: 73px;
-  width: 50px;
-  background-image: url("trashcan.png");
+  height: 60px;
+  width: 60px;
+  background-image: url("red-x.png");
   background-size: cover;
-  margin: 0px 8px 12px 0px;
+  margin-top: 8px;
 }
 
 .delete-project {
@@ -107,6 +107,10 @@
 
 .dropdown-style {
   width: 20px;
+}
+
+.editing {
+  color: black;
 }
 
 .error {
@@ -169,9 +173,9 @@ input {
 #main {
   background-attachment: fixed;
   /*background-image: url("http://i.imgur.com/e3klq.gif");*/
-  background-image: url("http://i.imgur.com/YPkmfQL.gif");
+  /*background-image: url("http://i.imgur.com/YPkmfQL.gif");*/
   /*background-image: url("http://imgur.com/Za58U7p.gif");*/
-  /*background-image: url("fp_back2.jpg"); */
+  background-image: url("fp_back2.jpg"); 
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
@@ -180,7 +184,7 @@ input {
 }
 
 .member-circle-img {
-  margin: 10px;
+  margin: 12px 8px 8px 8px;
   float: left;
 }
 
@@ -255,6 +259,10 @@ nav a {
   margin: 40px 20px 20px 0px;
 }
 
+.project-header-features {
+  margin-top: 20px;
+}
+
 .projects-index-item {
   background-color: white;
   border: 4px solid #aaaaaa;
@@ -292,7 +300,8 @@ nav a {
 }
 
 .project-show-header {
-  background-color: white;
+  background-color: black;
+  color: white;
   border-radius: 5px;
   margin: 20px;
   padding: 20px 10px;
@@ -360,6 +369,14 @@ nav a {
   padding: 0px 20px;
 }
 
+.tasks-container-header {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 8px 10px;
+}
+
 .task-dropdown {
   margin-top: 15px;
 }
@@ -376,7 +393,7 @@ nav a {
 }
 
 .task-index-item-description {
-  margin-left: 25px;
+  margin-left: 12px;
   overflow: hidden;
   white-space: nowrap;
 }

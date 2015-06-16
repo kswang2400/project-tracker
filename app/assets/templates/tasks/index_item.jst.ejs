@@ -1,9 +1,13 @@
-<a href="/#projects/<%= task.escape('project_id') %>/tasks/<%= task.id %>">
+<a href="/#tasks/<%= task.id %>">
   <div class="task-index-item-header clearfix">
     <h3 class="col-md-8"><%= task.escape('title') %></h3>
     <button type="button" class="complete-task btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button></li>
     <button type="button" class="delete-task btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
   </div>
 
-  <p class="task-index-item-description"><%= task.escape('body') %></p>
+  <div class="task-index-item-body">
+    <div class="col-md-6">
+      <p class="task-index-item-description"><%= task.escape('body') %></p>
+    </div>
+  </div>
 </a>

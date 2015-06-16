@@ -28,8 +28,9 @@ module Api
     end
 
     def show
-      project = Project.find(params[:id])
-      render json: project
+      @project = Project.find(params[:id])
+      @project_owner = User.find(@project.owner_id)
+      render "show.json.jbuilder"
     end
 
     def update

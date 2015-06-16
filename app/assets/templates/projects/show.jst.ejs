@@ -1,13 +1,12 @@
 
 <div class="project-show-header clearfix">
   <div class="project-header-title col-md-4">
-    <span class="glyphicon glyphicon-erase hidden" aria-hidden="true"></span>
-    <h1 class="project-title"><%= project.escape('title') %></h1>
+    <h1 class="project-title"><%= project.escape('title') %></h1><br><br>
+    <h4>Project Owner: <%= project.escape('owner_name') %></h4>
   </div>
 
   <div class="project-header-description col-md-6">
-    <h4>Project Description: </h4>
-    <span class="glyphicon glyphicon-erase hidden" aria-hidden="true"></span>
+    <h3>Project Description: </h3>
     <p class="project-description-text"><%= project.escape('description') %></p>
   </div>
 
@@ -20,13 +19,20 @@
 <div class="project-show-main clearfix">
   <div class="project-show-content col-md-8 clearfix">
     <div class="collaborators-list">
-      <h3 id="collaborator-title">Collaborators</h3>
       <div class="list-collaborators"></div>
       <div class="delete-member pull-right" id="droppable"></div>
     </div>
 
     <div class="tasks-container pre-scrollable">
-      <button type="button" class="new-task btn btn-primary">New Task</button>
+      <div class="tasks-container-header clearfix">
+        <div class="col-md-8">
+          <h3>Project Tasks</h3>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="new-task btn btn-primary pull-right">New Task</button>
+        </div>
+      </div>
+      <div class="tasks-container-body"></div>
     </div>
   </div>
 

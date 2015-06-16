@@ -6,18 +6,17 @@
 
   routes: {
     "home": "index",
-    "projects/:id":"show"
+    "projects/:id":"projectShow",
+    "tasks/:id": "taskShow"
   },
 
   index: function () {
     this.projects.fetch();
     var tagged = new BasecampApp.Collections.Projects();
 
-    tagged.fetch({
-      data: {
-        tagged: true
-      }
-    });
+    tagged.fetch({ data: {
+      tagged: true
+    }});
 
     var view = new BasecampApp.Views.ProjectsIndex({ 
       collection: this.projects,
@@ -27,26 +26,23 @@
     this._swapView(view);
   },
 
-  show: function (id) {
-    project = this.projects.getOrFetch(id);
+  projectShow: function (id) {
+    var project = this.projects.getOrFetch(id);
+
     var uploads = new BasecampApp.Collections.Uploads({ project: project });
-    var memberships = new BasecampApp.Collections.Memberships({
-      project: project
-    });
-    var tasks = new BasecampApp.Collections.Tasks({
-      project: project
-    });
+    var memberships = new BasecampApp.Collections.Memberships({ project: project });
+    var tasks = new BasecampApp.Collections.Tasks({ project: project });
     
     uploads.fetch();
     memberships.fetch();
     tasks.fetch();
     // TODO: nest associated objects in jbuilder
-
+    
     var view = new BasecampApp.Views.ProjectShow({
       model: project,
       uploads: uploads,
       memberships: memberships,
-      tasks: tasks,
+      tasks: tasks
     });
 
     this._swapView(view);

@@ -32,6 +32,13 @@ Project.create!(owner_id: 3, title: "Old Project",
     description: Faker::Lorem.paragraph)
 end
 
+50.times do |i|
+  Membership.create!(user_id: 1, project_id: i + 1)
+  Membership.create!(user_id: 2, project_id: i + 1)
+  Membership.create!(user_id: 3, project_id: i + 1)
+  Membership.create!(user_id: 4, project_id: i + 1)
+end
+
 100.times do |i|
   Task.create!(
     author_id: (i % 23) + 1, 
