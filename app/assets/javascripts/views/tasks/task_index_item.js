@@ -1,4 +1,4 @@
-BasecampApp.Views.TaskIndexItem = Backbone.View.extend({
+BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
   template: JST['tasks/index_item'],
   className: "task-index-item",
   id: "droppable",
@@ -13,6 +13,7 @@ BasecampApp.Views.TaskIndexItem = Backbone.View.extend({
   },
 
   initialize: function (options) {
+    debugger;
     this.project = options.project
     this.listenTo(this.model, 'sync', this.render);
   },
@@ -49,14 +50,13 @@ BasecampApp.Views.TaskIndexItem = Backbone.View.extend({
             user_id: user_id,
             task_id: task_id
           }
-          debugger;
           var assigned_task = new BasecampApp.Models.AssignedTask();
           assigned_task.save(attrs, {
             success: function () {
               alert('success!')
             }
           });
-          Backbone.history.navigate("/#", { trigger: true });
+          Backbone.history.navigate("/#projects/" + this.project.id, { trigger: true });
         }.bind(this)
       });
     }.bind(this), 0);

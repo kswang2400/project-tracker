@@ -15,6 +15,11 @@ module Api
       render json: @assigned_tasks
     end
 
+    def show
+      @assigned_task = AssignedTask.find(params[:id])
+      render json: @assigned_task
+    end
+
     def destroy
       assigned_task = AssignedTask.find(params[:id])
       assigned_task.destroy

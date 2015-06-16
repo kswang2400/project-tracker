@@ -35,7 +35,8 @@ module Api
 
     def show
       @task = Task.find(params[:id])
-      render json: @task
+      @assigned_users = @task.assigned_users
+      render "show.json.jbuilder"
     end
 
     private

@@ -17,4 +17,7 @@ class Task < ActiveRecord::Base
 
   belongs_to :author, class_name: :User
   belongs_to :project
+
+  has_many :assigned_tasks
+  has_many :assigned_users, through: :assigned_tasks, source: :user
 end
