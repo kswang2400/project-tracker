@@ -23,13 +23,27 @@
   min-width: 550px;
 }
 
+#c1 {
+  background-image: url("me.png");
+}
+
+#c2 {
+  background-image: url("prof1.png");
+}
+
+#c3 {
+  background-image: url("prof3.png");
+}
+
 .circle-image{
-    background-image: url("http://placekitten.com/g/200/400");
-    background-position-y: 25%;
-    border-radius: 50%;
-    display: block;
-    height: 50px;
-    width: 50px;
+  /*background-image: url("http://placekitten.com/g/200/400");*/
+  /*background-image: url("prof1.png");*/
+  background-position-y: 25%;
+  background-size: 50px 50px;
+  border-radius: 50%;
+  display: block;
+  height: 50px;
+  width: 50px;
 }
 
 .clearfix {
@@ -143,10 +157,10 @@ input {
 
 #main {
   background-attachment: fixed;
-  background-image: url("http://i.imgur.com/e3klq.gif");
+  /*background-image: url("http://i.imgur.com/e3klq.gif");*/
   /*background-image: url("http://i.imgur.com/YPkmfQL.gif"); crazy girl celebrating */
   /*background-image: url("http://imgur.com/Za58U7p.gif"); snail */
-  /*background-image: url("fp_back2.jpg"); */
+  background-image: url("fp_back2.jpg"); 
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
@@ -230,27 +244,6 @@ nav a {
   margin: 40px 20px 20px 0px;
 }
 
-.proj-index-header {
-  color: white;
-  margin-right: 150px;
-  text-align: right;
-}
-
-.proj-index-style {
-  background-color: rgba(245, 245, 245, 0.2);
-  border-radius: 5px;
-  display: block;
-  height: 275px;
-  margin: 30px 50px;
-  padding-top: 20px;
-  padding-left: 30px;
-}
-
-.projects-index-footer {
-  margin-left: 100px;
-  padding-bottom: 40px;
-}
-
 .projects-index-item {
   background-color: white;
   border: 4px solid #aaaaaa;
@@ -318,6 +311,27 @@ nav a {
   min-width: 300px;
 }
 
+.proj-index-header {
+  color: white;
+  margin-right: 150px;
+  text-align: right;
+}
+
+.proj-index-style {
+  background-color: rgba(245, 245, 245, 0.2);
+  border-radius: 5px;
+  display: block;
+  height: 275px;
+  margin: 30px 50px;
+  padding-top: 20px;
+  padding-left: 30px;
+}
+
+.projects-index-footer {
+  margin-left: 100px;
+  padding-bottom: 40px;
+}
+
 .searched-user {
   font-size: 20px;
 }
@@ -344,7 +358,7 @@ nav a {
   border-radius: 5px;
   display: block;
   float: left;
-  height: 230px;
+  height: 220px;
   margin: 10px;
   padding: 10px;
   width: 300px;

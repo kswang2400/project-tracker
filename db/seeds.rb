@@ -26,5 +26,16 @@ Project.create!(owner_id: 3, title: "Old Project",
 20.times { User.create!(username: Faker::Internet.user_name, password: "password")}
 
 50.times do |i|
-  Project.create!(owner_id: (i % 23 ) + 1, title: Faker::Lorem.words(2), description: Faker::Lorem.paragraph)
+  Project.create!(
+    owner_id: (i % 23 ) + 1, 
+    title: Faker::Lorem.words(2), 
+    description: Faker::Lorem.paragraph)
+end
+
+100.times do |i|
+  Task.create!(
+    author_id: (i % 23) + 1, 
+    project_id: (i % 50) + 1, 
+    title: Faker:: Lorem.words(1), 
+    body: Faker::Lorem.sentence)
 end
