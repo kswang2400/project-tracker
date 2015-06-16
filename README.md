@@ -14,9 +14,9 @@ Basecamp Clone is a clone of Tumblr built on Rails and Backbone. Users can:
 - [x] CRUD for projects
 - [x] Tag other users to projects
 - [ ] Subscribe to projects
-- [ ] Create tasks in projects
+- [x] Create tasks in projects
 - [ ] Create comment threads in tasks
-- [ ] Upload images in projects
+- [x] Upload images in projects
 
 ## Design Docs
 * [View Wireframes][views]
@@ -64,8 +64,8 @@ to use Amazon Ruby SDK to store images on S3.
 ### Bonus Features (TBD)
 - [ ] Project search
 - [ ] User avatars
-- [ ] Typeahead search bar
-- [ ] Photo Carousel
+- [x] Typeahead search bar
+- [x] Photo Carousel
 - [ ] Chat window
 
 
