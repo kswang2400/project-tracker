@@ -13,7 +13,11 @@ BasecampApp.Views.TaskIndexItem = Backbone.View.extend({
   },
 
   completeTask: function (event) {
-    alert('hello')
+    if (this.model.get('status') === "completed") {
+      this.model.save({ status: "incomplete"}, { patch: true});
+    } else {
+      this.model.save({ status: "completed" }, { patch: true });
+    }
   },
 
   deleteTask: function () {
@@ -24,6 +28,11 @@ BasecampApp.Views.TaskIndexItem = Backbone.View.extend({
   render: function () {
     var content = this.template({ task: this.model });
     this.$el.html(content);
+    if (this.model.get('status') === "completed") {
+      this.$el.append($("<img>")
+        .attr("src", "http://ajax.raffertyaluminum.com/pics/completed_stamp.gif")
+        .addClass("complete-stamp pull-right"));
+    }
     return this;
   }
 });

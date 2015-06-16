@@ -8,7 +8,7 @@ module Api
       if task.save
         render json: task
       else
-        render json: task.errors.fullmessages, status: :unprocessable_entity
+        render json: task.errors.full_messages, status: :unprocessable_entity
       end
     end
 
@@ -23,10 +23,20 @@ module Api
       render json: {}
     end
 
+    def update
+      task = Task.find(params[:id])
+
+      if task.update(task_params)
+        render json: task
+      else
+        render json: task.errors.full_messages, status: :unprocessable_entity
+      end
+    end
+
     private
 
     def task_params
-      params.require(:task).permit(:title, :body)
+      params.require(:task).permit(:title, :body, :status)
     end
   end
 end
