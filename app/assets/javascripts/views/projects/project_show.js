@@ -104,9 +104,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       this.$el.find('#droppable').droppable({
         drop: function(event, ui) {
           var membership = this.memberships.get($(ui.draggable[0]).data('id'));
-          debugger;
           membership.destroy();
-
         }.bind(this)
       });
     }.bind(this), 0);
