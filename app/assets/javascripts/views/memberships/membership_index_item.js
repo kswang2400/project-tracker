@@ -25,7 +25,12 @@ BasecampApp.Views.MembershipIndexItem = Backbone.View.extend({
       case 3:
         this.$el.find('.member').attr('id', 'c3');
         break;
+      default:
+        this.$el.find('.member').attr('id', 'c-default');
+        break;
     }
+    //
+
     setTimeout(function () {
       this.$el.draggable({ revert: true });
     }.bind(this), 0)
