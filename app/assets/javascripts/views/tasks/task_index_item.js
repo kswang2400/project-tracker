@@ -14,13 +14,14 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.project = options.project
-    this.assigned_users = this.model.users().fetch();
     this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.assigned_users, 'sync', this.addAssignedSubview);
+    this.listenTo(this.model.users(), 'add', this.addAssignedSubview);
     debugger;
+    this.model.users().each(this.addAssignedSubview);
   },
 
   addAssignedSubview: function (assigned_user) {
+    debugger;
     var subview = new BasecampApp.Views.AssignedIndexItem({
       model: assigned_user
     });
@@ -43,6 +44,7 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({ task: this.model });
     this.$el.html(content);
+    this.attachSubviews();
 
     if (this.model.get('status') === "completed") {
       this.$el.append($("<img>")
