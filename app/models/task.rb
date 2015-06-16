@@ -9,6 +9,7 @@
 #  body       :string
 #  created_at :datetime
 #  updated_at :datetime
+#  status     :string
 #
 
 class Task < ActiveRecord::Base

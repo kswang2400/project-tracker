@@ -8,6 +8,10 @@ BasecampApp.Views.TaskIndexItem = Backbone.View.extend({
     'click .delete-task': "deleteTask"
   },
 
+  attributes: function () {
+    return { 'data-task-id': this.model.get('id') }
+  },
+
   initialize: function (options) {
     this.project = options.project
     this.listenTo(this.model, 'sync', this.render);
@@ -39,9 +43,19 @@ BasecampApp.Views.TaskIndexItem = Backbone.View.extend({
     setTimeout(function () {
       this.$el.droppable({
         drop: function(event, ui) {
-          debugger;
           var user_id = $(ui.draggable[0]).data('id')
-          // var assigned_task = new BasecampApp.Model.AssignedTask()
+          var task_id = $(event.target).data('task-id')
+          var attrs = {
+            user_id: user_id,
+            task_id: task_id
+          }
+          debugger;
+          var assigned_task = new BasecampApp.Models.AssignedTask();
+          assigned_task.save(attrs, {
+            success: function () {
+              alert('success!')
+            }
+          });
           Backbone.history.navigate("/#", { trigger: true });
         }.bind(this)
       });

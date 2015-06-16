@@ -1,5 +1,5 @@
 module Api
-  class TasksController < ApiController
+  class AssignedTasksController < ApiController
     def create
       assigned_task = AssignedTask.new(assigned_task_params)
 
