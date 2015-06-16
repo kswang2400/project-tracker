@@ -28,8 +28,13 @@ module Api
     end
 
     def show
-      @project = Project.find(params[:id])
+      project_id = params[:id]
+      @project = Project.find(project_id)
       @project_owner = User.find(@project.owner_id)
+      @uploads = Upload.where(project_id: project_id)
+      @tasks = Task.where(project_id: project_id)
+      @memberships = Membership.where(project_id: project_id)
+
       render "show.json.jbuilder"
     end
 
