@@ -18,7 +18,7 @@
  @import "bootstrap";
 
 .add-project {
-  margin: 0px 100px 0px 20px;
+  margin: 0px 100px 0px;
 }
 
 body {
@@ -28,15 +28,15 @@ body {
 }
 
 #c1 {
-  background-image: url("me.png");
+  background-image: url("profile-pictures/me.png");
 }
 
 #c2 {
-  background-image: url("prof1.png");
+  background-image: url("profile-pictures/prof1.png");
 }
 
 #c3 {
-  background-image: url("prof3.png");
+  background-image: url("profile-pictures/prof3.png");
 }
 
 #c-default {
@@ -288,7 +288,7 @@ nav a {
 }
 
 .projects-index-title {
-  color: white;
+  color: black;
   margin: 0px 0px 20px 100px;
 }
 
@@ -304,8 +304,8 @@ nav a {
 }
 
 .project-show-header {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   border-radius: 5px;
   margin: 20px;
   padding: 20px 10px;
@@ -374,8 +374,8 @@ nav a {
 }
 
 .tasks-container-header {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   border-radius: 5px;
   margin: 20px;
   padding: 0px 10px;
@@ -414,7 +414,6 @@ nav a {
   border: 1px solid red;
   height: 100%;
   width: 100%;
-  background-color: black;
 }
 
 textarea {
