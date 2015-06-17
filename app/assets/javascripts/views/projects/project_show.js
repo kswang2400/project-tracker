@@ -14,7 +14,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenToOnce(this.model, 'sync', this.render);
 
     this.listenTo(this.model.memberships(), 'add', this.addMembershipSubview);
     this.listenTo(this.model.uploads(), 'add', this.addUploadSubview);
@@ -71,7 +71,9 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
     this.$el.find('.project-description-text').html($input);
     $input.focus();
-    this.$el.find('.project-description-text').removeClass('project-description-text')
+    this.$el.find('.project-description-text')
+      .addClass('project-description-text-editing')
+      .removeClass('project-description-text')
   },
 
   inviteUsers: function (event) {
@@ -143,7 +145,14 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     var input = $(event.currentTarget).data('input');
     var newAttr = {};
     newAttr[attr] = this.$el.find(input).val();
+
     this.model.save(newAttr);
+
+    if (attr == "title") {
+      $('h1').remove('input').addClass('project-title').text(newAttr[attr])
+    } else {
+      $('p#description').remove('input').addClass('project-description-text').text(newAttr[attr])
+    }
   },
 
   upload: function (event) {
