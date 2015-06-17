@@ -9,5 +9,6 @@ class CreateMembershipJoinTable < ActiveRecord::Migration
 
     add_index :memberships, :user_id
     add_index :memberships, :project_id
+    add_index :memberships, [:user_id, :project_id], unique: true
   end
 end

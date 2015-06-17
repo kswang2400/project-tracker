@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150616214917) do
   end
 
   add_index "memberships", ["project_id"], name: "index_memberships_on_project_id", using: :btree
+  add_index "memberships", ["user_id", "project_id"], name: "index_memberships_on_user_id_and_project_id", unique: true, using: :btree
   add_index "memberships", ["user_id"], name: "index_memberships_on_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
