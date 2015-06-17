@@ -29,6 +29,7 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
   completeTask: function (event) {
     if (this.model.get('status') === "completed") {
       this.model.save({ status: "incomplete"}, { patch: true});
+      this.$el.removeClass('completed');
     } else {
       this.model.save({ status: "completed" }, { patch: true });
     }
@@ -45,10 +46,6 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
     this.attachSubviews();
 
     if (this.model.get('status') === "completed") {
-      // this.$el.append($("<img>")
-      //   .attr("src", "http://ajax.raffertyaluminum.com/pics/completed_stamp.gif")
-      //   .addClass("complete-stamp pull-right"));
-
       this.$el.addClass('completed');
     }
 
