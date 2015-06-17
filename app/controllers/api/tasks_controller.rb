@@ -3,7 +3,7 @@ module Api
     def create
       task = Task.new(task_params)
       task.author_id = current_user.id
-      task.project_id = params[:project_id]
+      task.project_id = params[:project][:id]
 
       if task.save
         render json: task

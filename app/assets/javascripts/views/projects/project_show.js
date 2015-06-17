@@ -85,7 +85,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     var taskForm = new BasecampApp.Views.TaskForm({
       model: new BasecampApp.Models.Task({ project: this.model }),
       project: this.model,
-      collection: this.tasks
+      collection: this.model.tasks()
     });
     $('#main').prepend(taskForm.render().$el);
   },
@@ -98,6 +98,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     setTimeout(function () {
       this.$el.find('#droppable-member').droppable({
         drop: function(event, ui) {
+          alert()
           var membership = this.model.memberships().get($(ui.draggable[0]).data('id'));
           membership.destroy();
         }.bind(this)
