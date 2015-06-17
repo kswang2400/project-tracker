@@ -1,7 +1,6 @@
 BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
   template: JST['tasks/index_item'],
   className: "task-index-item",
-  id: "droppable",
 
   events: {
     'click .complete-task': "completeTask",
@@ -51,7 +50,7 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
     setTimeout(function () {
       this.$el.droppable({
         drop: function(event, ui) {
-          var user_id = $(ui.draggable[0]).data('id')
+          var user_id = $(ui.draggable[0]).data('user-id')
           var task_id = $(event.target).data('task-id')
           var attrs = {
             user_id: user_id,

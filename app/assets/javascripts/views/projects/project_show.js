@@ -14,11 +14,16 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
+    this.model.memberships().each(this.addMembershipSubview.bind(this));
+    this.model.uploads().each(this.addUploadSubview.bind(this));
+    this.model.tasks().each(this.addTaskSubview.bind(this));
+
     this.listenToOnce(this.model, 'sync', this.render);
 
     this.listenTo(this.model.memberships(), 'add', this.addMembershipSubview);
     this.listenTo(this.model.uploads(), 'add', this.addUploadSubview);
     this.listenTo(this.model.tasks(), 'add', this.addTaskSubview);
+    
     this.addUsersSearchSubview();
   },
 

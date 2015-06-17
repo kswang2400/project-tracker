@@ -46,6 +46,7 @@
           <ul class="dropdown-menu" role="menu">
             <% if current_user %>
               <li><%= link_to "Log Out", session_url, method: :delete %></li>
+              <li><a href="#users/<%= current_user.id %>">Your Page</a></li>
             <li class="divider"></li>
               <li><a href="#home">Index</a></li>            
             <% else %>
