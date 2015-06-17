@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    # render json: @username
+    @tasks = @user.tasks_assigned
     render "show.json.jbuilder"
   end
 

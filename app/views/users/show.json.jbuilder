@@ -1,1 +1,2 @@
-json.extract!(@user, :id, :projects)
+json.extract!(@user, :id, :username, :projects)
+json.tasks @tasks
