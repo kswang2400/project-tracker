@@ -45,9 +45,11 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
     this.attachSubviews();
 
     if (this.model.get('status') === "completed") {
-      this.$el.append($("<img>")
-        .attr("src", "http://ajax.raffertyaluminum.com/pics/completed_stamp.gif")
-        .addClass("complete-stamp pull-right"));
+      // this.$el.append($("<img>")
+      //   .attr("src", "http://ajax.raffertyaluminum.com/pics/completed_stamp.gif")
+      //   .addClass("complete-stamp pull-right"));
+
+      this.$el.addClass('completed');
     }
 
     setTimeout(function () {
@@ -60,12 +62,8 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
             task_id: task_id
           }
           var assigned_task = new BasecampApp.Models.AssignedTask();
-          assigned_task.save(attrs, {
-            success: function () {
-              alert('success!')
-            }
-          });
-          Backbone.history.navigate("/#projects/" + this.project.id, { trigger: true });
+
+          assigned_task.save(attrs);
         }.bind(this)
       });
     }.bind(this), 0);

@@ -87,7 +87,10 @@ body {
 }
 
 .completed {
-  background-color: green;
+  background-image: url("http://ajax.raffertyaluminum.com/pics/completed_stamp.gif") !important;
+  background-size: 280px 200px !important;
+  background-repeat: no-repeat !important;
+  margin: 8px 0px 0px 8px;
 }
 
 .delete-member {
@@ -402,7 +405,7 @@ nav a {
 }
 
 .task-index-item-header {
-  margin-bottom: 10px;
+/*  margin-bottom: 10px;*/
 }
 
 .task-index-item:hover {
