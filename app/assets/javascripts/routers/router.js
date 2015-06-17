@@ -6,8 +6,9 @@
 
   routes: {
     "home": "index",
-    "projects/:id":"projectShow",
-    "projects/:project_id/tasks/:id": "taskShow"
+    "projects/:id": "projectShow",
+    "projects/:project_id/tasks/:id": "taskShow",
+    "users/:id": "userShow"
   },
 
   index: function () {
@@ -41,6 +42,10 @@
     var view = new BasecampApp.Views.TaskShow({ model: task });
 
     this._swapView(view);
+  },
+
+  userShow: function (id) {
+    
   },
   
   _swapView: function (view) {

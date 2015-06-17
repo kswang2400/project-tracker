@@ -1,7 +1,9 @@
 <div class="project-show-header clearfix">
   <div class="project-header-title col-md-4">
     <h1 class="project-title"><%= project.escape('title') %></h1><br><br>
-    <h4 class="project-owner">Project Owner: <%= project.escape('owner_name') %></h4>
+    <h4 class="project-owner">
+      Project Owner: <a href="/#users/<%= project.escape('owner_id') %>"><%= project.escape('owner_name') %></a>
+    </h4>
   </div>
 
   <div class="project-header-description col-md-6">
