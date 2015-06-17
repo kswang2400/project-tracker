@@ -400,8 +400,8 @@ nav a {
 }
 
 .task-index-item-description {
-  overflow: hidden;
-  white-space: nowrap;
+  margin-left: 12px;
+  word-wrap: normal;
 }
 
 .task-index-item-header {

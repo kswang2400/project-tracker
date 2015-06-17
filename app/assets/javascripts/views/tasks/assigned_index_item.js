@@ -3,7 +3,7 @@ BasecampApp.Views.AssignedIndexItem = Backbone.View.extend({
   className: "member-circle-img",
 
   attributes: function () {
-    return { 'data-id': this.model.get('user-_id' )}
+    return { 'data-id': this.model.get('id' )}
   },
 
   initialize: function () {
@@ -16,7 +16,7 @@ BasecampApp.Views.AssignedIndexItem = Backbone.View.extend({
     this.$el.html(content);
 
     // hacking profile pictures for now -__-
-    switch(this.model.get('user_id')) {
+    switch(this.model.get('id')) {
       case 1:
         this.$el.find('.member').attr('id', 'c1');
         break;

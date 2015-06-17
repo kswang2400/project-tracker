@@ -1,8 +1,6 @@
 BasecampApp.Collections.Tasks = Backbone.Collection.extend({
   model: BasecampApp.Models.Task,
-  url: function (options) { 
-    return "/api/projects/" + this.project.id + "/tasks";
-  },
+  url: "/api/tasks",
   
   initialize: function (options) {
     this.project = options.project;

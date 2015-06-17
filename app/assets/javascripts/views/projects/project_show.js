@@ -98,7 +98,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     setTimeout(function () {
       this.$el.find('#droppable').droppable({
         drop: function(event, ui) {
-          var membership = this.memberships.get($(ui.draggable[0]).data('id'));
+          var membership = this.model.memberships().get($(ui.draggable[0]).data('id'));
           membership.destroy();
         }.bind(this)
       });
@@ -117,7 +117,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
     membership.save(attr, {
       success: function () {
-        this.memberships.fetch();
+        this.model.memberships().add(membership, { merge: true });
         this.$el.find('.project-user-search').toggleClass('hidden');
       }.bind(this)
     });
