@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
   def index
     if params[:query]
-      @users = User.where("username LIKE \"%#{params[:query]}%\"").limit(10)
+      @users = User.where("LOWER(username) ~ ?",params[:query]).limit(10)
     else
       @users = User.all
     end
