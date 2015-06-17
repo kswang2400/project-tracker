@@ -2,9 +2,7 @@ BasecampApp.Models.Project = Backbone.Model.extend({
   urlRoot: "/api/projects",
 
   memberships: function () {
-    this._memberships = this._memberships || new BasecampApp.Collections.Memberships({
-      project: this
-    });
+    this._memberships = this._memberships || new BasecampApp.Collections.Memberships();
     return this._memberships;
   },
 
@@ -28,16 +26,12 @@ BasecampApp.Models.Project = Backbone.Model.extend({
   },
 
   tasks: function () {
-    this._tasks = this._tasks || new BasecampApp.Collections.Tasks({
-      project: this
-    });
+    this._tasks = this._tasks || new BasecampApp.Collections.Tasks();
     return this._tasks;
   },
   
   uploads: function () {
-    this._uploads = this._uploads || new BasecampApp.Collections.Uploads({
-      project: this
-    });
+    this._uploads = this._uploads || new BasecampApp.Collections.Uploads();
     return this._uploads;
   }
 });

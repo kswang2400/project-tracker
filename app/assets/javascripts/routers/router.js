@@ -47,8 +47,9 @@
   userShow: function (id) {
     var users = new BasecampApp.Collections.Users()
     var user = users.getOrFetch(id);
-    debugger;
+
     var view = new BasecampApp.Views.UsersShow({ model: user });
+    
     this._swapView(view);
   },
   

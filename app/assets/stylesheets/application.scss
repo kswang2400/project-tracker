@@ -408,10 +408,6 @@ nav a {
   word-wrap: normal;
 }
 
-.task-index-item-header {
-/*  margin-bottom: 10px;*/
-}
-
 .task-index-item:hover {
   background-color: #dbdbdb;
 }
@@ -428,7 +424,6 @@ textarea {
 
 .upload-button {
   margin: 0px 0px 20px 10px;
-
 }
 
 .upload-thumbnail {
@@ -451,3 +446,17 @@ textarea {
   max-height: 400px;
   padding: 15px;
 }
+
+.user-show {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px 10px;
+}
+
+.user-task-list-item {
+  margin-left: 50px;
+}
+
+

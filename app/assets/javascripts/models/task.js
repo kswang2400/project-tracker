@@ -1,10 +1,6 @@
 BasecampApp.Models.Task = Backbone.Model.extend({
   urlRoot: "/api/tasks",
-
-  initialize: function (options) {
-    this.project = options.project;
-  },
-
+  
   parse: function (payload) {
     if (payload.assignments) {
       this.assignments().set(payload.assignments);

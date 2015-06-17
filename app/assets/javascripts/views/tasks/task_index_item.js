@@ -12,8 +12,7 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
     return { 'data-task-id': this.model.get('id') }
   },
 
-  initialize: function (options) {
-    this.project = options.project
+  initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.assignments(), 'add', this.addAssignedSubview);
     this.model.assignments().each(this.addAssignedSubview.bind(this));
