@@ -3,7 +3,7 @@ json.owner_name @project_owner.username
 json.uploads @uploads
 json.tasks @tasks do |task|
   json.extract! task, :id, :author_id, :project_id, :title, :body, :status
-  json.assigned_users task.assigned_users
+  json.assignments task.assigned_tasks
 end
 json.memberships @memberships
 

@@ -6,16 +6,17 @@ BasecampApp.Models.Task = Backbone.Model.extend({
   },
 
   parse: function (payload) {
-    if (payload.assigned_users) {
-      this.users().set(payload.assigned_users);
-      delete payload.assigned_users;
+    debugger;
+    if (payload.assignments) {
+      this.assignments().set(payload.assignments);
+      delete payload.assignments;
     }
 
     return payload;
   },
 
-  users: function () {
-    this._users = this._users || new BasecampApp.Collections.Users();
-    return this._users;
+  assignments: function () {
+    this._assignments = this._assignments || new BasecampApp.Collections.AssignedTasks();
+    return this._assignments;
   }
 });
