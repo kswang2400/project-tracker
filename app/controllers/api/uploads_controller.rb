@@ -3,7 +3,7 @@ module Api
     def create
       upload = Upload.new(upload_params)
       upload.user_id = current_user.id
-      upload.project_id = params[:project_id]
+      upload.project_id = params[:project][:id]
 
       if upload.save
         render json: upload

@@ -2,7 +2,7 @@ BasecampApp.Views.UploadShow = Backbone.View.extend({
   template: JST['uploads/show'],
 
   events: {
-    // 'keydown': 'esc',
+    'keydown': 'esc',
     "click .modal-backdrop": "removeModal"
   },
 
@@ -11,7 +11,6 @@ BasecampApp.Views.UploadShow = Backbone.View.extend({
   },
 
   esc: function (event) {
-    debugger;
     if (event.keyCode === 27) {
       this.remove();
     }

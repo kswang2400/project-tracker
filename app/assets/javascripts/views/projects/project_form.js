@@ -18,7 +18,6 @@ BasecampApp.Views.ProjectForm = Backbone.CompositeView.extend({
     event.preventDefault();
     var attrs = this.$el.find('.new-form').serializeJSON();
     var that = this;
-    debugger;
 
     this.model.save(attrs['project'], {
       success: function () {

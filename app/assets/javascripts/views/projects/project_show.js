@@ -100,7 +100,6 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     setTimeout(function () {
       this.$el.find('#droppable-member').droppable({
         drop: function(event, ui) {
-          debugger;
           if ($(ui.draggable[0]).data('task-id') === undefined) {
             var membership = this.model.memberships().get($(ui.draggable[0]).data('id'));
             membership.destroy();
@@ -172,7 +171,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       };
       new BasecampApp.Models.Upload({ project: this.model }).save(attrs, {
         success: function () {
-          this.uploads.fetch();
+          this.model.uploads().fetch();
         }.bind(this)
       });
     }.bind(this));
