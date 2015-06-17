@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150616214917) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "assigned_tasks", force: :cascade do |t|
     t.integer  "user_id",    null: false
     t.integer  "task_id",    null: false
@@ -20,9 +23,9 @@ ActiveRecord::Schema.define(version: 20150616214917) do
     t.datetime "updated_at"
   end
 
-  add_index "assigned_tasks", ["task_id"], name: "index_assigned_tasks_on_task_id"
-  add_index "assigned_tasks", ["user_id", "task_id"], name: "index_assigned_tasks_on_user_id_and_task_id", unique: true
-  add_index "assigned_tasks", ["user_id"], name: "index_assigned_tasks_on_user_id"
+  add_index "assigned_tasks", ["task_id"], name: "index_assigned_tasks_on_task_id", using: :btree
+  add_index "assigned_tasks", ["user_id", "task_id"], name: "index_assigned_tasks_on_user_id_and_task_id", unique: true, using: :btree
+  add_index "assigned_tasks", ["user_id"], name: "index_assigned_tasks_on_user_id", using: :btree
 
   create_table "memberships", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 20150616214917) do
     t.datetime "updated_at"
   end
 
-  add_index "memberships", ["project_id"], name: "index_memberships_on_project_id"
-  add_index "memberships", ["user_id"], name: "index_memberships_on_user_id"
+  add_index "memberships", ["project_id"], name: "index_memberships_on_project_id", using: :btree
+  add_index "memberships", ["user_id"], name: "index_memberships_on_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string  "title",       null: false
@@ -40,8 +43,8 @@ ActiveRecord::Schema.define(version: 20150616214917) do
     t.string  "description"
   end
 
-  add_index "projects", ["owner_id"], name: "index_projects_on_owner_id"
-  add_index "projects", ["title"], name: "index_projects_on_title"
+  add_index "projects", ["owner_id"], name: "index_projects_on_owner_id", using: :btree
+  add_index "projects", ["title"], name: "index_projects_on_title", using: :btree
 
   create_table "tasks", force: :cascade do |t|
     t.integer  "author_id",  null: false
@@ -53,8 +56,8 @@ ActiveRecord::Schema.define(version: 20150616214917) do
     t.string   "status"
   end
 
-  add_index "tasks", ["author_id"], name: "index_tasks_on_author_id"
-  add_index "tasks", ["project_id"], name: "index_tasks_on_project_id"
+  add_index "tasks", ["author_id"], name: "index_tasks_on_author_id", using: :btree
+  add_index "tasks", ["project_id"], name: "index_tasks_on_project_id", using: :btree
 
   create_table "uploads", force: :cascade do |t|
     t.string   "url",           null: false
@@ -65,10 +68,10 @@ ActiveRecord::Schema.define(version: 20150616214917) do
     t.datetime "updated_at"
   end
 
-  add_index "uploads", ["project_id"], name: "index_uploads_on_project_id"
-  add_index "uploads", ["thumbnail_url"], name: "index_uploads_on_thumbnail_url", unique: true
-  add_index "uploads", ["url"], name: "index_uploads_on_url", unique: true
-  add_index "uploads", ["user_id"], name: "index_uploads_on_user_id"
+  add_index "uploads", ["project_id"], name: "index_uploads_on_project_id", using: :btree
+  add_index "uploads", ["thumbnail_url"], name: "index_uploads_on_thumbnail_url", unique: true, using: :btree
+  add_index "uploads", ["url"], name: "index_uploads_on_url", unique: true, using: :btree
+  add_index "uploads", ["user_id"], name: "index_uploads_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
@@ -78,6 +81,6 @@ ActiveRecord::Schema.define(version: 20150616214917) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
