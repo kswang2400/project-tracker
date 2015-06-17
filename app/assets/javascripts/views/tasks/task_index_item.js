@@ -58,9 +58,14 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
             user_id: user_id,
             task_id: task_id
           }
+          
           var assigned_task = new BasecampApp.Models.AssignedTask();
 
-          assigned_task.save(attrs);
+          assigned_task.save(attrs, {
+            success: function () {
+              this.model.assignments().add(assigned_task);
+            }.bind(this)
+          });
         }.bind(this)
       });
     }.bind(this), 0);
