@@ -100,8 +100,13 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
         drop: function(event, ui) {
           var membership = this.model.memberships().get($(ui.draggable[0]).data('id'));
           if (!membership) {
-            var assignment = this.model.tasks().assignments().get($(ui.draggable[0]).data('id'))
-            debugger;
+            var taskId = $(ui.draggable[0]).data('task-id')
+            var assignmentId = $(ui.draggable[0]).data('id')
+
+            var task = this.model.tasks().get(taskId)
+            var assignment = task.assignments().get(assignmentId)
+
+            assignment.destroy();
           } else {
             membership.destroy();
           }

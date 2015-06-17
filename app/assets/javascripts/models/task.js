@@ -6,7 +6,6 @@ BasecampApp.Models.Task = Backbone.Model.extend({
   },
 
   parse: function (payload) {
-    debugger;
     if (payload.assignments) {
       this.assignments().set(payload.assignments);
       delete payload.assignments;
