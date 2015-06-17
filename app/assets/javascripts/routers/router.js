@@ -45,7 +45,10 @@
   },
 
   userShow: function (id) {
-    
+    var user = new BasecampApp.Collections.Users().getOrFetch(id);
+    var view = new BasecampApp.Views.UsersShow({ model: user });
+
+    this._swapView(view);
   },
   
   _swapView: function (view) {
