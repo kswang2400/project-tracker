@@ -100,9 +100,13 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     setTimeout(function () {
       this.$el.find('#droppable-member').droppable({
         drop: function(event, ui) {
-          alert()
-          var membership = this.model.memberships().get($(ui.draggable[0]).data('id'));
-          membership.destroy();
+          debugger;
+          if ($(ui.draggable[0]).data('task-id') === undefined) {
+            var membership = this.model.memberships().get($(ui.draggable[0]).data('id'));
+            membership.destroy();
+          } else {
+            alert("You can only delete project memberships here");
+          }
         }.bind(this)
       });
     }.bind(this), 0);
@@ -110,6 +114,10 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     setTimeout(function () {
       this.$el.find('#droppable-assignment').droppable({
         drop: function(event, ui) {
+          if ($(ui.draggable[0]).data('task-id') === undefined) {
+            alert("You can only delete tasks assignments here");
+            return 
+          }
           var taskId = $(ui.draggable[0]).data('task-id')
           var assignmentId = $(ui.draggable[0]).data('id')
 
