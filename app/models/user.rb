@@ -16,12 +16,12 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
 
   has_many :projects, foreign_key: :owner_id, dependent: :destroy
-  has_many :tasks, foreign_key: :author_id, dependent: :destroy
+  has_many :tasks, foreign_key: :author_id
 
-  has_many :memberships
+  has_many :memberships, dependent: :destroy
   has_many :tagged_projects, through: :memberships, source: :project
 
-  has_many :assigned_tasks
+  has_many :assigned_tasks, dependent: :destroy
   has_many :tasks_assigned, through: :assigned_tasks, source: :task
   
   attr_reader :password

@@ -96,20 +96,24 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.attachSubviews(); 
 
     setTimeout(function () {
-      this.$el.find('#droppable').droppable({
+      this.$el.find('#droppable-member').droppable({
         drop: function(event, ui) {
           var membership = this.model.memberships().get($(ui.draggable[0]).data('id'));
-          if (!membership) {
-            var taskId = $(ui.draggable[0]).data('task-id')
-            var assignmentId = $(ui.draggable[0]).data('id')
+          membership.destroy();
+        }.bind(this)
+      });
+    }.bind(this), 0);
 
-            var task = this.model.tasks().get(taskId)
-            var assignment = task.assignments().get(assignmentId)
+    setTimeout(function () {
+      this.$el.find('#droppable-assignment').droppable({
+        drop: function(event, ui) {
+          var taskId = $(ui.draggable[0]).data('task-id')
+          var assignmentId = $(ui.draggable[0]).data('id')
 
-            assignment.destroy();
-          } else {
-            membership.destroy();
-          }
+          var task = this.model.tasks().get(taskId)
+          var assignment = task.assignments().get(assignmentId)
+
+          assignment.destroy();
         }.bind(this)
       });
     }.bind(this), 0);

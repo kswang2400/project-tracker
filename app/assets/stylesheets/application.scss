@@ -28,15 +28,15 @@ body {
 }
 
 #c1 {
-  background-image: url("profile-pictures/me.png");
+  background-image: asset-url("profile-pictures/me.png");
 }
 
 #c2 {
-  background-image: url("profile-pictures/prof1.png");
+  background-image: asset-url("profile-pictures/prof1.png");
 }
 
 #c3 {
-  background-image: url("profile-pictures/prof3.png");
+  background-image: asset-url("profile-pictures/prof3.png");
 }
 
 #c-default {
@@ -96,7 +96,7 @@ body {
 .delete-member {
   height: 60px;
   width: 60px;
-  background-image: url("red-x.png");
+  background-image: asset-url("red-x.png");
   background-size: cover;
   margin-top: 8px;
 }
@@ -182,7 +182,7 @@ input {
   /*background-image: url("http://i.imgur.com/e3klq.gif");*/
   /*background-image: url("http://i.imgur.com/YPkmfQL.gif");*/
   /*background-image: url("http://imgur.com/Za58U7p.gif");*/
-  background-image: url("fp_back2.jpg"); 
+  background-image: asset-url("fp_back2.jpg"); 
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
@@ -400,7 +400,7 @@ nav a {
 }
 
 .task-index-item-description {
-  margin-left: 12px;
+  margin: 8px;
   word-wrap: normal;
 }
 

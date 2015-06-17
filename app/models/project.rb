@@ -15,5 +15,5 @@ class Project < ActiveRecord::Base
   
   has_many :uploads, foreign_key: :project_id, dependent: :destroy
   has_many :collaborators, through: :memberships, source: :users
-  has_many :tasks
+  has_many :tasks, dependent: :destroy
 end
