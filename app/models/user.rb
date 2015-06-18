@@ -13,7 +13,7 @@
 class User < ActiveRecord::Base
   validates :username, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
-  VALID_USERNAME_REGEX = /\A[a-zA-Z0-9]+\z/
+  VALID_USERNAME_REGEX = /\A[a-zA-Z0-9_]+\z/
   validates :username,  uniqueness: true, 
                         length: { maximum: 28 },
                         format: { with: VALID_USERNAME_REGEX }
