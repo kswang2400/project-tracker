@@ -412,6 +412,11 @@ nav a {
   background-color: #dbdbdb;
 }
 
+.task-list-item {
+  padding: 8px 0px;
+  margin-right: 20px;
+}
+
 .task-show {
   border: 1px solid red;
   height: 100%;
@@ -456,7 +461,7 @@ textarea {
 }
 
 .user-task-list-item {
-  margin-left: 50px;
+  margin: 0px 50px;
 }
 
 
