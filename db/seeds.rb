@@ -9,6 +9,7 @@
 User.create!(username: "kevin_wang", password: "password")
 User.create!(username: "jimothy_smith", password: "password")
 User.create!(username: "jolene_anderson", password: "password")
+User.create!(username: "guest", password: "password")
 
 # 20.times { User.create!(username: Faker::Internet.user_name, password: "password")}
 

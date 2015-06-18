@@ -27,6 +27,7 @@
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
+          <li><%= link_to "Guest Log In", new_session_url %></li>
         <% if current_user %>
           <li><a href="#home">Projects Index</a></li>
           <li><a href="#users/<%= current_user.id %>">Profile Page</a></li>
