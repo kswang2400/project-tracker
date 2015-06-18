@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   # VALID_USERNAME_REGEX = /\A[a-zA-Z0-9_]+\z/
   validates :username,  uniqueness: true, 
-                        length: { maximum: 28 },
+                        length: { maximum: 28 }
                         # format: { with: VALID_USERNAME_REGEX }
 
 
