@@ -28,7 +28,9 @@
   },
 
   projectShow: function (id) {
-    var project = this.projects.getOrFetch(id);
+    var project = new BasecampApp.Models.Project({ id: id })
+    project.fetch();
+
     var view = new BasecampApp.Views.ProjectShow({ model: project });
 
     this._swapView(view);
