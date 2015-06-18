@@ -405,6 +405,14 @@ nav a {
   width: 300px;
 }
 
+.task-index-item-buttons {
+  display: none;
+}
+
+.task-index-item:hover .task-index-item-buttons {
+  display: block;
+}
+
 .task-index-item-description {
   margin: 8px;
   word-wrap: normal;
