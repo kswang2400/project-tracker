@@ -18,7 +18,7 @@
  @import "bootstrap";
 
 .add-project {
-  margin: 0px 100px 0px;
+  margin: 8px 100px 0px 0px;
 }
 
 body {
@@ -343,8 +343,10 @@ nav a {
 }
 
 .proj-index-header {
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   margin-right: 150px;
+  padding: 8px;
   text-align: right;
 }
 
