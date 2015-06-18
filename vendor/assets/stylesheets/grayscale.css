@@ -30,11 +30,11 @@ h6 {
     letter-spacing: 1px;
 }
 
-p {
+/*p {
     margin: 0 0 25px;
     font-size: 18px;
     line-height: 1.5;
-}
+}*/
 
 @media(min-width:768px) {
     p {
@@ -147,7 +147,7 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url("fp_back2.jpg") no-repeat bottom center scroll;
+    background: asset-url("fp_back2.jpg") no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -265,7 +265,7 @@ a:focus {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: url("downloads-bg.jpg") no-repeat center center scroll;
+    background: asset-url("downloads-bg.jpg") no-repeat center center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
