@@ -9,26 +9,45 @@ module Api
         Membership.create!(user_id: 2, project_id: project.id)
         Membership.create!(user_id: 3, project_id: project.id)
 
-        task = Task.create!(
+        task1 = Task.create!(
           author_id: 1,
           project_id: project.id,
           title: "First Task!",
-          body: "Hello! We're here to get you started! Drag any membership to any task to create an assignment!"
+          body: "Hello! We're here to get you started! Drag anyone to any task to create an assignment!"
+        )
+
+        task2 = Task.create!(
+          author_id: 1,
+          project_id: project.id,
+          title: "Second Task!",
+          body: "If they're not doing a good job, drag them to the X to remove them from task"
+        )
+
+        task3 = Task.create!(
+          author_id: 1,
+          project_id: project.id,
+          title: "Last Task!",
+          body: "If they REALLY suck, kick them out of the project. Drag them from the bar to the X to remove them from the project"
         )
 
         AssignedTask.create!(
           user_id: 1,
-          task_id: task.id
-        )
-
-        AssignedTask.create!(
-          user_id: 2,
-          task_id: task.id
+          task_id: task1.id
         )
 
         AssignedTask.create!(
           user_id: 3,
-          task_id: task.id
+          task_id: task1.id
+        )
+
+        AssignedTask.create!(
+          user_id: 2,
+          task_id: task2.id
+        )
+
+        AssignedTask.create!(
+          user_id: 1,
+          task_id: task3.id
         )
 
         render json: project
