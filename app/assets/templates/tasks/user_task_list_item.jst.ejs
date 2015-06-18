@@ -1,5 +1,7 @@
 <li class="task-list-item">
-  <a href="/#projects/<%= task.escape('project_id') %>"><%= task.escape('title') %></a>
-  <div class="task-project"><%= task.escape('project_title') %></div>
-  <div class="task-status pull-right"><%= task.escape('status') %></div>
+  <a href="/#projects/<%= task.escape('project_id') %>" class="col-md-6">
+    <%= task.escape('title') %>
+  </a>
+  <div class="task-project col-md-3"><%= task.escape('project_title') %></div>
+  <div class="task-status col-md-3 pull-right"><%= task.escape('status') %></div>
 </li>

@@ -1,6 +1,6 @@
 BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
   template: JST['users/show'],
-  className: 'users-show col-md-6 col-md-offset-3',
+  className: 'users-show col-md-8 col-md-offset-2',
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
