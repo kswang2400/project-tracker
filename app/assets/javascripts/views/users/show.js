@@ -17,5 +17,20 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews(); 
     return this;
+  },
+
+  upload: function (event) {
+    event.preventDefault();
+    cloudinary.openUploadWidget(window.CLOUDINARY_SETTINGS, function(error, payload) {
+      var attrs = {
+        url: payload[0].url,
+        thumbnail_url: payload[0].thumbnail_url
+      };
+      new BasecampApp.Models.Upload({ project: this.model }).save(attrs, {
+        success: function () {
+          this.model.uploads().fetch();
+        }.bind(this)
+      });
+    }.bind(this));
   }
 })
