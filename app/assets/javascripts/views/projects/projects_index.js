@@ -7,7 +7,6 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
-    debugger;
     this.tagged = options.tagged;
     this.collection.each(this.addProjectSubview.bind(this));
     this.listenTo(this.collection, 'add', this.addProjectSubview);
