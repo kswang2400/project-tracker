@@ -36,7 +36,6 @@ end
   Membership.create!(user_id: 1, project_id: i + 1)
   Membership.create!(user_id: 2, project_id: i + 1)
   Membership.create!(user_id: 3, project_id: i + 1)
-  Membership.create!(user_id: 4, project_id: i + 1)
 end
 
 100.times do |i|
