@@ -3,7 +3,9 @@
 
   <div class="task-index-item-buttons">
     <button type="button" class="complete-task btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
-    <button type="button" class="delete-task btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+    <% if (window.CURRENT_USER_ID === task.escape('author_id')) { %>
+      <button type="button" class="delete-task btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+    <% } %>
   </div>
 </div>
 

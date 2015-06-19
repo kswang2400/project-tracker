@@ -156,7 +156,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.model.save(newAttr);
 
     if (attr == "title") {
-      $('h1').remove('input').addClass('project-title').text(newAttr[attr])
+      $('h1#project-title').remove('input').addClass('project-title').text(newAttr[attr])
     } else {
       $('p#description').remove('input').addClass('project-description-text').text(newAttr[attr])
     }
