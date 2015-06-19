@@ -201,6 +201,7 @@ input {
 
 .main-content {
   border: 10px solid blue;
+  height: 100%;
 }
 
 .member-circle-img {
@@ -254,9 +255,11 @@ nav a {
 }
 
 .new-task {
-  clear: both;
-  display: block;
-  margin: 20px 0px;
+  margin: 0px 0px 20px 10px;
+}
+
+.invite-users {
+  margin: 0px 0px 20px 10px;
 }
 
 .new-user-session {
@@ -285,10 +288,6 @@ nav a {
 
 .project-features {
   margin: 40px 20px 20px 0px;
-}
-
-.project-header-features {
-  margin-top: 20px;
 }
 
 .projects-index-item {
@@ -394,6 +393,7 @@ nav a {
 
 .side-bar {
   border: 10px solid red;
+  height: 100%;
 }
 
 .tag-user {
@@ -403,6 +403,7 @@ nav a {
 .tasks-container {
   border-radius: 5px;
   display: block;
+  height: 100%;
 }
 
 .tasks-container-header {
@@ -482,7 +483,7 @@ textarea {
   background-color: white;
   border: 3px solid blue;
   margin: 20px;
-  max-height: 400px;
+  height: 100%;
   padding: 0px 15px 8px 15px;
 }
 
