@@ -322,7 +322,6 @@ nav a {
 }
 
 .project-show {
-  background-color: rgba(245, 245, 245, 0.4);;
   border-radius: 5px;
   height: 95%;
   margin: 0px 100px;
@@ -357,10 +356,6 @@ nav a {
   background-color: #aaaaaa;
 }
 
-.project-user-search {
-  min-width: 300px;
-}
-
 .proj-index-header {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -390,6 +385,8 @@ nav a {
 
 .searched-user {
   font-size: 20px;
+  width: 110px;
+  overflow: hidden;
 }
 
 .side-bar {
@@ -407,7 +404,6 @@ nav a {
 }
 
 .tasks-container-header {
-  color: black;
   border-radius: 5px;
 }
 
@@ -476,13 +472,6 @@ textarea {
 
 .users {
   height: 100%;
-}
-
-.users-search {
-  background-color: white;
-  margin: 20px;
-  height: 100%;
-  padding: 0px 15px 8px 15px;
 }
 
 .user-show {
