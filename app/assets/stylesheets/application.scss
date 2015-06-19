@@ -195,6 +195,10 @@ input {
   width: 100%;
 }
 
+.main-content {
+  border: 10px solid blue;
+}
+
 .member-circle-img {
   margin: 12px 8px 8px 8px;
   float: left;
@@ -313,7 +317,8 @@ nav a {
 }
 
 .project-show {
-  background-color: rgba(245, 245, 245, 0.4);;  
+  background-color: rgba(245, 245, 245, 0.4);;
+  border: 10px solid green;
   border-radius: 5px;
   height: 95%;
   margin: 0px 100px;
@@ -386,6 +391,10 @@ nav a {
   font-size: 20px;
 }
 
+.side-bar {
+  border: 10px solid red;
+}
+
 .tag-user {
   margin-top: 3px;
 }
@@ -393,10 +402,6 @@ nav a {
 .tasks-container {
   border-radius: 5px;
   display: block;
-  height: 100%;
-  width: 100%;
-  margin: 20px;
-  padding: 0px 20px;
 }
 
 .tasks-container-header {

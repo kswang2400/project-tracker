@@ -1,6 +1,6 @@
 BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   template: JST['projects/show'],
-  className: "project-show clearfix",
+  className: "project-show",
 
   events: {
     'click .invite-users': "inviteUsers",
