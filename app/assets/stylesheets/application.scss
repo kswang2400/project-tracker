@@ -23,6 +23,10 @@
   margin: 8px 100px 0px 0px;
 }
 
+.assigned-users {
+  height: 70px;
+}
+
 body {
   height: 100%;
   margin: 0;
@@ -65,7 +69,6 @@ body {
 
 .collaborators-list {
   border-radius: 5px;
-  border: 10px solid green;
   display: block;
   width: 100%;
 }
@@ -200,7 +203,6 @@ input {
 }
 
 .main-content {
-  border: 10px solid blue;
   height: 100%;
 }
 
@@ -321,7 +323,6 @@ nav a {
 
 .project-show {
   background-color: rgba(245, 245, 245, 0.4);;
-  border: 10px solid green;
   border-radius: 5px;
   height: 95%;
   margin: 0px 100px;
@@ -392,7 +393,6 @@ nav a {
 }
 
 .side-bar {
-  border: 10px solid red;
   height: 100%;
 }
 
@@ -407,11 +407,8 @@ nav a {
 }
 
 .tasks-container-header {
-  background-color: white;
   color: black;
   border-radius: 5px;
-  margin: 20px;
-  padding: 0px 10px;
 }
 
 .task-dropdown {
@@ -419,7 +416,7 @@ nav a {
 }
 
 .task-index-item {
-  background: white;
+  border: 3px solid #aaa;
   border-radius: 5px;
   display: block;
   float: left;
@@ -438,7 +435,10 @@ nav a {
 }
 
 .task-index-item-description {
+  font-size: 16px;
+  height: 50px;
   margin: 8px;
+  overflow: auto;
   word-wrap: normal;
 }
 
@@ -452,7 +452,6 @@ nav a {
 }
 
 .task-show {
-  border: 1px solid red;
   height: 100%;
   width: 100%;
 }
@@ -481,7 +480,6 @@ textarea {
 
 .users-search {
   background-color: white;
-  border: 3px solid blue;
   margin: 20px;
   height: 100%;
   padding: 0px 15px 8px 15px;
