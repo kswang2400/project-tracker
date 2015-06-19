@@ -77,6 +77,10 @@ body {
   text-align: center;
 }
 
+#contact {
+  margin-bottom: 100px;
+}
+
 .complete-stamp {
   height: 50%;
   width: 50%;
@@ -146,6 +150,10 @@ body {
   margin: 0;
 }
 
+.guest-login {
+  font-size: 60px;
+}
+
 h3 {
   white-space: nowrap;
   overflow: hidden;
@@ -154,6 +162,11 @@ h3 {
 
 html {
   height: 100%;
+}
+
+.img-circle {
+  height: 300px;
+  width: 300px;
 }
 
 .index-item-header {
@@ -273,6 +286,12 @@ nav a {
   overflow: auto;
   word-wrap: normal;
   white-space: pre;
+}
+
+.product-features {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 70px 2px 2px 2px;
 }
 
 .project-description-text:hover {

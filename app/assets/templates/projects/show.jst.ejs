@@ -25,7 +25,9 @@
   <!-- Project Collaborators -->
   <div class="collaborators-list clearfix">
     <div class="list-collaborators"></div>
-    <div class="delete-member pull-right" id="droppable-member"></div>
+    <% if (window.CURRENT_USER_ID === project.escape('owner_id')) { %>
+      <div class="delete-member pull-right" id="droppable-member"></div>
+    <% } %>
   </div>
 
   <!-- Upload Section -->
@@ -54,8 +56,12 @@
   <!-- Tasks Container -->
   <div class="tasks-container">
     <div class="tasks-container-header">
-      <h1>Tasks</h1>
-      <div class="delete-member pull-right" id="droppable-assignment"></div>
+      <div class="row">
+        <h1>Tasks</h1>
+        <% if (window.CURRENT_USER_ID === project.escape('owner_id')) { %>
+          <div class="delete-member pull-right" id="droppable-assignment"></div>
+        <% } %>
+      </div>
     </div>
 
     <div class="tasks-container-body"></div>
