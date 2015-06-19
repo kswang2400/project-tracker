@@ -50,7 +50,6 @@ body {
 }
 
 .circle-image{
-  /*background-image: url("prof1.png");*/
   background-position-y: 25%;
   background-size: 50px 50px;
   border-radius: 50%;
@@ -92,7 +91,6 @@ body {
   background-size: 280px 200px !important;
   background-repeat: no-repeat !important;
   background-position: 10px 10px !important;
-  margin: 8px 0px 0px 8px;
 }
 
 .delete-member {
@@ -117,8 +115,6 @@ body {
 #description {
   max-height: 70px;
   overflow: auto;
-  /*word-wrap: normal;*/
-  /*white-space: pre;*/
 }
 
 .dropdown-style {
@@ -212,7 +208,7 @@ input {
 }
 
 .modal-backdrop {
-  background-color: rgba(100, 100, 100, 0.8);
+  background-color: rgba(14,47,90,0.9);
   height: 110%;
   position: absolute;
   z-index: 10;
@@ -251,7 +247,6 @@ nav a {
 }
 
 .new-form {
-  background-color: white;
   border-radius: 5px;
   padding: 20px;
 }
@@ -265,7 +260,6 @@ nav a {
 }
 
 .new-user-session {
-  background-color: white;
   border-radius: 5px;
   padding: 20px;
 }
@@ -379,14 +373,16 @@ nav a {
   padding-bottom: 40px;
 }
 
+.search-bar {
+  margin-top: 25px;
+}
+
 .search-label {
   text-align: center;
 }
 
 .searched-user {
   font-size: 20px;
-  width: 110px;
-  overflow: hidden;
 }
 
 .side-bar {
