@@ -64,13 +64,10 @@ body {
 }
 
 .collaborators-list {
-  background-color: white;
   border-radius: 5px;
+  border: 10px solid green;
   display: block;
-  height: 75px;
   width: 100%;
-  margin: 20px;
-  padding: 0px 12px;
 }
 
 #collaborator-title {
@@ -112,6 +109,13 @@ body {
   border-radius: 25%;
   margin: 8px 0px 0px 8px;
   padding: 8px;
+}
+
+#description {
+  max-height: 70px;
+  overflow: auto;
+  /*word-wrap: normal;*/
+  /*white-space: pre;*/
 }
 
 .dropdown-style {
@@ -341,10 +345,7 @@ nav a {
 }
 
 .project-show-upload-bar {
-  background-color: white;
   border-radius: 5px;
-  margin: 20px;
-  height: 150px;
 }
 
 .project-title-editing {
