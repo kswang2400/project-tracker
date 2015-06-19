@@ -33,6 +33,10 @@
           <li><a class="page-scroll" href="#about">About</a></li>
           <li><a class="page-scroll" href="#download">Download</a></li>
           <li><a class="page-scroll" href="#contact">Contact</a></li>
+          <% if current_user %>
+            <li><a href="#users/<%= current_user.id %>">Your Page</a></li>
+            <li><a href="#home">Projects Index</a></li>
+          <% end %>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">

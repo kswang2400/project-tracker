@@ -38,7 +38,7 @@
 
   taskShow: function (project_id, id) {
     var project = this.projects.getOrFetch(project_id);
-    var tasks = new BasecampApp.Collections.Tasks({ project: project })
+    var tasks = new BasecampApp.Collections.Tasks()
     var task = tasks.getOrFetch(id);
 
     var view = new BasecampApp.Views.TaskShow({ model: task });

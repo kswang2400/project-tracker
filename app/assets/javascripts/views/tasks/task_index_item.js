@@ -4,7 +4,8 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
 
   events: {
     'click .complete-task': "completeTask",
-    'click .delete-task': "deleteTask"
+    'click .delete-task': "deleteTask",
+    'click .view-task': "viewTask"
   },
 
   attributes: function () {
@@ -68,5 +69,13 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
       });
     }.bind(this), 0);
     return this;
+  },
+
+  viewTask: function (event) {
+    event.preventDefault();
+    var proj_id = $(event.currentTarget).data('project-id');
+    var task_id = this.model.get('id');
+    var link = "/projects/" + proj_id + "/tasks/" + task_id
+    Backbone.history.navigate(link, { trigger: true });
   }
 });

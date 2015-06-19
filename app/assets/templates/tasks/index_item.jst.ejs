@@ -11,4 +11,4 @@
   <strong><p class="task-index-item-description"><%= task.escape('body') %></p></strong>
 </div>
 <div class="assigned-users clearfix"></div>
-<button class="btn btn-primary btn-md btn-block">View</button>
+<button class="view-task btn btn-primary btn-md btn-block" data-project-id="<%= task.escape('project_id') %>">View</button>
