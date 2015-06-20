@@ -47,21 +47,21 @@ class ApplicationController < ActionController::Base
     Membership.create!(user_id: 3, project_id: project.id)
 
     task1 = Task.create!(
-      author_id: 1,
+      author_id: current_user.id,
       project_id: project.id,
       title: "First Task!",
       body: "Hello! We're here to get you started! Drag anyone to any task to create an assignment!"
     )
 
     task2 = Task.create!(
-      author_id: 1,
+      author_id: current_user.id,
       project_id: project.id,
       title: "Second Task!",
       body: "If they're not doing a good job, drag them to the X to remove them from task"
     )
 
     task3 = Task.create!(
-      author_id: 1,
+      author_id: current_user.id,
       project_id: project.id,
       title: "Last Task!",
       body: "If they REALLY suck, kick them out of the project. Drag them from the bar to the X to remove them from the project"

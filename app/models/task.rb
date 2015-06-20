@@ -9,7 +9,7 @@
 #  body       :string
 #  created_at :datetime
 #  updated_at :datetime
-#  status     :string
+#  status     :string           default("incomplete")
 #
 
 class Task < ActiveRecord::Base

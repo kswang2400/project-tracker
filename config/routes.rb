@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :uploads, except: [:new, :edit, :update]
     resources :tasks
     resources :assigned_tasks
+    resources :comments
   end
 
   resource :session, only: [:new, :create, :destroy]
