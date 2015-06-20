@@ -1,0 +1,98 @@
+.project-description-text:hover {
+  background-color: #aaaaaa;
+}
+
+.project-description-text-editing {
+  width: 100%;
+}
+
+.project-features {
+  margin: 40px 20px 20px 0px;
+}
+
+.projects-index-item {
+  background-color: white;
+  border: 4px solid #aaaaaa;
+  border-radius: 5px;
+  display: block;
+  float: left;
+  margin: 20px;
+  padding: 0px 15px 0px 15px;
+  width: 350px;
+  height: 200px;
+}
+
+.projects-index-item:hover {
+  background-color: #dbdbdb;
+}
+
+.projects-index-item:hover .delete-project{
+  display: block;
+}
+
+.projects-index-title {
+  color: white;
+  margin: 0px 0px 20px 100px;
+}
+
+.project-owner {
+  color: blue;
+}
+
+.project-show {
+  border-radius: 5px;
+  height: 95%;
+  margin: 0px 100px;
+}
+
+.project-show-content {
+  height: 100%;
+}
+
+.project-show-header {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px 10px;
+}
+
+.project-show-footer {
+  margin: 100px;
+}
+
+.project-show-upload-bar {
+  border-radius: 5px;
+}
+
+.project-title-editing {
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.project-title:hover {
+  background-color: #aaaaaa;
+}
+
+.proj-index-header {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  margin-right: 150px;
+  padding: 8px;
+  text-align: right;
+}
+
+.proj-index-style {
+  background-color: rgba(245, 245, 245, 0.2);
+  border-radius: 5px;
+  display: block;
+  height: 275px;
+  margin: 10px 50px;
+  padding-top: 20px;
+  padding-left: 30px;
+}
+
+.projects-index-footer {
+  margin-left: 100px;
+  padding-bottom: 40px;
+}

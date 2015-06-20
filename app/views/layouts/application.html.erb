@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Basecamp</title>
+  <title>Project Tracker</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
@@ -10,6 +10,7 @@
               upload_preset: "<%= ENV['upload_preset'] %>" } </script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <%= csrf_meta_tags %>
+
 </head>
 
 <body>
@@ -21,7 +22,7 @@
           <i class="fa fa-bars"></i>
         </button>
         <a class="navbar-brand page-scroll" href="<%= root_url %>">
-          <i class="fa fa-play-circle"></i>  <span class="light">Basecamp</span> Home
+          <i class="fa fa-play-circle"></i>  <span class="light">Project Tracker</span> Home
         </a>
       </div>
 
@@ -30,6 +31,8 @@
         <ul class="nav navbar-nav">
           <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
           <li class="hidden"><a href="#page-top"></a></li>
+
+
           <li><a class="page-scroll" href="#about">About</a></li>
           <li><a class="page-scroll" href="#product-features">Features</a></li>
           <li><a class="page-scroll" href="#contact">Contact</a></li>
