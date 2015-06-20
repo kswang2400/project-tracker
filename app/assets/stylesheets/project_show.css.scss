@@ -5,3 +5,43 @@
 .project-description-text-editing {
   width: 100%;
 }
+
+.project-owner {
+  color: blue;
+}
+
+.project-show {
+  border-radius: 5px;
+  height: 95%;
+  margin: 0px 100px;
+}
+
+.project-show-content {
+  height: 100%;
+}
+
+.project-show-header {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px 10px;
+}
+
+.project-show-footer {
+  margin: 100px;
+}
+
+.project-show-upload-bar {
+  border-radius: 5px;
+}
+
+.project-title-editing {
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.project-title:hover {
+  background-color: #aaaaaa;
+}
+
