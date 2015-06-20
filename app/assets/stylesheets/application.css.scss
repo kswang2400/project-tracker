@@ -266,11 +266,13 @@ nav a {
 }
 
 .new-task {
-  margin: 0px 0px 20px 10px;
+  /*margin: 0px 0px 20px 10px;*/
+  margin-left: 10px;
 }
 
 .invite-users {
-  margin: 0px 0px 20px 10px;
+  /*margin: 0px 0px 20px 10px;*/
+  margin-left: 10px;
 }
 
 .new-user-session {
@@ -297,22 +299,6 @@ nav a {
 
 .project-features {
   margin: 40px 20px 20px 0px;
-}
-
-.search-label {
-  text-align: center;
-}
-
-.searched-user {
-  font-size: 20px;
-}
-
-.side-bar {
-  height: 100%;
-}
-
-.tag-user {
-  margin-top: 3px;
 }
 
 .tasks-container-header {

@@ -40,7 +40,7 @@
     var project = this.projects.getOrFetch(project_id);
     var tasks = new BasecampApp.Collections.Tasks()
     var task = tasks.getOrFetch(id);
-
+    debugger;
     var view = new BasecampApp.Views.TaskShow({ model: task });
 
     this._swapView(view);
