@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project Tracker</title>
+  <title>Project Tracker  </title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
@@ -14,62 +14,7 @@
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-          <i class="fa fa-bars"></i>
-        </button>
-        <a class="navbar-brand page-scroll" href="<%= root_url %>">
-          <i class="fa fa-play-circle"></i>  <span class="light">Project Tracker</span> Home
-        </a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-        <ul class="nav navbar-nav">
-          <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-          <li class="hidden"><a href="#page-top"></a></li>
-
-
-          <li><a class="page-scroll" href="#about">About</a></li>
-          <li><a class="page-scroll" href="#product-features">Features</a></li>
-          <li><a class="page-scroll" href="#contact">Contact</a></li>
-          <% if current_user %>
-            <li><a href="#users/<%= current_user.id %>">Your Page</a></li>
-            <li><a href="#home">Projects Index</a></li>
-          <% end %>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <% if current_user %>
-                <script> window.CURRENT_USER_USERNAME = "<%= current_username %>" 
-                         window.CURRENT_USER_ID = "<%= current_user.id %>" </script>
-            <% else %>
-                <script> window.CURRENT_USER_USERNAME = "Guest" 
-                         window.CURRENT_USER_ID = 0 </script>
-            <% end %>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
-                        role="button" aria-expanded="false">Welcome, <%= current_username %>
-                        <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <% if current_user %>
-                <li><%= link_to "Log Out", session_url, method: :delete %></li>
-              <li class="divider"></li>
-                <li><a href="#users/<%= current_user.id %>">Your Page</a></li>
-                <li><a href="#home">Projects Index</a></li>            
-              <% else %>
-                <li><%= link_to "Log In", new_session_url %></li>
-                <li><%= link_to "Sign Up", new_user_url %></li>
-              <% end %>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <%= render 'shared/nav_bar' %>
 
   <div id="main">
     <%= yield %>

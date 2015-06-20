@@ -315,49 +315,12 @@ nav a {
   margin-top: 3px;
 }
 
-.tasks-container {
-  border-radius: 5px;
-  display: block;
-  height: 100%;
-}
-
 .tasks-container-header {
   border-radius: 5px;
 }
 
 .task-dropdown {
   margin-top: 15px;
-}
-
-.task-index-item {
-  border: 3px solid #aaa;
-  border-radius: 5px;
-  display: block;
-  float: left;
-  height: 260px;
-  margin: 10px;
-  padding: 10px;
-  width: 300px;
-}
-
-.task-index-item-buttons {
-  display: none;
-}
-
-.task-index-item:hover .task-index-item-buttons {
-  display: block;
-}
-
-.task-index-item-description {
-  font-size: 16px;
-  height: 50px;
-  margin: 8px;
-  overflow: auto;
-  word-wrap: normal;
-}
-
-.task-index-item:hover {
-  background-color: #dbdbdb;
 }
 
 .task-list-item {
@@ -368,32 +331,6 @@ nav a {
 .task-show {
   height: 100%;
   width: 100%;
-}
-
-textarea {
-  width: 100%;
-}
-
-.upload-button {
-  margin: 0px 0px 20px 10px;
-}
-
-.upload-thumbnail {
-  margin: 30px;
-  float: left;
-}
-
-#upload-title {
-  text-align: center;
-  padding: 10px 0px 20px 0px;
-}
-
-.users {
-  height: 100%;
-}
-
-.user-search {
-  margin-top: 18px;
 }
 
 .user-show {

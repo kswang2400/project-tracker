@@ -1,0 +1,30 @@
+.task-index-item {
+  border: 3px solid #aaa;
+  border-radius: 5px;
+  display: block;
+  float: left;
+  height: 260px;
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+}
+
+.task-index-item-buttons {
+  display: none;
+}
+
+.task-index-item:hover .task-index-item-buttons {
+  display: block;
+}
+
+.task-index-item-description {
+  font-size: 16px;
+  height: 50px;
+  margin: 8px;
+  overflow: auto;
+  word-wrap: normal;
+}
+
+.task-index-item:hover {
+  background-color: #dbdbdb;
+}
