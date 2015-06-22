@@ -13,15 +13,21 @@ module Api
       end
     end
 
-    def index 
-      @comments = Comment.all.where(project_id: params[:project_id])
-      render json: @comments
-    end
-
     def destroy
       comment = Comment.find(params[:id])
       comment.destroy
       render json: {}
+    end
+
+    def index 
+      @comments = Comment.all
+      # .where(project_id: params[:project_id])
+      render json: @comments
+    end
+
+    def show
+      @comment = Comment.find(params[:id])
+      render json: @comment
     end
 
     private

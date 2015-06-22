@@ -38,6 +38,7 @@ module Api
       @project_title = Project.find(@task.project_id).title
       @owner_name = User.find(@task.author_id).username
       @assignments = @task.assigned_tasks
+      @comments = @task.comments
       render "show.json.jbuilder"
     end
 

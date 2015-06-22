@@ -20,4 +20,6 @@ class Task < ActiveRecord::Base
 
   has_many :assigned_tasks
   has_many :assigned_users, through: :assigned_tasks, source: :user
+
+  has_many :comments
 end
