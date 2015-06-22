@@ -1,7 +1,8 @@
 <div class="side-bar col-md-5">
   <!-- Project Header -->
   <div class="project-header-title">
-    <h1 class="project-title" id="project-title"><%= project.escape('title') %></h1><br><br>
+    <u><h1 class="project-title" id="project-title"><%= project.escape('title') %></h1></u>
+    <br>
     <h4 class="project-owner">
       Owner: <a href="/#users/<%= project.escape('owner_id') %>"><%= project.escape('owner_name') %></a>
     </h4>
@@ -10,7 +11,7 @@
   <!-- Project Description -->
   <div class="project-header-description">
     <h3>Description: </h3>
-    <p class="project-description-text" id="description"><%= project.escape('description') %></p>
+    <u><p class="project-description-text" id="description"><%= project.escape('description') %></p></u>
   </div>
 
   <!-- Project Buttons -->

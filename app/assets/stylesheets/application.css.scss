@@ -68,8 +68,10 @@ body {
 }
 
 .collaborators-list {
+  background-color: #aaa;
   border-radius: 5px;
   display: block;
+  margin: 30px 0px;
   width: 100%;
 }
 
@@ -140,6 +142,14 @@ body {
   height: 500px;
   width: 100%;
   background-color: #aaaaaa;
+}
+
+.form {
+  height: 100%;
+  background-image: asset-url("fp_back3.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .form-group .btn {
@@ -276,7 +286,9 @@ nav a {
 }
 
 .new-user-session {
+  background-color: white;
   border-radius: 5px;
+  margin-top: 100px;
   padding: 20px;
 }
 

@@ -16,5 +16,5 @@ class Comment < ActiveRecord::Base
 
   belongs_to :author, class_name: :User
   belongs_to :project
-  belongs_to, :task
+  belongs_to :task
 end

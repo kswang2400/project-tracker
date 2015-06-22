@@ -13,10 +13,9 @@ Basecamp Clone is a clone of Basecamp built on Rails and Backbone. Users can:
 - [x] Create sessions (log in)
 - [x] CRUD for projects
 - [x] Tag other users to projects
-- [ ] Subscribe to projects
+- [x] Upload images in projects
 - [x] Create tasks in projects
 - [ ] Create comment threads in tasks
-- [x] Upload images in projects
 
 ## Design Docs
 * [View Wireframes][views]
@@ -38,11 +37,7 @@ to phase 2.
 The primary feature of Basecamp Clone is to interact with projects. I will finish 
 the server side CRUD operations for projects. Once my projecs table is setup, I will 
 add API routes to serve project data as JSON, then add Backbone models and collections 
-that fetch data from those routes. By the end of this phase, users will be able 
-to 
-
-+ tag other users to their projects
-+ subscribe to projects
+that fetch data from those routes.
 
 ### Phase 3: Implementing Tasks (~2 days)
 Once the users can create, search, tag and subscribe to projects, I want to add 
