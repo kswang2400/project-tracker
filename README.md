@@ -1,21 +1,25 @@
-# Basecamp Clone
+# Project Tracker!
 
 [Heroku link][heroku]
 
 [heroku]: http://basecamp-clone-kwang.herokuapp.com/
 
 ## Minimum Viable Product
-Basecamp Clone is a clone of Basecamp built on Rails and Backbone. Users can:
+ProjectTracker is a clone of Basecamp built on Rails and Backbone. Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 - [x] Create accounts
 - [x] Create sessions (log in)
-- [x] CRUD for projects
-- [x] Tag other users to projects
+- [x] Create projects
+- [x] Edit project descriptions without forms
+- [x] Tag other users to projects with search form
+- [x] Assign members to tasks with drop and drop
+- [x] Sort projects based on owner/tagged
 - [x] Upload images in projects
 - [x] Create tasks in projects
-- [ ] Create comment threads in tasks
+- [x] List all assigned tasks in a personal to-do list
+- [x] Create comment threads in tasks
 
 ## Design Docs
 * [View Wireframes][views]
