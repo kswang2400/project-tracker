@@ -1,8 +1,12 @@
+<div class="task-show-sidebar col-md-4">
+  <!-- Task Header -->
+  <div class="task-show-header">
+    <h1><%= task.escape('title') %></h1>
+    <h3><%= task.escape('status') %></h3>
+  </div>
 
-<div class="task-show task-show-header">
-  <h1><%= task.escape('title') %></h1>
-  <!-- <h1><%= task.id %></h1> -->
+  <div class="task-assignments"></div>
 </div>
 
-<div class="task-show-body">
+<div class="task-show-body col-md-8">
 </div>

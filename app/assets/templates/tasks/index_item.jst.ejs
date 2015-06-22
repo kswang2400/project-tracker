@@ -1,6 +1,7 @@
+<!-- Task Header / Buttons -->
 <div class="task-index-item-header clearfix">
   <h3 class="col-md-8"><%= task.escape('title') %></h3>
-  <!-- KW: task json issue still not resolved: owner_name, project_title not in payload -->
+  <!-- KW: task json issue still not resolved: owner_name, project_title not in payload`   -->
   <!--   <h4><%= task.escape('owner_name') %></h4> -->
 
   <div class="task-index-item-buttons">
@@ -11,8 +12,13 @@
   </div>
 </div>
 
+<!-- Task Body / Description -->
 <div class="task-index-item-body">
   <strong><p class="task-index-item-description"><%= task.escape('body') %></p></strong>
 </div>
+
+<!-- Assigned Users Subviews-->
 <div class="assigned-users clearfix"></div>
+
+<!-- Button to Task Show -->
 <button class="view-task btn btn-primary btn-md btn-block" data-project-id="<%= task.escape('project_id') %>">View</button>

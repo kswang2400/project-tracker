@@ -19,9 +19,7 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
   },
 
   addAssignedSubview: function (assignment) {
-    var subview = new BasecampApp.Views.AssignedIndexItem({
-      model: assignment
-    });
+    var subview = new BasecampApp.Views.AssignedIndexItem({ model: assignment });
     this.addSubview('.assigned-users', subview);
   },
 

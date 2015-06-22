@@ -15,15 +15,15 @@ BasecampApp.Models.Task = Backbone.Model.extend({
       delete payload.assignments;
     }
 
-    // if (payload.owner_name) {
-    //   this.owner_name = payload.owner_name;
-    //   delete payload.owner_name
-    // }
+    if (payload.owner_name) {
+      this.owner_name = payload.owner_name;
+      delete payload.owner_name
+    }
 
-    // if (payload.project_title) {
-    //   this.project_title = payload.project_title;
-    //   delete payload.assignments;
-    // }
+    if (payload.project_title) {
+      this.project_title = payload.project_title;
+      delete payload.assignments;
+    }
 
     return payload;
   }
