@@ -3,7 +3,7 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   className: "task-show col-md-10 col-md-offset-1",
 
   events: {
-    "click .back": "back",
+    "click .back-task": "back",
     "click .create-comment": "createComment",
     "click .task-complete": "toggleStatus"
   },

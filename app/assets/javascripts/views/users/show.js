@@ -1,6 +1,11 @@
 BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
   template: JST['users/show'],
-  className: 'users-show col-md-8 col-md-offset-2',
+  className: 'user-show col-md-8 col-md-offset-2',
+
+  events: { 
+    "click .back-user": "back",
+    "submit": "editInfo"
+  },
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
@@ -10,6 +15,17 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
   addTaskListItem: function (task) {
     var subview = new BasecampApp.Views.UserTaskListItem({ model: task });
     this.addSubview(".to-do-list", subview);
+  },
+
+  back: function (event) {
+    window.history.back();
+  },
+
+  editInfo: function (event) {
+    event.preventDefault();
+    var new_attr = this.$el.find('form').serializeJSON();
+    // debugger;
+    this.model.save(new_attr["user"]);
   },
 
   render: function () {

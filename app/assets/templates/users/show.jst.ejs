@@ -1,13 +1,49 @@
-<div class="user-show user-show-header">
-  <h1><%= user.escape('username') %></h1>
+<div class="user-show-header clearfix">
+  <h1 id="user-username"><%= user.escape('username') %></h1>
+  <button class="back-user btn btn-pri">Back to Project</button>
 </div>
 
-<div class="user-show-body">
-  <div class="user-show user-show-tasks col-md-6">
+<div class="user-show-body clearfix">
+  <div class="user-show-tasks col-md-6">
     <h2>To Do List</h2>
     <ul class="to-do-list pre-scrollable"></ul>
   </div>
 
-  <div class="user-show user-show-edit col-md-4 pull-right">
+  <div class="user-show-edit col-md-6 pull-right">
+    <form class="new-form">
+      <h1 class="form-title">Edit Info</h1>
+
+      <div class="form-group">
+        <label for="user_username">Username</label>
+        <input class="form-control" type="text" name="user[username]" 
+               value="<%= user.escape('username') %>" 
+               id="user-username"/>
+      </div>
+
+<!--       <div class="form-group">
+        <label for="user_password">Password</label>
+        <input type="password" class="form-control" name="user[password]"id="user-password"></input>
+      </div>     -->  
+
+      <div class="form-group">
+        <label for="user_bio">Bio</label>
+        <textarea class="form-control" name="user[bio]" id="user-bio"><%= user.escape('bio') %></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="user_email">Email</label>
+        <input class="form-control" name="user[email]" id="user-email"
+          value="<%= user.escape('email') %>"/>
+      </div>
+<!-- 
+      <div class="form-group">
+        <label for="user_profile_picture">Profile Picture</label>
+        <input class="form-control" name="user[profile_picture]" id="user-profile_picture"/>
+      </div> -->
+
+      <div class="form-group">
+        <input type="submit" class="btn btn-pri">
+      </div>
+    </form>
   </div>
 </div>

@@ -33,9 +33,19 @@ class UsersController < ApplicationController
     render "show.json.jbuilder"
   end
 
+  def update 
+    user = User.find(params[:id])
+    
+    if user.update(user_params)
+      render json: user
+    else
+      render json: user.errors.full_messages, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :bio, :email)
   end
 end

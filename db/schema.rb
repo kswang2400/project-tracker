@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150620183659) do
+ActiveRecord::Schema.define(version: 20150623143554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,11 +88,17 @@ ActiveRecord::Schema.define(version: 20150620183659) do
   add_index "uploads", ["user_id"], name: "index_uploads_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",        null: false
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
+    t.string   "username",                        null: false
+    t.string   "password_digest",                 null: false
+    t.string   "session_token",                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "bio"
+    t.string   "email"
+    t.string   "profile_picture"
+    t.boolean  "activated",       default: false
+    t.boolean  "premium",         default: false
+    t.boolean  "admin",           default: false
   end
 
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
