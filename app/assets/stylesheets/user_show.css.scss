@@ -4,18 +4,33 @@
 }
 
 .user-show {
-  border: 1px solid red;
+  background-color: #aaa;
+  /*border: 1px solid red;*/
   margin-top: 80px;
+  padding-bottom: 100px;
 }
 
 .user-show-header {
+  background-color: white;
   /*border: 2px solid blue;*/
+  border-radius: 5px;
   margin: 20px;
   padding: 8px;
 }
 
 .user-show-body {
-  border: 3px solid black;
+  /*border: 3px solid black;*/
+  padding: 12px;
+}
+
+.user-show-edit {
+  background-color: white;
+  border-radius: 5px
+}
+
+.user-show-tasks {
+  background-color: white;
+  border-radius: 5px;
 }
 
 #user-username {
