@@ -146,7 +146,7 @@ body {
 
 .form {
   height: 100%;
-  background-image: asset-url("fp_back3.jpg");
+  background-image: asset-url("fp_back.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -168,6 +168,10 @@ h3 {
   white-space: nowrap;
   overflow: hidden;
   margin-right: 8px;
+}
+
+#HCB_comment_box {
+  width: 70%;
 }
 
 html {
@@ -261,7 +265,7 @@ nav a {
 }
 
 .navbar {
-  background-color: #3A43F1;
+  background-color: #3773f1;
   border-radius: 0px;
   margin-bottom: 0px;
 }

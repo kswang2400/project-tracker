@@ -7,8 +7,8 @@ BasecampApp.Models.Task = Backbone.Model.extend({
   },
 
   parse: function (payload) {
-    console.log(payload)
-    debugger;
+    // console.log(payload)
+    // debugger;
     
     if (payload.assignments) {
       this.assignments().set(payload.assignments);
