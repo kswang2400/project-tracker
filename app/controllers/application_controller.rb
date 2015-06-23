@@ -67,6 +67,13 @@ class ApplicationController < ActionController::Base
       body: "If they REALLY suck, kick them out of the project. Drag them from the bar to the X to remove them from the project"
     )
 
+    task4 = Task.create!(
+      author_id: current_user.id,
+      project_id: project.id,
+      title: "Create New Task!",
+      body: "Great job! Now mark this complete and watch your incomplete tasks get shorter!"
+    )
+
     AssignedTask.create!(
       user_id: 1,
       task_id: task1.id
@@ -85,6 +92,11 @@ class ApplicationController < ActionController::Base
     AssignedTask.create!(
       user_id: 1,
       task_id: task3.id
+    )
+
+    AssignedTask.create!(
+      user_id: current_user.id,
+      task_id: task4.id
     )
   end
 end

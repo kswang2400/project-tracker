@@ -9,10 +9,11 @@
 User.create(username: "kevin_wang", password: "password123")
 User.create(username: "jimothy_smith", password: "password123")
 User.create(username: "jolene_anderson", password: "password123")
+User.create(username: "kush_ruggeri", password: "password123")
 User.create(username: "guest_user", password: "password")
 
 
-# 20.times { User.create!(username: Faker::Internet.user_name, password: "password")}
+20.times { User.create!(username: Faker::Internet.user_name, password: "password123")}
 
 # 50.times do |i|
 #   Project.create!(
