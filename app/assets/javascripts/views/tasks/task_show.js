@@ -3,6 +3,7 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   className: "task-show col-md-10 col-md-offset-1",
 
   events: {
+    "click .back": "back",
     "click .create-comment": "createComment",
     "click .task-complete": "toggleStatus"
   },
@@ -22,6 +23,11 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   addCommentsSubview: function (comment) {
     var subview = new BasecampApp.Views.CommentsShow({ model: comment });
     this.addSubview('.comments-section', subview);
+  },
+
+  back: function (event) {
+    event.preventDefault();
+    window.history.back();
   },
 
   createComment: function (events) {

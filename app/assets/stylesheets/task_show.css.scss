@@ -1,3 +1,8 @@
+.back {
+  position: absolute;
+  bottom: 50px;
+}
+
 .task-show {
   /*background-color: red;*/
   border-radius: 5px;
@@ -24,5 +29,5 @@
 
 .task-complete {
   position: absolute;
-  bottom:50px;
+  bottom: 100px;
 }
