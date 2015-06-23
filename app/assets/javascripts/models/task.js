@@ -7,7 +7,7 @@ BasecampApp.Models.Task = Backbone.Model.extend({
   },
 
   parse: function (payload) {
-    // console.log(payload)
+    console.log(payload)
     debugger;
     
     if (payload.assignments) {
@@ -15,20 +15,20 @@ BasecampApp.Models.Task = Backbone.Model.extend({
       delete payload.assignments;
     }
 
-    if (payload.comments) {
-      this.comments().set(payload.comments);
-      delete payload.comments;
-    }
+    // if (payload.comments) {
+    //   this.comments().set(payload.comments);
+    //   delete payload.comments;
+    // }
 
-    if (payload.owner_name) {
-      this.owner_name = payload.owner_name;
-      delete payload.owner_name
-    }
+    // if (payload.owner_name) {
+    //   this.owner_name = payload.owner_name;
+    //   delete payload.owner_name
+    // }
 
-    if (payload.project_title) {
-      this.project_title = payload.project_title;
-      delete payload.assignments;
-    }
+    // if (payload.project_title) {
+    //   this.project_title = payload.project_title;
+    //   delete payload.assignments;
+    // }
 
     return payload;
   },

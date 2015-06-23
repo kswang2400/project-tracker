@@ -1,22 +1,10 @@
 class UsersController < ApplicationController
-  def show
-    @user = User.find(params[:id])
-    @tasks = @user.tasks_assigned
-    render "show.json.jbuilder"
-  end
-
-  def new
-    @user = User.new
-    render :new
-  end
-
   def create
     @user = User.new(user_params)
 
     if @user.save
       log_in(@user)
       seed_new_user(@user)
-      byebug
       redirect_to "/#home"
     else
       flash.now[:errors] = @user.errors.full_messages
@@ -32,6 +20,17 @@ class UsersController < ApplicationController
     end
 
     render json: @users
+  end
+  
+  def new
+    @user = User.new
+    render :new
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @tasks = @user.tasks_assigned
+    render "show.json.jbuilder"
   end
 
   private
