@@ -79,21 +79,3 @@ seed_new_user(User.create(username: "jimothy_smith", password: "password123"))
 seed_new_user(User.create(username: "jolene_anderson", password: "password123"))
 seed_new_user(User.create(username: "kush_ruggeri", password: "password123"))
 seed_new_user(User.create(username: "guest_user", password: "password"))
-
-
-# 20.times { User.create!(username: Faker::Internet.user_name, password: "password123")}
-
-# 50.times do |i|
-#   Project.create!(
-#     owner_id: (i % 23 ) + 1, 
-#     title: Faker::Lorem.words(2), 
-#     description: Faker::Lorem.paragraph)
-# end
-
-# 100.times do |i|
-#   Task.create!(
-#     author_id: (i % 23) + 1, 
-#     project_id: (i % 50) + 1, 
-#     title: Faker:: Lorem.words(1), 
-#     body: Faker::Lorem.sentence)
-# end
