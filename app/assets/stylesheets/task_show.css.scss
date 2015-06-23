@@ -9,10 +9,20 @@
   height: 100%;
 }
 
+.task-show-sidebar {
+  height: 100%;
+  position: relative;
+}
+
 .comments-header {
   float: left;
 }
 
 .create-comment {
   margin: 20px 80px;
+}
+
+.task-complete {
+  position: absolute;
+  bottom:50px;
 }

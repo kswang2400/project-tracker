@@ -3,13 +3,15 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   className: "task-show col-md-10 col-md-offset-1",
 
   events: {
-    "click .create-comment": "createComment"
+    "click .create-comment": "createComment",
+    "click .task-complete": "toggleStatus"
   },
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.assignments(), 'add', this.addAssignmentSubview);
-    this.listenTo(this.model.comments(), 'add', this.addCommentsSubview);
+    // this.listenTo(this.model.comments(), 'add', this.addCommentsSubview);
+    this.addCommentsSubview();
   },
 
   addAssignmentSubview: function (assignment) {
@@ -18,9 +20,8 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   },
 
   addCommentsSubview: function (comment) {
-    // debugger;
-    // var subview = new BasecampApp.Views.Comment({ model: comment });
-    // this.addSubview('.comments-section', subview);
+    var subview = new BasecampApp.Views.CommentsShow({ model: comment });
+    this.addSubview('.comments-section', subview);
   },
 
   createComment: function (events) {
@@ -33,5 +34,13 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
     return this;
+  },
+
+  toggleStatus: function (event) {
+    if (this.model.get('status') === "completed") {
+      this.model.save({ status: "incomplete"}, { patch: true});
+    } else {
+      this.model.save({ status: "completed" }, { patch: true });
+    }
   }
 });
