@@ -3,7 +3,8 @@
   <div class="task-show-header">
     <h1><%= task.escape('title') %></h1>
     <br>
-    <h4>Status:   <%= task.escape('status') %></h4>
+    <h4>Status:   <%= task.escape('status') %></h4><br>
+    <h3>Description: </h3><p><%= task.escape('body') %></p>
   </div>
 
   <div class="task-assignments"></div>

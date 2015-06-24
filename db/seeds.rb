@@ -44,7 +44,7 @@ def seed_new_project(project, user)
   task4 = Task.create!(
     author_id: user.id,
     project_id: project.id,
-    title: "Create New Task!",
+    title: "Create Task!",
     body: "Great job! Now mark this complete and watch your incomplete tasks get shorter!"
   )
 
