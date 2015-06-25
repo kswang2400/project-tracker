@@ -1,8 +1,8 @@
 # Project Tracker!
 
-[Heroku link][heroku]
+[Live Link!][production]
 
-[heroku]: http://basecamp-clone-kwang.herokuapp.com/
+[production]: http://www.projecttracker.com/
 
 ## Minimum Viable Product
 ProjectTracker is a clone of Basecamp built on Rails and Backbone. Users can:

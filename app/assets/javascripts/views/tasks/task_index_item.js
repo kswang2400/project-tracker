@@ -24,10 +24,7 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
   },
 
   completeTask: function (event) {
-    if (this.model.get('status') === "completed") {
-      this.model.save({ status: "incomplete"}, { patch: true});
-      this.$el.removeClass('completed');
-    } else {
+    if (this.model.get('status') !== "completed") {
       this.model.save({ status: "completed" }, { patch: true });
     }
   },

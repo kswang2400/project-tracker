@@ -5,7 +5,7 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   events: {
     "click .back-task": "back",
     "click .create-comment": "createComment",
-    "click .task-complete": "toggleStatus"
+    "click .task-complete": "completeTask"
   },
 
   initialize: function () {
@@ -42,10 +42,8 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
     return this;
   },
 
-  toggleStatus: function (event) {
-    if (this.model.get('status') === "completed") {
-      this.model.save({ status: "incomplete"}, { patch: true});
-    } else {
+  completeTask: function (event) {
+    if (this.model.get('status') !== "completed") {
       this.model.save({ status: "completed" }, { patch: true });
     }
   }
