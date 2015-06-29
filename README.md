@@ -2,7 +2,7 @@
 
 [Live Link!][production]
 
-[production]: http://www.projecttracker.com/
+[production]: http://www.projecttracker.biz/
 
 ## Minimum Viable Product
 ProjectTracker is a clone of Basecamp built on Rails and Backbone. Users can:
