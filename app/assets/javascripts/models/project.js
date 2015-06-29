@@ -1,11 +1,13 @@
 BasecampApp.Models.Project = Backbone.Model.extend({
   urlRoot: "/api/projects",
 
+  // store associated collections to be called on later as a function.
   memberships: function () {
     this._memberships = this._memberships || new BasecampApp.Collections.Memberships();
     return this._memberships;
   },
 
+  // override default parse function to pull out extranneous data from jbuilder
   parse: function (payload) {
     if (payload.uploads) {
       this.uploads().set(payload.uploads);

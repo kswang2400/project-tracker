@@ -8,12 +8,14 @@ BasecampApp.Views.ProjectForm = Backbone.CompositeView.extend({
     "click .modal-backdrop": "removeModal"
   },
 
+  // delete modal form on "esc" keypress
   esc: function (event) {
     if (event.keyCode === 27) {
       this.remove();
     }
   },
 
+  // serialize data from form to create a new project
   createNewProject: function (event) {
     event.preventDefault();
     var attrs = this.$el.find('.new-form').serializeJSON();
@@ -21,9 +23,10 @@ BasecampApp.Views.ProjectForm = Backbone.CompositeView.extend({
 
     this.model.save(attrs['project'], {
       success: function () {
+        // add new project to collection so you don't have to refetch
         that.collection.add(that.model, { merge: true });
         Backbone.history.navigate("#projects/" + that.model.get('id'), { trigger: true });
-        that.$el.find('.new-project').remove();
+        that.$el.find('.new-project').remove(); // remove form from DOM
       }
     })
   },
