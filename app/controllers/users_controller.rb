@@ -33,6 +33,12 @@ class UsersController < ApplicationController
     render "show.json.jbuilder"
   end
 
+  def destroy
+    user = User.find(params[:id])
+    user.try(:destroy)
+    render json: {}
+  end 
+
   def update 
     user = User.find(params[:id])
     
