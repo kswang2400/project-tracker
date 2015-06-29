@@ -24,6 +24,7 @@ group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails', :require => false
   gem 'faker'
+  gem 'jasmine'
   gem 'rspec-rails'
   gem "shoulda-matchers"
   gem 'spring'
