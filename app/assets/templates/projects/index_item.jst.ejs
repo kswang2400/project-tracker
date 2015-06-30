@@ -13,22 +13,22 @@
 
 <div class="project-stats">
   <div class="row">
-    <div class="col-md-6">
-      <%= project.escape("num_tasks") %> Tasks
+    <div class="stat col-md-6">
+      <h3 class="stat-title"><%= project.escape("num_tasks") %></h3> Tasks
     </div>
     
-    <div class="col-md-6">
-      18 Assignments
+    <div class="stat col-md-6">
+      <h3 class="stat-title"><%= project.escape("num_members") %></h3> Members
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-6">
-      47 Documents
+    <div class="stat col-md-6">
+      <h3 class="stat-title"><%= project.escape("num_uploads") %></h3> Documents
     </div>
     
-    <div class="col-md-6">
-      12 Members
+    <div class="stat col-md-6">
+      <h3 class="stat-title"><%= project.escape("num_assignments") %></h3> Assignments
     </div>
   </div>
 </div>

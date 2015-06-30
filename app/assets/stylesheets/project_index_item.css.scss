@@ -6,6 +6,16 @@
   font-size: 20px;
 }
 
+.stat {
+  height: 50px;
+  /*border: 2px solid red;*/
+}
+
+.stat-title {
+  margin: 0;
+  padding: 0;
+}
+
 .projects-index-item {
   background-color: white;
   border: 4px solid #aaaaaa;
@@ -47,4 +57,5 @@
   position: absolute;
   bottom: 8px;
   width: 95%;
+  /*border: 2px solid blue;*/
 }
