@@ -3,7 +3,9 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
   className: "projects-index",
 
   events: {
-    "click button.add-project": "newProject"
+    "click button.add-project": "newProject",
+    "click li.sb-my-projects": "myProjects",
+    "click li.sb-tagged-projects": "taggedProjects"
   },
 
   initialize: function (options) {
@@ -25,7 +27,12 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
     var subview = new BasecampApp.Views.ProjectsIndexItem({
       model: project
     });
-    this.addSubview('.projects-index', subview);
+    this.addSubview('.projects-owned-index', subview);
+  },
+
+  myProjects: function (event) {
+    event.preventDefault();
+    $('.my-projects').toggleClass("glyphicon-folder-close").toggleClass("glyphicon-folder-open");
   },
 
   newProject: function (event) {
@@ -42,5 +49,10 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
     return this;
+  },
+
+  taggedProjects: function (event) {
+    event.preventDefault();
+    $('.tagged-projects').toggleClass("glyphicon-folder-close").toggleClass("glyphicon-folder-open");
   }
 });
