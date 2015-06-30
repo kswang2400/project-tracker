@@ -55,8 +55,8 @@
   background-color: rgba(245, 245, 245, 0.2);
   border-radius: 5px;
   display: block;
-  height: 275px;
-  margin: 10px 50px;
+  height: 90%;
+  /*margin: 16px 50px;*/
   padding-top: 20px;
 }
 
@@ -64,10 +64,12 @@
   color: white;
   margin: 0px 0px 20px 100px;
 }
-
+/*
 .projects-owned {
-}
+  transition: height 0.8s ease 0s;
+}*/
 
 .projects-tagged {
+  transition: height 0.8s ease 0s;
   bottom: 0;
 }
