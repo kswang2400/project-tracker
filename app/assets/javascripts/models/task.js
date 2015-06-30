@@ -7,29 +7,11 @@ BasecampApp.Models.Task = Backbone.Model.extend({
   },
 
   parse: function (payload) {
-    // console.log(payload)
-    // debugger;
-    
     if (payload.assignments) {
       this.assignments().set(payload.assignments);
       delete payload.assignments;
     }
-
-    // if (payload.comments) {
-    //   this.comments().set(payload.comments);
-    //   delete payload.comments;
-    // }
-
-    // if (payload.owner_name) {
-    //   this.owner_name = payload.owner_name;
-    //   delete payload.owner_name
-    // }
-
-    // if (payload.project_title) {
-    //   this.project_title = payload.project_title;
-    //   delete payload.assignments;
-    // }
-
+    
     return payload;
   },
 

@@ -2,10 +2,33 @@
   <div class="index-item-body">
     <div class="index-item-header clearfix">
       <h2 class="index-item-header-title col-md-8"><%= project.escape('title') %></h2>
+
       <button class="delete-project btn btn-danger col-md-2 pull-right">
         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
       </button>
     </div>
-    <li class="list-project-description"><%= project.escape('description') %></li><br>
-  </div>
+
+    <li class="list-project-description"><%= project.escape('description') %></li>
 </a>
+
+<div class="project-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <%= project.escape("num_tasks") %> Tasks
+    </div>
+    
+    <div class="col-md-6">
+      18 Assignments
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      47 Documents
+    </div>
+    
+    <div class="col-md-6">
+      12 Members
+    </div>
+  </div>
+</div>

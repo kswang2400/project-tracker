@@ -1,3 +1,50 @@
+.delete-project {
+  display: none !important;
+}
+
 .index-item-header-title {
   font-size: 20px;
+}
+
+.projects-index-item {
+  background-color: white;
+  border: 4px solid #aaaaaa;
+  border-radius: 5px;
+  display: block;
+  float: left;
+  margin: 20px 8px 0px 8px;
+  padding: 0px 8px;
+  width: 350px;
+  height: 270px;
+  position: relative;
+}
+
+.projects-index-item:hover {
+  background-color: #dbdbdb;
+}
+
+.projects-index-item:hover .delete-project{
+  display: block !important;
+  margin-top: 12px;
+}
+
+.projects-index-style {
+  background-color: rgba(245, 245, 245, 0.2);
+  border-radius: 5px;
+  display: block;
+  height: 90%;
+  /*margin: 16px 50px;*/
+  /*padding-top: 20px;*/
+}
+
+.projects-index-title {
+  color: white;
+  margin: 0px 0px 20px 100px;
+}
+
+.project-stats {
+  text-align: center;
+  position: absolute;
+  bottom: 8px;
+  width: 95%;
 }

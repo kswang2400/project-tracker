@@ -1,10 +1,10 @@
 .active {
-  height: 90%;
+  height: 86%;
   overflow: hidden;
 }
 
 .inactive {
-  height: 10%;
+  height: 14%;
   overflow: hidden;
 }
 
@@ -31,45 +31,6 @@
   text-align: right;
 }
 
-.projects-index-item {
-  background-color: white;
-  border: 4px solid #aaaaaa;
-  border-radius: 5px;
-  display: block;
-  float: left;
-  margin: 20px;
-  padding: 0px 8px;
-  width: 350px;
-  height: 200px;
-}
-
-.projects-index-item:hover {
-  background-color: #dbdbdb;
-}
-
-.projects-index-item:hover .delete-project{
-  display: block;
-}
-
-.projects-index-style {
-  background-color: rgba(245, 245, 245, 0.2);
-  border-radius: 5px;
-  display: block;
-  height: 90%;
-  /*margin: 16px 50px;*/
-  padding-top: 20px;
-}
-
-.projects-index-title {
-  color: white;
-  margin: 0px 0px 20px 100px;
-}
-/*
-.projects-owned {
-  transition: height 0.8s ease 0s;
-}*/
-
 .projects-tagged {
   transition: height 0.8s ease 0s;
-  bottom: 0;
 }

@@ -9,7 +9,7 @@
 #
 
 class Project < ActiveRecord::Base
-  validates :title, :owner_id, presence: true
+  validates :title, :owner_id, :description, presence: true
 
   belongs_to :owner, class_name: :User
   

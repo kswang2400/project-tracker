@@ -24,7 +24,6 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
   editInfo: function (event) {
     event.preventDefault();
     var new_attr = this.$el.find('form').serializeJSON();
-    // debugger;
     this.model.save(new_attr["user"]);
   },
 

@@ -5,14 +5,14 @@
   },
 
   routes: {
-    "home": "index",
+    "home": "projectIndex",
     "projects/:id": "projectShow",
     "projects/:project_id/tasks/:id": "taskShow",
     "users/:id": "userShow"
   },
 
   // projects index view that fetches two separate collections of projects
-  index: function () {
+  projectIndex: function () {
     this.projects.fetch();
     var tagged = new BasecampApp.Collections.Projects();
 
