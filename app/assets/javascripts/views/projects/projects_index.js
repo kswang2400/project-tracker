@@ -32,7 +32,10 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
 
   myProjects: function (event) {
     event.preventDefault();
-    $('.my-projects').toggleClass("glyphicon-folder-close").toggleClass("glyphicon-folder-open");
+    $('.my-projects').addClass("glyphicon-folder-open").removeClass("glyphicon-folder-close");
+    $('.tagged-projects').addClass("glyphicon-folder-close").removeClass("glyphicon-folder-open");
+    $('.projects-owned').addClass("active").removeClass("inactive");
+    $('.projects-tagged').removeClass("active").addClass("inactive");
   },
 
   newProject: function (event) {
@@ -53,6 +56,9 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
 
   taggedProjects: function (event) {
     event.preventDefault();
-    $('.tagged-projects').toggleClass("glyphicon-folder-close").toggleClass("glyphicon-folder-open");
+    $('.tagged-projects').addClass("glyphicon-folder-open").removeClass("glyphicon-folder-close");
+    $('.my-projects').addClass("glyphicon-folder-close").removeClass("glyphicon-folder-open");
+    $('.projects-owned').removeClass("active").addClass("inactive");
+    $('.projects-tagged').addClass("active").removeClass("inactive");
   }
 });

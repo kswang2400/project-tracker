@@ -1,3 +1,17 @@
+.active {
+  height: 90%;
+  overflow: hidden;
+}
+
+.inactive {
+  height: 10%;
+  overflow: hidden;
+}
+
+.projects {
+  height: 100%;
+}
+
 .projects-index {
   background-image: asset-url("fp_back3.jpg");
   height: 100%;
@@ -24,7 +38,7 @@
   display: block;
   float: left;
   margin: 20px;
-  padding: 0px 15px 0px 15px;
+  padding: 0px 8px;
   width: 350px;
   height: 200px;
 }
@@ -44,10 +58,16 @@
   height: 275px;
   margin: 10px 50px;
   padding-top: 20px;
-  padding-left: 30px;
 }
 
 .projects-index-title {
   color: white;
   margin: 0px 0px 20px 100px;
+}
+
+.projects-owned {
+}
+
+.projects-tagged {
+  bottom: 0;
 }
