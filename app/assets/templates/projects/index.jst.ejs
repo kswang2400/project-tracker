@@ -1,11 +1,42 @@
-<h1 class="projects-index-title"><strong>Welcome, <%= window.CURRENT_USER_USERNAME %></strong></h1>
-
-<div class="my-projects-header clearfix">
-  <button type="button" class="add-project btn btn-success pull-right">
-    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-  </button>
-  <h2 class="projects-index-header">My Projects</h2>
+<div class="col-md-2" id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand">
+      <a href="#">
+        Start Bootstrap
+      </a>
+    </li>
+    <li>
+      <a href="#">Dashboard</a>
+    </li>
+    <li>
+      <a href="#">Shortcuts</a>
+    </li>
+    <li>
+      <a href="#">Overview</a>
+    </li>
+    <li>
+      <a href="#">Events</a>
+    </li>
+    <li>
+      <a href="#">About</a>
+    </li>
+    <li>
+      <a href="#">Services</a>
+    </li>
+    <li>
+      <a href="#">Contact</a>
+    </li>
+  </ul>
 </div>
-<ul class="projects-index projects-index-style clearfix pre-scrollable"></ul>
-<h2 class="projects-index-header">Projects I'm Tagged In</h2>
-<ul class="projects-tagged-index projects-index-style clearfix pre-scrollable"></ul>
+
+<div class="col-md-10 col-md-offset-2">
+  <div class="my-projects-header clearfix">
+    <button type="button" class="add-project btn btn-success pull-right">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </button>
+    <h2 class="projects-index-header">My Projects</h2>
+  </div>
+  <ul class="projects-index projects-index-style clearfix pre-scrollable"></ul>
+  <h2 class="projects-index-header">Projects I'm Tagged In</h2>
+  <ul class="projects-tagged-index projects-index-style clearfix pre-scrollable"></ul>
+</div>
