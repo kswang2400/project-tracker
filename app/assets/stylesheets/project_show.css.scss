@@ -1,3 +1,15 @@
+.main-content {
+  border: 5px solid blue;
+}
+
+.project-description {
+  font-size: 16px;
+}
+
+.project-description-text {
+  font-size: 12px;
+}
+
 .project-description-text:hover {
   background-color: #aaaaaa;
 }
@@ -11,6 +23,7 @@
 }
 
 .project-owner {
+  font-size: 16px;
   color: blue;
 }
 
@@ -40,6 +53,10 @@
   border-radius: 5px;
 }
 
+.project-title {
+  font-size: 24px;
+}
+
 .project-title-editing {
   border-radius: 5px;
   margin: 20px;
@@ -58,6 +75,7 @@
 }
 
 .side-bar {
+  border: 5px solid red;
   height: 100%;
 }
 
@@ -69,6 +87,10 @@
   border-radius: 5px;
   display: block;
   height: 100%;
+}
+
+.tasks-title {
+  font-size: 24px;
 }
 
 textarea {
