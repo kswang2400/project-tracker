@@ -1,11 +1,22 @@
 <div class="col-md-2" id="sidebar-wrapper">
   <ul class="sidebar-nav">
     <li class="sidebar-brand"><a href="#">PROJECT TRACKER</a></li>
-    <li><a href="/"><span class="glyphicon glyphicon-home btn-lg" aria-hidden="true"></span>Home</a>
+    <li><a href="/">
+      <span class="glyphicon glyphicon-home btn-lg" aria-hidden="true"></span>Home</a>
     </li>
-    <li class="sb-tagged-projects"><a href="#"><span class="tagged-projects glyphicon glyphicon-folder-close btn-lg" aria-hidden="true"></span> Tagged Projects <%= tagged.length %></a></li>
-    <li class="sb-my-projects"><a href="#"><span class="my-projects glyphicon glyphicon-folder-open btn-lg" aria-hidden="true"></span> My Projects <%= projects.length %></a></li>
-    <!-- <li><a href="#">Overview</a></li> -->
+
+    <li><a href="/#users/<%= window.CURRENT_USER_ID %>">
+      <span class="glyphicon glyphicon-user btn-lg" aria-hidden="true"></span> Profile Page</a>
+    </li>
+
+    <li class="sb-tagged-projects"><a href="#">
+      <span class="tagged-projects glyphicon glyphicon-folder-close btn-lg" aria-hidden="true"></span><%= tagged.length %> Tagged Projects</a>
+    </li>
+
+    <li class="sb-my-projects"><a href="#">
+      <span class="my-projects glyphicon glyphicon-folder-open btn-lg" aria-hidden="true"></span><%= projects.length %> Personal Projects</a>
+    </li>
+
     <!-- <li><a href="#">Events</a></li> -->
     <!-- <li><a href="#">About</a></li> -->
     <!-- <li><a href="#">Services</a></li> -->
