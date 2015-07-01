@@ -30,13 +30,15 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
 
   createComment: function (event) {
     event.preventDefault();
-    var attrs = $('textarea').serializeJSON()
+    var attrs = $('textarea').serializeJSON();
+    var that = this;
     attrs["comment"]["project_id"] = this.model.get("project_id");
     attrs["comment"]["task_id"] = this.model.id;
 
-    var comment = new BasecampApp.Models.Comment().save(attrs["comment"], {
+    var comment = new BasecampApp.Models.Comment()
+    comment.save(attrs["comment"], {
       success: function () {
-        alert("Success");
+        that.model.comments().add(comment);
       }
     });
   },

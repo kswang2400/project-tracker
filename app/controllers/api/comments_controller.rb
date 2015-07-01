@@ -3,6 +3,7 @@ module Api
     def create
       comment = Comment.new(comment_params)
       comment.author_id = current_user.id
+      comment.author_name = current_username
 
       if comment.save
         render json: comment

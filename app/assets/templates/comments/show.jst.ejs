@@ -1,5 +1,5 @@
-Comment Id  <%= comment.escape("id") %>
-Author Id  <%= comment.escape("author_id") %>
-Task Id  <%= comment.escape("task_id") %>
-Project Id  <%= comment.escape("project_id") %>
-Body <%= comment.escape("body") %>
+<%= comment.escape("body") %>
+<%= comment.escape("author_name") %>
+<% if (window.CURRENT_USER_ID === comment.escape("author_id")) { %>
+  <button class="delete-comment btn btn-xs btn-danger pull-right">Delete</button>
+<% } %>

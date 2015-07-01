@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623143554) do
+ActiveRecord::Schema.define(version: 20150701194739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,12 +28,13 @@ ActiveRecord::Schema.define(version: 20150623143554) do
   add_index "assigned_tasks", ["user_id"], name: "index_assigned_tasks_on_user_id", using: :btree
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "author_id",  null: false
-    t.integer  "task_id",    null: false
-    t.integer  "project_id", null: false
-    t.string   "body",       null: false
+    t.integer  "author_id",   null: false
+    t.integer  "task_id",     null: false
+    t.integer  "project_id",  null: false
+    t.string   "body",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "author_name"
   end
 
   add_index "comments", ["author_id"], name: "index_comments_on_author_id", using: :btree
