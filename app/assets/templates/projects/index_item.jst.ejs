@@ -17,22 +17,31 @@
 
 <div class="project-stats">
   <div class="row">
-    <div class="stat col-md-6">
+    <div class="stat col-md-4">
       <h3 class="stat-title"><%= project.escape("num_members") %></h3> Members
     </div>
     
-    <div class="stat col-md-6">
+    <div class="stat col-md-4">
+      <h3 class="stat-title"><%= project.escape("num_assignments") %></h3> Assignments
+    </div>
+
+    <div class="stat col-md-4">
       <h3 class="stat-title"><%= project.escape("num_uploads") %></h3> Documents
     </div>
   </div>
 
   <div class="row">
-    <div class="stat col-md-6">
+    <div class="stat col-md-4">
       <h3 class="stat-title"><%= project.escape("num_tasks") %></h3> Tasks
     </div>
     
-    <div class="stat col-md-6">
-      <h3 class="stat-title"><%= project.escape("num_assignments") %></h3> Assignments
+    <div class="stat col-md-4">
+      <h3 class="stat-title"><%= project.escape("num_complete") %></h3> Complete
+    </div>
+
+    <div class="stat col-md-4">
+      <h3 class="stat-title">
+        <%= (project.escape("num_complete") / project.escape("num_tasks") * 100).toFixed(1) %>%</h3> Progress
     </div>
   </div>
 </div>

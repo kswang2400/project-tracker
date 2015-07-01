@@ -5,7 +5,9 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
   events: {
     "click button.add-project": "newProject",
     "click .sb-my-projects": "myProjects",
-    "click .sb-tagged-projects": "taggedProjects"
+    "click .sb-tagged-projects": "taggedProjects",
+    "click .header-my-projects": "toggleView",
+    "click .header-tagged-projects": "toggleView"
   },
 
   initialize: function (options) {
@@ -64,5 +66,12 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
     $('.my-projects').addClass("glyphicon-folder-close").removeClass("glyphicon-folder-open");
     $('.projects-owned').removeClass("active").addClass("inactive");
     $('.projects-tagged').addClass("active").removeClass("inactive");
+  },
+
+  toggleView: function (event) {
+    $('.tagged-projects').toggleClass("glyphicon-folder-open").toggleClass("glyphicon-folder-close");
+    $('.my-projects').toggleClass("glyphicon-folder-close").toggleClass("glyphicon-folder-open");
+    $('.projects-owned').toggleClass("active").toggleClass("inactive");
+    $('.projects-tagged').toggleClass("active").toggleClass("inactive");
   }
 });

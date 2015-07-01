@@ -1,24 +1,48 @@
-<div class="task-show-sidebar col-md-3">
-  <!-- Task Header -->
-  <div class="task-show-header">
-    <h1><%= task.escape('title') %></h1>
-    <br>
-    <h4>Status:   <%= task.escape('status') %></h4><br>
-    <h3>Description: </h3><p><%= task.escape('body') %></p>
-  </div>
+<div class="col-md-2" id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand"><a href="#">PROJECT TRACKER</a></li>
+    <li><a href="/">
+      <span class="glyphicon glyphicon-home btn-lg" aria-hidden="true"></span>Home</a>
+    </li>
 
-  <div class="task-assignments"></div>
-  
-  <button class="back-task btn btn-pri">Back</button>
-  <button class="task-complete btn btn-success">Mark Complete!</button>
+    <li><a href="/#users/<%= window.CURRENT_USER_ID %>">
+      <span class="glyphicon glyphicon-user btn-lg" aria-hidden="true"></span>Profile Page</a>
+    </li>
+
+    <li><a href="/#home">
+      <span class="glyphicon glyphicon-user btn-lg" aria-hidden="true"></span>Projects Index</a>
+    </li>
+
+    <!-- <li><a href="#">Events</a></li> -->
+    <!-- <li><a href="#">About</a></li> -->
+    <!-- <li><a href="#">Services</a></li> -->
+    <!-- <li><a href="#">Contact</a></li> -->
+  </ul>
 </div>
 
-<div class="task-show-body col-md-9">
-  <div class="row">
-    <h1 class="comments-header">Comments</h1>
-    <!-- KW: will implement my own comments section later... -->
-    <!-- <button class="create-comment btn btn-success">New Comment</button> -->
+<div class="col-md-10 col-md-offset-2">
+  <div class="task-show-sidebar col-md-3">
+    <!-- Task Header -->
+    <div class="task-show-header">
+      <h1><%= task.escape('title') %></h1>
+      <br>
+      <h4>Status:   <%= task.escape('status') %></h4><br>
+      <h3>Description: </h3><p><%= task.escape('body') %></p>
+    </div>
+
+    <div class="task-assignments"></div>
+    
+    <button class="back-task btn btn-pri">Back</button>
+    <button class="task-complete btn btn-success">Mark Complete!</button>
   </div>
 
-  <div class="comments-section"></div>
+  <div class="task-show-body col-md-9">
+    <div class="row">
+      <h1 class="comments-header">Comments</h1>
+      <!-- KW: will implement my own comments section later... -->
+      <!-- <button class="create-comment btn btn-success">New Comment</button> -->
+    </div>
+
+    <div class="comments-section"></div>
+  </div>
 </div>

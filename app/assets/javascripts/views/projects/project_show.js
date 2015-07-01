@@ -93,7 +93,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   },
 
   render: function () { 
-    var content = this.template({ project:  this.model });
+    var content = this.template({ project: this.model });
     this.$el.html(content); 
     this.attachSubviews(); 
 
