@@ -16,22 +16,23 @@
 </div>
 
 <div class="task-main col-md-10 col-md-offset-1">
-  <div class="task-show-sidebar col-md-7">
+  <div class="task-show-sidebar col-md-6">
     <!-- Task Header -->
     <div class="task-show-header">
-      <h1 id="task-title"><%= task.escape('title') %></h1>
-      <br>
-      <h4 id="task-status">Status:   <%= task.escape('status') %></h4><br>
+      <h1 id="task-title"><%= task.escape('title') %></h1><br>
+
+      <h4 id="task-status">Status:   <%= task.escape('status') %></h4>
+      <button class="task-complete btn btn-success pull-right">Mark Complete!</button><br>
+      
       <h3 id="task-description">Description: </h3><p id="task-description"><%= task.escape('body') %></p>
     </div>
 
     <div class="task-assignments"></div>
     
     <button class="back-task btn btn-pri">Back</button>
-    <button class="task-complete btn btn-success">Mark Complete!</button>
   </div>
 
-  <div class="task-show-body col-md-5">
+  <div class="task-show-body col-md-5 col-md-offset-1">
     <div class="row">
       <h1 class="comments-header">Comments</h1>
       <button class="create-comment btn btn-success" 

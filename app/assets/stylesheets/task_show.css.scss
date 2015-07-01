@@ -1,11 +1,12 @@
 .back-task {
   position: absolute;
-  bottom: 50px;
+  bottom: 30px;
 }
 
 .comments-header {
-  font-size: 20px;
+  font-size: 28px;
   float: left;
+  margin-left: 20px;
 }
 
 .complete {
@@ -13,7 +14,8 @@
 }
 
 .create-comment {
-  margin: 20px 80px;
+  margin: 20px;
+  float: right;
 }
 
 .incomplete {
@@ -22,8 +24,8 @@
 
 
 .task-complete {
-  position: absolute;
-  bottom: 100px;
+  /*position: absolute;*/
+  /*bottom: 100px;*/
 }
 
 #task-description {
@@ -34,13 +36,29 @@
   height: 100%;
 }
 
-.task-show-body {
+.task-show {
+  background-image: asset-url("fp_back3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100%;
+}
+
+.task-show-body {
+  background-color: white;
+  border-radius: 5px;
+  height: 600px;
+  margin-top: 50px;
+  padding: 12px;
 }
 
 .task-show-sidebar {
   height: 100%;
   position: relative;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 50px;
+  max-height: 600px;
+  padding: 16px;
 }
 
 #task-status {
@@ -50,4 +68,5 @@
 
 #task-title {
   font-size: 28px;
+  margin-top: 20px;
 }
