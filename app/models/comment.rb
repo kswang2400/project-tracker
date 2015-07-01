@@ -13,6 +13,7 @@
 
 class Comment < ActiveRecord::Base
   validates :author_id, :task_id, :project_id, :body, presence: true
+  validates :body, length: { maximum: 40 }
 
   belongs_to :author, class_name: :User
   belongs_to :project

@@ -54,6 +54,11 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
     }
 
     this.attachSubviews();
+
+    // scroll to bottom for most recent comments
+    var comments = $('.comments-section')
+    comments.scrollTop(comments.prop("scrollHeight"));
+
     return this;
   },
 

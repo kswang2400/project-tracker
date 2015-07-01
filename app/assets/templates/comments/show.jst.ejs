@@ -1,5 +1,5 @@
-<%= comment.escape("body") %>
-<%= comment.escape("author_name") %>
+<font color="blue"><%= comment.escape("author_name") %></font> says 
+<font color="green"><%= comment.escape("body") %></font>
 <% if (window.CURRENT_USER_ID === comment.escape("author_id")) { %>
-  <button class="delete-comment btn btn-xs btn-danger pull-right">Delete</button>
+  <!-- <button class="delete-comment btn btn-xs btn-danger pull-right">Delete</button> -->
 <% } %>
