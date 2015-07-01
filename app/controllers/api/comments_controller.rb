@@ -3,13 +3,11 @@ module Api
     def create
       comment = Comment.new(comment_params)
       comment.author_id = current_user.id
-      comment.task_id = params[:task_id]
-      comment.project_id = Project.find(Task.find(params[:task_id]).project_id)
 
       if comment.save
         render json: comment
       else
-        render json: comment.errors.fullmessages, status: :unprocessable_entity
+        render json: comment.errors.full_messages, status: :unprocessable_entity
       end
     end
 
@@ -33,7 +31,7 @@ module Api
     private
 
     def comment_params
-      params.require(:comment).permit(:body)
+      params.require(:comment).permit(:body, :task_id, :project_id)
     end
   end
 end

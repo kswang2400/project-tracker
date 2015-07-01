@@ -48,7 +48,6 @@
   border-radius: 5px;
   height: 600px;
   margin-top: 50px;
-  padding: 12px;
 }
 
 .task-show-sidebar {
@@ -69,4 +68,8 @@
 #task-title {
   font-size: 28px;
   margin-top: 20px;
+}
+
+textarea {
+  width: 50%;
 }
