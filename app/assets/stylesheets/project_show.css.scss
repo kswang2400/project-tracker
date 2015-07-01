@@ -1,5 +1,8 @@
 .main-content {
   /*border: 5px solid blue;*/
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 50px;
 }
 
 .project-description {
@@ -25,6 +28,13 @@
 .project-owner {
   font-size: 16px;
   color: hsl(195, 60%, 35%);
+}
+
+.project-show {
+  background-image: asset-url("fp_back3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
 .project-show-content {
@@ -70,7 +80,12 @@
 
 .side-bar {
   /*border: 5px solid red;*/
-  height: 100%;
+  background-color: white;
+  border-radius: 5px;
+  margin: 50px 0px;
+  max-height: 675px;
+  padding-bottom: 100px;
+  overflow: hidden;
 }
 
 .tag-user {
@@ -83,9 +98,14 @@
   height: 100%;
 }
 
+.tasks-container-body.pre-scrollable {
+  max-height: 600px;
+}
+
 .tasks-title {
   font-size: 24px;
   float: left;
+  margin-left: 20px;
 }
 
 textarea {
