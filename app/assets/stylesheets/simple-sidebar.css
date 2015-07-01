@@ -21,7 +21,7 @@
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
-    left: 228px;
+    left: 230px;
     width: 0;
     height: 100%;
     margin-left: -250px;
@@ -60,7 +60,7 @@
 }
 
 .sidebar-nav li {
-    text-indent: 20px;
+    text-indent: 12px;
     line-height: 40px;
 }
 

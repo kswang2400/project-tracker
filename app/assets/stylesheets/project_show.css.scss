@@ -27,12 +27,6 @@
   color: blue;
 }
 
-.project-show {
-  border-radius: 5px;
-  height: 95%;
-  margin: 0px 100px;
-}
-
 .project-show-content {
   height: 100%;
 }
@@ -91,6 +85,7 @@
 
 .tasks-title {
   font-size: 24px;
+  float: left;
 }
 
 textarea {
