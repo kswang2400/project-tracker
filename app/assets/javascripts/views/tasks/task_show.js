@@ -38,6 +38,13 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({ task: this.model });
     this.$el.html(content);
+
+    if (this.model.get("status") === "completed") {
+      $('#task-status').addClass("complete");
+    } else {
+      $('#task-status').addClass("incomplete");
+    }
+
     this.attachSubviews();
     return this;
   },

@@ -3,13 +3,36 @@
   bottom: 50px;
 }
 
+.comments-header {
+  font-size: 20px;
+  float: left;
+}
+
+.complete {
+  color: green;
+}
+
+.create-comment {
+  margin: 20px 80px;
+}
+
+.incomplete {
+  color: red;
+}
+
+
+.task-complete {
+  position: absolute;
+  bottom: 100px;
+}
+
+#task-description {
+  font-size: 16px;
+}
+
 .task-main {
   height: 100%;
 }
-
-/*.task-show {
-  border-radius: 5px;
-}*/
 
 .task-show-body {
   height: 100%;
@@ -20,15 +43,11 @@
   position: relative;
 }
 
-.comments-header {
-  float: left;
+#task-status {
+  font-size: 16px;
+  text-transform: capitalize;
 }
 
-.create-comment {
-  margin: 20px 80px;
-}
-
-.task-complete {
-  position: absolute;
-  bottom: 100px;
+#task-title {
+  font-size: 20px;
 }

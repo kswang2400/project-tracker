@@ -19,10 +19,10 @@
   <div class="task-show-sidebar col-md-3">
     <!-- Task Header -->
     <div class="task-show-header">
-      <h1><%= task.escape('title') %></h1>
+      <h1 id="task-title"><%= task.escape('title') %></h1>
       <br>
-      <h4>Status:   <%= task.escape('status') %></h4><br>
-      <h3>Description: </h3><p><%= task.escape('body') %></p>
+      <h4 id="task-status">Status:   <%= task.escape('status') %></h4><br>
+      <h3 id="task-description">Description: </h3><p id="task-description"><%= task.escape('body') %></p>
     </div>
 
     <div class="task-assignments"></div>
