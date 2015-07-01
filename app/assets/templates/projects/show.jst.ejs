@@ -10,10 +10,12 @@
     </li>
 
     <li><a href="/#home">
-      <span class="glyphicon glyphicon-user btn-lg" aria-hidden="true"></span>Projects Index</a>
+      <span class="glyphicon glyphicon-tasks btn-lg" aria-hidden="true"></span>Projects Index</a>
     </li>
 
-    <!-- <li><a href="#">Events</a></li> -->
+    <li><a href="#">
+      <span class="glyphicon glyphicon-log-out btn-lg" aria-hidden="true"></span>Sign Out</a>
+    </li>
     <!-- <li><a href="#">About</a></li> -->
     <!-- <li><a href="#">Services</a></li> -->
     <!-- <li><a href="#">Contact</a></li> -->
@@ -53,7 +55,9 @@
     <div class="collaborators-list clearfix">
       <div class="list-collaborators"></div>
       <% if (window.CURRENT_USER_ID === project.escape('owner_id')) { %>
-        <div class="delete-member pull-right" id="droppable-member"></div>
+        <div class="delete-member pull-right" id="droppable-member">
+          <!-- <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> -->
+        </div>
       <% } %>
     </div>
 
@@ -83,7 +87,9 @@
         <div class="row">
           <h1 class="tasks-title">Tasks</h1>
           <% if (window.CURRENT_USER_ID === project.escape('owner_id')) { %>
-            <div class="delete-member pull-right" id="droppable-assignment"></div>
+            <div class="delete-member pull-right" id="droppable-assignment">
+              <!-- <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> -->
+            </div>
           <% } %>
         </div>
       </div>

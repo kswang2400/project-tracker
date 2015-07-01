@@ -135,6 +135,7 @@ body {
 }
 
 .delete-member {
+  font-size: 20px;
   height: 60px;
   width: 60px;
   background-image: asset-url("red-x.png");
@@ -220,11 +221,7 @@ input {
 .intro-body {
   padding: 0;
 }
-/*
-.intro-text {
-  color: black;
-}
-*/
+
 .jumbotron {
   background-color: rgba(245, 245, 245, 0.4);
   color: #eeeeee;
@@ -234,7 +231,7 @@ input {
 }
 
 .list-project-description {
-  margin-left: 25px;
+  margin-left: 12px;
   height: 60px;
   overflow: hidden;
 }
