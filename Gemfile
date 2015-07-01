@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'js_assets'
 gem 'newrelic_rpm'
 gem 'pg'
+gem 'prawn'
+gem 'prawn_rails'
 gem 'rails', '4.2.1'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc

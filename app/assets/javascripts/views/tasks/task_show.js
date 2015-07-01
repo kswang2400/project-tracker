@@ -5,14 +5,13 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   events: {
     "click .back-task": "back",
     "click .create-comment": "createComment",
-    "click .task-complete": "completeTask"
+    "click .task-complete": "completeTask",
   },
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.assignments(), 'add', this.addAssignmentSubview);
-    // this.listenTo(this.model.comments(), 'add', this.addCommentsSubview);
-    this.addCommentsSubview();
+    this.listenTo(this.model.comments(), 'add', this.addCommentsSubview);
   },
 
   addAssignmentSubview: function (assignment) {
@@ -21,17 +20,18 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   },
 
   addCommentsSubview: function (comment) {
-    var subview = new BasecampApp.Views.CommentsShow({ model: comment });
+    var subview = new BasecampApp.Views.CommentShow({ model: comment });
     this.addSubview('.comments-section', subview);
   },
 
   back: function (event) {
-    event.preventDefault();
     window.history.back();
   },
 
-  createComment: function (events) {
-    event.preventDefault();
+  createComment: function (event) {
+    author_id = $(event.currentTarget).data("author-id");
+    project_id = this.model.get("project_id");
+    task_id = this.model.id;
     debugger;
   },
 

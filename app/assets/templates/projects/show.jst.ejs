@@ -41,11 +41,12 @@
 
     <!-- Project Buttons -->
     <div class="project-header-buttons clearfix">
-      <button type="button" class="new-task btn btn-sm btn-pri pull-right">New Task</button>
-      <button type="button" class="upload-button btn-sm btn btn-pri">Upload Image</button>
+      <button class="new-task btn btn-sm btn-pri pull-right">New Task</button>
+      <button class="upload-button btn-sm btn btn-pri">Upload Image</button>
       <% if (window.CURRENT_USER_ID === project.escape('owner_id')) { %>
         <button type="button" class="invite-users btn btn-sm btn-success">Invite Users</button>
       <% } %>
+      <!-- <button class="create-pdf">Download PDF</button> -->
     </div>
 
     <!-- User Search -->

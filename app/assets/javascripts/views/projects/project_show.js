@@ -3,6 +3,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   className: "project-show",
 
   events: {
+    // 'click .create-pdf': "createPDF",
     'click .invite-users': "inviteUsers",
     'click .new-task': "newTask",
     'click .project-title': "editTitle",
@@ -47,6 +48,12 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     var subview = new BasecampApp.Views.UsersSearch();
     this.addSubview('.project-user-search', subview);
   },
+
+  // createPDF: function () {
+  //   var doc = new jsPDF();
+  //   doc.text(20, 20, 'Hello world.');
+  //   doc.save('Test.pdf');
+  // },
 
   editTitle: function (event) {
     event.preventDefault();

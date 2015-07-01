@@ -12,6 +12,11 @@ BasecampApp.Models.Task = Backbone.Model.extend({
       delete payload.assignments;
     }
     
+    if (payload.comments) {
+      this.comments().set(payload.comments);
+      delete payload.comments;
+    }
+    
     return payload;
   },
 

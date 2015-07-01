@@ -25,6 +25,11 @@ module Api
         @projects = current_user.projects
       end
 
+      # respond_to do |format|
+      #   format.json { render "index.json.jbuilder" } 
+      #   format.pdf { render "basic.pdf.prawn" }
+      # end
+
       render "index.json.jbuilder"
     end
 
