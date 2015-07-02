@@ -20,13 +20,16 @@
   <button class="back-user btn btn-pri">Back</button>
 </div>
 
+<div class="user-show-nav clearfix">
+  <button class="btn btn-pri pull-right" id="upload-prof-pic">Upload Profile Picture</button>
+</div>
+
 <!-- Profile Picture -->
 <div class="profile-picture clearfix">
   <img src="<%= user.escape("profile_picture") %>" height="200" width="200"/>
 </div>
 
 <div class="user-show-body clearfix">
-  <button class="upload-prof-pic">Upload Profile Picture</button>
 
   <!-- User Tasks -->
   <div class="user-show-tasks col-md-5">

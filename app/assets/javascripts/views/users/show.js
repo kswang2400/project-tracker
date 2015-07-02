@@ -4,7 +4,7 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
 
   events: { 
     "click .back-user": "back",
-    "click .upload-prof-pic": "upload",
+    "click #upload-prof-pic": "upload",
     "submit": "editInfo"
   },
 

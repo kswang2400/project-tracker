@@ -13,10 +13,20 @@
   top: 40px;
 }
 
+#upload-prof-pic {
+  margin: 20px 40px;
+}
+
 .user-show {
-  background-color: #aaa;
+  /*background-color: #aaa;*/
   padding-bottom: 100px;
   position: relative;
+}
+
+.user-show-nav {
+  height: 140px;
+  width: 100%;
+  background-color: white;
 }
 
 .user-show-header {
@@ -30,7 +40,6 @@
 .user-show-body {
   /*border: 3px solid black;*/
   padding: 12px;
-  margin-top: 150px;
 }
 
 .user-show-edit {
