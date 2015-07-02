@@ -20,13 +20,13 @@
   <button class="back-user btn btn-pri">Back</button>
 </div>
 
+<!-- Profile Picture -->
+<div class="profile-picture clearfix">
+  <img src="<%= user.escape("profile_picture") %>" height="200" width="200"/>
+</div>
+
 <div class="user-show-body clearfix">
   <button class="upload-prof-pic">Upload Profile Picture</button>
-
-  <!-- Profile Picture -->
-  <div class="profile-picture clearfix">
-    <img src="<%= user.escape("profile_picture") %>"/>
-  </div>
 
   <!-- User Tasks -->
   <div class="user-show-tasks col-md-5">
@@ -35,7 +35,7 @@
   </div>
 
   <div class="user-show-edit col-md-6 pull-right">
-    <form class="new-form">
+    <form class="new-form hidden">
       <h1 class="form-title">Edit Info</h1>
 
       <div class="form-group">

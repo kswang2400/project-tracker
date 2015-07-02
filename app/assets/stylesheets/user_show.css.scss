@@ -4,14 +4,19 @@
 }
 
 .profile-picture {
-  height: 100px;
-  width: 100px;
+  height: 204px;
+  width: 204px;
+  background-color: white;
+  border: 2px solid black;
+  margin-left: 40px;
+  position: absolute;
+  top: 40px;
 }
 
 .user-show {
   background-color: #aaa;
-  /*border: 1px solid red;*/
   padding-bottom: 100px;
+  position: relative;
 }
 
 .user-show-header {
@@ -25,6 +30,7 @@
 .user-show-body {
   /*border: 3px solid black;*/
   padding: 12px;
+  margin-top: 150px;
 }
 
 .user-show-edit {
@@ -39,4 +45,5 @@
 
 #user-username {
   float: left;
+  margin-left: 250px;
 }

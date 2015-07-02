@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def index
     if params[:query]
-      @users = User.where("LOWER(username) ~ ?",params[:query]).limit(5)
+      @users = User.where("LOWER(username) ~ ?",params[:query]).limit(6)
     else
       @users = User.all
     end
