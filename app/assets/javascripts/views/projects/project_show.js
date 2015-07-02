@@ -86,6 +86,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   inviteUsers: function (event) {
     event.preventDefault();
     this.$el.find('.project-user-search').toggleClass('hidden');
+    this.$el.find('.project-show-upload-bar').toggleClass('hidden');
     $('body').find('.users-search').usersSearch();
   },
 
