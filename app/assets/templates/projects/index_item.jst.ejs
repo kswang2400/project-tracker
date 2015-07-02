@@ -3,11 +3,13 @@
     <div class="index-item-header clearfix">
       <h2 class="index-item-header-title col-md-8"><%= project.escape('title') %></h2>
 
-      <button class="delete-project btn btn-danger col-md-2 pull-right">
+      <button class="delete-project btn btn-danger col-md-2 pull-right">  
         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
       </button>
     </div>
 
+    <hr>
+      <h5 id="project-owner">Project Owner: <%= project.escape("owner_name") %></h5>
     <hr>
 
     <li class="list-project-description"><%= project.escape('description') %></li>

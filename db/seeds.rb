@@ -10,7 +10,7 @@ def seed_new_user(user)
   project = Project.create!(
     owner_id: user.id, 
     title: "Demo Project!", 
-    description: "Click here for more info."
+    description: "This is your demo project! Click here for more info."
   )
   seed_new_project(project, user)
 end
@@ -83,6 +83,10 @@ seed_new_user(User.create(username: "jimothy_smith", password: "password123", pr
 seed_new_user(User.create(username: "jolene_anderson", password: "password123", profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/prof3_nkspjg.png"))
 seed_new_user(User.create(username: "kush_ruggeri", password: "password123", profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800655/kush_k7fzhv.jpg"))
 seed_new_user(User.create(username: "guest_user", password: "password", profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/professional-corgi_b7uiec.jpg"))
+
+# 20.times do 
+  seed_new_user(User.create(username: Faker::Internet.user_name, password: "password123"))
+# end
 
 
 
