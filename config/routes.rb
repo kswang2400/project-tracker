@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :projects
     resources :memberships, only: [:create, :index, :destroy]
     resources :uploads, except: [:new, :edit, :update]
-    resources :tasks
+    resources :tasks, except: [:index]
     resources :assigned_tasks
     resources :comments
   end

@@ -11,12 +11,7 @@ module Api
         render json: task.errors.full_messages, status: :unprocessable_entity
       end
     end
-
-    def index 
-      @tasks = Task.all.where(project_id: params[:project_id])
-      render json: @tasks
-    end
-
+    
     def destroy
       task = current_user.tasks.find(params[:id])
       task.try(:destroy)

@@ -34,6 +34,8 @@ module Api
       @project_owner = User.find(@project.owner_id)
       @uploads = Upload.where(project_id: project_id)
       @tasks = Task.where(project_id: project_id)
+      @completed = @tasks.where(status: "completed")
+      @incomplete = @tasks.where.not(status: "completed")
       @memberships = Membership.where(project_id: project_id)
 
       render "show.json.jbuilder"
