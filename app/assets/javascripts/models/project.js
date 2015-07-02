@@ -24,6 +24,16 @@ BasecampApp.Models.Project = Backbone.Model.extend({
       delete payload.memberships
     }
 
+    if (payload.incomplete_tasks) {
+      this.num_incomplete = payload.incomplete_tasks.length
+      delete payload.incomplete_tasks
+    }
+
+    if (payload.completed_tasks) {
+      this.num_complete = payload.completed_tasks.length
+      delete payload.completed_tasks
+    }
+
     return payload;
   },
 

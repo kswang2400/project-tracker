@@ -32,6 +32,12 @@
       <u><p class="project-description-text" id="description"><%= project.escape('description') %></p></u>
     </div>
 
+    <!-- Project Stats -->
+    <div class="project-show-stats clearfix">
+      <h3> <%=project.num_incomplete %> Incomplete </h3>
+      <h3> <%= project.num_complete %> Completed </h3>
+    </div>
+
     <!-- Project Buttons -->
     <div class="project-header-buttons clearfix">
       <button class="new-task btn btn-sm btn-pri pull-right">New Task</button>
