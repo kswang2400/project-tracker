@@ -15,7 +15,6 @@ BasecampApp.Views.MembershipIndexItem = Backbone.View.extend({
   },
 
   render: function () {
-    debugger;
     var content = this.template({ membership: this.model });
     this.$el.html(content);
 

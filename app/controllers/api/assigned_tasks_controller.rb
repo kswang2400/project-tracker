@@ -2,6 +2,7 @@ module Api
   class AssignedTasksController < ApiController
     def create
       assigned_task = AssignedTask.new(assigned_task_params)
+      assigned_task.profile_picture = User.find(assigned_task_params[:user_id]).profile_picture
 
       if assigned_task.save
         render json: assigned_task

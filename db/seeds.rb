@@ -50,22 +50,26 @@ def seed_new_project(project, user)
 
   AssignedTask.create!(
     user_id: 1,
-    task_id: task1.id
+    task_id: task1.id,
+    profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435799495/sxsn38m5qgbrsjleorz6.png" 
   )
 
   AssignedTask.create!(
     user_id: 3,
-    task_id: task1.id
+    task_id: task1.id,
+    profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/prof3_nkspjg.png"
   )
 
   AssignedTask.create!(
     user_id: 2,
-    task_id: task2.id
+    task_id: task2.id,
+    profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/prof1_qiylm8.png"
   )
 
   AssignedTask.create!(
     user_id: 1,
-    task_id: task3.id
+    task_id: task3.id,
+    profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435799495/sxsn38m5qgbrsjleorz6.png"
   )
 
   AssignedTask.create!(
