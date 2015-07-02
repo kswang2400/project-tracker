@@ -20,24 +20,27 @@
     <!-- Project Header -->
     <div class="project-header-title">
       <u><h1 class="project-title" id="project-title"><%= project.escape('title') %></h1></u>
-      <br>
+      <hr>
       <h4 class="project-owner">
         Owner: <a href="/#users/<%= project.escape('owner_id') %>"><%= project.escape('owner_name') %></a>
       </h4>
     </div>
 
+    <hr>
     <!-- Project Description -->
     <div class="project-header-description">
       <h3 class="project-description">Description: </h3>
       <u><p class="project-description-text" id="description"><%= project.escape('description') %></p></u>
     </div>
 
+    <hr>
     <!-- Project Stats -->
     <div class="project-show-stats clearfix">
-      <h3> <%=project.num_incomplete %> Incomplete </h3>
-      <h3> <%= project.num_complete %> Completed </h3>
+      <font color="red"><p id="stats-incomplete"><%=project.num_incomplete %> Incomplete </p></font>
+      <font color="blue"><p id="stats-complete"><%= project.num_complete %> Completed </p></font>
     </div>
-
+    
+    <hr>
     <!-- Project Buttons -->
     <div class="project-header-buttons clearfix">
       <button class="new-task btn btn-sm btn-pri pull-right">New Task</button>

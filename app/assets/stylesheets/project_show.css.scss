@@ -88,6 +88,16 @@
   overflow: hidden;
 }
 
+#stats-incomplete {
+  font-size: 14px;
+  float: right;
+}
+
+#stats-complete {
+  font-size: 14px;
+  float: left;
+}
+
 .tag-user {
   margin-top: 3px;
 }

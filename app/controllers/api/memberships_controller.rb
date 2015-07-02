@@ -3,6 +3,7 @@ module Api
     def create
       membership = Membership.new(membership_params)
       membership.project_id = params[:project_id]
+      membership.profile_picture = User.find(membership_params[:user_id]).profile_picture
 
       if membership.save
         render json: membership

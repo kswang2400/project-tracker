@@ -85,22 +85,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-#c1 {
-  background-image: asset-url("profile-pictures/me.png");
-}
-
-#c2 {
-  background-image: asset-url("profile-pictures/prof1.png");
-}
-
-#c3 {
-  background-image: asset-url("profile-pictures/prof3.png");
-}
-
-#c-default {
-  background-image: asset-url("profile-pictures/professional-corgi.jpg");
-}
-
 .circle-image{
   background-position-y: 25%;
   background-size: 50px 50px;
@@ -145,7 +129,7 @@ body {
 }
 
 .completed {
-  background-image: url("https://ajax.raffertyaluminum.com/pics/completed_stamp.gif") !important;
+  background-image: url("http://ajax.raffertyaluminum.com/pics/completed_stamp.gif") !important;
   background-size: 280px 200px !important;
   background-repeat: no-repeat !important;
   background-position: 10px 10px !important;

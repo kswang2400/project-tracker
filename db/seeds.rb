@@ -16,9 +16,9 @@ def seed_new_user(user)
 end
 
 def seed_new_project(project, user)
-  Membership.create!(user_id: 1, project_id: project.id)
-  Membership.create!(user_id: 2, project_id: project.id)
-  Membership.create!(user_id: 3, project_id: project.id)
+  Membership.create!(user_id: 1, project_id: project.id, profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435799495/sxsn38m5qgbrsjleorz6.png")
+  Membership.create!(user_id: 2, project_id: project.id, profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/prof1_qiylm8.png")
+  Membership.create!(user_id: 3, project_id: project.id, profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/prof3_nkspjg.png")
 
   task1 = Task.create!(
     author_id: user.id,
@@ -74,8 +74,13 @@ def seed_new_project(project, user)
   )
 end
 
-seed_new_user(User.create(username: "kevin_wang", password: "password123"))
-seed_new_user(User.create(username: "jimothy_smith", password: "password123"))
-seed_new_user(User.create(username: "jolene_anderson", password: "password123"))
-seed_new_user(User.create(username: "kush_ruggeri", password: "password123"))
-seed_new_user(User.create(username: "guest_user", password: "password"))
+seed_new_user(User.create(username: "kevin_wang", password: "password123", profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435799495/sxsn38m5qgbrsjleorz6.png"))
+seed_new_user(User.create(username: "jimothy_smith", password: "password123", profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/prof1_qiylm8.png"))
+seed_new_user(User.create(username: "jolene_anderson", password: "password123", profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/prof3_nkspjg.png"))
+seed_new_user(User.create(username: "kush_ruggeri", password: "password123", profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800655/kush_k7fzhv.jpg"))
+seed_new_user(User.create(username: "guest_user", password: "password", profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/professional-corgi_b7uiec.jpg"))
+
+
+
+
+

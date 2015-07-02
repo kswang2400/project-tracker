@@ -4,6 +4,7 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
 
   events: { 
     "click .back-user": "back",
+    "click .upload-prof-pic": "upload",
     "submit": "editInfo"
   },
 
@@ -38,12 +39,12 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
     event.preventDefault();
     cloudinary.openUploadWidget(window.CLOUDINARY_SETTINGS, function(error, payload) {
       var attrs = {
-        url: payload[0].url,
-        thumbnail_url: payload[0].thumbnail_url
+        profile_picture: payload[0].url,
       };
-      new BasecampApp.Models.Upload({ project: this.model }).save(attrs, {
+
+      this.model.save(attrs, {
         success: function () {
-          this.model.uploads().fetch();
+          alert(this.model.get('profile_picture'));
         }.bind(this)
       });
     }.bind(this));
