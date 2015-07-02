@@ -6,6 +6,7 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
     "click button.add-project": "newProject",
     "click .sb-my-projects": "myProjects",
     "click .sb-tagged-projects": "taggedProjects",
+    "click .sign-out": "signOut",
     "click .header-my-projects": "toggleView",
     "click .header-tagged-projects": "toggleView"
   },
@@ -58,6 +59,18 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
     return this;
+  },
+
+  signOut: function (event) {
+    event.preventDefault();
+    alert("HERE")
+    $.ajax({
+      url: "/session",
+      type: "DELETE",
+      success: function () {
+        Backbone.history.navigate("", { trigger: true });
+      }
+    });
   },
 
   taggedProjects: function (event) {
