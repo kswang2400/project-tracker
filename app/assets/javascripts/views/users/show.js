@@ -4,6 +4,7 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
 
   events: { 
     "click .back-user": "back",
+    "click .sign-out": "signOut",
     "click #upload-prof-pic": "upload",
     "submit": "editInfo"
   },
@@ -33,6 +34,18 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews(); 
     return this;
+  },
+
+  signOut: function (event) {
+    event.preventDefault();
+
+    $.ajax({
+      url: "/session",
+      type: "DELETE",
+      success: function () {
+        window.location.href = "/session/new"
+      }
+    });
   },
 
   upload: function (event) {

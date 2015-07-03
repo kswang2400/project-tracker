@@ -5,6 +5,7 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   events: {
     "click .back-task": "back",
     "click .create-comment": "createComment",
+    "click .sign-out": "signOut",
     "click .task-complete": "completeTask",
   },
 
@@ -22,6 +23,12 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   addCommentsSubview: function (comment) {
     var subview = new BasecampApp.Views.CommentShow({ model: comment });
     this.addSubview('.comments-section', subview);
+  },
+
+  completeTask: function (event) {
+    if (this.model.get('status') !== "completed") {
+      this.model.save({ status: "completed" }, { patch: true });
+    }
   },
 
   back: function (event) {
@@ -62,9 +69,15 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
     return this;
   },
 
-  completeTask: function (event) {
-    if (this.model.get('status') !== "completed") {
-      this.model.save({ status: "completed" }, { patch: true });
-    }
+  signOut: function (event) {
+    event.preventDefault();
+
+    $.ajax({
+      url: "/session",
+      type: "DELETE",
+      success: function () {
+        window.location.href = "/session/new"
+      }
+    });
   }
 });

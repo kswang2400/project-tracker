@@ -10,6 +10,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     'click #new-task': "newTask",
     'click .project-title': "editTitle",
     'click .project-description-text': "editDescription",
+    "click .sign-out": "signOut",
     'click .tag-user': "tagUser",
     'click .upload-button': "upload",
     'blur input.editing': "updateAndSave",
@@ -154,6 +155,19 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     }.bind(this), 0);
 
     return this;
+  },
+
+  // super not DRY, will refactor later
+  signOut: function (event) {
+    event.preventDefault();
+
+    $.ajax({
+      url: "/session",
+      type: "DELETE",
+      success: function () {
+        window.location.href = "/session/new"
+      }
+    });
   },
 
   tagUser: function (event) {
