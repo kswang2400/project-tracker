@@ -363,6 +363,18 @@ nav a {
   height: 100%;
   width: 100%;
 }
+#upload-full-image {
+  max-height: 600px;
+  max-width: 1000px;
+}
+
+#upload-modal {
+  left: 120px;
+}
+
+#upload-thumbnail {
+  margin-top: 20px;
+}
 
 .user-show-tasks {
   padding-bottom: 12px;
