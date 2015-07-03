@@ -20,7 +20,7 @@ module Api
 
     def index
       @task = Task.all
-      
+
       render json: @task
     end
 
@@ -35,6 +35,7 @@ module Api
     end
 
     def show
+      # too much querying, will migrate to table columns later 
       @task = Task.find(params[:id])
       @project_title = Project.find(@task.project_id).title
       @owner_name = User.find(@task.author_id).username

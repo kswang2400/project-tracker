@@ -1,3 +1,8 @@
+#task-author {
+  margin: 4px 0px 8px 14px;
+  font-size: 12px;
+}
+
 .task-index-item {
   background-color: white;
   border: 3px solid #aaa;
@@ -21,11 +26,15 @@
 .task-index-item-description {
   font-size: 12px;
   height: 50px;
-  margin: 8px;
+  margin: 2px;
   overflow: auto;
   word-wrap: normal;
 }
 
 .task-index-item:hover {
   background-color: #dbdbdb;
+}
+
+#task-item-title {
+  margin-top: 8px;
 }
