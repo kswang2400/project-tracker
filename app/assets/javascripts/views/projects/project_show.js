@@ -96,9 +96,15 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
   inviteUsers: function (event) {
     event.preventDefault();
-    this.$el.find('.project-user-search').toggleClass('hidden');
-    this.$el.find('.project-show-upload-bar').toggleClass('hidden');
+    var searchBar = this.$el.find('.project-user-search')
+    searchBar.toggleClass('hidden');
     $('body').find('.users-search').usersSearch();
+
+    if (searchBar.hasClass('hidden')) {
+      this.$el.find('.project-show-upload-bar').removeClass('hidden');
+    } else {
+      this.$el.find('.project-show-upload-bar').addClass('hidden');
+    }
   },
 
   newTask: function (event) {
@@ -162,6 +168,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       success: function () {
         this.model.memberships().add(membership, { merge: true });
         this.$el.find('.project-user-search').toggleClass('hidden');
+        this.$el.find('.project-show-upload-bar').removeClass('hidden');
       }.bind(this)
     });
   },

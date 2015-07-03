@@ -11,6 +11,7 @@ $.UsersSearch = function (el) {
 $.UsersSearch.prototype.handleInput = function (event) {
   // empty search string brings up all users, otherwise query on username
   var users = new BasecampApp.Collections.Users();
+
   users.fetch({
     data: {
       query: this.$input.val()

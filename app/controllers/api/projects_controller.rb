@@ -36,7 +36,7 @@ module Api
       @tasks = Task.where(project_id: project_id)
       @completed = @tasks.where(status: "completed")
       @incomplete = @tasks.where.not(status: "completed")
-      @memberships = Membership.where(project_id: project_id)
+      @memberships = Membership.where(project_id: project_id).limit(9)
 
       render "show.json.jbuilder"
     end
