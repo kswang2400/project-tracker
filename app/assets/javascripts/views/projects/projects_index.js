@@ -63,12 +63,12 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
 
   signOut: function (event) {
     event.preventDefault();
-    alert("HERE")
+
     $.ajax({
       url: "/session",
       type: "DELETE",
       success: function () {
-        Backbone.history.navigate("", { trigger: true });
+        window.location.href = "/session/new"
       }
     });
   },

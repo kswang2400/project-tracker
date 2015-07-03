@@ -1,6 +1,6 @@
 BasecampApp.Models.Project = Backbone.Model.extend({
   urlRoot: "/api/projects",
-
+  // store associated collections to be called on later as a function.
   completed_tasks: function () {
     this._completed_tasks = this._completed_tasks || new BasecampApp.Collections.Tasks();
     return this._completed_tasks
@@ -11,7 +11,6 @@ BasecampApp.Models.Project = Backbone.Model.extend({
     return this._incomplete_tasks
   },
 
-  // store associated collections to be called on later as a function.
   memberships: function () {
     this._memberships = this._memberships || new BasecampApp.Collections.Memberships();
     return this._memberships;
@@ -31,7 +30,7 @@ BasecampApp.Models.Project = Backbone.Model.extend({
       this.incomplete_tasks().set(payload.incomplete_tasks);
       delete payload.incomplete_tasks
     }
-    
+
     if (payload.memberships) {
       this.memberships().set(payload.memberships);
       delete payload.memberships

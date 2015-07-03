@@ -28,6 +28,7 @@ BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
     });
     this.$el.html(content);
 
+    // add color to project progress number
     percent = this.$el.find('#percentage-complete')
     console.log(percentage, percent)
     if (percentage < 50) {
