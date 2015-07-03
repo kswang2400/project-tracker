@@ -255,11 +255,6 @@ input {
   width: 100%;
 }
 
-.main-content {
-  height: 650px;
-  border: 1px solid red;
-}
-
 .member-circle-img {
   margin: 12px 8px 8px 8px;
   float: left;
@@ -287,7 +282,7 @@ input {
 
 #myCarousel {
   width: 100%;
-  height: 150px;
+  height: 50px;
 }
 
 nav a {
@@ -309,9 +304,8 @@ nav a {
   padding: 20px;
 }
 
-.new-task {
-  /*margin: 0px 0px 20px 10px;*/
-  margin-left: 10px;
+#new-task {
+  margin: 22px;
 }
 
 .invite-users {

@@ -16,7 +16,7 @@
 </div>
 
 <div class="col-md-10 col-md-offset-2">
-  <div class="side-bar col-md-4">
+  <div class="side-bar col-md-3">
     <!-- Project Header -->
     <div class="project-header-title">
       <u><h1 class="project-title" id="project-title"><%= project.escape('title') %></h1></u>
@@ -43,10 +43,9 @@
     <hr>
     <!-- Project Buttons -->
     <div class="project-header-buttons clearfix">
-      <button class="new-task btn btn-sm btn-pri pull-right">New Task</button>
-      <button class="upload-button btn-sm btn btn-pri">Upload Image</button>
+      <button class="upload-button btn-xs btn btn-pri">Upload Image</button>
       <% if (window.CURRENT_USER_ID === project.escape('owner_id')) { %>
-        <button type="button" class="invite-users btn btn-sm btn-success">Invite Users</button>
+        <button type="button" class="invite-users btn btn-xs btn-success pull-right">Invite Users</button>
       <% } %>
       <!-- <button class="create-pdf">Download PDF</button> -->
     </div>
@@ -83,13 +82,14 @@
     </div>
   </div>
 
-  <div class="main-content col-md-7 col-md-offset-1">
+  <div class="main-content col-md-8 col-md-offset-1">
     <!-- Tasks Container -->
     <div class="tasks-container">
 
       <div class="tasks-container-header">
         <div class="row">
           <h1 class="tasks-title">Tasks</h1>
+          <button class="btn btn-xs btn-pri" id="new-task">New Task</button>
           <% if (window.CURRENT_USER_ID === project.escape('owner_id')) { %>
             <div class="delete-member pull-right" id="droppable-assignment">
               <!-- <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> -->
@@ -98,12 +98,15 @@
         </div>
       </div>
 
-      <h4>To Do</h4>
-      <div class="tasks-container-body-incomplete pre-scrollable clearfix"></div>
-      <br><hr><br>
-      <h4>Completed!</h4>
-      <div class="tasks-container-body-completed pre-scrollable clearfix"></div>
+      <div class="active" id="div-incomplete">
+        <h4 class="project-show-task-title" id="tasks-incomplete">To Do</h4>
+        <div class="tasks-container-body-incomplete pre-scrollable clearfix"></div>
+      </div>
       
+      <div class="inactive" id="div-completed">
+        <h4 class="project-show-task-title" id="tasks-completed">Completed!</h4>
+        <div class="tasks-container-body-completed pre-scrollable clearfix"></div>
+      </div>
     </div>
   </div>
 </div>

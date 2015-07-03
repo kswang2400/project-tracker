@@ -4,8 +4,10 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
   events: {
     // 'click .create-pdf': "createPDF",
+    'click #tasks-completed': "toggleActiveFolder",
+    'click #tasks-incomplete': "toggleActiveFolder",
     'click .invite-users': "inviteUsers",
-    'click .new-task': "newTask",
+    'click #new-task': "newTask",
     'click .project-title': "editTitle",
     'click .project-description-text': "editDescription",
     'click .tag-user': "tagUser",
@@ -58,6 +60,11 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   //   doc.text(20, 20, 'Hello world.');
   //   doc.save('Test.pdf');
   // },
+
+  toggleActiveFolder: function () {
+    $('#div-incomplete').toggleClass("active").toggleClass("inactive");
+    $('#div-completed').toggleClass("active").toggleClass("inactive");
+  },
 
   editTitle: function (event) {
     event.preventDefault();
