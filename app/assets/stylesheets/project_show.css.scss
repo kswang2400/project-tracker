@@ -107,8 +107,13 @@
   height: 100%;
 }
 
-.tasks-container-body.pre-scrollable {
-  max-height: 600px;
+.tasks-container-body-completed.pre-scrollable {
+  max-height: 200px;
+}
+
+
+.tasks-container-body-incomplete.pre-scrollable {
+  max-height: 200px;
 }
 
 .tasks-title {
