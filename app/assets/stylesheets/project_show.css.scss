@@ -72,8 +72,9 @@
 
 .project-show-task-title {
   background-color: rgba(0,0,0,0.5);
+  border-radius: 5px;
   margin-left: 50px;
-  padding: 4px;
+  padding: 8px;
 }
 
 .project-title {
@@ -125,12 +126,14 @@
 }
 
 .tasks-container-body-completed.pre-scrollable {
-  max-height: 70% !important;
+  margin-top: 24px;
+  max-height: 90% !important;
 }
 
 
 .tasks-container-body-incomplete.pre-scrollable {
-  max-height: 70% !important;
+  margin-top: 24px;
+  max-height: 90% !important;
 }
 
 .tasks-title {
