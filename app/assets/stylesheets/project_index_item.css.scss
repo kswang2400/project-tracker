@@ -11,6 +11,8 @@ hr {
 
 .index-item-header {
   display: block;
+  white-space: nowrap; 
+  overflow: scroll;
 }
 
 .index-item-header-title {
