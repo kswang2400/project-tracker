@@ -45,8 +45,8 @@
     </div>
 
     <div class="stat col-md-4">
-      <h3 class="stat-title">
-        <%= (project.escape("num_complete") / project.escape("num_tasks") * 100).toFixed(1) %>%</h3> Progress
+      <h3 class="stat-title" id="percentage-complete">
+        <%= percentage %>%</h3> Progress
     </div>
   </div>
 </div>

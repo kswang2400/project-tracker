@@ -28,6 +28,18 @@ hr {
   padding: 0;
 }
 
+.incomplete {
+  color: red;
+}
+
+.partial {
+  color: blue;
+}
+
+.complete { 
+  color: green;
+}
+
 .projects-index-style.pre-scrollable {
   max-height: 90% !important;
 }
