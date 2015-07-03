@@ -18,6 +18,12 @@ module Api
       render json: {}
     end
 
+    def index
+      @task = Task.all
+      
+      render json: @task
+    end
+
     def update
       task = Task.find(params[:id])
 

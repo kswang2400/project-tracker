@@ -21,12 +21,13 @@
     <div class="task-show-header">
       <h1 id="task-show-title"><%= task.escape('title') %></h1><br>
 
-      <h4 id="task-status">Status:   <%= task.escape('status') %></h4>
+      <h4 id="task-status">Status: <%= task.escape('status') %></h4>
 
       <% if (task.escape("status") !== "completed") { %>
         <button class="task-complete btn btn-success pull-right">Mark Complete!</button><br>
       <% } %>
       
+      <h4 id="task-owner"><a href="/#users/<%= task.escape('author_id') %>">Owner: <%= task.escape('owner_name') %></a></h4>
       <h3 id="task-description">Description: </h3><p id="task-description"><%= task.escape('body') %></p>
     </div>
 
