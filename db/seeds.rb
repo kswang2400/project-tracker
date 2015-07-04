@@ -7,6 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 def seed_new_user(user)
+  # WAT Owner can't be blank?!
+
   # project = Project.create!(
   #   owner_id: user.id, 
   #   title: "Demo Project!", 
