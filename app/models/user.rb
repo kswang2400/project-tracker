@@ -8,6 +8,12 @@
 #  session_token   :string           not null
 #  created_at      :datetime
 #  updated_at      :datetime
+#  bio             :string
+#  email           :string
+#  profile_picture :string
+#  activated       :boolean          default(FALSE)
+#  premium         :boolean          default(FALSE)
+#  admin           :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
@@ -38,19 +44,25 @@ class User < ActiveRecord::Base
     user
   end
 
+  def is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
-  end
-
-  def is_password?(password)
-    BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
   def reset_session_token!
     self.session_token = SecureRandom.urlsafe_base64(16)
     self.save!
     self.session_token
+  end
+
+  def slack_notify
+    notifier = Slack::Notifier.new ENV['slack_webhook_url'], channel: "#newUser", username: "notifier"
+    message = "NEW USER JUST JOINED PROJECT TRACKER!"
+    notifier.ping message
   end
 
   private

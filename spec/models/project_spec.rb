@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: projects
+#
+#  id          :integer          not null, primary key
+#  title       :string           not null
+#  owner_id    :integer          not null
+#  description :string
+#
+
 require 'rails_helper'
 
 RSpec.describe Project, type: :model do

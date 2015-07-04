@@ -29,7 +29,6 @@ module Api
     end
 
     def show
-      # too much querying here too
       project_id = params[:id]
       @project = Project.find(project_id)
       @project_owner = User.find(@project.owner_id)

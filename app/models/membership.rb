@@ -2,11 +2,12 @@
 #
 # Table name: memberships
 #
-#  id         :integer          not null, primary key
-#  user_id    :integer          not null
-#  project_id :integer          not null
-#  created_at :datetime
-#  updated_at :datetime
+#  id              :integer          not null, primary key
+#  user_id         :integer          not null
+#  project_id      :integer          not null
+#  created_at      :datetime
+#  updated_at      :datetime
+#  profile_picture :string
 #
 
 class Membership < ActiveRecord::Base

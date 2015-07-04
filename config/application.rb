@@ -25,7 +25,7 @@ module BasecampApp
     config.active_record.raise_in_transactional_callbacks = true
 
     # config.middleware.use "PDFKit::Middleware", :print_media_type => true
-
+    
     config.generators do |g|
       g.test_framework :rspec
     end

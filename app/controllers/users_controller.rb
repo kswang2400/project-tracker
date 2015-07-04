@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   def create
-    byebug
-    user_params.profile_picture ||= "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/professional-corgi_b7uiec.jpg"
+    # user_params.profile_picture ||= "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/professional-corgi_b7uiec.jpg"
     @user = User.new(user_params)
 
     if @user.save
       log_in(@user)
       seed_new_user(@user)
+      @user.slack_notify
       redirect_to "/#home"
     else
       flash.now[:errors] = @user.errors.full_messages
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
       render json: user.errors.full_messages, status: :unprocessable_entity
     end
   end
-
+  
   private
 
   def user_params
