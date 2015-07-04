@@ -19,16 +19,11 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <% if current_user %>
-                <script> window.CURRENT_USER_USERNAME = "<%= current_username %>" 
-                         window.CURRENT_USER_ID = "<%= current_user.id %>" </script>
-            <% else %>
-                <script> window.CURRENT_USER_USERNAME = "Guest" 
-                         window.CURRENT_USER_ID = 0 </script>
-            <% end %>
+          <li><%= link_to "Log In", new_session_url %></li>
+          <li><%= link_to "Sign Up", new_user_url %></li>
+          <!-- <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
-                        role="button" aria-expanded="false">Welcome, <%= current_username %>
+                        role="button" aria-expanded="false">Log In / Sign Up
                         <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <% if current_user %>
@@ -41,7 +36,7 @@
                 <li><%= link_to "Sign Up", new_user_url %></li>
               <% end %>
             </ul>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>

@@ -59,12 +59,6 @@ class User < ActiveRecord::Base
     self.session_token
   end
 
-  def slack_notify
-    notifier = Slack::Notifier.new ENV['slack_webhook_url'], channel: "#notifier", username: "notifier"
-    message = "NEW USER JUST JOINED PROJECT TRACKER!"
-    notifier.ping message
-  end
-
   private
 
   def ensure_session_token

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in(@user)
       seed_new_user(@user)
-      @user.slack_notify
+      slack_notify(@user)
       redirect_to "/#home"
     else
       flash.now[:errors] = @user.errors.full_messages
@@ -54,6 +54,20 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :bio, :email, :profile_picture)
+    params.require(:user).permit(
+      :username, 
+      :password, 
+      :bio, 
+      :email, 
+      :profile_picture
+    )
+  end
+
+  def slack_notify(user)
+    notifier = Slack::Notifier.new ENV['slack_webhook_url'], 
+      channel: "#notifier", 
+      username: "notifier"
+    message = "#{user.username} has just joined Project Tracker"
+    notifier.ping message
   end
 end

@@ -10,6 +10,14 @@
                 upload_preset: "<%= ENV['upload_preset'] %>" } </script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <%= csrf_meta_tags %>
+
+    <% if current_user %>
+        <script> window.CURRENT_USER_USERNAME = "<%= current_username %>" 
+                 window.CURRENT_USER_ID = "<%= current_user.id %>" </script>
+    <% else %>
+        <script> window.CURRENT_USER_USERNAME = "Guest" 
+                 window.CURRENT_USER_ID = 0 </script>
+    <% end %>
   </head>
 
   <body>
