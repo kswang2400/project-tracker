@@ -6,18 +6,38 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
     "click button.add-project": "newProject",
     "click .sb-my-projects": "myProjects",
     "click .sb-tagged-projects": "taggedProjects",
-    "click .sign-out": "signOut",
     "click .header-my-projects": "toggleView",
     "click .header-tagged-projects": "toggleView"
   },
 
   initialize: function (options) {
     this.tagged = options.tagged;
+
     this.collection.each(this.addProjectSubview.bind(this));
+
     this.listenTo(this.collection, 'add', this.addProjectSubview);
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.tagged, 'add', this.addTaggedProjectsSubview);
     this.listenTo(this.tagged, 'sync', this.render);
+
+    // updates number of projects in sidebar whenever add
+    // delete is still funky, listener is getting hit but need
+    // to do something other than add subview
+    this.collection.bind("add remove", function () {
+      this.addNavBarSubview();
+    }.bind(this));
+
+    this.tagged.bind("add remove", function () {
+      this.addNavBarSubview();
+    }.bind(this));
+  },
+
+  addNavBarSubview: function () {
+    var subview = new BasecampApp.Views.NavBar({
+      tagged: this.tagged,
+      projects: this.collection
+    });
+    this.addSubview('#backbone-sidebar', subview);
   },
   
   addTaggedProjectsSubview: function(taggedProject) {
@@ -59,18 +79,6 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
     return this;
-  },
-
-  signOut: function (event) {
-    event.preventDefault();
-
-    $.ajax({
-      url: "/session",
-      type: "DELETE",
-      success: function () {
-        window.location.href = "/session/new"
-      }
-    });
   },
 
   taggedProjects: function (event) {

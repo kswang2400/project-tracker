@@ -11,6 +11,19 @@ BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
     this.listenTo(this.model, 'sync', this.render);
   },
 
+  colorize: function (percentage) {
+    // add color to project progress number
+    percent = this.$el.find('#percentage-complete')
+
+    if (percentage < 50) {
+      percent.addClass("incomplete");
+    } else if (percentage < 85) {
+      percent.addClass("partial");
+    } else if (percentage == 100) {
+      percent.addClass("complete");
+    }
+  },
+
   destroyProject: function (event) {
     event.preventDefault();
     var yes = confirm("Are you sure you want to delete this project?")
@@ -27,17 +40,7 @@ BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
       percentage: percentage
     });
     this.$el.html(content);
-
-    // add color to project progress number
-    percent = this.$el.find('#percentage-complete')
-
-    if (percentage < 50) {
-      percent.addClass("incomplete");
-    } else if (percentage < 85) {
-      percent.addClass("partial");
-    } else if (percentage == 100) {
-      percent.addClass("complete");
-    }
+    this.colorize(percentage);
 
     return this;
   }

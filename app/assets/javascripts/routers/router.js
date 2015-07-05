@@ -15,10 +15,7 @@
   projectIndex: function () {
     this.projects.fetch();
     var tagged = new BasecampApp.Collections.Projects();
-
-    tagged.fetch({ data: {
-      tagged: true
-    }});
+    tagged.fetch({ data: { tagged: true } });
 
     var view = new BasecampApp.Views.ProjectsIndex({ 
       collection: this.projects,
