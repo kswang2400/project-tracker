@@ -27,12 +27,16 @@
 }
 
 .projects-index-header {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
   font-size: 20px;
   margin-right: 150px;
   padding: 8px;
   text-align: right;
+}
+
+.projects-index-header:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .projects-tagged {

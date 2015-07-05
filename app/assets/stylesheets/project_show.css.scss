@@ -70,10 +70,14 @@
 }
 
 .project-show-task-title {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   margin-left: 80px;
   padding: 8px;
+}
+
+.project-show-task-title:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .project-title {
@@ -130,6 +134,10 @@
 .tasks-container-body-incomplete.pre-scrollable {
   margin-top: 12px;
   max-height: 90% !important;
+}
+
+.task-folder {
+  margin-right: 50px;
 }
 
 .tasks-title {
