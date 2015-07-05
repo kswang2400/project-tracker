@@ -5,7 +5,6 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   events: {
     "click .back-task": "back",
     "click .create-comment": "createComment",
-    "click .sign-out": "signOut",
     "click .task-complete": "completeTask",
   },
 
@@ -80,17 +79,5 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
     comments.scrollTop(comments.prop("scrollHeight"));
 
     return this;
-  },
-
-  signOut: function (event) {
-    event.preventDefault();
-
-    $.ajax({
-      url: "/session",
-      type: "DELETE",
-      success: function () {
-        window.location.href = "/session/new"
-      }
-    });
   }
 });

@@ -3,20 +3,22 @@ BasecampApp.Views.AssignedIndexItem = Backbone.View.extend({
   className: "member-circle-img",
 
   attributes: function () {
-    return { 
-      'data-id': this.model.get('id'),
-      'data-user-id': this.model.get('user_id'), 
-      'data-task-id': this.model.get('task_id')
+    return {
+      'data-id': this.model.id,
+      'data-user-id': this.model.get("user_id"),
+      'data-task-id': this.model.get("task_id")
     }
   },
 
-  initialize: function () {
-    this.listenTo(this.model, 'sync', this.render);
+  initialize: function (options) {
+    this.user = options.user;
+
+    this.listenTo(this.user, 'sync', this.render);
     this.listenTo(this.model, 'destroy', this.remove);
   },
 
   render: function () {
-    var content = this.template({ user: this.model });
+    var content = this.template({ user: this.user });
     this.$el.html(content);
     
     setTimeout(function () {

@@ -30,5 +30,5 @@ BasecampApp.Views.NavBar = Backbone.View.extend({
         window.location.href = "/session/new"
       }
     });
-  },
+  }
 });

@@ -11,7 +11,7 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
   attributes: function () {
     return { 'data-task-id': this.model.get('id') }
   },
-
+  
   initialize: function () {
     this.users = new BasecampApp.Collections.Users();
 
@@ -23,7 +23,10 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
   addAssignedSubview: function (assignment) {
     var user = this.users.getOrFetch(assignment.get("user_id")); 
 
-    var subview = new BasecampApp.Views.AssignedIndexItem({ model: user });
+    var subview = new BasecampApp.Views.AssignedIndexItem({ 
+      model: assignment,
+      user: user
+    });
     this.addSubview('.assigned-users', subview);
   },
 
@@ -31,10 +34,27 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
     if (this.model.get('status') !== "completed") {
       this.model.save({ status: "completed" }, { patch: true });
     }
+    // move View to completed section?
+  },
+
+  createAssignment: function (event, ui) {
+    var user_id = $(ui.draggable[0]).data('user-id');
+    var attrs = {
+      user_id: user_id,
+      task_id: this.model.id
+    };
+    
+    var assigned_task = new BasecampApp.Models.AssignedTask();
+
+    assigned_task.save(attrs, {
+      success: function () {
+        this.model.assignments().add(assigned_task);
+      }.bind(this)
+    });
   },
 
   deleteTask: function () {
-    this.model.destroy()
+    this.model.destroy();
     this.remove();
   },
 
@@ -43,37 +63,25 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
 
+    // add visual effects for completed tasks
     if (this.model.get('status') === "completed") {
       this.$el.addClass('completed');
     }
 
+    // initialize droppable plugin on task index item
     setTimeout(function () {
       this.$el.droppable({
-        drop: function(event, ui) {
-          var user_id = $(ui.draggable[0]).data('user-id')
-          var task_id = $(event.target).data('task-id')
-          var attrs = {
-            user_id: user_id,
-            task_id: task_id
-          }
-          
-          var assigned_task = new BasecampApp.Models.AssignedTask();
-
-          assigned_task.save(attrs, {
-            success: function () {
-              this.model.assignments().add(assigned_task);
-            }.bind(this)
-          });
-        }.bind(this)
+        drop: this.createAssignment.bind(this)
       });
     }.bind(this), 0);
+
     return this;
   },
 
   viewTask: function (event) {
     event.preventDefault();
     var proj_id = $(event.currentTarget).data('project-id');
-    var task_id = this.model.get('id');
+    var task_id = this.model.id;
     var link = "/projects/" + proj_id + "/tasks/" + task_id
     Backbone.history.navigate(link, { trigger: true });
   }
