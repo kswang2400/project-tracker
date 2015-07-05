@@ -4,7 +4,7 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
           <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand page-scroll" href="<%= root_url %>">
+        <a class="navbar-brand" href="<%= root_url %>">
           <i class="fa fa-play-circle"></i>  <span class="light">Project Tracker  </span> Home
         </a>
       </div>
@@ -16,27 +16,6 @@
           <li class="hidden"><a href="#page-top"></a></li>
 
           <%= render 'shared/front_page_nav' %>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Log In", new_session_url %></li>
-          <li><%= link_to "Sign Up", new_user_url %></li>
-          <!-- <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
-                        role="button" aria-expanded="false">Log In / Sign Up
-                        <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <% if current_user %>
-                <li><%= link_to "Log Out", session_url, method: :delete %></li>
-              <li class="divider"></li>
-                <li><a href="#users/<%= current_user.id %>">Your Page</a></li>
-                <li><a href="#home">Projects Index</a></li>            
-              <% else %>
-                <li><%= link_to "Log In", new_session_url %></li>
-                <li><%= link_to "Sign Up", new_user_url %></li>
-              <% end %>
-            </ul>
-          </li> -->
         </ul>
       </div>
     </div>

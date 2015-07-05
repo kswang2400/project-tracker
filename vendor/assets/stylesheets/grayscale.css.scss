@@ -77,6 +77,10 @@ a:focus {
   outline: 0;
 }
 
+.navbar-custom .navbar-brand:hover {
+  color: #aaa;
+}
+
 .navbar-custom .navbar-brand .navbar-toggle {
   padding: 4px 6px;
   font-size: 16px;

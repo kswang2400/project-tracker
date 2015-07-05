@@ -1,9 +1,9 @@
 <% if current_user %>
   <li><a href="#users/<%= current_user.id %>">Your Page</a></li>
   <li><a href="#home">Projects Index</a></li>
+  <li><%= link_to "Log Out", session_url, method: :delete %></li>
 <% else %>
-  <li><a class="page-scroll" href="#about">About</a></li>
-  <li><a class="page-scroll" href="#product-features">Features</a></li>
-  <li><a class="page-scroll" href="#free-trial">Guest Login</a></li>
-  <li><a class="page-scroll" href="#contact">Contact</a></li>
+  <%= render "shared/page_scrolls" %>
+  <li><%= link_to "Log In", new_session_url %></li>
+  <li><%= link_to "Sign Up", new_user_url %></li>
 <% end %>
