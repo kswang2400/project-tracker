@@ -4,8 +4,6 @@ gem 'backbone-on-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.1.0'
-# gem 'exception_notifications', git: 'https://github.com/smartinez87/exception_notification.git'
-gem 'exception_notification', '~> 4.1.1'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
@@ -19,6 +17,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'slack-notifier'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'uglifier', '>= 1.3.0'
+gem 'youtube_it'
 
 # gem 'unicorn'
 # gem 'capistrano-rails', group: :development
