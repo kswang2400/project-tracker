@@ -19,6 +19,7 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.tagged, 'add', this.addTaggedProjectsSubview);
     this.listenTo(this.tagged, 'sync', this.render);
+    this.addNavBarSubview();
 
     // updates number of projects in sidebar whenever add or remove
     this.collection.bind("add remove", function () {

@@ -10,8 +10,19 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
+    this.users = new BasecampApp.Collections.Users();
+
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.tasks(), 'add', this.addTaskListItem);
+    this.addNavBarSubview();
+  },
+
+  addNavBarSubview: function () {
+    var subview = new BasecampApp.Views.NavBar({
+      tagged: false,
+      projects: false
+    });
+    this.addSubview('#backbone-sidebar', subview);
   },
 
   addTaskListItem: function (task) {
