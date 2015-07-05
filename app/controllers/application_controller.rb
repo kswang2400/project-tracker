@@ -38,13 +38,14 @@ class ApplicationController < ActionController::Base
       title: "Demo Project!", 
       description: "Click here for more info."
     )
+
     seed_new_project(project)
   end
 
   def seed_new_project(project)
-    Membership.create!(user_id: 1, project_id: project.id)
-    Membership.create!(user_id: 2, project_id: project.id)
-    Membership.create!(user_id: 3, project_id: project.id)
+    Membership.create!(user_id: 1, project_id: project.id, profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435799495/sxsn38m5qgbrsjleorz6.png")
+    Membership.create!(user_id: 2, project_id: project.id, profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/prof1_qiylm8.png")
+    Membership.create!(user_id: 3, project_id: project.id, profile_picture:  "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/prof3_nkspjg.png")
 
     task1 = Task.create!(
       author_id: current_user.id,

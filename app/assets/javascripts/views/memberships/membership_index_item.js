@@ -5,8 +5,7 @@ BasecampApp.Views.MembershipIndexItem = Backbone.View.extend({
   attributes: function () {
     return { 
       'data-user-id': this.model.get('user_id'),
-      'data-id': this.model.id
-      
+      'data-id': this.model.id 
     }
   },
 
