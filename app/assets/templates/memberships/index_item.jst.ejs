@@ -1,7 +1,3 @@
 <div class="member circle-image">
-  <% if (membership.escape("profile_picture")) { %>
-    <img class="member circle-image" src="<%= membership.escape("profile_picture") %>"/>
-  <% } else { %>
-    <img class="member circle-image" src="http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/professional-corgi_b7uiec.jpg"/>
-  <% } %>
+    <img class="member circle-image" src="<%= user.escape("profile_picture") %>"/>
 </div>

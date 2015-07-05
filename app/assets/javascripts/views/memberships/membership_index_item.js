@@ -9,13 +9,16 @@ BasecampApp.Views.MembershipIndexItem = Backbone.View.extend({
     }
   },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.user = options.user
+
+    this.listenTo(this.user, 'sync', this.render);
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model, 'destroy', this.remove);
   },
 
   render: function () {
-    var content = this.template({ membership: this.model });
+    var content = this.template({ user: this.user });
     this.$el.html(content);
 
     setTimeout(function () {

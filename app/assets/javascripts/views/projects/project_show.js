@@ -18,6 +18,8 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
+    this.users = new BasecampApp.Collections.Users();
+
     this.model.memberships().each(this.addMembershipSubview.bind(this));
     this.model.uploads().each(this.addUploadSubview.bind(this));
     this.model.tasks().each(this.addTaskSubview.bind(this));
@@ -32,7 +34,11 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   },
 
   addMembershipSubview: function (membership) {
-    var subview = new BasecampApp.Views.MembershipIndexItem({ model: membership });
+    var user = this.users.getOrFetch(membership.get("user_id"));
+    var subview = new BasecampApp.Views.MembershipIndexItem({ 
+      model: membership,
+      user: user
+    });
     this.addSubview('.list-collaborators', subview);
   },
 
