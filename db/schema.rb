@@ -11,17 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702032127) do
+ActiveRecord::Schema.define(version: 20150705044759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "assigned_tasks", force: :cascade do |t|
-    t.integer  "user_id",                                                                                                                null: false
-    t.integer  "task_id",                                                                                                                null: false
+    t.integer  "user_id",    null: false
+    t.integer  "task_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "profile_picture", default: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/professional-corgi_b7uiec.jpg"
   end
 
   add_index "assigned_tasks", ["task_id"], name: "index_assigned_tasks_on_task_id", using: :btree
@@ -43,11 +42,10 @@ ActiveRecord::Schema.define(version: 20150702032127) do
   add_index "comments", ["task_id"], name: "index_comments_on_task_id", using: :btree
 
   create_table "memberships", force: :cascade do |t|
-    t.integer  "user_id",         null: false
-    t.integer  "project_id",      null: false
+    t.integer  "user_id",    null: false
+    t.integer  "project_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "profile_picture"
   end
 
   add_index "memberships", ["project_id"], name: "index_memberships_on_project_id", using: :btree
