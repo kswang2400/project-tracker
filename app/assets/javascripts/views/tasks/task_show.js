@@ -10,19 +10,32 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
+    this.users = new BasecampApp.Collections.Users();
+
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.assignments(), 'add', this.addAssignmentSubview);
     this.listenTo(this.model.comments(), 'add', this.addCommentsSubview);
+    this.addNavBarSubview();
   },
 
   addAssignmentSubview: function (assignment) {
-    var subview = new BasecampApp.Views.AssignedIndexItem({ model: assignment });
+    var user = this.users.getOrFetch(assignment.get("user_id")); 
+
+    var subview = new BasecampApp.Views.AssignedIndexItem({ model: user });
     this.addSubview('.task-assignments', subview);
   },
 
   addCommentsSubview: function (comment) {
     var subview = new BasecampApp.Views.CommentShow({ model: comment });
     this.addSubview('.comments-section', subview);
+  },
+
+  addNavBarSubview: function () {
+    var subview = new BasecampApp.Views.NavBar({
+      tagged: false,
+      projects: false
+    });
+    this.addSubview('#backbone-sidebar', subview);
   },
 
   completeTask: function (event) {
