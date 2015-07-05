@@ -31,6 +31,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.listenTo(this.model.tasks(), 'add', this.addTaskSubview);
     
     this.addUsersSearchSubview();
+    this.addNavBarSubview();
   },
 
   addMembershipSubview: function (membership) {
@@ -40,6 +41,14 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       user: user
     });
     this.addSubview('.list-collaborators', subview);
+  },
+
+  addNavBarSubview: function () {
+    var subview = new BasecampApp.Views.NavBar({
+      tagged: false,
+      projects: false
+    });
+    this.addSubview('#backbone-sidebar', subview);
   },
 
   addTaskSubview: function (task) {

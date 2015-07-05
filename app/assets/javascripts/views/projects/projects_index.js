@@ -20,9 +20,7 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
     this.listenTo(this.tagged, 'add', this.addTaggedProjectsSubview);
     this.listenTo(this.tagged, 'sync', this.render);
 
-    // updates number of projects in sidebar whenever add
-    // delete is still funky, listener is getting hit but need
-    // to do something other than add subview
+    // updates number of projects in sidebar whenever add or remove
     this.collection.bind("add remove", function () {
       this.addNavBarSubview();
     }.bind(this));

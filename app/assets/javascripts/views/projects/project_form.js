@@ -25,8 +25,7 @@ BasecampApp.Views.ProjectForm = Backbone.CompositeView.extend({
       success: function () {
         // add new project to collection so you don't have to refetch
         that.collection.add(that.model, { merge: true });
-        Backbone.history.navigate("#projects/" + that.model.get('id'), { trigger: true });
-        that.$el.find('.new-project').remove(); // remove form from DOM
+        that.$el.remove(); 
       }
     })
   },

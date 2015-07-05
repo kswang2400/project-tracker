@@ -14,6 +14,7 @@
   // projects index view that fetches two separate collections of projects
   projectIndex: function () {
     this.projects.fetch();
+    
     var tagged = new BasecampApp.Collections.Projects();
     tagged.fetch({ data: { tagged: true } });
 
