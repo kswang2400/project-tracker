@@ -8,19 +8,19 @@
 
 User.create(username: "kevin_wang", 
   password: "password123", 
-  profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435799495/sxsn38m5qgbrsjleorz6.png")
+  profile_picture: ENV["kevin_picture"])
 User.create(username: "jimothy_smith", 
   password: "password123", 
-  profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/prof1_qiylm8.png")
+  profile_picture: ENV["jimothy_picture"])
 User.create(username: "jolene_anderson", 
   password: "password123", 
-  profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/prof3_nkspjg.png")
+  profile_picture: ENV["jolene_picture"])
 User.create(username: "kush_ruggeri", 
   password: "password123", 
-  profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800655/kush_k7fzhv.jpg")
+  profile_picture: ENV["kush_picture"])
 User.create(username: "guest_user", 
   password: "password", 
-  profile_picture: "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/professional-corgi_b7uiec.jpg")
+  profile_picture: ENV["default_picture"])
 
 # User.all.each do |user|
 #   seed_new_user(user)

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def create
-    params["user"]["profile_picture"] ||= "http://res.cloudinary.com/du0durr8z/image/upload/v1435800470/professional-corgi_b7uiec.jpg"
+    params["user"]["profile_picture"] ||= ENV["default_picture"]
     @user = User.new(user_params)
 
     if @user.save
@@ -53,6 +53,14 @@ class UsersController < ApplicationController
   
   private
 
+  def slack_notify(user)
+    notifier = Slack::Notifier.new ENV['slack_webhook_url'], 
+      channel: "#notifier", 
+      username: "welcome ghost"
+    message = "#{user.username} has just joined Project Tracker"
+    notifier.ping message, icon_emoji: ":ghost:"
+  end
+
   def user_params
     params.require(:user).permit(
       :username, 
@@ -61,13 +69,5 @@ class UsersController < ApplicationController
       :email, 
       :profile_picture
     )
-  end
-
-  def slack_notify(user)
-    notifier = Slack::Notifier.new ENV['slack_webhook_url'], 
-      channel: "#notifier", 
-      username: "notifier"
-    message = "#{user.username} has just joined Project Tracker"
-    notifier.ping message
   end
 end

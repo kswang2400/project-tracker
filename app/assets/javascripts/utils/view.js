@@ -1,6 +1,6 @@
 _.extend(Backbone.View.prototype, {
+  // fuck you zombie view, wtf
   close: function () {
-    // fuck you zombie view, wtf
     this.unbind();
     this.stopListening();
     this.undelegateEvents();
