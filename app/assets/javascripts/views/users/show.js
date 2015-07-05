@@ -51,15 +51,8 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
   upload: function (event) {
     event.preventDefault();
     cloudinary.openUploadWidget(window.CLOUDINARY_SETTINGS, function(error, payload) {
-      var attrs = {
-        profile_picture: payload[0].url,
-      };
-
-      this.model.save(attrs, {
-        success: function () {
-          alert(this.model.get('profile_picture'));
-        }.bind(this)
-      });
+      var attrs = { profile_picture: payload[0].url };
+      this.model.save(attrs);
     }.bind(this));
   }
 })
