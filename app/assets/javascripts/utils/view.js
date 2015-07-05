@@ -1,14 +1,10 @@
 _.extend(Backbone.View.prototype, {
   close: function () {
-    this.remove();
+    // fuck you zombie view, wtf
     this.unbind();
-
-    if (this.onClose) {
-      this.onClose();
-    }
-  },
-
-  onClose: function () {
-    this.model.unbind("change", this.render);
+    this.stopListening();
+    this.undelegateEvents();
+    this.$el.empty().off();
+    this.remove();
   }
 })
