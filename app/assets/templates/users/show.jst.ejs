@@ -20,7 +20,14 @@
 <div class="user-show-body clearfix">
   <!-- User Tasks -->
   <div class="user-show-tasks">
-    <h2>To Do List</h2>
+    <div class="row">
+      <h2 id="user-show-task-title">To Do List</h2>
+      <p class="pull-right" id="user-show-task-stats">
+        <font color="red"><%= incomplete %> Incomplete Tasks</font><br>
+        <font color="green"><%= completed %> Completed Tasks</font>
+      </p>
+    </div>
+    
     <div class="to-do-container pre-scrollable">
       <ul class="to-do-list" id="to-do"></ul>
       <ul class="to-do-list" id="completed"></ul>

@@ -44,7 +44,13 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template({ user: this.model });
+    var completed = this.model.completed().length
+    var incomplete = this.model.tasks().length
+    var content = this.template({ 
+      user: this.model,
+      completed: completed,
+      incomplete: incomplete
+    });
     this.$el.html(content);
     this.attachSubviews(); 
     return this;
