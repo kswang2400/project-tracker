@@ -7,11 +7,21 @@ BasecampApp.Models.User = Backbone.Model.extend({
       delete payload.projects;
     }
 
+    if (payload.completed) {
+      this.completed().set(payload.completed, { parse: true });
+      delete payload.completed;
+    }
+
     if (payload.tasks) {
       this.tasks().set(payload.tasks, { parse: true });
       delete payload.tasks;
     }
     return payload;
+  },
+
+  completed: function () {
+    this._completed = this._completed || new BasecampApp.Collections.Tasks();
+    return this._completed
   },
 
   projects: function () {

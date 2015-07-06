@@ -15,7 +15,13 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
 
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.tasks(), 'add', this.addTaskListItem);
+    this.listenTo(this.model.completed(), 'add', this.addCompletedTaskListItem);
     this.addNavBarSubview();
+  },
+
+  addCompletedTaskListItem: function (task) {
+    var subview = new BasecampApp.Views.UserTaskListItem({ model: task });
+    this.addSubview(".to-do-list#completed", subview);
   },
 
   addNavBarSubview: function () {
@@ -28,7 +34,7 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
 
   addTaskListItem: function (task) {
     var subview = new BasecampApp.Views.UserTaskListItem({ model: task });
-    this.addSubview(".to-do-list", subview);
+    this.addSubview(".to-do-list#to-do", subview);
   },
 
   editInfo: function (event) {
