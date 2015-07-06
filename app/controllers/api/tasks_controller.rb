@@ -19,9 +19,9 @@ module Api
     end
 
     def index
-      @task = Task.all
+      @tasks = Task.all
 
-      render json: @task
+      render "index.json.jbuilder"
     end
 
     def update

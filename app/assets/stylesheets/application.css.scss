@@ -38,7 +38,7 @@ body {
   min-width: 550px;
 }
 
-.btn-custom {
+.btn-success {
   background-color: hsl(170, 100%, 39%) !important;
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00c6a5", endColorstr="#00c6a5");
@@ -55,7 +55,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.btn-success {
+.btn-dark-teal {
   background-color: hsl(195, 60%, 35%) !important;
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2d95b7", endColorstr="#23748e");
@@ -150,7 +150,6 @@ body {
 
 .delete-task {
   border-radius: 25%;
-  margin: 8px 0px 0px 8px;
   padding: 8px;
 }
 
@@ -350,11 +349,6 @@ nav a {
 
 .task-dropdown {
   margin-top: 15px;
-}
-
-.task-list-item {
-  padding: 8px 0px;
-  margin-right: 20px;
 }
 
 .task-show {

@@ -1,7 +1,23 @@
-<li class="task-list-item">
-  <a href="/#projects/<%= task.escape('project_id') %>/tasks/<%= task.id %>" class="col-md-6">
-    <%= task.escape('title') %>
-  </a>
-  <div class="task-project col-md-3"><%= task.escape('project_title') %></div>
-  <div class="task-status col-md-3 pull-right"><%= task.escape('status') %></div>
-</li>
+<div class="col-md-3">
+  Project: <a href="/#projects/<%= task.escape('project_id') %>"><%= task.escape('project_title') %></a><br>
+  Author: <a href="/#users/<%= task.escape("author_id") %>"><%= task.escape('author') %></a>
+</div>
+
+<div class="col-md-5">
+  <p>Task: <a href="/#projects/<%= task.escape('project_id') %>/tasks/<%= task.id %>">
+  <%= task.escape('title') %></a></p>
+</div>
+
+<div class="col-md-2">
+  <p id="task-status"><%= task.escape('status') %></p>
+</div>
+
+<div class="user-buttons col-md-2">
+  <% if (task.escape('status') !== "completed") { %>
+    <button type="button" class="complete-task btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+  <% } %>
+
+  <% if (window.CURRENT_USER_ID === task.escape('author_id')) { %>
+    <button type="button" class="delete-task btn-danger pull-right"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+  <% } %>
+</div>

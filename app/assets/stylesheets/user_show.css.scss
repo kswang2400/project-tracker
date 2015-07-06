@@ -13,13 +13,29 @@
   top: 40px;
 }
 
+.task-list-item {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 12px 0px;
+}
+
+.to-do-list {
+  /*border: 2px solid black;*/
+  padding: 4px 10px;
+}
+
 #upload-prof-pic {
   margin: 24px 40px;
 }
 
+.user-buttons {
+  height: 10px;
+}
+
 .user-nav {
   cursor: pointer;
-  padding: 0px 20px;
+  padding: 0px 40px;
 }
 
 .user-show {
@@ -27,33 +43,30 @@
 }
 
 .user-show-nav {
-  padding-top: 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+  /*border: 2px solid red;*/
   height: 40px;
+  padding-left: 350px;
+  padding-top: 12px;
   width: 100%;
-  background-color: white;
 }
 
 .user-show-header {
   background-color: white;
-  border: 2px solid blue;
+  /*border: 2px solid blue;*/
   margin-top: 128px;
   padding: 8px;
 }
 
 .user-show-body {
-  border: 3px solid black;
-  padding: 12px 60px;
+  /*border: 3px solid black;*/
+  padding: 12px 40px;
   height: 500px;
 }
 
 .user-show-edit {
   background-color: white;
   border-radius: 5px
-}
-
-.user-show-nav {
-  padding-left: 250px;
-  border: 2px solid red;
 }
 
 .user-show-tasks {
