@@ -2,11 +2,14 @@
 
 <div class="user-show-header clearfix">
   <h1 id="user-username"><%= user.escape('username') %></h1>
-  <button class="back-user btn btn-pri">Back</button>
+  <button class="btn btn-pri pull-right" id="upload-prof-pic">Upload Profile Picture</button>
+  <button class="btn btn-pri pull-right" id="update-info">Upload Info</button>
 </div>
 
 <div class="user-show-nav clearfix">
-  <button class="btn btn-pri pull-right" id="upload-prof-pic">Upload Profile Picture</button>
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">    
+    <button class="btn btn-pri" id="user-task-list">Task List</button>
+  </nav>
 </div>
 
 <!-- Profile Picture -->
