@@ -1,17 +1,21 @@
+<!-- Project and Author -->
 <div class="col-md-3">
   Project: <a href="/#projects/<%= task.escape('project_id') %>"><%= task.escape('project_title') %></a><br>
   Author: <a href="/#users/<%= task.escape("author_id") %>"><%= task.escape('author') %></a>
 </div>
 
+<!-- Task Title -->
 <div class="col-md-5">
   <p>Task: <a href="/#projects/<%= task.escape('project_id') %>/tasks/<%= task.id %>">
   <%= task.escape('title') %></a></p>
 </div>
 
+<!-- Task Status -->
 <div class="col-md-2">
   <p id="task-status"><%= task.escape('status') %></p>
 </div>
 
+<!-- User Buttons -->
 <div class="user-buttons col-md-2">
   <% if (task.escape('status') !== "completed") { %>
     <button type="button" class="complete-task btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
