@@ -33,7 +33,7 @@ BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
       // remove View from DOM
       this.collection.remove(this.model);
       this.model.destroy();
-      this.close();
+      this.remove();
     }
   },
 

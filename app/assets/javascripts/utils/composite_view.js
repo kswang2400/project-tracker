@@ -35,11 +35,32 @@ Backbone.CompositeView = Backbone.View.extend({
     });
   },
 
+  removeModelSubview: function (selector, model) {
+    var selectorSubviews = this.subviews(selector);
+
+    // var i = selectorSubviews.indexOf(function (subview) {
+    //   return subview.model === model;
+    // });
+    
+    // if (i === -1) { return; }
+
+    for (var i = 0; i < selectorSubviews.length; i++) {
+      if (selectorSubviews[i].model == model) {
+        var j = i
+      };
+    };
+    
+    if (j === undefined) { return; }
+
+    selectorSubviews[j].remove();
+    selectorSubviews.splice(j, 1);
+  },
+
   removeSubview: function (selector, subview) {
     // remove actual view
     subview.remove();
 
-    // remove subview from CompositeView object so future renders so reproduce the deleted view
+    // remove subview from CompositeView object so future renders don't reproduce the deleted view
     var subviews = this.subviews(selector);
     subviews.splice(subviews.indexOf(subview), 1);
   },
