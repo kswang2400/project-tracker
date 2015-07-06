@@ -3,7 +3,10 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
   className: 'user-show col-md-8 col-md-offset-2',
 
   events: { 
+    "click #update-info": "showEdit",
     "click #upload-prof-pic": "upload",
+    "click #user-task-list": "showTask",
+    "click #user-show-info": "showInfo",
     "submit": "editInfo"
   },
 
@@ -39,6 +42,24 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews(); 
     return this;
+  },
+
+  showEdit: function () {
+    this.$el.find('.user-show-edit').removeClass("hidden");
+    this.$el.find('.user-show-tasks').addClass("hidden");
+    this.$el.find('.user-show-info').addClass("hidden");
+  },
+
+  showInfo: function () {
+    this.$el.find('.user-show-info').removeClass("hidden");
+    this.$el.find('.user-show-edit').addClass("hidden");
+    this.$el.find('.user-show-tasks').addClass("hidden");
+  },
+
+  showTask: function () {
+    this.$el.find('.user-show-tasks').removeClass("hidden");
+    this.$el.find('.user-show-edit').addClass("hidden");
+    this.$el.find('.user-show-info').addClass("hidden");
   },
 
   upload: function (event) {

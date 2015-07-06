@@ -1,15 +1,15 @@
 <div id="backbone-sidebar"></div>
 
 <div class="user-show-header clearfix">
-  <h1 id="user-username"><%= user.escape('username') %></h1>
-  <button class="btn btn-pri pull-right" id="upload-prof-pic">Upload Profile Picture</button>
-  <button class="btn btn-pri pull-right" id="update-info">Upload Info</button>
+  <h1 id="user-show-username"><%= user.escape('username') %></h1>
+  <button class="btn pull-right" id="upload-prof-pic">Upload Profile Picture</button>
+
 </div>
 
-<div class="user-show-nav clearfix">
-  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">    
-    <button class="btn btn-pri" id="user-task-list">Task List</button>
-  </nav>
+<div class="user-show-nav clearfix">   
+  <a class="user-nav" id="user-task-list">Task List</a>
+  <a class="user-nav" id="user-show-info">About</a>
+  <a class="user-nav" id="update-info">Update Info</a>
 </div>
 
 <!-- Profile Picture -->
@@ -20,13 +20,19 @@
 <div class="user-show-body clearfix">
 
   <!-- User Tasks -->
-  <div class="user-show-tasks col-md-5">
+  <div class="user-show-tasks">
     <h2>To Do List</h2>
     <ul class="to-do-list pre-scrollable"></ul>
   </div>
 
-  <div class="user-show-edit col-md-6 pull-right">
-    <form class="new-form hidden">
+  <!-- User Info -->
+  <div class="user-show-info hidden">
+    <h2>About</h2>
+  </div>
+
+  <!-- User Edit -->
+  <div class="user-show-edit hidden">
+    <form class="new-form col-md-6 col-md-offset-3">
       <h1 class="form-title">Edit Info</h1>
 
       <div class="form-group">
@@ -35,11 +41,6 @@
                value="<%= user.escape('username') %>" 
                id="user-username"/>
       </div>
-
-<!--       <div class="form-group">
-        <label for="user_password">Password</label>
-        <input type="password" class="form-control" name="user[password]"id="user-password"></input>
-      </div>     -->  
 
       <div class="form-group">
         <label for="user_bio">Bio</label>
@@ -51,11 +52,6 @@
         <input class="form-control" name="user[email]" id="user-email"
           value="<%= user.escape('email') %>"/>
       </div>
-<!-- 
-      <div class="form-group">
-        <label for="user_profile_picture">Profile Picture</label>
-        <input class="form-control" name="user[profile_picture]" id="user-profile_picture"/>
-      </div> -->
 
       <div class="form-group">
         <input type="submit" class="btn btn-pri">

@@ -14,17 +14,21 @@
 }
 
 #upload-prof-pic {
-  margin: 20px 40px;
+  margin: 24px 40px;
+}
+
+.user-nav {
+  cursor: pointer;
+  padding: 0px 20px;
 }
 
 .user-show {
-  /*background-color: #aaa;*/
-  padding-bottom: 100px;
   position: relative;
 }
 
 .user-show-nav {
-  height: 140px;
+  padding-top: 8px;
+  height: 40px;
   width: 100%;
   background-color: white;
 }
@@ -32,14 +36,14 @@
 .user-show-header {
   background-color: white;
   border: 2px solid blue;
-  border-radius: 5px;
-  margin: 20px;
+  margin-top: 128px;
   padding: 8px;
 }
 
 .user-show-body {
   border: 3px solid black;
-  padding: 12px;
+  padding: 12px 60px;
+  height: 500px;
 }
 
 .user-show-edit {
@@ -57,7 +61,7 @@
   border-radius: 5px;
 }
 
-#user-username {
+#user-show-username {
   float: left;
   margin-left: 250px;
 }
