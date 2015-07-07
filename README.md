@@ -4,6 +4,16 @@
 
 [production]: https://www.projecttracker.biz/
 
+Version History
+
+1.1.0 - First Update -- coming soon!
+Site redesign, models more informative, integration with Slack!
+
+1.0.0 - Initial Public Deploy -- June 23, 2015
+This release included the basic mvp, users, projects, tasks, comments, images, etc.
+
+##
+
 ## Minimum Viable Product
 ProjectTracker is a clone of Basecamp built on Rails and Backbone. Users can:
 
