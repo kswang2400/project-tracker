@@ -36,7 +36,11 @@
 
   <!-- User Info -->
   <div class="user-show-info hidden">
-    <h2>About</h2>
+    <h2 id="user-show-about-title">About</h2>
+    <ul>
+      <li class="user-stats"><h4>Bio:</h4> <%= user.escape("bio") %></li>
+      <li class="user-stats"><h4>Email:</h4> <%= user.escape("email") %></li>
+    </ul>
   </div>
 
   <!-- User Edit -->
