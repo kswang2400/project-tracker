@@ -15,6 +15,27 @@
   height: 100%;
 }
 
+.member-circle-img:hover .member-username{
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.member-username {
+  background: rgba(29, 106, 154, 0.72);
+  color: #fff;
+  font-size: 12px;
+  padding: 2px;
+  position: absolute;
+  z-index: 1001;
+
+
+  visibility: hidden;
+  opacity: 0;
+
+  -webkit-transition: visibility opacity 0.2s;
+}
+
 .project-description {
   font-size: 16px;
 }
