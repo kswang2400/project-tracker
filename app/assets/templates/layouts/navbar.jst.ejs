@@ -26,7 +26,19 @@
     <% } %>
 
     <div class="bottom">
-      <li><a href="/#home" class="customer-support">
+      <div class="hidden" id="customer-question">
+        <form class="form-group" id="question">
+          <h5 class="form-control">What's your question?</h5>
+
+          <textarea class="form-control" name="question" id="question"></textarea>
+
+          <input type="submit" class="btn btn-success" value="Submit"/>
+        </form>
+
+        <div class="hidden" id="response">Question Submitted!</div>
+      </div>
+
+      <li><a class="customer-support">
         <span class="glyphicon glyphicon-blackboard btn-lg" aria-hidden="true"></span>Customer Support</a>
       </li>
       
