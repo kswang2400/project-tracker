@@ -44,6 +44,14 @@ class User < ActiveRecord::Base
     user
   end
 
+  def customer_support()
+    new_ticket = Slack::Notifier.new ENV['slack_webhook_url'],
+      channel: "#customer-support",
+      username: current_user
+    message = "new question"
+    new_ticket.ping message
+  end
+
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end

@@ -5,7 +5,7 @@ window.BasecampApp = {
   Routers: {},
   initialize: function() {
     new BasecampApp.Routers.Router({ 
-      $rootEl: $('#main')
+      $rootEl: $("#main")
     });
     Backbone.history.start();
   }

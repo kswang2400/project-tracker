@@ -20,17 +20,15 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
 
     this.listenTo(this.tagged, 'add', this.addTaggedProjectsSubview);
     this.listenTo(this.tagged, 'sync', this.render);
-    this.addNavBarSubview();
 
     this.listenTo(this.collection, 'remove', this.removeProjectSubview);
+    this.listenTo(this.tagged, 'remove', this.removeTaggedSubview);
 
     // updates number of projects in sidebar whenever add or remove
     this.collection.bind("add remove", function () { this.addNavBarSubview() }.bind(this));
     this.tagged.bind("add remove", function () { this.addNavBarSubview() }.bind(this));
-  },
 
-  removeProjectSubview: function (project) {
-    this.removeModelSubview('.projects-owned-index', project);
+    this.addNavBarSubview();
   },
 
   addNavBarSubview: function () {
@@ -72,6 +70,14 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
       collection: this.collection
     });
     $('#main').prepend(projectFormView.render().$el);
+  },
+  
+  removeProjectSubview: function (project) {
+    this.removeModelSubview('.projects-owned-index', project);
+  },
+
+  removeTaggedSubview: function (tagged) {
+    this.removeModelSubview('.projects-tagged-index', tagged);
   },
 
   render: function () {

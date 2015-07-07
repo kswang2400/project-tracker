@@ -20,7 +20,7 @@
 
     var view = new BasecampApp.Views.ProjectsIndex({ 
       collection: this.projects,
-      tagged: tagged
+      tagged: tagged,
     });
 
     this._swapView(view);
