@@ -1,18 +1,42 @@
+
+.bottom {
+  bottom: 4%;
+  position: absolute;
+  width: 100%;
+}
+
 #customer-question {
   background-color: rgba(256, 256, 256, 0.8);
+  padding-bottom: 16px;
+  transition: visibility 1.0 opacity;
+}
+
+.customer-support:hover {
+  cursor: pointer;
+}
+
+.nav-side-bar {
+  width: 100%;
+}
+
+#question {
+  margin: 10px 0px;
+  padding-top: 4px;
+  width: 100%;
+}
+
+#response {
+  text-align: center;
+  margin-left: 20px;
+  width: 200px;
+}
+
+.sidebar-nav {
+  height: 90%;
+  width: 40%;
 }
 
 #sidebar-wrapper {
   height: 100%;
   position: relative;
-}
-
-.sidebar-nav {
-  height: 100%;
-}
-
-.bottom {
-  bottom: 10%;
-  position: absolute;
-  width: 100%;
 }
