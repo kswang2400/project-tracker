@@ -27,12 +27,19 @@
     </div>
     
     <hr>
+    
     <!-- Project Buttons -->
     <div class="project-header-buttons clearfix">
+      <!-- Upload -->
       <button class="upload-button btn-xs btn btn-pri">Upload Image</button>
+
+      <!-- Invite Users -->
       <% if (window.CURRENT_USER_ID === project.escape('owner_id')) { %>
         <button type="button" class="invite-users btn btn-xs btn-success pull-right">Invite Users</button>
       <% } %>
+
+      <!-- Github, you guys ain't ready for this yet, sorry -->
+      <!-- <button type="button" class="btn btn-xs btn-primary" id="assign-repo">Find Github Repo</button> -->
       <!-- <button class="create-pdf">Download PDF</button> -->
     </div>
 

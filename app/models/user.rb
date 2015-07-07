@@ -44,6 +44,16 @@ class User < ActiveRecord::Base
     user
   end
 
+  def self.github_repos(user)
+    repos = []
+    github_username = user.username
+    
+    Github.new.repos.list user: github_username do |repo|
+      repos.push(repo.name)
+    end
+    repos
+  end
+
   def customer_support(question)
     new_ticket = Slack::Notifier.new ENV['slack_webhook_url'],
       channel: "#customer-support",

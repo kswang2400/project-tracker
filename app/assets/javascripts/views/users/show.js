@@ -1,6 +1,6 @@
 BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
-  template: JST['users/show'],
-  className: 'user-show col-md-8 col-md-offset-2',
+  template: JST["users/show"],
+  className: "user-show col-md-8 col-md-offset-2",
 
   events: { 
     "click #update-info": "showEdit",
@@ -13,9 +13,10 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.users = new BasecampApp.Collections.Users();
 
-    this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.model.tasks(), 'add', this.addTaskListItem);
-    this.listenTo(this.model.completed(), 'add', this.addCompletedTaskListItem);
+    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model.tasks(), "add", this.addTaskListItem);
+    this.listenTo(this.model.completed(), "add", this.addCompletedTaskListItem);
+    this.listenTo(this.model.repos(), "add", this.render);
     this.addNavBarSubview();
   },
 
@@ -29,7 +30,7 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
       tagged: false,
       projects: false
     });
-    this.addSubview('#backbone-sidebar', subview);
+    this.addSubview("#backbone-sidebar", subview);
   },
 
   addTaskListItem: function (task) {
@@ -39,17 +40,19 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
 
   editInfo: function (event) {
     event.preventDefault();
-    var new_attr = this.$el.find('form').serializeJSON();
+    var new_attr = this.$el.find("form").serializeJSON();
     this.model.save(new_attr["user"]);
   },
 
   render: function () {
     var completed = this.model.completed().length
     var incomplete = this.model.tasks().length
+    var repos = this.model.repos()
     var content = this.template({ 
       user: this.model,
       completed: completed,
-      incomplete: incomplete
+      incomplete: incomplete,
+      repos: repos
     });
     this.$el.html(content);
     this.attachSubviews(); 
@@ -57,21 +60,21 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
   },
 
   showEdit: function () {
-    this.$el.find('.user-show-edit').removeClass("hidden");
-    this.$el.find('.user-show-tasks').addClass("hidden");
-    this.$el.find('.user-show-info').addClass("hidden");
+    this.$el.find(".user-show-edit").removeClass("hidden");
+    this.$el.find(".user-show-tasks").addClass("hidden");
+    this.$el.find(".user-show-info").addClass("hidden");
   },
 
   showInfo: function () {
-    this.$el.find('.user-show-info').removeClass("hidden");
-    this.$el.find('.user-show-edit').addClass("hidden");
-    this.$el.find('.user-show-tasks').addClass("hidden");
+    this.$el.find(".user-show-info").removeClass("hidden");
+    this.$el.find(".user-show-edit").addClass("hidden");
+    this.$el.find(".user-show-tasks").addClass("hidden");
   },
 
   showTask: function () {
-    this.$el.find('.user-show-tasks').removeClass("hidden");
-    this.$el.find('.user-show-edit').addClass("hidden");
-    this.$el.find('.user-show-info').addClass("hidden");
+    this.$el.find(".user-show-tasks").removeClass("hidden");
+    this.$el.find(".user-show-edit").addClass("hidden");
+    this.$el.find(".user-show-info").addClass("hidden");
   },
 
   upload: function (event) {

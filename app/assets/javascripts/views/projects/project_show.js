@@ -4,6 +4,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
   events: {
     // "click .create-pdf": "createPDF",
+    // "click #assign-repo": "linkGithub",
     "click #tasks-completed": "toggleActiveFolder",
     "click #tasks-incomplete": "toggleActiveFolder",
     "click .invite-users": "inviteUsers",
@@ -17,7 +18,6 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-
     this.users = new BasecampApp.Collections.Users();
 
     this.model.memberships().each(this.addMembershipSubview.bind(this));
@@ -123,6 +123,14 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       this.$el.find(".project-show-upload-bar").addClass("hidden");
     }
   },
+
+  // cool feature coming soon!
+  // linkGithub: function (event) {
+  //   event.preventDefault();
+  //   var github = new BasecampApp.Views.GithubForm();
+  //   $('#main').prepend(github.render().$el);
+  //   debugger;
+  // },
 
   newTask: function (event) {
     event.preventDefault();
