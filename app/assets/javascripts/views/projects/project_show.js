@@ -16,7 +16,8 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     "blur textarea": "updateAndSave"
   },
 
-  initialize: function (options) {
+  initialize: function () {
+
     this.users = new BasecampApp.Collections.Users();
 
     this.model.memberships().each(this.addMembershipSubview.bind(this));

@@ -20,16 +20,15 @@
   opacity: 1;
 }
 
-
 .member-username {
   background: rgba(29, 106, 154, 0.72);
   color: #fff;
   font-size: 12px;
+  opacity: 0;
   padding: 2px;
   position: absolute;
-  z-index: 1001;
   visibility: hidden;
-  opacity: 0;
+  z-index: 1001;
 }
 
 .project-description {
@@ -124,11 +123,13 @@
 }
 
 #stats-incomplete {
+  color: red;
   font-size: 14px;
   float: right;
 }
 
 #stats-complete {
+  color: blue;
   font-size: 14px;
   float: left;
 }
