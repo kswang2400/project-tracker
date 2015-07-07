@@ -44,10 +44,10 @@ class User < ActiveRecord::Base
     user
   end
 
-  def customer_support()
+  def customer_support
     new_ticket = Slack::Notifier.new ENV['slack_webhook_url'],
       channel: "#customer-support",
-      username: current_user
+      username: self.username
     message = "new question"
     new_ticket.ping message
   end

@@ -14,6 +14,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def customer_support
+    current_user.customer_support
+    render json: {}
+  end
+
   def index
     if params[:query]
       @users = User.where("LOWER(username) ~ ?",params[:query]).limit(6)

@@ -3,12 +3,23 @@ BasecampApp.Views.NavBar = Backbone.View.extend({
   className: "nav-side-bar",
 
   events: {
-    "click .sign-out": "signOut"
+    "click .sign-out": "signOut",
+    "click .customer-support": "customerSupport"
   },
 
   initialize: function (options) {
     this.projects = options.projects;
     this.tagged = options.tagged;
+  },
+
+  customerSupport: function () {
+    $.ajax({
+      url: "/customer_support",
+      type: "GET", 
+      success: function () {
+        alert("nice");
+      }
+    })
   },
 
   render: function () {

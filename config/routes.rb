@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
   resources :users
+
+  get '/customer_support', :to => "users#customer_support"
 end
