@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
     new_ticket = Slack::Notifier.new ENV['slack_webhook_url'],
       channel: "#customer-support",
       username: self.username
-    message = "#{self.username}       asks              #{question}"
+    message = "#{self.username}  asks  #{question}"
     new_ticket.ping message
   end
 
