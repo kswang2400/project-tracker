@@ -3,6 +3,7 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
   className: "user-show col-md-8 col-md-offset-2",
 
   events: { 
+    "click #assign-repo": "linkGithub",
     "click #update-info": "showEdit",
     "click #upload-prof-pic": "upload",
     "click #user-task-list": "showTask",
@@ -16,7 +17,7 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model.tasks(), "add", this.addTaskListItem);
     this.listenTo(this.model.completed(), "add", this.addCompletedTaskListItem);
-    this.listenTo(this.model.repos(), "add", this.render);
+
     this.addNavBarSubview();
   },
 
@@ -44,16 +45,24 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
     this.model.save(new_attr["user"]);
   },
 
+  linkGithub: function (event) {
+    event.preventDefault();
+    var github = new BasecampApp.Views.GithubForm({
+      repos: this.model.repos()
+    });
+    $('#main').prepend(github.render().$el);
+  },
+
   render: function () {
     var completed = this.model.completed().length
     var incomplete = this.model.tasks().length
-    var repos = this.model.repos()
+
     var content = this.template({ 
       user: this.model,
       completed: completed,
       incomplete: incomplete,
-      repos: repos
     });
+
     this.$el.html(content);
     this.attachSubviews(); 
     return this;

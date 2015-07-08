@@ -2,9 +2,6 @@
 
 <div class="modal-content">
   <form class="new-form col-md-4 col-md-offset-4">
-    <h2>Enter your github username</h2>
-    <textarea name="github"></textarea>
-
     <button class="btn btn-md btn-block" id="github-input">Search for Repos</button>
 
     <div class="dropdown">
@@ -12,12 +9,9 @@
         Dropdown
         <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Something else here</a></li>
-        <li><a href="#">Separated link</a></li>
-      </ul>
+
+      <!-- Repos List -->
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="repos-dropdown"></ul>
     </div>
   </form>
 </div>

@@ -1,7 +1,5 @@
 <div id="backbone-sidebar"></div>
 
-<div><%= repos %></div>
-
 <div class="user-show-header clearfix">
   <h1 id="user-show-username"><%= user.escape('username') %></h1>
   <button class="btn pull-right" id="upload-prof-pic">Upload Profile Picture</button>
@@ -43,6 +41,21 @@
       <li class="user-stats"><h4>Bio:</h4> <%= user.escape("bio") %></li>
       <li class="user-stats"><h4>Email:</h4> <%= user.escape("email") %></li>
     </ul>
+
+    <button type="button" class="btn btn-xs btn-primary" id="assign-repo">Find Github Repo</button>
+
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Repos
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="repos-dropdown">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
   </div>
 
   <!-- User Edit -->
