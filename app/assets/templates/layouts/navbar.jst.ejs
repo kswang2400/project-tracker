@@ -12,9 +12,6 @@
     <li><a href="/#home">
       <span class="glyphicon glyphicon-tasks btn-lg" aria-hidden="true"></span>Projects Index</a>
     </li>
-
-    <br>
-    <ul id="tree-route"></ul>
     
     <% if (tagged) { %> 
       <li class="sb-tagged-projects"><a href="#">
@@ -27,6 +24,11 @@
         <span class="my-projects glyphicon glyphicon-folder-open btn-lg" aria-hidden="true"></span><%= projects.length %> Personal Projects</a>
       </li>
     <% } %>
+
+    <div id="tree-route">
+      <ul id="nav-task-list"></ul>
+    </div>
+
 
     <div class="bottom">
       <div class="hidden" id="customer-question">

@@ -29,7 +29,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.listenTo(this.model.uploads(), "add", this.addUploadSubview);
     this.listenTo(this.model.tasks(), "add", this.addTaskSubview);
 
-    this.listenTo(this.model.tasks(), "sync", this.addTaskSubview);
+    this.listenTo(this.model.tasks(), "remove", this.removeTaskSubivew);
     
     this.addUsersSearchSubview();
     this.addNavBarSubview();
@@ -64,12 +64,26 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
   addTree: function () {
     var $tree = $("body").find("#tree-route")
-    $tree.empty();
-
-    var link = $("<a href='#'>")
+    var task_list = $("#nav-task-list");
+    debugger;
+    var project_link = $("<a href='#'>")
       .text(this.model.get("title"))
       .prepend('<span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>   ');
-    var project = $("<li>").append(link);
+    
+    var project = $("<li>")
+      .append(project_link)
+      .append($("<ul>").addClass("nav-task-list"));
+
+    this.model.tasks().forEach(function (task) {
+      var title = task.get("title")
+
+      var task_link = $("<a href='#'>")
+        .text(title)
+        .prepend('<span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>   ');
+      
+      task_list.append(task_link);
+    });
+
     $tree.append(project);
   },
 
@@ -144,6 +158,10 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       collection: this.model.tasks()
     });
     $("#main").prepend(taskForm.render().$el);
+  },
+
+  removeTaskSubview: function (task) {
+
   },
 
   render: function () { 
