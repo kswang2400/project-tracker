@@ -60,6 +60,17 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     }
   },
 
+  addTree: function () {
+    var $tree = $("body").find("#tree-route")
+    $tree.empty();
+
+    var link = $("<a href='#'>")
+      .text(this.model.get("title"))
+      .prepend('<span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>   ');
+    var project = $("<li>").append(link);
+    $tree.append(project);
+  },
+
   addUploadSubview: function (upload) {
     var subview = new BasecampApp.Views.UploadsIndexItem({ model: upload });
     this.addSubview(".carousel-inner", subview);
@@ -168,6 +179,8 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
         }.bind(this)
       });
     }.bind(this), 0);
+
+    this.addTree();
 
     return this;
   },
