@@ -1,13 +1,13 @@
 #div-completed {
   /*overflow: hidden;*/
   background-color: rgba(0, 0, 0, 0.3);
-  padding-top: 20px;
+  /*padding-top: 20px;*/
 }
 
 #div-incomplete {
   transition: height 0.8s ease 0s;
   background-color: rgba(0, 0, 0, 0.3);
-  padding-top: 20px;
+  /*padding-top: 20px;*/
 }
 
 .main-content {
@@ -88,13 +88,21 @@
 .project-show-task-title {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  margin-left: 80px;
+  /*margin-left: 80px;*/
   padding: 8px;
 }
 
 .project-show-task-title:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
+/*.project-tasks.active {
+  height: 90%;  
+}
+
+.project-tasks.active {
+  height: 10%;
+}*/
 
 .project-title {
   font-size: 28px;
@@ -146,12 +154,14 @@
 .tasks-container-body-completed.pre-scrollable {
   margin: 12px 0px 0px 8px;
   max-height: 90% !important;
+  margin-left: 5%;
 }
 
 
 .tasks-container-body-incomplete.pre-scrollable {
   margin: 12px 0px 0px 8px;
   max-height: 90% !important;
+  margin-left: 5%;
 }
 
 .task-folder {
