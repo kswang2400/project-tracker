@@ -206,8 +206,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     var attr = $(event.currentTarget).data("attr");
     var input = $(event.currentTarget).data("input");
     var newAttr = {};
-    newAttr[attr] = this.$el.find(input).val();
-
+    newAttr[attr] = $("#project-show-main").find(input).val();
     this.model.save(newAttr);
 
     if (attr == "title") {
