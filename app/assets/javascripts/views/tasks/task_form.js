@@ -7,7 +7,7 @@ BasecampApp.Views.TaskForm = Backbone.CompositeView.extend({
     'keydown': 'esc',
     "click .modal-backdrop": "removeModal"
   },
-
+  
   initialize: function (options) {
     this.project = options.project;
   },

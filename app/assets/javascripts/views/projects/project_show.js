@@ -65,7 +65,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   addTree: function () {
     var $tree = $("body").find("#tree-route")
     var task_list = $("#nav-task-list");
-    debugger;
+
     var project_link = $("<a href='#'>")
       .text(this.model.get("title"))
       .prepend('<span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>   ');
@@ -75,13 +75,15 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       .append($("<ul>").addClass("nav-task-list"));
 
     this.model.tasks().forEach(function (task) {
-      var title = task.get("title")
+      if (task.get("status") === "incomplete") {
+        var title = task.get("title");
 
-      var task_link = $("<a href='#'>")
-        .text(title)
-        .prepend('<span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>   ');
-      
-      task_list.append(task_link);
+        var task_link = $("<a href='#'>")
+          .text(title)
+          .prepend('<span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>   ');
+        
+        task_list.append(task_link);
+      }
     });
 
     $tree.append(project);
@@ -180,9 +182,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
           }
         }.bind(this)
       });
-    }.bind(this), 0);
 
-    setTimeout(function () {
       this.$el.find("#droppable-assignment").droppable({
         drop: function(event, ui) {
           if ($(ui.draggable[0]).data("task-id") === undefined) {
@@ -199,8 +199,6 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
         }.bind(this)
       });
     }.bind(this), 0);
-
-    this.addTree();
 
     return this;
   },
