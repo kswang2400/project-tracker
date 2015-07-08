@@ -3,6 +3,20 @@
   margin: 16px;
 }
 
+.dropdown {
+  width: 200px;
+}
+
+.github-list-item {
+  padding: 4px 4px 4px 12px;
+}
+
+.github-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  cursor: pointer;
+}
+
 .profile-picture {
   height: 204px;
   width: 204px;
@@ -11,6 +25,12 @@
   margin-left: 40px;
   position: absolute;
   top: 40px;
+}
+
+.scrollable-menu {
+  height: auto;
+  max-height: 300px;
+  overflow-x: hidden;
 }
 
 .task-list-item {

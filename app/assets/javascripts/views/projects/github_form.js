@@ -9,7 +9,8 @@ BasecampApp.Views.GithubForm = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
-    this.repos = options.repos
+    this.repos = options.repos;
+    this.username = options.username;
   },
 
   esc: function (event) {
@@ -26,7 +27,7 @@ BasecampApp.Views.GithubForm = Backbone.CompositeView.extend({
   populateList: function () {
     var $reposDropdown = this.$el.find("#repos-dropdown")
     this.repos[0].forEach(function (repo) {
-      $reposDropdown.append($("<li>").text(repo).attr("name", repo));
+      $reposDropdown.append($("<li>").text(repo).attr("name", repo).addClass("github-list-item"));
     });
   },
 
@@ -35,7 +36,9 @@ BasecampApp.Views.GithubForm = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template();
+    var content = this.template({
+      username: this.username
+    });
     this.$el.html(content);
     this.populateList();
     return this;

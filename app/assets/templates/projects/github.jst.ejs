@@ -2,16 +2,14 @@
 
 <div class="modal-content">
   <form class="new-form col-md-4 col-md-offset-4">
-    <button class="btn btn-md btn-block" id="github-input">Search for Repos</button>
-
     <div class="dropdown">
       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Dropdown
+        <%= username %>
         <span class="caret"></span>
       </button>
 
       <!-- Repos List -->
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="repos-dropdown"></ul>
+      <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu1" id="repos-dropdown"></ul>
     </div>
   </form>
 </div>

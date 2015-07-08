@@ -48,7 +48,8 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
   linkGithub: function (event) {
     event.preventDefault();
     var github = new BasecampApp.Views.GithubForm({
-      repos: this.model.repos()
+      repos: this.model.repos(),
+      username: this.model.get("username")
     });
     $('#main').prepend(github.render().$el);
   },
