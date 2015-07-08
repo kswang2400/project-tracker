@@ -195,7 +195,13 @@ body {
 }
 
 .guest-login {
-  font-size: 60px;
+  border-radius: 50px;
+  font-size: 25px;
+  width: 300px;
+}
+
+.guest-login:hover {
+  text-decoration: none;
 }
 
 h3 {
