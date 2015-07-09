@@ -21,13 +21,13 @@ BasecampApp.Models.Project = Backbone.Model.extend({
 
     if (payload.completed_tasks) {
       this.num_complete = payload.completed_tasks.length
-      this.completed_tasks().set(payload.completed_tasks);
+      this.completed_tasks().set(payload.completed_tasks, { parse: true });
       delete payload.completed_tasks
     }
 
     if (payload.incomplete_tasks) {
       this.num_incomplete = payload.incomplete_tasks.length
-      this.incomplete_tasks().set(payload.incomplete_tasks);
+      this.incomplete_tasks().set(payload.incomplete_tasks, { parse: true });
       delete payload.incomplete_tasks
     }
 

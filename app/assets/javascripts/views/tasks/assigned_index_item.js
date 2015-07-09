@@ -7,8 +7,8 @@ BasecampApp.Views.AssignedIndexItem = Backbone.View.extend({
     return {
       "data-id": this.model.id,
       "data-user-id": this.model.get("user_id"),
-      "data-task-id": this.model.get("task_id"),
-      "style": "z-index: 10"
+      "data-task-id": this.model.get("task_id")
+      // "style": "z-index: 10"
     }
   },
 
