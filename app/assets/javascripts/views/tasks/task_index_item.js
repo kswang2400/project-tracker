@@ -32,7 +32,6 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
   },
 
   checkEmptyAssignments: function () {
-    debugger;
     var notice = this.$el.find(".assigned-users")
     if (notice.is(":empty")) {
       notice.append($("<p>")
