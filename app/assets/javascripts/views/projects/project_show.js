@@ -79,7 +79,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     
     var project = $("<li>")
       .append(project_link)
-      .append($("<ul>").addClass("nav-task-list hidden"));
+      .append($("<ul>").addClass("nav-task-list pre-scrollable hidden"));
 
     $("body").find("#tree-route").append(project);
     var $task_list = $(".nav-task-list");
