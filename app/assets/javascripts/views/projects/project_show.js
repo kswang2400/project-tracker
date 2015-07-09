@@ -59,6 +59,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       model: task,
       collection: this.model.incomplete_tasks()
     });
+
     if (task.get("status") === "completed") {
       this.addSubview(".tasks-container-body-completed", subview);
     } else {
