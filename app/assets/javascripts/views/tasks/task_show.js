@@ -3,6 +3,7 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   className: "task-show col-md-10 col-md-offset-1",
 
   events: {
+    "click .current-task": "eventPreventDefault",
     "click .create-comment": "createComment",
     "click .task-complete": "completeTask",
   },
@@ -49,11 +50,20 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   backToProject: function () {
     $("#route-back-project").empty();
     var project_id = this.model.get("project_id");
+
     var link = $("<a href='/#projects/" + project_id + "'>")
       .text(this.model.get("project_title"))
       .prepend('<span class="glyphicon glyphicon-tree-conifer btn-lg" aria-hidden="true"></span>');
+    
+    var current_task = $("<a href='#'>")
+      .text(this.model.get("title"))
+      .addClass("tree-list-item current-task")
+      .prepend('<span class="glyphicon glyphicon-leaf btn-lg" aria-hidden="true"></span>');
+
     var link_project = $("<li>")
       .append(link)
+      .append($("<ul>").append(current_task));
+
     $("#route-back-project").append(link_project);
   },
 
@@ -71,6 +81,10 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
         that.model.comments().add(comment);
       }
     });
+  },
+
+  eventPreventDefault: function (event) {
+    event.preventDefault();
   },
 
   render: function () {
