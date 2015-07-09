@@ -8,7 +8,7 @@ BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'sync change', this.render);
   },
 
   // add color to project progress number
@@ -46,6 +46,7 @@ BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
       project: this.model,
       percentage: percentage
     });
+
     this.$el.html(content);
     this.colorize(percentage);
 
