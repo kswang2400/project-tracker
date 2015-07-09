@@ -1,5 +1,6 @@
 .active {
   height: 92%;
+  overflow: hidden;
 }
 
 #folder {
@@ -8,6 +9,7 @@
 
 .inactive {
   height: 8%;
+  overflow: hidden;
 }
 
 .projects {
