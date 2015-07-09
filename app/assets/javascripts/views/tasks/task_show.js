@@ -69,7 +69,7 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
 
   createComment: function (event) {
     event.preventDefault();
-    debugger;
+    
     var attrs = $('textarea#comment-body').serializeJSON();
     var that = this;
     attrs["comment"]["project_id"] = this.model.get("project_id");
