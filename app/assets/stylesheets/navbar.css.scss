@@ -41,6 +41,11 @@
   position: relative;
 }
 
-#tree-route {
-  margin-top: 20px;
+.tree-list-item {
+  font-size: 10px;
+  margin-left: -35px;
+  overflow: hidden;
+  padding-left: 10px;
+  width: 230px;
+  white-space: nowrap;
 }

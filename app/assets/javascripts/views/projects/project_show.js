@@ -8,6 +8,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     "click #tasks-incomplete": "toggleActiveFolder",
     "click .invite-users": "inviteUsers",
     "click #new-task": "newTask",
+    "click .project-link": "showTree",
     "click .project-title": "editTitle",
     "click .project-description-text": "editDescription",
     "click .tag-user": "tagUser",
@@ -28,9 +29,6 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.listenTo(this.model.memberships(), "add", this.addMembershipSubview);
     this.listenTo(this.model.uploads(), "add", this.addUploadSubview);
     this.listenTo(this.model.tasks(), "add sync", this.addTaskSubview);
-
-    // fucking tree man, i don't want to do more subviews
-    this.listenTo(this.model.tasks(), "add sync", this.addTree);
     
     this.addUsersSearchSubview();
     this.addNavBarSubview();
@@ -64,16 +62,20 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   },
 
   addTree: function () {
-    var $tree = $("body").find("#tree-route")
-    var task_list = $("#nav-task-list");
+    // excuse my fuck-ugly-ness
+    $("#tree-route").empty();
 
-    var project_link = $("<a href='#'>")
+    var project_link = $('<a href="#">')
       .text(this.model.get("title"))
-      .prepend('<span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>   ');
+      .addClass("project-link")
+      .prepend('<span class="glyphicon glyphicon-tree-conifer btn-lg" aria-hidden="true"></span>');
     
     var project = $("<li>")
       .append(project_link)
-      .append($("<ul>").addClass("nav-task-list"));
+      .append($("<ul>").addClass("nav-task-list hidden"));
+
+    $("body").find("#tree-route").append(project);
+    var $task_list = $(".nav-task-list");
 
     this.model.tasks().forEach(function (task) {
       if (task.get("status") === "incomplete") {
@@ -81,13 +83,12 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
         var task_link = $("<a href='#'>")
           .text(title)
-          .prepend('<span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>   ');
+          .addClass("tree-list-item")
+          .prepend('<span class="glyphicon glyphicon-leaf btn-lg" aria-hidden="true"></span>');
         
-        task_list.append(task_link);
+        $task_list.append(task_link);
       }
     });
-
-    $tree.append(project);
   },
 
   addUploadSubview: function (upload) {
@@ -197,7 +198,15 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       });
     }.bind(this), 0);
 
+
+    this.addTree();
+
     return this;
+  },
+
+  showTree: function (event) {
+    event.preventDefault();
+    $(".nav-task-list").toggleClass("hidden");
   },
 
   tagUser: function (event) {
