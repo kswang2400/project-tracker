@@ -3,7 +3,6 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   className: "task-show col-md-10 col-md-offset-1",
 
   events: {
-    "click .back-task": "back",
     "click .create-comment": "createComment",
     "click .task-complete": "completeTask",
   },
@@ -14,6 +13,7 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.assignments(), 'add', this.addAssignmentSubview);
     this.listenTo(this.model.comments(), 'add', this.addCommentsSubview);
+
     this.addNavBarSubview();
   },
 
@@ -46,8 +46,15 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
     }
   },
 
-  back: function (event) {
-    window.history.back();
+  backToProject: function () {
+    $("#route-back-project").empty();
+    var project_id = this.model.get("project_id");
+    var link = $("<a href='/#projects/" + project_id + "'>")
+      .text(this.model.get("project_title"))
+      .prepend('<span class="glyphicon glyphicon-tree-conifer btn-lg" aria-hidden="true"></span>');
+    var link_project = $("<li>")
+      .append(link)
+    $("#route-back-project").append(link_project);
   },
 
   createComment: function (event) {
@@ -76,12 +83,12 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
       $('#task-status').addClass("incomplete");
     }
 
-    this.attachSubviews();
-
     // scroll to bottom for most recent comments
     var comments = $('.comments-section')
     comments.scrollTop(comments.prop("scrollHeight"));
 
+    this.attachSubviews();
+    this.backToProject();
     return this;
   }
 });
