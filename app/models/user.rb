@@ -34,8 +34,8 @@ class User < ActiveRecord::Base
   has_many :assigned_tasks, dependent: :destroy
   has_many :tasks_assigned, through: :assigned_tasks, source: :task
 
-  has_many :conversations, foreign_key: :sender_id
-  
+  has_many :uploads
+    
   attr_reader :password
   after_initialize :ensure_session_token
 

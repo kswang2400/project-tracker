@@ -2,4 +2,9 @@
 
 <div class="modal-content" id="upload-modal">
   <img src="<%= image.escape('url') %>" id="upload-full-image">
+  <div class="row">
+    <% if (window.CURRENT_USER_ID == image.get("user_id")) { %>
+      <button class="btn btn-danger btn-md" id="deleteUpload">Delete</button>
+    <% } %>
+  </div>
 </div>

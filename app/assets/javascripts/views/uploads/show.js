@@ -2,12 +2,19 @@ BasecampApp.Views.UploadShow = Backbone.View.extend({
   template: JST['uploads/show'],
 
   events: {
+    "click .modal-backdrop": "removeModal",
+    "click #deleteUpload": "deleteUpload",
     'keydown': 'esc',
-    "click .modal-backdrop": "removeModal"
   },
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
+  },
+
+  deleteUpload: function (event) {
+    event.preventDefault();
+    this.model.destroy();
+    this.remove();
   },
 
   esc: function (event) {
