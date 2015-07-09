@@ -19,9 +19,6 @@
 //= require jquery.serializeJSON.js
 //= require grayscale
 //= require jquery.easing.min
-//= require chat
-//= require user
-//= require private_pub
 //= require basecamp_app
 //= require_tree ./utils
 //= require_tree ../templates

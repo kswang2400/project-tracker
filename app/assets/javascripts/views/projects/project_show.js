@@ -28,6 +28,8 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.listenTo(this.model.memberships(), "add", this.addMembershipSubview);
     this.listenTo(this.model.uploads(), "add", this.addUploadSubview);
     this.listenTo(this.model.tasks(), "add sync", this.addTaskSubview);
+
+    // fucking tree man, i don't want to do more subviews
     this.listenTo(this.model.tasks(), "add sync", this.addTree);
     
     this.addUsersSearchSubview();
