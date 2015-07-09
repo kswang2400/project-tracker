@@ -4,7 +4,7 @@
   <h3 class="col-md-8" id="task-item-title"><%= task.escape('title') %></h3>
 
   <!-- Task Buttons -->
-  <div class="task-index-item-buttons">
+  <div class="task-index-item-buttons pull-right">
     <button type="button" class="complete-task btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
     <% if (window.CURRENT_USER_ID === task.escape('author_id')) { %>
       <button type="button" class="delete-task btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
