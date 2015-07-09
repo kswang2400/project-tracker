@@ -214,6 +214,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   showTree: function (event) {
     event.preventDefault();
     $(".nav-task-list").toggleClass("hidden");
+    $("#customer-question").addClass("hidden");
   },
 
   tagUser: function (event) {
