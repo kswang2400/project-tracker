@@ -28,8 +28,6 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.listenTo(this.model.memberships(), "add", this.addMembershipSubview);
     this.listenTo(this.model.uploads(), "add", this.addUploadSubview);
     this.listenTo(this.model.tasks(), "add sync", this.addTaskSubview);
-
-    this.listenTo(this.model.tasks(), "remove", this.removeTaskSubivew);
     
     this.addUsersSearchSubview();
     this.addNavBarSubview();
@@ -160,10 +158,6 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       collection: this.model.tasks()
     });
     $("#main").prepend(taskForm.render().$el);
-  },
-
-  removeTaskSubview: function (task) {
-
   },
 
   render: function () { 
