@@ -14,6 +14,7 @@ BasecampApp.Views.NavBar = Backbone.View.extend({
   },
 
   customerSupport: function () {
+    this.$el.find(".nav-task-list").addClass("hidden");
     this.$el.find("#customer-question").toggleClass("hidden");
   },
 
@@ -28,6 +29,7 @@ BasecampApp.Views.NavBar = Backbone.View.extend({
 
   sendCustomerSupport: function (event) {
     event.preventDefault();
+
     var question = this.$el.find("textarea").serializeJSON();
     var response = this.$el.find("#response");
 
