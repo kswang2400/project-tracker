@@ -22,13 +22,15 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
     this.model.memberships().each(this.addMembershipSubview.bind(this));
     this.model.uploads().each(this.addUploadSubview.bind(this));
-    this.model.tasks().each(this.addTaskSubview.bind(this));
+    this.model.completed_tasks().each(this.addTaskSubview.bind(this));
+    this.model.incomplete_tasks().each(this.addTaskSubview.bind(this));
 
     this.listenToOnce(this.model, "sync", this.render);
 
     this.listenTo(this.model.memberships(), "add", this.addMembershipSubview);
     this.listenTo(this.model.uploads(), "add", this.addUploadSubview);
-    this.listenTo(this.model.tasks(), "add change", this.addTaskSubview);
+    this.listenTo(this.model.completed_tasks(), "add", this.addTaskSubview);
+    this.listenTo(this.model.incomplete_tasks(), "add", this.addTaskSubview);
     
     this.addUsersSearchSubview();
     this.addNavBarSubview();
@@ -53,7 +55,10 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   },
 
   addTaskSubview: function (task) {
-    var subview = new BasecampApp.Views.TaskIndexItem({ model: task });
+    var subview = new BasecampApp.Views.TaskIndexItem({ 
+      model: task,
+      collection: this.model.incomplete_tasks()
+    });
     if (task.get("status") === "completed") {
       this.addSubview(".tasks-container-body-completed", subview);
     } else {
@@ -78,19 +83,17 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     $("body").find("#tree-route").append(project);
     var $task_list = $(".nav-task-list");
 
-    this.model.tasks().forEach(function (task) {
-      if (task.get("status") === "incomplete") {
-        var title = task.get("title");
-        var task_id = task.id;
+    this.model.incomplete_tasks().forEach(function (task) {
+      var title = task.get("title");
+      var task_id = task.id;
 
-        // so ugly, i said i'm sorry....
-        var task_link = $("<a href='/#projects/" + project_id + "/tasks/" + task_id + "'>")
-          .text(title)
-          .addClass("tree-list-item")
-          .prepend('<span class="glyphicon glyphicon-leaf btn-lg" aria-hidden="true"></span>');
-        
-        $task_list.append(task_link);
-      }
+      // so ugly, i said i'm sorry....
+      var task_link = $("<a href='/#projects/" + project_id + "/tasks/" + task_id + "'>")
+        .text(title)
+        .addClass("tree-list-item")
+        .prepend('<span class="glyphicon glyphicon-leaf btn-lg" aria-hidden="true"></span>');
+      
+      $task_list.append(task_link);
     });
   },
 
@@ -162,7 +165,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     var taskForm = new BasecampApp.Views.TaskForm({
       model: new BasecampApp.Models.Task({ project: this.model }),
       project: this.model,
-      collection: this.model.tasks()
+      collection: this.model.completed_tasks()
     });
     $("#main").prepend(taskForm.render().$el);
   },
@@ -193,7 +196,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
           var taskId = $(ui.draggable[0]).data("task-id")
           var assignmentId = $(ui.draggable[0]).data("id")
 
-          var task = this.model.tasks().get(taskId)
+          var task = this.model.incomplete_tasks().get(taskId)
           var assignment = task.assignments().get(assignmentId)
 
           assignment.destroy();

@@ -34,8 +34,10 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
     if (this.model.get('status') !== "completed") {
       this.model.save({ status: "completed" }, { patch: true });
     }
+
     // move View to completed section?
     this.remove();
+    this.collection.add(this.model, { merge: true });
   },
 
   createAssignment: function (event, ui) {

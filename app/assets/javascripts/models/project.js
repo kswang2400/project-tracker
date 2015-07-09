@@ -35,11 +35,6 @@ BasecampApp.Models.Project = Backbone.Model.extend({
       this.memberships().set(payload.memberships);
       delete payload.memberships
     }
-
-    if (payload.tasks) {
-      this.tasks().set(payload.tasks, { parse: true });
-      delete payload.tasks;
-    }
     
     if (payload.uploads) {
       this.uploads().set(payload.uploads);
@@ -47,11 +42,6 @@ BasecampApp.Models.Project = Backbone.Model.extend({
     }
 
     return payload;
-  },
-
-  tasks: function () {
-    this._tasks = this._tasks || new BasecampApp.Collections.Tasks();
-    return this._tasks;
   },
   
   uploads: function () {
