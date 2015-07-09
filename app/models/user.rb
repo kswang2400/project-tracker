@@ -53,6 +53,8 @@ class User < ActiveRecord::Base
     # 403 API rate limit exceeded for 199.241.200.248. 
     # (But here's the good news: Authenticated requests get a higher rate limit. 
     #   Check out the documentation for more details.)  
+
+
     # Github.new.repos.list user: github_username do |repo|
     #   repos.push(repo.name)
     # end
