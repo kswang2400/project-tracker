@@ -64,6 +64,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   addTree: function () {
     // excuse my fuck-ugly-ness
     $("#tree-route").empty();
+    var project_id = this.model.id
 
     var project_link = $('<a href="#">')
       .text(this.model.get("title"))
@@ -80,8 +81,10 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.model.tasks().forEach(function (task) {
       if (task.get("status") === "incomplete") {
         var title = task.get("title");
+        var task_id = task.id;
 
-        var task_link = $("<a href='#'>")
+        // so ugly, i said i'm sorry....
+        var task_link = $("<a href='/#projects/" + project_id + "/tasks/" + task_id + "'>")
           .text(title)
           .addClass("tree-list-item")
           .prepend('<span class="glyphicon glyphicon-leaf btn-lg" aria-hidden="true"></span>');
