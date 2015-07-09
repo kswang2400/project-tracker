@@ -31,6 +31,16 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
     this.addSubview('.assigned-users', subview);
   },
 
+  checkEmptyAssignments: function () {
+    debugger;
+    var notice = this.$el.find(".assigned-users")
+    if (notice.is(":empty")) {
+      notice.append($("<p>")
+        .text("Drop Assignments Here")
+        .addClass("no-ass"));
+    }
+  },
+
   completeTask: function (event) {
     if (this.model.get('status') !== "completed") {
       this.model.save({ status: "completed" }, { patch: true });
@@ -53,6 +63,7 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
     assigned_task.save(attrs, {
       success: function () {
         this.model.assignments().add(assigned_task);
+        $("p.no-ass").remove();
       }.bind(this)
     });
   },
@@ -79,6 +90,7 @@ BasecampApp.Views.TaskIndexItem = Backbone.CompositeView.extend({
       });
     }.bind(this), 0);
 
+    this.checkEmptyAssignments();
     return this;
   },
 

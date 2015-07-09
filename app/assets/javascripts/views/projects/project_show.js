@@ -166,7 +166,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     var taskForm = new BasecampApp.Views.TaskForm({
       model: new BasecampApp.Models.Task({ project: this.model }),
       project: this.model,
-      collection: this.model.completed_tasks()
+      collection: this.model.incomplete_tasks()
     });
     $("#main").prepend(taskForm.render().$el);
   },

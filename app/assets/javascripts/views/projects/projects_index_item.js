@@ -8,7 +8,7 @@ BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.model, 'sync change', this.render);
+    this.listenTo(this.model, 'sync', this.render);
   },
 
   // add color to project progress number
@@ -39,9 +39,9 @@ BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
 
   render: function () {
     var percentage = (this.model.get("num_complete") / this.model.get("num_tasks") * 100).toFixed(1)
-    if (isNaN(percentage)) {
-      percentage = 0;
-    }
+    
+    if (isNaN(percentage)) { percentage = 0 };
+
     var content = this.template({ 
       project: this.model,
       percentage: percentage
