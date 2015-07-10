@@ -9,7 +9,9 @@
 <div class="user-show-nav clearfix"> 
   <a class="user-nav" id="user-task-list">Task List</a>
   <a class="user-nav" id="user-show-info">About</a>
-  <a class="user-nav" id="update-info">Update Info</a>
+  <% if (window.CURRENT_USER_ID === user.escape("id")) { %>
+    <a class="user-nav" id="update-info">Update Info</a>
+  <% } %>
 </div>
 
 <!-- Profile Picture -->
@@ -49,24 +51,26 @@
   </div>
 
   <!-- User Edit -->
-  <div class="user-show-edit hidden">
-    <form class="new-form col-md-6 col-md-offset-3">
-      <h1 class="form-title">Edit Info</h1>
-      
-      <div class="form-group">
-        <label for="user_bio">Bio</label>
-        <textarea class="form-control" name="user[bio]" id="user-bio"><%= user.escape('bio') %></textarea>
-      </div>
+  <% if (window.CURRENT_USER_ID === user.escape("id")) { %>
+    <div class="user-show-edit hidden">
+      <form class="new-form col-md-6 col-md-offset-3">
+        <h1 class="form-title">Edit Info</h1>
+        
+        <div class="form-group">
+          <label for="user_bio">Bio</label>
+          <textarea class="form-control" name="user[bio]" id="user-bio"><%= user.escape('bio') %></textarea>
+        </div>
 
-      <div class="form-group">
-        <label for="user_email">Email</label>
-        <input class="form-control" name="user[email]" id="user-email"
-          value="<%= user.escape('email') %>"/>
-      </div>
+        <div class="form-group">
+          <label for="user_email">Email</label>
+          <input class="form-control" name="user[email]" id="user-email"
+            value="<%= user.escape('email') %>"/>
+        </div>
 
-      <div class="form-group">
-        <input type="submit" class="btn btn-pri">
-      </div>
-    </form>
-  </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-pri">
+        </div>
+      </form>
+    </div>
+  <% } %>
 </div>
