@@ -40,12 +40,7 @@
   padding: 12px 0px;
 }
 
-.to-do-container.pre-scrollable {
-  /*border: 2px solid red;*/
-}
-
 .to-do-list {
-  /*border: 2px solid black;*/
   padding: 4px 10px;
 }
 
@@ -66,13 +61,8 @@
   position: relative;
 }
 
-#user-show-about-title {
-  /*border: 2px solid red;*/
-}
-
 .user-show-nav {
   background-color: rgba(0, 0, 0, 0.2);
-  /*border: 2px solid red;*/
   height: 40px;
   padding-left: 350px;
   padding-top: 12px;
@@ -81,13 +71,11 @@
 
 .user-show-header {
   background-color: white;
-  /*border: 2px solid blue;*/
   margin-top: 128px;
   padding: 8px;
 }
 
 .user-show-body {
-  /*border: 3px solid black;*/
   padding: 12px 40px;
   height: 500px;
 }
@@ -104,9 +92,6 @@
 
 #user-show-task-title {
   float: left;
-}
-
-#user-show-task-stats {
 }
 
 #user-show-username {

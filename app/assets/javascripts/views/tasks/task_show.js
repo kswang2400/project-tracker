@@ -1,6 +1,6 @@
 BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   template: JST['tasks/show'],
-  className: "task-show col-md-10 col-md-offset-1",
+  className: "task-show",
 
   events: {
     "click .current-task": "eventPreventDefault",

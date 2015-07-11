@@ -1,8 +1,8 @@
 BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
   template: JST["users/show"],
-  className: "user-show col-md-8 col-md-offset-2",
+  className: "user-show",
 
-  events: { 
+  events: {
     "click #assign-repo": "linkGithub",
     "click #update-info": "showEdit",
     "click #upload-prof-pic": "upload",

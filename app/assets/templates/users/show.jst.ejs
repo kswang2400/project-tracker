@@ -1,76 +1,78 @@
-<div id="backbone-sidebar"></div>
+<div class="col-md-2" id="backbone-sidebar"></div>
 
-<div class="user-show-header clearfix">
-  <h1 id="user-show-username"><%= user.escape('username') %></h1>
-  <button class="btn pull-right" id="upload-prof-pic">Upload Profile Picture</button>
-
-</div>
-
-<div class="user-show-nav clearfix"> 
-  <a class="user-nav" id="user-task-list">Task List</a>
-  <a class="user-nav" id="user-show-info">About</a>
-  <% if (window.CURRENT_USER_ID === user.escape("id")) { %>
-    <a class="user-nav" id="update-info">Update Info</a>
-  <% } %>
-</div>
-
-<!-- Profile Picture -->
-<div class="profile-picture clearfix">
-  <img src="<%= user.escape("profile_picture") %>" height="200" width="200"/>
-</div>
-
-<div class="user-show-body clearfix">
-  <!-- User Tasks -->
-  <div class="user-show-tasks">
-    <div class="row">
-      <h2 id="user-show-task-title">To Do List</h2>
-      <p class="pull-right" id="user-show-task-stats">
-        <font color="red"><%= incomplete %> Incomplete Tasks</font><br>
-        <font color="green"><%= completed %> Completed Tasks</font>
-      </p>
-    </div>
-    
-    <div class="to-do-container pre-scrollable">
-      <ul class="to-do-list" id="to-do"></ul>
-      <ul class="to-do-list" id="completed"></ul>
-    </div>
-  </div>
-
-  <!-- User Info -->
-  <div class="user-show-info hidden">
-    <h2 id="user-show-about-title">About</h2>
-
-    <!-- Github Repo Button -->
-    <!-- <button type="button" class="btn btn-xs btn-primary pull-right" id="assign-repo">Find Github Repo</button> -->
-
-    <ul>
-      <li class="user-stats"><h4>Bio:</h4> <%= user.escape("bio") %></li>
-      <li class="user-stats"><h4>Email:</h4> <%= user.escape("email") %></li>
-    </ul>
+<div class="user-show-content col-md-7">
+  <div class="user-show-header clearfix">
+    <h1 id="user-show-username"><%= user.escape('username') %></h1>
+    <button class="btn pull-right" id="upload-prof-pic">Upload Profile Picture</button>
 
   </div>
 
-  <!-- User Edit -->
-  <% if (window.CURRENT_USER_ID === user.escape("id")) { %>
-    <div class="user-show-edit hidden">
-      <form class="new-form col-md-6 col-md-offset-3">
-        <h1 class="form-title">Edit Info</h1>
-        
-        <div class="form-group">
-          <label for="user_bio">Bio</label>
-          <textarea class="form-control" name="user[bio]" id="user-bio"><%= user.escape('bio') %></textarea>
-        </div>
+  <div class="user-show-nav clearfix"> 
+    <a class="user-nav" id="user-task-list">Task List</a>
+    <a class="user-nav" id="user-show-info">About</a>
+    <% if (window.CURRENT_USER_ID === user.escape("id")) { %>
+      <a class="user-nav" id="update-info">Update Info</a>
+    <% } %>
+  </div>
 
-        <div class="form-group">
-          <label for="user_email">Email</label>
-          <input class="form-control" name="user[email]" id="user-email"
-            value="<%= user.escape('email') %>"/>
-        </div>
+  <!-- Profile Picture -->
+  <div class="profile-picture clearfix">
+    <img src="<%= user.escape("profile_picture") %>" height="200" width="200"/>
+  </div>
 
-        <div class="form-group">
-          <input type="submit" class="btn btn-pri">
-        </div>
-      </form>
+  <div class="user-show-body clearfix">
+    <!-- User Tasks -->
+    <div class="user-show-tasks">
+      <div class="row">
+        <h2 id="user-show-task-title">To Do List</h2>
+        <p class="pull-right" id="user-show-task-stats">
+          <font color="red"><%= incomplete %> Incomplete Tasks</font><br>
+          <font color="green"><%= completed %> Completed Tasks</font>
+        </p>
+      </div>
+      
+      <div class="to-do-container pre-scrollable">
+        <ul class="to-do-list" id="to-do"></ul>
+        <ul class="to-do-list" id="completed"></ul>
+      </div>
     </div>
-  <% } %>
+
+    <!-- User Info -->
+    <div class="user-show-info hidden">
+      <h2 id="user-show-about-title">About</h2>
+
+      <!-- Github Repo Button -->
+      <!-- <button type="button" class="btn btn-xs btn-primary pull-right" id="assign-repo">Find Github Repo</button> -->
+
+      <ul>
+        <li class="user-stats"><h4>Bio:</h4> <%= user.escape("bio") %></li>
+        <li class="user-stats"><h4>Email:</h4> <%= user.escape("email") %></li>
+      </ul>
+
+    </div>
+
+    <!-- User Edit -->
+    <% if (window.CURRENT_USER_ID === user.escape("id")) { %>
+      <div class="user-show-edit hidden">
+        <form class="new-form col-md-6 col-md-offset-3">
+          <h1 class="form-title">Edit Info</h1>
+          
+          <div class="form-group">
+            <label for="user_bio">Bio</label>
+            <textarea class="form-control" name="user[bio]" id="user-bio"><%= user.escape('bio') %></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="user_email">Email</label>
+            <input class="form-control" name="user[email]" id="user-email"
+              value="<%= user.escape('email') %>"/>
+          </div>
+
+          <div class="form-group">
+            <input type="submit" class="btn btn-pri">
+          </div>
+        </form>
+      </div>
+    <% } %>
+  </div>
 </div>

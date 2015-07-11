@@ -10,7 +10,7 @@ Version History
 Connect your projects on ProjectTracker with any repo on your github!
 
 #### 1.1.0 - Slack Integration -- July 10, 2015
-Site redesign, models more informative, integration with Slack (not user facing)
+Site redesign, models more informative, integration with Slack
 
 #### 1.0.0 - Initial Public Deploy -- June 23, 2015
 This release included the basic mvp, users, projects, tasks, comments, images, etc.
