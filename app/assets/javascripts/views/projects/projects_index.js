@@ -87,6 +87,11 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
     this.attachSubviews();
+
+    setTimeout(function () {
+      $(".projects-owned-index").sortable();
+    });
+
     return this;
   },
 
