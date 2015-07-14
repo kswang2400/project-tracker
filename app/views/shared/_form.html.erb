@@ -1,7 +1,7 @@
 <%= render "shared/nav_bar", home: false %>
 
-<div class="form" id="auth_form">
-  <form action="<%= action_url %>" method="post" class="new-user-session col-md-4 col-md-offset-4">
+<div class="form" id="auth_form_div">
+  <form action="<%= action_url %>" method="post" class="new-user-session col-md-offset-4" id="auth_form">
     <h1 class="form-title"><%= form_title %></h1>
 
     <div class="render-errors">
