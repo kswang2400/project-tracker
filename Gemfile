@@ -11,12 +11,10 @@ gem 'jquery-rails'
 gem 'js_assets'
 gem 'newrelic_rpm'
 gem 'pg'
-# gem 'private_pub'
 gem 'rails', '4.2.1'
 gem 'sass-rails', '~> 5.0'
 gem 'slack-notifier'
 gem 'sdoc', '~> 0.4.0', group: :doc
-# gem 'thin'
 gem 'uglifier', '>= 1.3.0'
 
 # gem 'unicorn'
@@ -30,7 +28,7 @@ group :development, :test do
   gem 'faker'
   gem 'jasmine'
   gem 'rspec-rails'
-  gem "shoulda-matchers"
+  gem 'shoulda-matchers'
   gem 'spring'
   gem 'web-console', '~> 2.0'
 end
