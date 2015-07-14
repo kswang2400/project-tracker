@@ -23,8 +23,9 @@ RSpec.describe User, type: :model do
 
   describe ".find_by_credentials" do
     it "searches for user by username and password" do
-      query = User.find_by_credentials("test", "password")
-      expect(query.username).to eq subject.username
+      user = User.create(username: "test2", password: "password")
+      query = User.find_by_credentials("test2", "password")
+      expect(query.username).to eq user.username
       expect(query.is_password?("password")).to be true
     end
   end
@@ -43,7 +44,7 @@ RSpec.describe User, type: :model do
   describe "#reset_session_token!" do
     # original subject collides in database; create separate user to 
     # test reset_session_token (Validation failed: Username has already been taken)
-    subject { User.create(username: "test123", password: "password")}
+    subject { User.create(username: "test3", password: "password")}
 
     it "creates new session token and saves" do 
       old_session_token = subject.session_token
