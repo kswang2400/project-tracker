@@ -2,7 +2,7 @@
 
 [Live Link!][production]
 
-[production]: (www.projecttracker.biz)
+[production]: http://www.projecttracker.biz
 
 Version History
 
