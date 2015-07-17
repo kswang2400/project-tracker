@@ -17,7 +17,7 @@ BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
 
     if (percentage < 50) {
       percent.addClass("incomplete");
-    } else if (percentage < 85) {
+    } else if (percentage < 100) {
       percent.addClass("partial");
     } else if (percentage == 100) {
       percent.addClass("complete");
