@@ -8,19 +8,15 @@ BasecampApp.Views.AssignedIndexItem = Backbone.View.extend({
       "data-id": this.model.id,
       "data-user-id": this.model.get("user_id"),
       "data-task-id": this.model.get("task_id")
-      // "style": "z-index: 10"
     }
   },
 
-  initialize: function (options) {
-    this.user = options.user;
-
-    this.listenTo(this.user, "sync", this.render);
+  initialize: function () {
     this.listenTo(this.model, "destroy", this.remove);
   },
 
   render: function () {
-    var content = this.template({ user: this.user });
+    var content = this.template({ assignment: this.model });
     this.$el.html(content);
     
     setTimeout(function () {

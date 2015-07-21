@@ -6,14 +6,20 @@ json.incomplete_tasks @incomplete do |task|
   json.extract! task, :id, :author_id, :project_id, :title, :body, :status
   json.author User.find(task.author_id).username
   json.project_title @project.title
-  json.assignments task.assigned_tasks
+  json.assignments task.assigned_tasks do |assignment|
+    json.extract! assignment, :id, :user_id, :task_id
+    json.user_pic User.find(assignment.user_id).profile_picture
+  end
 end
 
 json.completed_tasks @completed do |task|
   json.extract! task, :id, :author_id, :project_id, :title, :body, :status
   json.author User.find(task.author_id).username
   json.project_title @project.title
-  json.assignments task.assigned_tasks
+  json.assignments task.assigned_tasks do |assignment|
+    json.extract! assignment, :id, :user_id, :task_id
+    json.user_pic User.find(assignment.user_id).profile_picture
+  end
 end
 
 json.memberships @memberships do |membership|
