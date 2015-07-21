@@ -1,7 +1,7 @@
 <% if current_user %>
   <li><a href="#users/<%= current_user.id %>">Your Page</a></li>
   <li><a href="#home">Projects Index</a></li>
-  <li><%= link_to "Log Out", session_url, method: :delete %></li>
+  <!-- <li><%= link_to "Log Out", session_url, method: :delete %></li> -->
 <% else %>
   <% if home %>
     <%= render "shared/page_scrolls" %>

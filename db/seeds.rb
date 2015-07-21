@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+include ApplicationHelper
+
 User.create(username: "kevin_wang", 
   password: "password123", 
   profile_picture: ENV["kevin_picture"])
@@ -22,6 +24,6 @@ User.create(username: "guest_user",
   password: "password", 
   profile_picture: ENV["default_picture"])
 
-# User.all.each do |user|
-#   seed_new_user(user)
-# end
+User.all.each do |user|
+  seed_new_user(user)
+end
