@@ -9,8 +9,6 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    this.users = new BasecampApp.Collections.Users();
-
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.assignments(), 'add', this.addAssignmentSubview);
     this.listenTo(this.model.comments(), 'add', this.addCommentsSubview);
@@ -19,12 +17,10 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   },
 
   addAssignmentSubview: function (assignment) {
-    var user = this.users.getOrFetch(assignment.get("user_id")); 
-
     var subview = new BasecampApp.Views.AssignedIndexItem({ 
-      model: assignment,
-      user: user 
+      model: assignment
     });
+
     this.addSubview('.task-assignments', subview);
   },
 

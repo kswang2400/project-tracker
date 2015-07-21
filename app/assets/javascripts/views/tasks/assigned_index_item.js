@@ -2,7 +2,6 @@ BasecampApp.Views.AssignedIndexItem = Backbone.View.extend({
   template: JST["tasks/assigned_index_item"],
   className: "member-circle-img",
 
-
   attributes: function () {
     return {
       "data-id": this.model.id,
