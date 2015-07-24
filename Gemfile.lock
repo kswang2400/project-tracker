@@ -226,7 +226,7 @@ PLATFORMS
 DEPENDENCIES
   backbone-on-rails
   bcrypt (~> 3.1.7)
-  better_errors
+  better_errors (>= 2.0.0)
   binding_of_caller
   bootstrap-sass
   byebug
