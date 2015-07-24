@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'backbone-on-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass'
-gem 'coffee-rails', '~> 4.1.0'
 gem 'figaro'
 gem 'github_api'
 gem 'jbuilder', '~> 2.0'
@@ -34,5 +33,5 @@ group :development, :test do
 end
 
 group :production do 
-  gem 'rails_12factor'
+  # gem 'rails_12factor'
 end
