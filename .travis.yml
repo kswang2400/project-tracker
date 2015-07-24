@@ -3,7 +3,4 @@ language: ruby
 script:
   - "bundle exec rspec spec"
 
-matrix:
-  allow_failures:
-    -better_errors
-    -bye_bug
+bundler_args: --without development debug

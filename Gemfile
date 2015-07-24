@@ -20,9 +20,6 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'byebug'
   gem 'factory_girl_rails', :require => false
   gem 'faker'
   gem 'jasmine'
@@ -30,6 +27,12 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'spring'
   gem 'web-console', '~> 2.0'
+end
+
+group :debug do
+  gem "better_errors"
+  gem 'binding_of_caller'
+  gem "byebug"
 end
 
 group :production do 
