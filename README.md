@@ -4,6 +4,10 @@
 
 [production]: http://www.projecttracker.biz
 
+[![Dependency Status](https://gemnasium.com/kswang2400/project-tracker.svg)](https://gemnasium.com/kswang2400/project-tracker)
+<a href="https://codeclimate.com/github/kswang2400/project-tracker"><img src="https://codeclimate.com/github/kswang2400/project-tracker/badges/gpa.svg" /></a>
+<a href="https://codeclimate.com/github/kswang2400/project-tracker/coverage"><img src="https://codeclimate.com/github/kswang2400/project-tracker/badges/coverage.svg" /></a>
+
 Version History
 
 #### 1.2.0 - Github Integration -- *coming soon*
