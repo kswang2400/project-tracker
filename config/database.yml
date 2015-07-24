@@ -21,6 +21,7 @@ test:
   <<: *default
   adapter: postgresql
   database: basecampapp_database_test
+  username: postgres
 
 production:
   <<: *default
