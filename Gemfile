@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem "codeclimate-test-reporter", require: nil
   gem 'factory_girl_rails', :require => false
   gem 'faker'
   gem 'jasmine'
