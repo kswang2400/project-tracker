@@ -7,5 +7,3 @@ bundler_args: --without development debug
 
 before_script:
   - psql -c 'create database basecampapp_database_test;' -U postgres
-
-  
