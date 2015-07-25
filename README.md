@@ -1,9 +1,8 @@
 # Project Tracker!
 
-[Live Link!][production]
+[Live Link!][https://www.projecttracker.biz]
 
-[production]: http://www.projecttracker.biz
-
+[![Build Status](https://travis-ci.org/kswang2400/project-tracker.svg?branch=master)](https://travis-ci.org/kswang2400/project-tracker)
 [![Dependency Status](https://gemnasium.com/kswang2400/project-tracker.svg)](https://gemnasium.com/kswang2400/project-tracker)
 <a href="https://codeclimate.com/github/kswang2400/project-tracker"><img src="https://codeclimate.com/github/kswang2400/project-tracker/badges/gpa.svg" /></a>
 <a href="https://codeclimate.com/github/kswang2400/project-tracker/coverage"><img src="https://codeclimate.com/github/kswang2400/project-tracker/badges/coverage.svg" /></a>
