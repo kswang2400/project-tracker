@@ -10,6 +10,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  status     :string           default("incomplete")
+#  priority   :integer          default(0)
 #
 
 require 'rails_helper'

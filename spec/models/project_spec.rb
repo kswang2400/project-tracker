@@ -6,6 +6,7 @@
 #  title       :string           not null
 #  owner_id    :integer          not null
 #  description :string
+#  priority    :integer          default(0)
 #
 
 require 'rails_helper'

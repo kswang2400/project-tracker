@@ -6,6 +6,7 @@
 #  title       :string           not null
 #  owner_id    :integer          not null
 #  description :string
+#  priority    :integer          default(0)
 #
 
 class Project < ActiveRecord::Base
@@ -19,5 +20,4 @@ class Project < ActiveRecord::Base
   has_many :members, through: :memberships, source: :user
   
   has_many :tasks, dependent: :destroy
-  has_many :assignments, through: :tasks, source: :assigned_users
 end

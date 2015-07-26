@@ -7,6 +7,8 @@ module ApplicationHelper
     )
 
     seed_new_project(project, user)
+
+    nil
   end
 
   def seed_new_project(project, user)
@@ -66,5 +68,7 @@ module ApplicationHelper
       user_id: user.id,
       task_id: task4.id
     )
+
+    nil
   end
 end
