@@ -1,11 +1,13 @@
 module Api
   class ProjectsController < ApiController
+    include ApplicationHelper 
+
     def create
       project = Project.new(project_params)
       project.owner_id = current_user.id
 
       if project.save
-        seed_new_project(project)
+        seed_new_project(project, current_user)
         render json: project
       else
         render json: project.errors.fullmessages, status: :unprocessable_entity
