@@ -3,7 +3,7 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
   className: "user-show",
 
   events: {
-    "click #assign-repo": "linkGithub",
+    // "click #assign-repo": "linkGithub",
     "click #update-info": "showEdit",
     "click #upload-prof-pic": "upload",
     "click #user-task-list": "showTask",
@@ -45,14 +45,14 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
     this.model.save(new_attr["user"]);
   },
 
-  linkGithub: function (event) {
-    event.preventDefault();
-    var github = new BasecampApp.Views.GithubForm({
-      repos: this.model.repos(),
-      username: this.model.get("username")
-    });
-    $('#main').prepend(github.render().$el);
-  },
+  // linkGithub: function (event) {
+  //   event.preventDefault();
+  //   var github = new BasecampApp.Views.GithubForm({
+  //     repos: this.model.repos(),
+  //     username: this.model.get("username")
+  //   });
+  //   $('#main').prepend(github.render().$el);
+  // },
 
   render: function () {
     var completed = this.model.completed().length

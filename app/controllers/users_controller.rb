@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     @tasks_assigned = @user.tasks_assigned
     @tasks = @tasks_assigned.where(status: "incomplete")
     @completed = @tasks_assigned.where(status: "completed")
-    @repos = User.github_repos(@user) || []
+    # @repos = User.github_repos(@user) || []
     
     render "show.json.jbuilder"
   end
