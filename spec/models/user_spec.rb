@@ -19,7 +19,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.create(username: "test", password: "password") }
+  subject { User.create(username: "rspec-user", password: "password") }
 
   describe ".find_by_credentials" do
     it "searches for user by username and password" do
@@ -27,6 +27,12 @@ RSpec.describe User, type: :model do
       query = User.find_by_credentials("test2", "password")
       expect(query.username).to eq user.username
       expect(query.is_password?("password")).to be true
+    end
+  end
+
+  describe "#customer_support" do
+    it "returns the message" do
+      expect(subject.customer_support("rspec-question")).to eq "rspec-user  asks  rspec-question"
     end
   end
 

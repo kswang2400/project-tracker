@@ -46,22 +46,22 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.github_repos(user)
-    repos = []
-    # github_username = user.username
+  # def self.github_repos(user)
+  #   repos = []
+  #   # github_username = user.username
 
-    # 403 API rate limit exceeded for 199.241.200.248. 
-    # (But here's the good news: Authenticated requests get a higher rate limit. 
-    #   Check out the documentation for more details.)  
+  #   # 403 API rate limit exceeded for 199.241.200.248. 
+  #   # (But here's the good news: Authenticated requests get a higher rate limit. 
+  #   #   Check out the documentation for more details.)  
 
-    # if ["conanza", "kswang2400", "dvdwasibi", "jisuyoum"].include?(github_username)
-    #   Github.new.repos.list user: github_username do |repo|
-    #     repos.push(repo.name)
-    #   end
-    # end
+  #   # if ["conanza", "kswang2400", "dvdwasibi", "jisuyoum"].include?(github_username)
+  #   #   Github.new.repos.list user: github_username do |repo|
+  #   #     repos.push(repo.name)
+  #   #   end
+  #   # end
 
-    repos
-  end
+  #   repos
+  # end
 
   def customer_support(question)
     new_ticket = Slack::Notifier.new ENV['slack_webhook_url'],
@@ -69,6 +69,8 @@ class User < ActiveRecord::Base
       username: self.username
     message = "#{self.username}  asks  #{question}"
     new_ticket.ping message
+
+    message
   end
 
   def is_password?(password)
