@@ -68,7 +68,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   addTree: function () {
     // excuse my fuck-ugly-ness
     $("#tree-route").empty();
-    var project_id = this.model.id
+    var project_id = this.model.id;
 
     var project_link = $('<a href="#">')
       .text(this.model.get("title"))
@@ -128,7 +128,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
     this.$el.find(".project-title").html($input);
     $input.focus();
-    this.$el.find(".project-title").removeClass("project-title")
+    this.$el.find(".project-title").removeClass("project-title");
   },
 
   editDescription: function (event) {
@@ -143,12 +143,12 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     $input.focus();
     this.$el.find(".project-description-text")
       .addClass("project-description-text-editing")
-      .removeClass("project-description-text")
+      .removeClass("project-description-text");
   },
 
   inviteUsers: function (event) {
     event.preventDefault();
-    var searchBar = this.$el.find(".project-user-search")
+    var searchBar = this.$el.find(".project-user-search");
     searchBar.toggleClass("hidden");
     $("body").find(".users-search").usersSearch();
 
@@ -190,13 +190,13 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
         drop: function(event, ui) {
           if ($(ui.draggable[0]).data("task-id") === undefined) {
             alert("You can only delete tasks assignments here");
-            return 
+            return;
           }
-          var taskId = $(ui.draggable[0]).data("task-id")
-          var assignmentId = $(ui.draggable[0]).data("id")
+          var taskId = $(ui.draggable[0]).data("task-id");
+          var assignmentId = $(ui.draggable[0]).data("id");
 
-          var task = this.model.incomplete_tasks().get(taskId)
-          var assignment = task.assignments().get(assignmentId)
+          var task = this.model.incomplete_tasks().get(taskId);
+          var assignment = task.assignments().get(assignmentId);
 
           assignment.destroy();
         }.bind(this)
@@ -216,8 +216,8 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   },
 
   tagUser: function (event) {
-    var userId = $(event.currentTarget).attr("id")
-    var attr = { user_id: userId }
+    var userId = $(event.currentTarget).attr("id");
+    var attr = { user_id: userId };
 
     var membership = new BasecampApp.Models.Membership({
       project_id: this.model.id
@@ -239,10 +239,10 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     newAttr[attr] = $("#project-show-main").find(input).val();
     this.model.save(newAttr);
 
-    if (attr == "title") {
-      $("h1#project-title").remove("input").addClass("project-title").text(newAttr[attr])
+    if (attr === "title") {
+      $("h1#project-title").remove("input").addClass("project-title").text(newAttr[attr]);
     } else {
-      $("p#description").remove("input").addClass("project-description-text").text(newAttr[attr])
+      $("p#description").remove("input").addClass("project-description-text").text(newAttr[attr]);
     }
   },
 
