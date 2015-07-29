@@ -76,7 +76,7 @@ to use Amazon Ruby SDK to store images on S3.
 
 ### Bonus Features (TBD)
 - [ ] Project search
-- [ ] User avatars
+- [x] User avatars
 - [x] Typeahead search bar
 - [x] Photo Carousel
 - [ ] Chat window
