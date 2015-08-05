@@ -30,7 +30,7 @@ BasecampApp.Views.NavBar = Backbone.View.extend({
   sendCustomerSupport: function (event) {
     event.preventDefault();
 
-    var question = this.$el.find("textarea").serializeJSON();
+    var question = this.$el.find("#question-form").serializeJSON();
     var response = this.$el.find("#response");
 
     $.ajax({

@@ -16,7 +16,8 @@ class UsersController < ApplicationController
 
   def customer_support
     question = params["question"]
-    current_user.customer_support(question)
+    email = params["email"]
+    current_user.customer_support(question, email)
     render json: {}
   end
 
