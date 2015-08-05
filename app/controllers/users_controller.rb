@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include ApplicationHelper 
+  
   def create
     params["user"]["profile_picture"] ||= ENV["default_picture"]
     @user = User.new(user_params)
@@ -16,7 +18,8 @@ class UsersController < ApplicationController
 
   def customer_support
     question = params["question"]
-    current_user.customer_support(question)
+    email = params["email"]
+    current_user.customer_support(question, email)
     render json: {}
   end
 
@@ -76,7 +79,7 @@ class UsersController < ApplicationController
       :username, 
       :password, 
       :bio, 
-      :email, 
+      :email,
       :profile_picture
     )
   end

@@ -1,4 +1,4 @@
-# [project tracker](https://www.projecttracker.biz)
+# [Project Tracker](https://www.projecttracker.biz)
 
 [![Build Status](https://travis-ci.org/kswang2400/project-tracker.svg?branch=master)](https://travis-ci.org/kswang2400/project-tracker)
 [![Dependency Status](https://gemnasium.com/kswang2400/project-tracker.svg)](https://gemnasium.com/kswang2400/project-tracker)
@@ -76,7 +76,7 @@ to use Amazon Ruby SDK to store images on S3.
 
 ### Bonus Features (TBD)
 - [ ] Project search
-- [ ] User avatars
+- [x] User avatars
 - [x] Typeahead search bar
 - [x] Photo Carousel
 - [ ] Chat window

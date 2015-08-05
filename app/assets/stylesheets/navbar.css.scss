@@ -1,4 +1,8 @@
 
+#brand {
+  margin-left: 20px;
+}
+
 .bottom {
   bottom: 4%;
   position: absolute;
@@ -19,15 +23,20 @@
   width: 100%;
 }
 
-#question {
+#question-form {
   margin: 10px 0px;
   padding-top: 4px;
   width: 100%;
 }
 
+#question-submit {
+  margin-top: 20px;
+}
+
 #response {
-  text-align: center;
+  height: 52px;
   margin-left: 20px;
+  text-align: center;
   width: 200px;
 }
 

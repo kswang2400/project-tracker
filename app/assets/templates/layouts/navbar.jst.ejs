@@ -1,6 +1,6 @@
 <div class="col-md-2" id="sidebar-wrapper">
   <ul class="sidebar-nav">
-    <li class="sidebar-brand"><a href="#">PROJECT TRACKER</a></li>
+    <li class="sidebar-brand"><a href="#" id="brand">PROJECT TRACKER</a></li>
     <li><a href="/">
       <span class="glyphicon glyphicon-home btn-lg" aria-hidden="true"></span>Home</a>
     </li>
@@ -30,16 +30,20 @@
 
     <div class="bottom">
       <div class="hidden" id="customer-question">
-        <form class="form-group" id="question">
+        <form class="form-group" id="question-form">
           <h5 class="form-control" id="question-title">Hello, how can we help?</h5>
 
-          <textarea class="form-control" name="question" id="question"></textarea>
+          <label for="project_title">Email</label>
+          <input type="text" class="form-control" name="email"></input>
 
-          <input type="submit" class="btn btn-success" id="question" value="Submit"/>
+          <label for="project_title">Question</label>
+          <textarea class="form-control" name="question"></textarea>
+
+          <input type="submit" class="btn btn-success" id="question-submit" value="Submit"/>
         </form>
 
         <div class="hidden form-control" id="response">
-          Question Submitted!   <span class="glyphicon glyphicon-send" aria-hidden="true"></span> 
+          Thank you for your inquiry, we will email you soon!   <span class="glyphicon glyphicon-send" aria-hidden="true"></span> 
         </div>
       </div>
 
