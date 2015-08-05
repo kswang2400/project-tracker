@@ -17,8 +17,8 @@ class SessionsController < ApplicationController
     if user
       log_in(user)
       stalk(user)
-      UserMailer.welcome_email(user)
-      UserMailer.new_account(user)
+      UserMailer.welcome_email(user).deliver_now
+      UserMailer.new_account(user).deliver_now
       redirect_to "/#home"
     else
       @user = User.new

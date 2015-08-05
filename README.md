@@ -1,4 +1,4 @@
-# [project tracker](https://www.projecttracker.biz)
+# [Project Tracker](https://www.projecttracker.biz)
 
 [![Build Status](https://travis-ci.org/kswang2400/project-tracker.svg?branch=master)](https://travis-ci.org/kswang2400/project-tracker)
 [![Dependency Status](https://gemnasium.com/kswang2400/project-tracker.svg)](https://gemnasium.com/kswang2400/project-tracker)
