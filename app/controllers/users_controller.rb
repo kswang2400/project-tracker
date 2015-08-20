@@ -1,3 +1,4 @@
+
 class UsersController < ApplicationController
   include ApplicationHelper 
   
@@ -20,6 +21,12 @@ class UsersController < ApplicationController
     question = params["question"]
     email = params["email"]
     current_user.customer_support(question, email)
+    render json: {}
+  end
+
+  def destroy
+    user = User.find(params[:id])
+    user.try(:destroy)
     render json: {}
   end
 
@@ -47,13 +54,7 @@ class UsersController < ApplicationController
     
     render "show.json.jbuilder"
   end
-
-  def destroy
-    user = User.find(params[:id])
-    user.try(:destroy)
-    render json: {}
-  end 
-
+  
   def update 
     user = User.find(params[:id])
     

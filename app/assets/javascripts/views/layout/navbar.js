@@ -5,7 +5,8 @@ BasecampApp.Views.NavBar = Backbone.View.extend({
   events: {
     "click .sign-out": "signOut",
     "click .customer-support": "customerSupport",
-    "submit": "sendCustomerSupport"
+    // "click .sb-pager-duty": "sendPagerDuty",
+    "submit #question-submit": "sendCustomerSupport"
   },
 
   initialize: function (options) {
@@ -44,8 +45,22 @@ BasecampApp.Views.NavBar = Backbone.View.extend({
           this.$el.find("#customer-question").addClass("hidden");
         }.bind(this), 2000);
       }.bind(this)
-    })
+    });
   },
+
+  // sendPagerDuty: function (event) {
+  //   event.preventDefault();
+
+  //   $.ajax({
+  //     url: "https://events.pagerduty.com/generic/2010-04-15/create_event.json",
+  //     type: "POST",
+  //     data: {
+  //       "incident_key": "abc123",
+  //       "event_type": "acknowledge",
+  //       "description": "Good Morning from Kevin"
+  //     }
+  //   });
+  // },
 
   signOut: function (event) {
     event.preventDefault();

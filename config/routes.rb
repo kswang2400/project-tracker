@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :users
 
   post '/customer_support', :to => "users#customer_support"
+  post '/pager_duty', :to => "users#pager_duty"
 end
