@@ -124,6 +124,7 @@ body {
 
 #contact {
   margin-bottom: 100px;
+  background-color: dimgray;
 }
 
 .complete-stamp {
@@ -173,6 +174,11 @@ body {
 .error {
   color: red;
   padding: 15px 0px 15px 30px;
+}
+
+.feature-description {
+  font-size: 16px;
+  padding: 12px;
 }
 
 #footer {
@@ -233,7 +239,7 @@ input {
 }
 
 .intro-body {
-  padding: 0;
+  padding-top: 14%;
 }
 
 .jumbotron {
@@ -343,7 +349,7 @@ nav a {
 }
 
 .product-features {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
   padding: 70px 8px 8px 8px;
   height: 700px;

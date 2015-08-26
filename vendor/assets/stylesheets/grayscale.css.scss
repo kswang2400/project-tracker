@@ -161,7 +161,7 @@ a:focus {
 
 .intro .intro-body {
   display: table-cell;
-  vertical-align: middle;
+  /*vertical-align: middle;*/
 }
 
 .intro .intro-body .brand-heading {
@@ -180,10 +180,13 @@ a:focus {
 
   .intro .intro-body .brand-heading {
     font-size: 100px;
+    /*color: #000;*/
   }
 
   .intro .intro-body .intro-text {
     font-size: 26px;
+    padding: 4px;
+    color: #444;
   }
 }
 
