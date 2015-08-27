@@ -4,7 +4,6 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
 
   events: {
     "click #new-task": "newTask",
-    "click .project-link": "showTree"
   },
 
   initialize: function () {
@@ -104,11 +103,5 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     }.bind(this), 0);
 
     return this;
-  },
-
-  showTree: function (event) {
-    event.preventDefault();
-    $(".nav-task-list").toggleClass("hidden");
-    $("#customer-question").addClass("hidden");
   }
 });
