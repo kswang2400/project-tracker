@@ -74,6 +74,17 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
     //   $(".projects-tagged-index").sortable();
     // });
 
+    setTimeout(function () {
+      $(".projects-owned-index").mousewheel(function (event, delta) {
+        event.preventDefault();
+        this.scrollleft -= (delta * 30);
+      });
+      $(".projects-tagged-index").mousewheel(function (event, delta) {
+        event.preventDefault();
+        this.scrollleft -= (delta * 30);
+      });
+    });
+
     return this;
   }
 });

@@ -16,9 +16,10 @@
 //= require bootstrap
 //= require underscore
 //= require backbone
-//= require jquery.serializeJSON.js
+//= require jquery.serializeJSON
 //= require grayscale
 //= require jquery.easing.min
+//= require jquery.mousewheel.min
 //= require basecamp_app
 //= require_tree ./utils
 //= require_tree ../templates
