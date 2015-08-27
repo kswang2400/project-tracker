@@ -21,19 +21,13 @@
   color: red;
 }
 
-
-.task-complete {
-  /*position: absolute;*/
-  /*bottom: 100px;*/
-}
-
 #task-description {
   font-size: 16px;
 }
 
 .task-main {
   height: 100%;
-  margin: 0;
+  padding: 0 !important;
 }
 
 .task-show {
