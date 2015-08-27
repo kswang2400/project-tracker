@@ -27,10 +27,7 @@ BasecampApp.Views.UsersShow = Backbone.CompositeView.extend({
   },
 
   addNavBarSubview: function () {
-    var subview = new BasecampApp.Views.NavBar({
-      tagged: false,
-      projects: false
-    });
+    var subview = new BasecampApp.Views.NavBar();
     this.addSubview("#backbone-sidebar", subview);
   },
 

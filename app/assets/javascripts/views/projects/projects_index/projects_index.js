@@ -24,10 +24,7 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
   },
 
   addNavBarSubview: function () {
-    var subview = new BasecampApp.Views.NavBar({
-      tagged: this.tagged,
-      projects: this.collection
-    });
+    var subview = new BasecampApp.Views.NavBar();
     this.addSubview("#backbone-sidebar", subview);
   },
   
