@@ -11,7 +11,7 @@ BasecampApp.Views.GithubForm = Backbone.Modal.extend({
   initialize: function (options) {
     this.repos = options.repos;
     this.username = options.username;
-  }
+  },
 
   linkGithub: function (event) {
     event.preventDefault();
