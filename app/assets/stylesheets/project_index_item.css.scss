@@ -51,7 +51,7 @@ hr {
 .projects-index-item {
   background-color: white;
   border-radius: 5px;
-  display: block;
+  display: inline;
   float: left;
   margin: 20px 8px 0px 8px;
   padding: 0px 8px;
@@ -70,10 +70,7 @@ hr {
 }
 
 .projects-index-row {
-  height: 50%;
-  padding: 8px;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  height: 45%;
   width: auto;
   white-space: nowrap;
 }
@@ -94,4 +91,12 @@ hr {
   position: absolute;
   text-align: center;
   width: 95%;
+}
+
+.x-scroll {
+  height: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
 }
