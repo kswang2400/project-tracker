@@ -1,0 +1,70 @@
+
+<!-- Project Header -->
+<div class="project-header-title">
+  <u><h1 class="project-title" id="project-title"><%= project.escape("title") %></h1></u>
+  <hr>
+  <h4 class="project-owner">
+    Owner: <a href="/#users/<%= project.escape("owner_id") %>"><%= project.escape("owner_name") %></a>
+  </h4>
+</div>
+
+<hr>
+<!-- Project Description -->
+<div class="project-header-description">
+  <h3 class="project-description">Description: </h3>
+  <u><p class="project-description-text" id="description"><%= project.escape("description") %></p></u>
+</div>
+
+<hr>
+
+<!-- Project Stats -->
+<div class="project-show-stats clearfix">
+  <p id="stats-incomplete"><%=project.num_incomplete %> Incomplete</p>
+  <p id="stats-complete"><%= project.num_complete %> Completed</p>
+</div>
+
+<hr>
+
+<!-- Project Buttons -->
+<div class="project-header-buttons clearfix">
+  <!-- Upload -->
+  <button class="upload-button btn-xs btn btn-pri">Upload Image</button>
+
+  <!-- Invite Users -->
+  <% if (window.CURRENT_USER_ID === project.escape("owner_id")) { %>
+    <button type="button" class="invite-users btn btn-xs btn-success pull-right">Invite Users</button>
+  <% } %>
+  
+  <!-- <button class="create-pdf">Download PDF</button> -->
+</div>
+
+<!-- User Search -->
+<div class="project-user-search hidden"></div>
+
+<!-- Project Collaborators -->
+<div class="collaborators-list clearfix">
+  <div class="list-collaborators"></div>
+  <% if (window.CURRENT_USER_ID === project.escape("owner_id")) { %>
+    <div class="delete-member pull-right" id="droppable-member">
+      <!-- <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> -->
+    </div>
+  <% } %>
+</div>
+
+<!-- Upload Section -->
+<div class="project-show-upload-bar clearfix">
+  <h4 id="upload-title">Uploaded Images</h4>
+
+  <div id="myCarousel" class="carousel slide pull-right" data-ride="carousel">
+    <center><div class="carousel-inner" role="listbox"></div></center>
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>

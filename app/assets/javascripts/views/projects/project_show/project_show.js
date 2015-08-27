@@ -1,9 +1,8 @@
 BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
-  template: JST["projects/show"],
+  template: JST["projects/project_show/show"],
   className: "project-show",
 
   events: {
-    // "click .create-pdf": "createPDF",
     "click #tasks-completed": "toggleActiveFolder",
     "click #tasks-incomplete": "toggleActiveFolder",
     "click .invite-users": "inviteUsers",
@@ -26,14 +25,15 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.model.incomplete_tasks().each(this.addTaskSubview.bind(this));
 
     this.listenToOnce(this.model, "sync", this.render);
+    this.listenToOnce(this.model, "sync", this.addSideBarSubview);
 
     this.listenTo(this.model.memberships(), "add", this.addMembershipSubview);
     this.listenTo(this.model.uploads(), "add", this.addUploadSubview);
     this.listenTo(this.model.completed_tasks(), "add", this.addTaskSubview);
     this.listenTo(this.model.incomplete_tasks(), "add", this.addTaskSubview);
     
-    this.addUsersSearchSubview();
     this.addNavBarSubview();
+    this.addUsersSearchSubview();
   },
 
   addMembershipSubview: function (membership) {
@@ -44,12 +44,18 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   },
 
   addNavBarSubview: function () {
-    // adds a new subview on update... needs to be a better way to do this
     var subview = new BasecampApp.Views.NavBar({
       tagged: false,
       projects: false
     });
     this.addSubview("#backbone-sidebar", subview);
+  },
+
+  addSideBarSubview: function () {
+    var subview = new BasecampApp.Views.ProjectShowSidebar({
+      model: this.model
+    });
+    this.addSubview("#project-show-sidebar", subview);
   },
 
   addTaskSubview: function (task) {
@@ -106,12 +112,6 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     var subview = new BasecampApp.Views.UsersSearch();
     this.addSubview(".project-user-search", subview);
   },
-
-  // createPDF: function () {
-  //   var doc = new jsPDF();
-  //   doc.text(20, 20, "Hello world.");
-  //   doc.save("Test.pdf");
-  // },
 
   toggleActiveFolder: function () {
     $("#div-incomplete").toggleClass("active").toggleClass("inactive");

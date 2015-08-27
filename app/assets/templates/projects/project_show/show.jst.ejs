@@ -1,0 +1,37 @@
+<div class="col-md-2" id="backbone-sidebar"></div>
+
+<div class="col-md-10" id="project-show-main">
+  <div id="project-show-sidebar" class="col-md-3"></div>
+
+  <div class="main-content col-md-9">
+    <!-- Tasks Container -->
+    <div class="tasks-container">
+
+      <div class="tasks-container-header">
+        <div class="row">
+          <h1 class="tasks-title">Tasks</h1>
+          <button class="btn btn-xs btn-pri" id="new-task">New Task</button>
+          <% if (window.CURRENT_USER_ID === project.escape('owner_id')) { %>
+            <div class="delete-member pull-right" id="droppable-assignment">
+              <!-- <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> -->
+            </div>
+          <% } %>
+        </div>
+      </div>
+
+      <h4 class="project-show-task-title" id="tasks-incomplete">
+        <span class="glyphicon glyphicon-chevron-down task-folder" aria-hidden="true"></span>To Do
+      </h4>
+      <div class="project-tasks active" id="div-incomplete">
+        <div class="tasks-container-body-incomplete pre-scrollable clearfix"></div>
+      </div>
+
+      <h4 class="project-show-task-title" id="tasks-completed">
+        <span class="glyphicon glyphicon-chevron-up task-folder" aria-hidden="true"></span>Completed!
+      </h4>
+      <div class="project-tasks inactive" id="div-completed">
+        <div class="tasks-container-body-completed pre-scrollable clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>
