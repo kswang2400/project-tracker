@@ -3,7 +3,19 @@ BasecampApp.Views.TaskLink = Backbone.View.extend({
   tagName: "li",
   className: "task-link-list-item",
 
-  initialize: function () {
+  events: {
+    "click": "addTaskDetailsSubview"
+  },
+
+  addTaskDetailsSubview: function (event) {
+    event.preventDefault();
+    var subview = new BasecampApp.Views.TaskShow({ model: this.model });
+    this.parentView.addSubview("#task-show-sidebar", subview);
+  },
+
+  initialize: function (options) {
+    this.parentView = options.parentView
+
     this.listenTo(this.model, "sync", this.render);
   },
 
