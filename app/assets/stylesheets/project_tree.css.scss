@@ -1,16 +1,48 @@
 
 .nav-task-list {
   height: 100%;
+  padding: 0;
 }
 
 .project-link {
+  /*border: 2px solid blue;*/
+  color: #999;
   font-size: 24px;
+  padding: 8px 24px;
+  width: 100%;
+
+  display: block;
+  text-decoration: none;
+}
+
+.project-link:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+}
+
+.project-tree {
+  width: 100%;
+}
+
+#project-tree-list {
+  padding: 0;
 }
 
 .task-link-list-item {
-  border: 1px solid red;
-  width: 100%;
+  /*border: 1px solid red;*/
+  color: #999;
+  display: block;
   font-size: 16px;
+  padding: 8px 0px 8px 32px;
+  text-decoration: none;
+  width: 100%;
+}
+
+.task-link-list-item:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255,255,255,0.2);
 }
 
 .tree-route {

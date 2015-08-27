@@ -1,5 +1,6 @@
 BasecampApp.Views.TaskLink = Backbone.View.extend({
   template: JST["projects/project_show/task_link"],
+  tagName: "li",
   className: "task-link-list-item",
 
   initialize: function () {
