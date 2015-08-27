@@ -8,24 +8,13 @@ BasecampApp.Views.NavBar = Backbone.View.extend({
     "click #question-submit": "sendCustomerSupport"
   },
 
-  initialize: function (options) {
-    this.projects = options.projects;
-    this.tagged = options.tagged;
-
-    this.listenTo(this.projects, "add remove", this.render);
-    this.listenTo(this.tagged, "add remove", this.render);
-  },
-
   customerSupport: function () {
     this.$el.find(".nav-task-list").addClass("hidden");
     this.$el.find("#customer-question").toggleClass("hidden");
   },
 
   render: function () {
-    var content = this.template({ 
-      projects: this.projects,
-      tagged: this.tagged
-    });
+    var content = this.template();
     this.$el.html(content);
     return this;
   },
