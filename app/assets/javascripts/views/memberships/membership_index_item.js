@@ -7,7 +7,7 @@ BasecampApp.Views.MembershipIndexItem = Backbone.View.extend({
       "data-user-id": this.model.get("user_id"),
       "data-id": this.model.id,
       "style": "z-index: 10"
-    }
+    };
   },
 
   initialize: function () {
@@ -22,7 +22,7 @@ BasecampApp.Views.MembershipIndexItem = Backbone.View.extend({
 
     setTimeout(function () {
       this.$el.draggable({ revert: true });
-    }.bind(this), 0)
+    }.bind(this), 0);
 
     return this;
   }
