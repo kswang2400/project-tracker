@@ -1,56 +1,55 @@
-<div class="task-main">
-  <div class="task-show-sidebar col-md-6">
-    <!-- Task Header -->
-    <div class="task-show-header">
-      <h1 id="task-show-title"><%= task.escape('title') %></h1><br>
 
-      <h4 id="task-status">Status: <%= task.escape('status') %></h4>
+<div class="task-show-sidebar col-md-6">
+  <!-- Task Header -->
+  <div class="task-show-header">
+    <h1 id="task-show-title"><%= task.escape('title') %></h1><br>
 
-      <% if (task.escape("status") !== "completed") { %>
-        <button class="task-complete btn btn-success pull-right">Mark Complete!</button><br>
-      <% } else { %>
-        <button class="task-complete btn btn-success pull-right">Mark Incomplete</button>
-      <% } %>
+    <h4 id="task-status">Status: <%= task.escape('status') %></h4>
 
-      <h4 id="task-project"><a href="/#projects/<%= task.escape('project_id')%>">Project: <%= task.escape("project_title") %></a></h4>
-      
-      <h4 id="task-owner"><a href="/#users/<%= task.escape('author_id') %>">Owner: <%= task.escape('owner_name') %></a></h4>
-      <h3 id="task-description">Description: </h3><p id="task-description"><%= task.escape('body') %></p>
-    </div>
+    <% if (task.escape("status") !== "completed") { %>
+      <button class="task-complete btn btn-success pull-right">Mark Complete!</button><br>
+    <% } else { %>
+      <button class="task-complete btn btn-success pull-right">Mark Incomplete</button>
+    <% } %>
 
-    <div class="task-assignments"></div>
+    <h4 id="task-project"><a href="/#projects/<%= task.escape('project_id')%>">Project: <%= task.escape("project_title") %></a></h4>
+    
+    <h4 id="task-owner"><a href="/#users/<%= task.escape('author_id') %>">Owner: <%= task.escape('owner_name') %></a></h4>
+    <h3 id="task-description">Description: </h3><p id="task-description"><%= task.escape('body') %></p>
+  </div>
 
-    <!-- Upload Section -->
+  <div class="task-assignments"></div>
+
+  <!-- Upload Section -->
 <!--     <div class="project-show-upload-bar clearfix">
-      <h4 id="upload-title">Uploaded Images</h4>
+    <h4 id="upload-title">Uploaded Images</h4>
 
-      <div id="myCarousel" class="carousel slide pull-right" data-ride="carousel">
-        <center><div class="carousel-inner" role="listbox"></div></center>
+    <div id="myCarousel" class="carousel slide pull-right" data-ride="carousel">
+      <center><div class="carousel-inner" role="listbox"></div></center>
 
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div> -->
-  </div>
-
-  <div class="task-show-body col-md-6">
-    <div class="row">
-      <h1 class="comments-header">Comments</h1>
-
-      <form>
-        <textarea class="form-control" name="comment[body]" id="comment-body"></textarea>
-        <br>
-        <input type="submit" class="create-comment btn btn-success" data-author-id="<%= window.CURRENT_USER_ID %>" value="New Comment"/>
-      </form>
-
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
+  </div> -->
+</div>
 
-    <div class="comments-section"></div>
+<div class="task-show-body col-md-6">
+  <div class="row">
+    <h1 class="comments-header">Comments</h1>
+
+    <form>
+      <textarea class="form-control" name="comment[body]" id="comment-body"></textarea>
+      <br>
+      <input type="submit" class="create-comment btn btn-success" data-author-id="<%= window.CURRENT_USER_ID %>" value="New Comment"/>
+    </form>
+
   </div>
+
+  <div class="comments-section"></div>
 </div>
