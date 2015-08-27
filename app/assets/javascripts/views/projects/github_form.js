@@ -2,10 +2,10 @@ BasecampApp.Views.GithubForm = Backbone.Modal.extend({
   template: JST["projects/github"],
   className: "modal-container",
 
-  events: {
-    "click .modal-backdrop": "removeModal",
-    "keydown": "esc",
-    "submit": "createNewProject"
+  events: function () {
+    return _.extend({}, Backbone.Modal.prototype.events, {
+      "submit": "createNewProject"
+    });
   },
 
   initialize: function (options) {

@@ -1,13 +1,13 @@
 BasecampApp.Views.TaskForm = Backbone.Modal.extend({
   template: JST["tasks/form"],
   className: "modal-container",
-
-  events: {
-    "submit": "createTask",
-    "keyup": "esc",
-    "click .modal-backdrop": "removeModal"
-  },
   
+  events: function () {
+    return _.extend({}, Backbone.Modal.prototype.events, {
+      "submit": "createTask"
+    });
+  },
+
   initialize: function (options) {
     this.project = options.project;
   },

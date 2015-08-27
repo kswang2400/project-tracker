@@ -1,10 +1,11 @@
-BasecampApp.Views.UploadShow = Backbone.View.extend({
+BasecampApp.Views.UploadShow = Backbone.Modal.extend({
   template: JST['uploads/show'],
 
-  events: {
-    "click .modal-backdrop": "removeModal",
-    "click #deleteUpload": "deleteUpload",
-    'keydown': 'esc',
+  events: function () {
+    return _.extend({}, Backbone.Modal.prototype.events, {
+      "click .modal-backdrop": "removeModal",
+      "click #deleteUpload": "deleteUpload"
+    });
   },
 
   initialize: function () {
@@ -14,16 +15,6 @@ BasecampApp.Views.UploadShow = Backbone.View.extend({
   deleteUpload: function (event) {
     event.preventDefault();
     this.model.destroy();
-    this.remove();
-  },
-
-  esc: function (event) {
-    if (event.keyCode === 27) {
-      this.remove();
-    }
-  },
-
-  removeModal: function () {
     this.remove();
   },
 

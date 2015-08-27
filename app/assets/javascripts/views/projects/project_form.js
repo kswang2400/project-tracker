@@ -1,11 +1,11 @@
 BasecampApp.Views.ProjectForm = Backbone.Modal.extend({
   template: JST['projects/form'],
   className: "modal-container",
-
-  events: {
-    "submit": "createNewProject",
-    'keydown': 'esc',
-    "click .modal-backdrop": "removeModal"
+  
+  events: function () {
+    return _.extend({}, Backbone.Modal.prototype.events, {
+      "submit": "createNewProject"
+    });
   },
 
   // serialize data from form to create a new project
