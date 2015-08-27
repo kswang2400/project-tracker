@@ -1,4 +1,4 @@
-BasecampApp.Views.ProjectForm = Backbone.CompositeView.extend({
+BasecampApp.Views.ProjectForm = Backbone.Modal.extend({
   template: JST['projects/form'],
   className: "modal-container",
 
@@ -6,13 +6,6 @@ BasecampApp.Views.ProjectForm = Backbone.CompositeView.extend({
     "submit": "createNewProject",
     'keydown': 'esc',
     "click .modal-backdrop": "removeModal"
-  },
-
-  // delete modal form on "esc" keypress
-  esc: function (event) {
-    if (event.keyCode === 27) {
-      this.remove();
-    }
   },
 
   // serialize data from form to create a new project
@@ -28,10 +21,6 @@ BasecampApp.Views.ProjectForm = Backbone.CompositeView.extend({
         that.$el.remove(); 
       }
     })
-  },
-
-  removeModal: function () {
-    this.remove();
   },
 
   render: function () {

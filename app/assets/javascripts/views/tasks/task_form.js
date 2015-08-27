@@ -1,10 +1,10 @@
-BasecampApp.Views.TaskForm = Backbone.CompositeView.extend({
-  template: JST['tasks/form'],
+BasecampApp.Views.TaskForm = Backbone.Modal.extend({
+  template: JST["tasks/form"],
   className: "modal-container",
 
   events: {
     "submit": "createTask",
-    'keydown': 'esc',
+    "keyup": "esc",
     "click .modal-backdrop": "removeModal"
   },
   
@@ -12,29 +12,18 @@ BasecampApp.Views.TaskForm = Backbone.CompositeView.extend({
     this.project = options.project;
   },
 
-  esc: function (event) {
-    if (event.keyCode === 27) {
-      this.remove();
-    }
-  },
-
   createTask: function (event) {
     event.preventDefault();
-    var attrs = this.$el.find('.new-form').serializeJSON();
+    var attrs = this.$el.find(".new-form").serializeJSON();
     var that = this;
 
-    this.model.save(attrs['task'], {
+    this.model.save(attrs["task"], {
       success: function () {
         that.collection.add(that.model, { merge: true });
         Backbone.history.navigate("#projects/" + that.project.id, { trigger: true });
         that.$el.remove();
       }
     })
-  },
-
-  removeModal: function (event) {
-    event.preventDefault();
-    this.remove();
   },
 
   render: function () {

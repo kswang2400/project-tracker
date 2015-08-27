@@ -1,4 +1,4 @@
-BasecampApp.Views.GithubForm = Backbone.CompositeView.extend({
+BasecampApp.Views.GithubForm = Backbone.Modal.extend({
   template: JST["projects/github"],
   className: "modal-container",
 
@@ -11,13 +11,7 @@ BasecampApp.Views.GithubForm = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.repos = options.repos;
     this.username = options.username;
-  },
-
-  esc: function (event) {
-    if (event.keyCode === 27) {
-      this.remove();
-    }
-  },
+  }
 
   linkGithub: function (event) {
     event.preventDefault();
@@ -30,11 +24,7 @@ BasecampApp.Views.GithubForm = Backbone.CompositeView.extend({
       $reposDropdown.append($("<li>").text(repo).attr("name", repo).addClass("github-list-item"));
     });
   },
-
-  removeModal: function () {
-    this.remove();
-  },
-
+  
   render: function () {
     var content = this.template({
       username: this.username
