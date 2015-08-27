@@ -9,7 +9,7 @@ BasecampApp.Views.ProjectTree = Backbone.CompositeView.extend({
 
   addTaskLinkSubview: function (task) {
     var subview = new BasecampApp.Views.TaskLink({ model: task });
-    this.addSubview("ul.nav-task-list", subview);
+    this.addSubview(".nav-task-list", subview);
   },
 
   render: function () {
