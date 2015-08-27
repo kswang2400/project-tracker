@@ -9,8 +9,8 @@ BasecampApp.Views.TaskLink = Backbone.View.extend({
 
   addTaskDetailsSubview: function (event) {
     event.preventDefault();
+    this.projectShowView.emptySubviews("#task-details-sidebar");
 
-    // KW: need to remove old task show subview
     var subview = new BasecampApp.Views.TaskShow({ model: this.model });
     this.projectShowView.addSubview("#task-details-sidebar", subview);
   },
