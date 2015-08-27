@@ -1,19 +1,20 @@
 BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
-  template: JST['projects/index_item'],
+  template: JST["projects/index_item"],
   tagName: "li",
   className: "projects-index-item",
 
   events: {
-    'click .delete-project': "destroyProject",
+    "click .delete-project": "destroyProject",
   },
 
   initialize: function () {
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "change", this.render);
   },
 
   // add color to project progress number
   colorize: function (percentage) {
-    percent = this.$el.find('#percentage-complete')
+    percent = this.$el.find("#percentage-complete")
 
     if (percentage < 50) {
       percent.addClass("incomplete");
@@ -28,9 +29,6 @@ BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
     event.preventDefault();
     var yes = confirm("Are you sure you want to delete this project?")
     if (yes) {
-      // remove from collection to update number
-      // destroy model to remove Backbone model persist deletion to database
-      // remove View from DOM
       this.collection.remove(this.model);
       this.model.destroy();
       this.remove();
