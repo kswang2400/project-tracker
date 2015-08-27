@@ -4,8 +4,6 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
 
   events: {
     "click button.add-project": "newProject",
-    "click .sb-my-projects": "myProjects",
-    "click .sb-tagged-projects": "taggedProjects",
     "click .header-my-projects": "toggleView",
     "click .header-tagged-projects": "toggleView"
   },
@@ -51,14 +49,6 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
     this.addSubview(".projects-owned-index", subview);
   },
 
-  myProjects: function (event) {
-    event.preventDefault();
-    $(".my-projects").addClass("glyphicon-folder-open").removeClass("glyphicon-folder-close");
-    $(".tagged-projects").addClass("glyphicon-folder-close").removeClass("glyphicon-folder-open");
-    $(".projects-owned").addClass("active").removeClass("inactive");
-    $(".projects-tagged").removeClass("active").addClass("inactive");
-  },
-
   newProject: function (event) {
     event.preventDefault();
     var projectFormView = new BasecampApp.Views.ProjectForm({
@@ -90,20 +80,5 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
     });
 
     return this;
-  },
-
-  taggedProjects: function (event) {
-    event.preventDefault();
-    $(".tagged-projects").addClass("glyphicon-folder-open").removeClass("glyphicon-folder-close");
-    $(".my-projects").addClass("glyphicon-folder-close").removeClass("glyphicon-folder-open");
-    $(".projects-owned").removeClass("active").addClass("inactive");
-    $(".projects-tagged").addClass("active").removeClass("inactive");
-  },
-
-  toggleView: function (event) {
-    $(".tagged-projects").toggleClass("glyphicon-folder-open").toggleClass("glyphicon-folder-close");
-    $(".my-projects").toggleClass("glyphicon-folder-close").toggleClass("glyphicon-folder-open");
-    $(".projects-owned").toggleClass("active").toggleClass("inactive");
-    $(".projects-tagged").toggleClass("active").toggleClass("inactive");
   }
 });
