@@ -93,10 +93,14 @@ hr {
   width: 95%;
 }
 
+.projects-index-row-title {
+  height: 10%;
+}
+
 .x-scroll {
-  height: 100%;
+  height: 90%;
   overflow-x: scroll;
-  overflow-y: hidden;
+  overflow-y: scroll;
   white-space: nowrap;
 
 }
