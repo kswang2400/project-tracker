@@ -1,5 +1,5 @@
 BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
-  template: JST["projects/project_show/show"],
+  template: JST["projects/project_show/show2"],
   className: "project-show",
 
   events: {
@@ -20,6 +20,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.listenTo(this.model.incomplete_tasks(), "add", this.addTaskSubview);
     
     this.addNavBarSubview();
+    this.addProjectTreeSubview();
   },
 
 
@@ -29,6 +30,13 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       model: this.model
     });
     this.addSubview("#backbone-sidebar", subview);
+  },
+
+  addProjectTreeSubview: function () {
+    var subview = new BasecampApp.Views.ProjectTree({
+      model: this.model
+    });
+    this.addSubview("#tree-route", subview);
   },
 
   addSideBarSubview: function () {
@@ -49,37 +57,6 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     } else {
       this.addSubview(".tasks-container-body-incomplete", subview);
     }
-  },
-
-  addTree: function () {
-    // excuse my fuck-ugly-ness
-    $("#tree-route").empty();
-    var project_id = this.model.id;
-
-    var project_link = $('<a href="#">')
-      .text(this.model.get("title"))
-      .addClass("project-link")
-      .prepend('<span class="glyphicon glyphicon-tree-conifer btn-lg" aria-hidden="true"></span>');
-    
-    var project = $("<li>")
-      .append(project_link)
-      .append($("<ul>").addClass("nav-task-list pre-scrollable hidden"));
-
-    $("body").find("#tree-route").append(project);
-    var $task_list = $(".nav-task-list");
-
-    this.model.incomplete_tasks().forEach(function (task) {
-      var title = task.get("title");
-      var task_id = task.id;
-
-      // so ugly, i said i'm sorry....
-      var task_link = $("<a href='/#projects/" + project_id + "/tasks/" + task_id + "'>")
-        .text(title)
-        .addClass("tree-list-item")
-        .prepend('<span class="glyphicon glyphicon-leaf btn-lg" aria-hidden="true"></span>');
-      
-      $task_list.append(task_link);
-    });
   },
 
   newTask: function (event) {
@@ -125,9 +102,6 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
         }.bind(this)
       });
     }.bind(this), 0);
-
-
-    this.addTree();
 
     return this;
   },

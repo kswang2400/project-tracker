@@ -1,0 +1,57 @@
+.project-description {
+  font-size: 16px;
+}
+
+.project-description-text {
+  font-size: 12px;
+}
+
+.project-description-text:hover {
+  background-color: #aaaaaa;
+}
+
+.project-description-text-editing {
+  width: 100%;
+}
+
+.project-header-description {
+  margin: 15px 0px;
+}
+
+.project-owner {
+  font-size: 16px;
+  color: hsl(195, 60%, 35%);
+}
+
+.project-title {
+  font-size: 28px;
+}
+
+.project-title-editing {
+  margin: 20px;
+}
+
+.project-title:hover {
+  background-color: #aaaaaa;
+}
+
+#stats-complete {
+  color: blue;
+  font-size: 14px;
+  float: left;
+}
+
+#stats-incomplete {
+  color: red;
+  font-size: 14px;
+  float: right;
+}
+
+.upload-button {
+  margin: 0px 0px 20px 0px;
+}
+
+#upload-title {
+  text-align: center;
+  padding: 10px 0px 20px 0px;
+}
