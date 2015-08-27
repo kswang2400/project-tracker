@@ -4,8 +4,6 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
 
   events: {
     "click button.add-project": "newProject",
-    "click .header-my-projects": "toggleView",
-    "click .header-tagged-projects": "toggleView"
   },
 
   initialize: function (options) {
