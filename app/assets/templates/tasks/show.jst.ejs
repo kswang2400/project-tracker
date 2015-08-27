@@ -1,11 +1,11 @@
 <div class="col-md-2" id="backbone-sidebar"></div>
 
 <div class="task-main col-md-10">
-  <div class="col-md-1">
+  <div class="col-md-3">
     <div id="route-back-project"></div>
   </div>
   
-  <div class="task-show-sidebar col-md-5">
+  <div class="task-show-sidebar col-md-4">
     <!-- Task Header -->
     <div class="task-show-header">
       <h1 id="task-show-title"><%= task.escape('title') %></h1><br>
@@ -23,9 +23,27 @@
     </div>
 
     <div class="task-assignments"></div>
+
+    <!-- Upload Section -->
+    <div class="project-show-upload-bar clearfix">
+      <h4 id="upload-title">Uploaded Images</h4>
+
+      <div id="myCarousel" class="carousel slide pull-right" data-ride="carousel">
+        <center><div class="carousel-inner" role="listbox"></div></center>
+
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
   </div>
 
-  <div class="task-show-body col-md-6">
+  <div class="task-show-body col-md-5">
     <div class="row">
       <h1 class="comments-header">Comments</h1>
 
