@@ -11,6 +11,9 @@ BasecampApp.Views.NavBar = Backbone.View.extend({
   initialize: function (options) {
     this.projects = options.projects;
     this.tagged = options.tagged;
+
+    this.listenTo(this.projects, "add remove", this.render);
+    this.listenTo(this.tagged, "add remove", this.render);
   },
 
   customerSupport: function () {
