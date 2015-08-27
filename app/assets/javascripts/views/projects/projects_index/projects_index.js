@@ -1,5 +1,5 @@
 BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
-  template: JST["projects/index2"],
+  template: JST["projects/projects_index/index2"],
   className: "projects-index",
 
   events: {

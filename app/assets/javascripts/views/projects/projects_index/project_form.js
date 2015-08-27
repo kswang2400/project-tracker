@@ -1,5 +1,5 @@
 BasecampApp.Views.ProjectForm = Backbone.Modal.extend({
-  template: JST['projects/form'],
+  template: JST['projects/projects_index/form'],
   className: "modal-container",
   
   events: function () {

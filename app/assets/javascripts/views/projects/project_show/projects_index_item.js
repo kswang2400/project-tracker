@@ -1,5 +1,5 @@
 BasecampApp.Views.ProjectsIndexItem = Backbone.View.extend({
-  template: JST["projects/index_item"],
+  template: JST["projects/projects_index/index_item"],
   tagName: "li",
   className: "projects-index-item",
 
