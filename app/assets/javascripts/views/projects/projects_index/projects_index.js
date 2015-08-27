@@ -33,7 +33,7 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
       collection: this.tagged,
       model: taggedProject
     });
-    this.addSubview(".projects-tagged-index", subview);
+    this.addSubview(".projects-tagged-index .x-scroll", subview);
   },
 
   addProjectSubview: function (project) {
@@ -41,7 +41,7 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
       collection: this.collection,
       model: project
     });
-    this.addSubview(".projects-owned-index", subview);
+    this.addSubview(".projects-owned-index .x-scroll", subview);
   },
 
   newProject: function (event) {
@@ -69,10 +69,10 @@ BasecampApp.Views.ProjectsIndex = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
 
-    setTimeout(function () {
-      $(".projects-owned-index").sortable();
-      $(".projects-tagged-index").sortable();
-    });
+    // setTimeout(function () {
+    //   $(".projects-owned-index").sortable();
+    //   $(".projects-tagged-index").sortable();
+    // });
 
     return this;
   }

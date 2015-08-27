@@ -78,7 +78,7 @@ hr {
 .projects-index-style {
   background-color: rgba(245, 245, 245, 0.2);
   border-radius: 5px;
-  display: block;
+  display: inline-block;
 }
 
 .projects-index-title {
@@ -98,9 +98,10 @@ hr {
 }
 
 .x-scroll {
-  height: 90%;
+  height: 92%;
+  margin-top: 12px;
   overflow-x: scroll;
-  overflow-y: scroll;
+  overflow-y: hidden;
   white-space: nowrap;
-
+  width: auto;
 }
