@@ -11,7 +11,6 @@
     "users/:id": "userShow"
   },
 
-  // projects index view that fetches two separate collections of projects
   projectIndex: function () {
     this.projects.fetch();
     
@@ -26,7 +25,6 @@
     this._swapView(view);
   },
 
-  // main project show view
   projectShow: function (id) {
     var project = new BasecampApp.Models.Project({ id: id })
     project.fetch();

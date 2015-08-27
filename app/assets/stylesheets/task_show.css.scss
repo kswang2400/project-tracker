@@ -9,8 +9,9 @@
   margin-left: 20px;
 }
 
-.comments-section {
+#comments-section {
   margin-top: 28px;
+  overflow: scroll;
 }
 
 .complete {
@@ -29,30 +30,23 @@
   height: 100%;
 }
 
-.task-main {
+.task-show-main {
   height: 100%;
-  padding: 0 !important;
-}
-
-.task-show {
-  background-image: url("http://res.cloudinary.com/du0durr8z/image/upload/v1437876214/fp_back3_eprpyg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
+  padding: 0px 10px;
 }
 
 .task-show-body {
   background-color: white;
-  height: 100%;
+  height: 60%;
   margin: 0;
-  padding: 0;
+  padding: 0px 16px;
 }
 
 .task-show-sidebar {
   background-color: white;
-  height: 100%;
+  height: 40%;
   margin: 0;  
-  padding: 0;
+  padding: 0px 16px;
   position: relative;
 }
 

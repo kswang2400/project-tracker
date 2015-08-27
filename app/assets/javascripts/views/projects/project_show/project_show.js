@@ -46,12 +46,6 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     this.addSubview("#project-show-sidebar", subview);
   },
   
-  //
-  addTaskDetailsSubview: function (active_task) {
-    var subview = new BasecampApp.Views.TaskShow({ model: active_task });
-    this.addSubview("#task-show-sidebar", subview);
-  },
-  
   addTaskSubview: function (task) {
     var subview = new BasecampApp.Views.TaskIndexItem({ 
       model: task,

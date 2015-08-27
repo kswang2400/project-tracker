@@ -1,6 +1,6 @@
 BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   template: JST["tasks/show"],
-  className: "task-show",
+  className: "task-show-main",
 
   events: {
     "click .current-task": "doNothing",
