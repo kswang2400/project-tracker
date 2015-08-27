@@ -19,32 +19,24 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.users = new BasecampApp.Collections.Users();
 
-    this.model.memberships().each(this.addMembershipSubview.bind(this));
-    this.model.uploads().each(this.addUploadSubview.bind(this));
     this.model.completed_tasks().each(this.addTaskSubview.bind(this));
     this.model.incomplete_tasks().each(this.addTaskSubview.bind(this));
 
     this.listenToOnce(this.model, "sync", this.render);
     this.listenToOnce(this.model, "sync", this.addSideBarSubview);
 
-    this.listenTo(this.model.memberships(), "add", this.addMembershipSubview);
-    this.listenTo(this.model.uploads(), "add", this.addUploadSubview);
     this.listenTo(this.model.completed_tasks(), "add", this.addTaskSubview);
     this.listenTo(this.model.incomplete_tasks(), "add", this.addTaskSubview);
     
     this.addNavBarSubview();
-    this.addUsersSearchSubview();
   },
 
-  addMembershipSubview: function (membership) {
-    var subview = new BasecampApp.Views.MembershipIndexItem({ 
-      model: membership,
-    });
-    this.addSubview(".list-collaborators", subview);
-  },
 
   addNavBarSubview: function () {
-    var subview = new BasecampApp.Views.NavBar();
+    var subview = new BasecampApp.Views.NavBar({
+      collection: this.users,
+      model: this.model
+    });
     this.addSubview("#backbone-sidebar", subview);
   },
 
@@ -97,22 +89,6 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       
       $task_list.append(task_link);
     });
-  },
-
-  addUploadSubview: function (upload) {
-    var subview = new BasecampApp.Views.UploadsIndexItem({ model: upload });
-    this.addSubview(".carousel-inner", subview);
-    this.$(".item").first().addClass("active");
-  },
-
-  addUsersSearchSubview: function () {
-    var subview = new BasecampApp.Views.UsersSearch();
-    this.addSubview(".project-user-search", subview);
-  },
-
-  toggleActiveFolder: function () {
-    $("#div-incomplete").toggleClass("active").toggleClass("inactive");
-    $("#div-completed").toggleClass("active").toggleClass("inactive");
   },
 
   editTitle: function (event) {

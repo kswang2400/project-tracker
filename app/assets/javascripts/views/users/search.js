@@ -5,7 +5,7 @@ BasecampApp.Views.UsersSearch = Backbone.View.extend({
   events: {
     'click .close': "removeSearch"
   },
-  
+
   removeSearch: function (event) {
     this.remove();
   },
