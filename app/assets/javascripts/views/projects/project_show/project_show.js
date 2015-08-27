@@ -36,7 +36,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     var subview = new BasecampApp.Views.ProjectTree({
       model: this.model
     });
-    this.addSubview("#tree-route", subview);
+    this.addSubview(".tree-route", subview);
   },
 
   addSideBarSubview: function () {

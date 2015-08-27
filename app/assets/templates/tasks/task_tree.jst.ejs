@@ -1,0 +1,8 @@
+<a href="/#projects/<%= task.escape("project_id") %>" class="project-link">
+  <span class="glyphicon glyphicon-tree-conifer btn-lg" aria-hidden="true"></span>
+  <%= task.escape("project_title") %>
+</a>
+
+<ul class="nav-task-list">
+  <li><%= task.escape("title") %></li>
+</ul>
