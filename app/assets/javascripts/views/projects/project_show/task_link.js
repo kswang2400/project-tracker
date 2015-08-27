@@ -9,12 +9,15 @@ BasecampApp.Views.TaskLink = Backbone.View.extend({
 
   addTaskDetailsSubview: function (event) {
     event.preventDefault();
-    var subview = new BasecampApp.Views.TaskShow({ model: this.model });
-    this.parentView.addSubview("#task-show-sidebar", subview);
+    debugger;
+    this.parentView.removeSubview("#task-details-sidebar", this.current_subview);
+    this.current_subview = new BasecampApp.Views.TaskShow({ model: this.model });
+    this.parentView.addSubview("#task-details-sidebar", this.current_subview);
   },
 
   initialize: function (options) {
     this.parentView = options.parentView
+    this.current_subview = new Backbone.View();
 
     this.listenTo(this.model, "sync", this.render);
   },

@@ -45,7 +45,13 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
     });
     this.addSubview("#project-show-sidebar", subview);
   },
-
+  
+  //
+  addTaskDetailsSubview: function (active_task) {
+    var subview = new BasecampApp.Views.TaskShow({ model: active_task });
+    this.addSubview("#task-show-sidebar", subview);
+  },
+  
   addTaskSubview: function (task) {
     var subview = new BasecampApp.Views.TaskIndexItem({ 
       model: task,
@@ -58,7 +64,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       this.addSubview(".tasks-container-body-incomplete", subview);
     }
   },
-  
+
   newTask: function (event) {
     event.preventDefault();
     var taskForm = new BasecampApp.Views.TaskForm({
@@ -67,6 +73,11 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       collection: this.model.incomplete_tasks()
     });
     $("#main").prepend(taskForm.render().$el);
+  },
+
+  //
+  removeTaskDetailsSubview: function (active_task) {
+    this.removeModelSubview("#task-show-sidebar", active_task);
   },
 
   render: function () { 
