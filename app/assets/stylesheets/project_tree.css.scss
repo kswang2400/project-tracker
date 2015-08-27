@@ -5,7 +5,6 @@
 }
 
 .project-link {
-  /*border: 2px solid blue;*/
   color: #999;
   font-size: 24px;
   padding: 8px 24px;
@@ -25,24 +24,30 @@
   width: 100%;
 }
 
+.project-tree-header {
+  color: white;
+  padding-left: 24px;
+}
+
 #project-tree-list {
   padding: 0;
 }
 
 .task-link-list-item {
-  /*border: 1px solid red;*/
-  color: #999;
+  background: white;
+  border: 1px solid white;
+  border-radius: 5px;
   display: block;
   font-size: 16px;
-  padding: 8px 0px 8px 32px;
+  margin: 12px;
+  padding: 4px 12px;
   text-decoration: none;
-  width: 100%;
 }
 
 .task-link-list-item:hover {
-  text-decoration: none;
-  color: #fff;
-  background: rgba(255,255,255,0.2);
+  color: white;
+  background: rgba(255,255,255,0.7);
+  cursor: pointer;
 }
 
 .tree-route {

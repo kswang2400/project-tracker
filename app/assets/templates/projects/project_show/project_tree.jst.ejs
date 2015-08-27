@@ -1,6 +1,10 @@
-<a href="#" class="project-link">
-  <!-- <span class="glyphicon glyphicon-tree-conifer btn-lg" aria-hidden="true"></span> -->
-  <%= project.escape("title") %>
-</a>
+<!-- Project Link -->
+<a href="#" class="project-link"><%= project.escape("title") %></a>
 
-<ul class="nav-task-list"></ul>
+<!-- Completed Tasks -->
+<h4 class="project-tree-header incomplete">To Do</h4>
+<ul class="nav-task-list tasks-incomplete"></ul>
+
+<!-- Incomplete Tasks -->
+<h4 class="project-tree-header complete">Done!</h4>
+<ul class="nav-task-list tasks-completed"></ul>

@@ -57,7 +57,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       this.addSubview(".tasks-container-body-incomplete", subview);
     }
   },
-
+  
   newTask: function (event) {
     event.preventDefault();
     var taskForm = new BasecampApp.Views.TaskForm({
