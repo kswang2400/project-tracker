@@ -1,3 +1,7 @@
+#backbone-sidebar {
+  padding: 0;
+  height: 100%;
+}
 
 #brand {
   margin-left: 20px;
@@ -20,6 +24,7 @@
 }
 
 .nav-side-bar {
+  height: 100%;
   width: 100%;
 }
 
@@ -42,12 +47,11 @@
 
 .sidebar-nav {
   height: 100%;
-  width: 40%;
+  width: 100%;
 }
 
 #sidebar-wrapper {
-  height: 100%;
-  position: relative;
+  width: 100%;
 }
 
 .tree-list-item {
