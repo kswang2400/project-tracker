@@ -8,6 +8,8 @@
 
       <% if (task.escape("status") !== "completed") { %>
         <button class="task-complete btn btn-success pull-right">Mark Complete!</button><br>
+      <% } else { %>
+        <button class="task-complete btn btn-success pull-right">Mark Incomplete</button>
       <% } %>
 
       <h4 id="task-project"><a href="/#projects/<%= task.escape('project_id')%>">Project: <%= task.escape("project_title") %></a></h4>

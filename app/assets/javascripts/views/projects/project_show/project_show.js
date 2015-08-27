@@ -34,7 +34,7 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   addProjectTreeSubview: function () {
     var subview = new BasecampApp.Views.ProjectTree({
       model: this.model,
-      parentView: this
+      projectShowView: this
     });
     this.addSubview(".tree-route", subview);
   },
