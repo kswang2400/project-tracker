@@ -7,6 +7,8 @@
 
 Version History
 
+#### CURRENTLY GOING THROUGH REDESIGN
+
 #### 1.2.0 - Github Integration -- *coming soon*
 Connect your projects on ProjectTracker with any repo on your github!
 

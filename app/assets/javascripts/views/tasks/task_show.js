@@ -16,6 +16,7 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
     this.addNavBarSubview();
     this.addTaskTreeSubview();
 
+    // currently fetching all comments
     this.model.comments().fetch();
   },
 
