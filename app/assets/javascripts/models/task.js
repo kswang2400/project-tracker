@@ -13,10 +13,9 @@ BasecampApp.Models.Task = Backbone.Model.extend({
     }
     
     if (payload.comments) {
-      this.comments().set(payload.comments);
+      this.comments().set(payload.comments, { parse: true });
       delete payload.comments;
     }
-    
     return payload;
   },
 

@@ -60,6 +60,10 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
     comment.save(attrs["comment"], {
       success: function () {
         that.model.comments().add(comment);
+      },
+
+      error: function (err) {
+        console.log(err);
       }
     });
   },
