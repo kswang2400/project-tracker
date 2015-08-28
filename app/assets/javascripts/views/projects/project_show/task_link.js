@@ -7,9 +7,6 @@ BasecampApp.Views.TaskLink = Backbone.View.extend({
   },
 
   initialize: function (options) {
-    this.projectShowView = options.projectShowView;
-    this.project = options.project;
-
     this.listenTo(this.model, "sync", this.render);
   },
   

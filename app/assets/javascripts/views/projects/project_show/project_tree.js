@@ -23,11 +23,7 @@ BasecampApp.Views.ProjectTree = Backbone.CompositeView.extend({
   },
 
   addTaskLinkSubview: function (task) {
-    var subview = new BasecampApp.Views.TaskLink({
-      project: this.model,
-      model: task,
-      projectShowView: this.projectShowView
-    });
+    var subview = new BasecampApp.Views.TaskLink({ model: task });
 
     if (task.get("status") === "completed") {
       this.addSubview(".nav-task-list.tasks-completed", subview);
@@ -40,8 +36,11 @@ BasecampApp.Views.ProjectTree = Backbone.CompositeView.extend({
     event.preventDefault();
 
     var task_id = $(event.currentTarget).attr("id");
-    var task = this.model.completed_tasks().getOrFetch(task_id);
+    var task = this.model.tasks().getOrFetch(task_id);
+    this.emptySubviews("#task-details-sidebar");
 
+    var subview = new BasecampApp.Views.TaskShow({ model: task });
+    this.addSubview("#task-details-sidebar", subview);
     debugger;
   },
 

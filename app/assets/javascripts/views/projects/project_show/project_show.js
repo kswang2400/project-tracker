@@ -9,12 +9,8 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.users = new BasecampApp.Collections.Users();
 
-    this.model.tasks().each(this.addTaskSubview.bind(this));
-
     this.listenToOnce(this.model, "sync", this.render);
     this.listenToOnce(this.model, "sync", this.addSideBarSubview);
-
-    this.listenTo(this.model.tasks(), "add", this.addTasksSubview);
 
     this.addNavBarSubview();
     this.addProjectTreeSubview();
@@ -42,19 +38,6 @@ BasecampApp.Views.ProjectShow = Backbone.CompositeView.extend({
       model: this.model
     });
     this.addSubview("#project-show-sidebar", subview);
-  },
-  
-  addTaskSubview: function (task) {
-    var subview = new BasecampApp.Views.TaskIndexItem({ 
-      model: task,
-      collection: this.model.completed_tasks()
-    });
-
-    if (task.get("status") === "completed") {
-      this.addSubview(".tasks-container-body-completed", subview);
-    } else {
-      this.addSubview(".tasks-container-body-incomplete", subview);
-    }
   },
 
   newTask: function (event) {
