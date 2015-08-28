@@ -13,7 +13,7 @@
 
     <h4 id="task-project"><a href="/#projects/<%= task.escape('project_id')%>">Project: <%= task.escape("project_title") %></a></h4>
     
-    <h4 id="task-owner"><a href="/#users/<%= task.escape('author_id') %>">Owner: <%= task.escape('owner_name') %></a></h4>
+    <h4 id="task-owner"><a href="/#users/<%= task.escape('author_id') %>">Owner: <%= task.escape("author") %></a></h4>
     <h3 id="task-description">Description: </h3><p id="task-description"><%= task.escape('body') %></p>
   </div>
 
