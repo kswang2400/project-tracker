@@ -18,10 +18,30 @@
   </div>
 
   <div class="task-assignments"></div>
+</div>
 
+<div class="col-md-6" id="task-show-body">
+  <div class="row">
+    <h3 class="comments-header">Comments</h3>
+  </div>
+  
+  <div class="row tasks-comments">
+    <div id="comments-section"></div>
+
+    <form>
+      <textarea class="form-control" name="comment[body]" id="comment-body"></textarea>
+      <br>
+      <input type="submit" class="create-comment btn btn-success" data-author-id="<%= window.CURRENT_USER_ID %>" value="Comment"/>
+    </form>
+  </div>
+</div>
+
+<div class="col-md-6" id="uploads-section">
   <!-- Upload Section -->
-<!--     <div class="project-show-upload-bar clearfix">
-    <h4 id="upload-title">Uploaded Images</h4>
+  <div class="project-show-upload-bar clearfix">
+    <h3 id="upload-title">Uploaded Images</h3>
+
+    <button class="upload-button btn-xs btn btn-pri">Upload Image</button>
 
     <div id="myCarousel" class="carousel slide pull-right" data-ride="carousel">
       <center><div class="carousel-inner" role="listbox"></div></center>
@@ -35,21 +55,5 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-  </div> -->
-</div>
-
-<div class="task-show-body row">
-  <div class="row">
-    <h1 class="comments-header">Comments</h1>
-  </div>
-  
-  <div class="row tasks-comments">
-    <div id="comments-section"></div>
-
-    <form>
-      <textarea class="form-control" name="comment[body]" id="comment-body"></textarea>
-      <br>
-      <input type="submit" class="create-comment btn btn-success" data-author-id="<%= window.CURRENT_USER_ID %>" value="Comment"/>
-    </form>
   </div>
 </div>
