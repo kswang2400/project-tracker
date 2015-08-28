@@ -9,13 +9,14 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    debugger;
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model.assignments(), "add", this.addAssignmentSubview);
     this.listenTo(this.model.comments(), "add", this.addCommentsSubview);
 
     this.addNavBarSubview();
     this.addTaskTreeSubview();
+
+    this.model.comments().fetch();
   },
 
   addAssignmentSubview: function (assignment) {
@@ -28,7 +29,7 @@ BasecampApp.Views.TaskShow = Backbone.CompositeView.extend({
 
   addCommentsSubview: function (comment) {
     var subview = new BasecampApp.Views.CommentShow({ model: comment });
-    this.addSubview(".comments-section", subview);
+    this.addSubview("#comments-section", subview);
   },
 
   addNavBarSubview: function () {
