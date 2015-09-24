@@ -2,6 +2,7 @@ json.extract! @project, :id, :title, :owner_id, :description
 json.owner_name @project_owner.username
 json.uploads @uploads
 
+<<<<<<< HEAD
 json.high @high_priority
 json.low @low_priority
 
@@ -17,6 +18,9 @@ json.incomplete_tasks @incomplete do |task|
 end
 
 json.completed_tasks @completed do |task|
+=======
+json.tasks @tasks do |task|
+>>>>>>> 15001c2f12d60f7645fed627f9c96341456b5d83
   json.extract! task, :id, :author_id, :project_id, :title, :body, :status
   json.author User.find(task.author_id).username
   json.project_title @project.title

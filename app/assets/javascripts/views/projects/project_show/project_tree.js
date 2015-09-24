@@ -3,7 +3,9 @@ BasecampApp.Views.ProjectTree = Backbone.CompositeView.extend({
   className: "project-tree",
 
   events: {
-    "click .project-link": "doNothing"
+    "click .project-link": "doNothing",
+    "click li.task-link-list-item": "changeTaskDetailsSubview"
+
   },
 
   doNothing: function (event) {
@@ -14,19 +16,14 @@ BasecampApp.Views.ProjectTree = Backbone.CompositeView.extend({
     this.projectShowView = options.projectShowView;
 
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model.completed_tasks(), "add", this.addTaskLinkSubview);
-    this.listenTo(this.model.completed_tasks(), "remove", this.removeTaskLinkSubview);
 
-    this.listenTo(this.model.incomplete_tasks(), "add", this.addTaskLinkSubview);
-    this.listenTo(this.model.incomplete_tasks(), "remove", this.removeTaskLinkSubview);
+    this.listenTo(this.model.tasks(), "add", this.addTaskLinkSubview);
+    this.listenTo(this.model.tasks(), "remove", this.removeTaskLinkSubview);
+
   },
 
   addTaskLinkSubview: function (task) {
-    var subview = new BasecampApp.Views.TaskLink({
-      project: this.model,
-      model: task,
-      projectShowView: this.projectShowView
-    });
+    var subview = new BasecampApp.Views.TaskLink({ model: task });
 
     if (task.get("status") === "completed") {
       this.addSubview(".nav-task-list.tasks-completed", subview);
@@ -38,6 +35,18 @@ BasecampApp.Views.ProjectTree = Backbone.CompositeView.extend({
       }
       // this.addSubview(".nav-task-list.tasks-incomplete", subview);
     }
+  },
+
+  changeTaskDetailsSubview: function (event) {
+    event.preventDefault();
+
+    var task_id = $(event.currentTarget).attr("id");
+    var task = this.model.tasks().getOrFetch(task_id);
+    this.emptySubviews("#task-details-sidebar");
+
+    var subview = new BasecampApp.Views.TaskShow({ model: task });
+    this.addSubview("#task-details-sidebar", subview);
+    debugger;
   },
 
   removeTaskLinkSubview: function (task) {

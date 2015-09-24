@@ -4,9 +4,7 @@
 }
 
 .comments-header {
-  font-size: 28px;
-  float: left;
-  margin-left: 20px;
+  text-align: center;
 }
 
 #comments-section {
@@ -33,20 +31,18 @@
 
 .task-show-main {
   height: 100%;
-  padding: 0px 10px;
 }
 
-.task-show-body {
+#task-show-body {
   background-color: white;
   height: 60%;
-  margin: 0;
   padding: 0px 16px;
 }
 
 .task-show-sidebar {
   background-color: white;
   height: 40%;
-  margin: 0;  
+  margin: 0 !important;
   padding: 0px 16px;
   position: relative;
 }
@@ -63,4 +59,9 @@
 
 textarea {
   width: 50%;
+}
+
+#uploads-section {
+  background-color: white;
+  height: 60%;
 }
