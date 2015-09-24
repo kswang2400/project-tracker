@@ -18,7 +18,6 @@
 //= require backbone
 //= require jquery.serializeJSON
 //= require grayscale
-//= require jquery.easing.min
 //= require basecamp_app
 //= require_tree ./utils
 //= require_tree ../templates

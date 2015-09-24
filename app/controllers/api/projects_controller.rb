@@ -36,13 +36,6 @@ module Api
       @project_owner = User.find(@project.owner_id)
       @uploads = Upload.where(project_id: project_id)
       @tasks = Task.where(project_id: project_id)
-
-      @high_priority = Task.where(project_id: project_id, priority: 1)
-      @low_priority = Task.where(project_id: project_id, priority: 0)
-
-      @completed = @tasks.where(status: "completed")
-      @incomplete = @tasks.where.not(status: "completed")
-
       @memberships = Membership.where(project_id: project_id).limit(9)
 
       render "show.json.jbuilder"

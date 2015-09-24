@@ -46,7 +46,6 @@ BasecampApp.Views.ProjectTree = Backbone.CompositeView.extend({
 
     var subview = new BasecampApp.Views.TaskShow({ model: task });
     this.addSubview("#task-details-sidebar", subview);
-    debugger;
   },
 
   removeTaskLinkSubview: function (task) {
