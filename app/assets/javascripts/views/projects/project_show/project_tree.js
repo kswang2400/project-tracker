@@ -31,7 +31,12 @@ BasecampApp.Views.ProjectTree = Backbone.CompositeView.extend({
     if (task.get("status") === "completed") {
       this.addSubview(".nav-task-list.tasks-completed", subview);
     } else {
-      this.addSubview(".nav-task-list.tasks-incomplete", subview);
+      if (task.get("priority") === 1) {
+        this.addSubview(".tasks-incomplete.high-p", subview);
+      } else {
+        this.addSubview(".tasks-incomplete.low-p", subview);
+      }
+      // this.addSubview(".nav-task-list.tasks-incomplete", subview);
     }
   },
 

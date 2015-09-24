@@ -35,11 +35,13 @@ module Api
     end
 
     def show
+      # authenticate current user
       @task = Task.find(params[:id])
       @project_title = Project.find(@task.project_id).title
       @owner_name = User.find(@task.author_id).username
       @assignments = @task.assigned_tasks
       @comments = @task.comments
+      
       render "show.json.jbuilder"
     end
 

@@ -27,4 +27,4 @@ BasecampApp.Views.TaskLink = Backbone.View.extend({
     this.$el.html(content);
     return this;
   }
-})
+});
